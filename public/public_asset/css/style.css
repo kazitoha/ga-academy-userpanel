@@ -1,0 +1,3184 @@
+/* ============
+google font
+============= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
+
+/* ----------
+
+/* trypography start===== */
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+a{
+    text-decoration: none !important;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    overflow-x: hidden;
+    background: #f3f0f0;
+    line-height: 24px;
+    color: #E84A5F;
+
+  }
+h1,h2,h3,h4,h5,h6{
+    font-size: 25px; 
+}
+img {
+    max-width: 100%;
+    vertical-align: middle !important;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  /* trypograpy css finish==== */
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+  /* =============
+navbar part start
+=============== */
+.navbar {
+  padding: 1px 0px;
+  transition: all 0.5s ease;
+  background-color: #6f977c05;
+}
+.navbar .nav-item .nav-link::before {
+  content: '';
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 2px;
+  background: red;
+  transition: 0.5s all ease;
+  transform: scale(0);
+  align-items: center;
+}
+
+.navbar .nav-item .nav-link.active::before,
+.navbar .nav-item .nav-link:hover::before {
+  transform: scale(1);
+  color: #fff;
+}
+
+.navbar-light .navbar-brand img{
+  width: 81px;
+  height: 70px;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar .nav-item .nav-link {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  position: relative;
+  transition: 0.5s;
+  
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color:#ff0022;
+}
+
+
+
+ .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+.sticky_top {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+.img-fluid{
+  margin-left: 18px;
+  margin-top: 2px;
+}
+.menu_bg {
+  background-color:#f3f0f0;
+  box-shadow: 0px 5px 15px #000;
+  
+}
+.menu_bg .nav-item .nav-link{
+  color:#000;
+}
+.menu_bg .nav-item .nav-link:hover{
+  color:#E84A5F;
+}
+
+/* .navbar {
+  transition: all .7s ease;
+} */
+.dropdown-item {
+  padding: 10px 10px;
+  border-bottom: 1px solid #e7e7e7;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+.dropdown-item:last-child {
+  border-bottom:none;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  color:#E84A5F;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+
+/* <!-- ======home and banner section start======= --> */
+#home-part{
+  overflow: hidden;
+  z-index: 1;
+  height:450px;
+}
+.bakground{
+  padding:150px 0px 200px 0px;
+  position: relative;
+}
+.bakground::before{
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+}
+.home-content-left, .home-content-right{
+  margin-top: 40px;
+  width:664px;
+
+}
+#home-part .home-content-left p{
+  font-size:16px;
+  color:#fff;
+  font-weight: 300px;
+
+ 
+}
+#home-part .home-content-left h2{
+  font-size:25px;
+  color:#fff;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+.banner-btn, .voice-btn {
+  width: 150px;
+  height: 45px;
+  background-color: #22b9b6f5;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 50px;
+  line-height:8px;
+  text-align: center;
+  margin-top: 25px;
+  color:rgba(255, 255, 255, 0.801);
+  font-weight: 600;
+  transition: 0.5s;
+  text-transform: capitalize;
+}
+
+.home-content-right i{
+  margin-right: 10px;
+  font-size: 25px;
+}
+.home-content-right span{
+  font-weight: 900;
+  color:#fff;
+  text-transform: capitalize;
+  padding-bottom: 20px;
+}
+.home-content-right h2{
+  font-weight: 400;
+  color:#fff;
+  text-transform:capitalize;
+  padding-bottom: 20px;
+  font-size:20px;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+background: #E84A5F;
+}
+.owl-theme .owl-dots, .owl-theme .owl-nav {
+margin-top: 149px;
+z-index: 999;
+position: relative;
+}
+.owl-theme .owl-dots .owl-dot span {
+width: 13px;
+height: 13px;
+}
+.owl-nav-prev{
+left: 50%;
+top: 50%;
+}
+
+.owl-nav .owl-next, .owl-prev {
+position: absolute;
+z-index: 999;
+}
+
+.owl-next {
+right:1%;
+}
+
+.owl-prev {
+left:1%;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+  color: #fff;
+  font-size: 20px;
+  margin: 10px;
+  padding: 5px 7px;
+  background: transparent;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: #22b9b6f5;
+  transition: 0.5s;
+  top: -467px;
+}
+.owl-theme .owl-nav [class*=owl-]:hover{
+background-color: #fff;
+color:#E84A5F;
+}
+
+.banner-text-box{
+  height:150px;
+}
+/* <!-- ======home and banner section finish======= --> */
+
+/* =============
+Vice Chancellor and pro Vice Chancellor section strat
+============= */
+#Vice-Chancellor-part{
+  padding: 0px 0px 50px 0px;
+}
+.voice-left-chanecllor{
+  padding:40px 10px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.7s;
+}
+.voice-left-chanecllor:hover{
+  box-shadow: 0 20px 30px 0 rgb(0 0 0 / 20%);
+}
+.voice-left-chanecllor .voice-images-box img, .pro-voice-box img{
+  width: 200px;
+  height: 180px;
+}
+.voice-images-box p, .pro-voice-box p{
+  font-size: 12px;
+  color:rgb(20, 18, 18);
+  font-weight: 700;
+  padding-top: 15px;
+  
+}
+.voice-images-box h5, .pro-voice-box h5{
+  font-size: 15px;
+  color:#000;
+  font-weight: 800;
+  
+}
+.voice-right-chanecllorr, .pro-voice-chanecllor{
+  padding: 22px 20px;
+  box-shadow: 0 10px 10px 10px #cccccc;
+  transition: 0.7s;
+}
+.voice-right-chanecllorr:hover, .pro-voice-chanecllor:hover{
+  box-shadow: 0 20px 30px 0 rgb(0 0 0 / 20%);
+}
+.voice-right-chanecllorr h4{
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: 600;
+  color:#000;
+}
+.voice-right-chanecllorr p{
+  text-align: justify;
+  color:rgba(51, 51, 51, 0.794);
+}
+.voice-btn{
+  float: right;
+  margin-top: -40px;
+}
+.pro-voice-chanecllor{
+  margin-top: 40px;
+}
+.pro-voice-box {
+  height: 250px;
+}
+
+
+/* <!-- ==========================
+our mission start
+========================== --> */
+#mission-part{
+  padding: 30px 0px;
+  background-color: #f4fbfd;
+}
+.mission-left .mission-heading h2{
+  font-size: 35px;
+  font-weight: 500;
+  color: #000;
+  text-transform: capitalize;
+}
+.mission-left p{
+  font-size:16px;
+  font-weight:400;
+  color: #333;
+  text-transform: capitalize;
+  padding-top:24px;
+}
+.mission-left .mission-heading .under-bottom {
+  left: 5%;
+  transform: translate(-5%);
+}
+.mission-button button{
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: capitalize;
+  font-style: italic;
+  float: right;
+  border:2px solid #22b9b6f5;
+  background-color: transparent;
+  padding:8px 30px;
+  transition: 0.5s;
+}
+.mission-button button:hover{
+  color: #000;
+  border:2px solid #fff;
+  background-color: #E84A5F;
+}
+.mission-button a:hover{
+  color: #fff;
+   
+ }
+.mission-button a{
+ color: #000;
+ transition: 0.5s;
+  
+}
+.mission-right img {
+  width: 100%;
+  height: 300px;
+}
+
+
+/* =================
+student admission part start
+==================== */
+#admission-part{
+  padding:80px 0px;
+  background-color: #eeeeee;
+}
+#admission-part h2{
+  font-size: 40px;
+  color: #333;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.admission-box h3{
+  font-size: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #333;
+  text-align: center;
+}
+.admission-box p{
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #252424;
+  text-align: center;
+}
+.content-join p{
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #000;
+  padding-top: 15px;
+  text-align: center;
+}
+.admission-form label {
+  color: #000;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.admission-right{
+  padding:10px 40px;
+
+}
+.admission-box{
+  padding: 30px 20px;
+  background-color: #ffb40600;
+  border-radius: 15px;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.admission-submit button{
+  background-color: #dd4b39;
+  color: #fff;
+  border: none;
+  padding: 10px 0px;
+  transition: 0.5s;
+}
+.admission-submit button:hover {
+  background-color: #dd4c39a3;
+  color: #fff;
+  border: none;
+  
+}
+
+/* =====================
+counter part start
+=================== */
+
+#counter_part{
+  padding:80px 0px 0px 0px;
+  
+}
+.line-header{
+  padding-bottom: 50px;
+}
+.line-header h2 {
+  font-size: 35px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  text-transform: capitalize;
+}
+.under-bottom {
+  width: 80px;
+  height: 3px;
+  background-color: #E84A5F;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.counter-main{
+  background-image: url("../images/30.jpg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding:50px 0px;
+  position: relative;
+}
+.counter-main::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.counter {
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+.couter-box{
+  text-align: center;
+}
+.couter-box i{
+ font-size: 40px;
+ width: 90px;
+ height: 90px;
+ border-radius:50%;
+ border: 2px solid #fff;
+ background-color: rgba(255, 255, 255, 0.431);
+ color:#E84A5F;
+ line-height: 90px;
+}
+.couter-box h1{
+  margin-top: 15px;
+  font-weight: 800;
+  color:#fff;
+  font-size: 35px;
+}
+.couter-box h3 {
+  margin-top: 10px;
+  font-weight: 700;
+  color: #fff;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+/* ================
+Welcome to University of Dhaka start
+======================= */
+#welcome-part{
+  padding: 30px 0px;
+  background-color: #fff;
+}
+.welcome-content-left h2{
+  font-size: 25px;
+  font-weight: 500;
+  color:#000;
+  margin-bottom: 10px;
+}
+.welcome-content-left p{
+  font-size: 15px;
+  font-weight: 400;
+  color:rgba(51, 51, 51, 0.876);
+  text-align: justify;
+  padding-bottom: 15px;
+}
+.welcome-btn, .view-btn{
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #22b9b6f5;
+  color:#fff;
+  text-transform: capitalize;
+  font-weight: 600;
+  transition: 0.7s;
+  border-radius: 15px;
+  
+}
+.welcome-btn:hover{
+  color:#fff;
+  box-shadow:5px 5px 5px 5px rgba(0, 0, 0, 0.349);
+}
+.welcome-content-left i{
+  float: right;
+ z-index: 1;
+ color: #000;
+ font-size: 30px;
+  
+}
+.laibery-video{
+  background-image: url("../images/du_library.jpg");
+  padding: 200px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+  position: relative;
+  
+}
+.btn-1 {
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: capitalize;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  position: absolute;
+  left: 42%;
+  top: 40%;
+  transform: translate(-40%, -41%);
+  animation: pulse_01 2s ease infinite;
+}
+.btn-1 i{
+  font-size: 30px;
+  color: #E84A5F;
+}
+@keyframes pulse_01 {
+  0% {
+    transform: scale(0.94);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    transform: scale(0.94);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* ======================
+announcement part start
+======================= */
+#announce-part{
+  background-color: #f8e5e5;
+  
+}
+.announce-box {
+  background: #fff;
+  padding: 5px 4px 70px 4px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 0 0 10px #cccccc;
+}
+
+.announce-info h2{
+  font-size:18px;
+  text-align: center;
+  color:#000;
+  padding: 20px 30px;
+  transition: 0.7s;
+  font-weight: 600;
+}
+.arrival-text h3{
+  font-size: 17px;
+  font-weight: 600;
+  color:#444;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  text-transform: capitalize;
+
+}
+.announce-info p{
+  font-size:14px;
+  font-weight: 300;
+  color:#444;
+  text-align: center;
+  margin-top:5px;
+  height:150px;
+
+}
+
+
+/* ==========
+Latest News part start
+============= */
+#latest-news-part, #latest-event-view-part, #Student-Achievements-view-part, #teachers-part, #announce-part{
+  padding: 80px 0px;
+}
+.news-box img, .event-box img, .Research-box img, .Featured-News-Event-box img, .Student-Achievements-box img, .announce-box img{
+  height: 260px;
+  width: 100%;
+}
+
+.checked {
+  color: orange;
+}
+  
+.news-info .date-line, .event-info .date-line, .Research-info .date-line, .Featured-News-Event-info .date-line, .Student-Achievements-info .date-line, .announce-info .date-line{
+ border-bottom: 1px solid #808080bc;
+ padding: 30px;
+ background-color: #fafafa;
+}
+.news-info .date-line h5, .event-info .date-line h5, .Research-info .date-line h5, .Featured-News-Event-info .date-line h5, .Student-Achievements-info h5, .announce-info .date-line h5{
+  font-size: 15px;
+  color:#333;
+}
+.news-info .date-line i, .event-info .date-line i, .Research-info .date-line i, .Featured-News-Event-info .date-line i, .Student-Achievements-info i, .announce-info .date-line i{
+  font-size: 20px;
+  color:#E84A5F;
+  margin-right: 10px;
+}
+.news-info h2, .event-info h2, .Research-info h2, .Featured-News-Event-info h2, .Student-Achievements-info h2{
+  font-size:20px;
+  color:#000;
+  padding: 20px 30px;
+  transition: 0.7s;
+  font-weight: 600;
+  height: 250px;
+}
+.news-info h2:hover, .event-info h2:hover, .Research-info h2:hover, .Featured-News-Event-info h2:hover, .Student-Achievements-info h2:hover, .announce-info h2:hover{
+  color:#E84A5F;
+}
+.news-box, .event-box, .Research-box, .Featured-News-Event-box, .Student-Achievements-box{
+  padding-bottom: 30px;
+  box-shadow: 0 0 10px #cccccc;
+ 
+}
+
+.owl-carousel .owl-theme .owl-news{
+  margin-bottom: 50px;
+}
+.btn-read {
+  border: 2px solid #22b9b6f5;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+  color: #222;
+  font-size: 15px;
+  font-weight:600;
+  margin-top: 30px;
+  text-transform: uppercase;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 99;
+  transition: all 0.7s ease;
+  border-radius: 25px;
+ left: 50%;
+ transform: translate(-50%);
+}
+
+.btn-read:hover {
+  color: #fff;
+  background: #E84A5F;
+}
+
+.btn-read:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 25px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #E84A5F;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.btn-read:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  color: #fff;
+}
+.view-btn{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 99px;
+}
+
+.view-btn-student{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -85%);
+    margin-top: 10px;
+    top: 94%;
+    }
+    .view-btn-student {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #22b9b6f5;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: 0.7s;
+    border-radius: 15px;
+}
+
+
+/* =========
+Recent and Upcoming Events part start
+=========== */
+
+#Upcoming-Events-part{
+  padding: 100px 0px 150px 0px;
+  background-color: #eeeeee;
+}
+.event-bottom{
+  padding-top: 20px !important;
+ 
+}
+.date-event{
+  float: left;
+  padding:20px 30px;
+  text-align: center;
+}
+.date-event span{
+  font-size: 30px;
+  color:#E84A5F;
+  font-weight: 600;
+}
+.date-event h5{
+  font-size: 16px;
+  color:#333;
+  font-weight: 500;
+}
+  
+.event-heading{
+  padding: 0px 0px 0px 106px;
+  font-size: 20px;
+  text-align: justify;
+  height:200px;
+}
+.news-info .event-heading h2{
+  font-size:16px;
+  
+}
+.event-news{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.event-news .news-info{
+  background-: #eeeeee;
+}
+.event-news .btn-read {
+  margin-bottom: 30px;
+  width: 122px;
+  height: 47px;
+  font-size: 12px;
+  z-index: 0;
+}
+.notice-content{
+  border-bottom: 1px solid #e7e7e7;
+  padding: 20px;
+ 
+}
+
+.notice-content h3{
+  font-size: 16px;
+  color:#333;
+  font-weight: 500;
+  transition: 0.7s;
+}
+.notice-content h3:hover{
+  color:#E84A5F;
+}
+.notice-content p{
+  font-size: 14px;
+  color:#000;
+  font-weight: 700;
+}
+.notice-slider{
+  overflow: scroll;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  height:540px;
+}
+.notice-slider .btn-read{
+  left:20%;
+  width: 120px;
+  font-size: 13px;
+  margin-top: 10px;
+  z-index: 0;
+}
+/*=========================== 
+teachers part start
+=============================== */
+
+.teachers-card {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  margin: auto;
+}
+
+.teachers-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.teachers-card-front img{
+  width:300px;
+  height:400px;
+}
+.teachers-card:hover .teachers-card-inner {
+  transform: rotateY(180deg);
+}
+
+.teachers-card-front, .teachers-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.teachers-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.teachers-card-back {
+  background-color: #000;
+  color: white;
+  transform: rotateY(180deg);
+  text-align: center;
+  
+}
+.teachers-card-back img{
+  width: 100%;
+}
+.teachers-card-back-text{
+  transform: translateY(20%);
+}
+.btn-teachers a{
+  border: 1px solid #bbb;
+  color:#fff;
+  font-size: 15px;
+  border-radius: 5px;
+  background: transparent;
+  display: inline-block;
+  padding:5px 15px;
+  transition: 0.5s;
+}
+.btn-teachers a:hover{
+  background-color: #fff;
+  color:#E84A5F;
+  font-weight: 500;
+}
+.btn-teachers i{
+  margin-right: 5px;
+}
+
+
+
+
+/* ==============
+Research Activities part start
+===============  */
+#research-activities-part{
+  padding: 100px 0px;
+  background-color: #f7f7f7;
+}
+
+.research-content .research-date h5{
+  float: right;
+  font-size: 14px;
+  color:rgba(51, 51, 51, 0.733);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-top: 20px;
+
+}
+.research-content h2{
+  font-size:16px;
+  font-weight: 500;
+  text-align: justify;
+  padding-top:50px;
+  color:#000;
+  height: 200px;
+  transition: 0.5s;
+}
+.research-content h2:hover {
+  color: #ffb606;
+}
+
+.research-content{
+  padding: 20px;
+
+}
+.item{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.owl-theme .owl-nav.disabled+.owl-dots {
+  margin-top:70px;
+}
+.item .btn-read {
+  margin-bottom: 20px;
+}
+
+/* ===========
+OUR CAMPUS video part strat
+================== */
+#campus-video{
+  background-image:url(../images/banner/16229812595c68187b-e769-4ce0-af61-c787c4c0687e.jpg);
+  padding: 200px 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#campus-video::before{
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+}
+.video-content h2{
+  font-size: 40px;
+  color:#fff;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding-bottom: 15px;
+}
+.video-content p{
+  font-size: 25px;
+  color:#E84A5F;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
+
+.video-content .btn-1 {
+  width: 90px;
+  height: 90px;
+  top: 133%;
+  left: 45%;
+  transform: translate(-133% , -45%);
+}
+
+/* <!-- =====================
+FEATURED- NEWS & EVENTS part start
+============== --> */
+#feature-news-event-part{
+  padding: 100px 0px;
+  background-color: #fff;
+}
+.feature-news-event-content h3, .heading-feature h2{
+  font-size: 20px;
+  color: #000;
+ 
+}
+.feature-news-event-left{
+  border:2px solid #e7e7e7;
+  padding:25px 20px 40px 20px;
+  margin-bottom: 20px;
+}
+.feature-left-images-box{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 0px 0px 0px 0px;
+}
+.feature-left-images-box img{
+  width:100%;
+  height: 270px;
+}
+.images-content-feature{
+  padding: 20px;
+}
+
+.images-content-feature h2{
+  font-size:18px;
+  font-weight: 500;
+  text-align: justify;
+  color:#000;
+  height: 220px;
+  transition: 0.5s;
+  border-bottom: 1px solid #e7e7e7;
+}
+.images-content-feature h2:hover {
+  color: #E84A5F;
+}
+.feature-right-images img {
+  float: left;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 5px 30px 0 rgb(214 215 216 / 57%);
+  padding: 3px;
+  vertical-align: middle !important;
+  margin-top: 30px;
+}
+.feature-right-images {
+    margin-left: 16px;
+}
+.feature-event-news-rights{
+ border:1px solid #e7e7e7;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ overflow: scroll;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  height:540px;
+
+}
+
+
+.feature-right-content {
+  background-color: #efefef;
+  padding: 14px;
+}
+.feature-images-right-details{
+  float: right;
+  padding: 30px 30px 0px 30px;
+  width: 95%;
+}
+
+.feature-images-right-details h4{
+  font-size: 15px;
+  font-weight: 700;
+  color:#333;
+}
+.feature-images-right-details span{
+  font-size: 13px;
+  font-weight: 500;
+  color:rgba(51, 51, 51, 0.623);
+}
+.feature-images-right-details p{
+  font-size: 15px;
+  font-weight: 500;
+  color:rgba(51, 51, 51, 0.623);
+}
+.feature-images-right-details i{
+  font-size: 15px;
+  color:#E84A5F;
+}
+
+/* ===================
+all video dhaka university part strat
+=================  */
+#all-video{
+  padding: 100px 0px;
+  background-color: #fff;
+}
+.video-semeilar h2{
+  font-size: 15px;
+  color:#0c0c0da4;
+}
+
+
+/* ===================
+footer part start
+================= */
+#footer-part{
+  background: #000;
+  padding: 19px  0px 0px 0px;
+  background-position: center center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-top: 2px solid #E84A5F;
+  position: relative;
+}
+#footer-part::before{
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: #002147;
+  opacity: 0.5;
+  left: 0;
+  top: 0;
+}
+.footer-top-one h2{
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.footer-link ul li a{
+  font-size: 15px;
+  font-weight:300;
+  color:#fff;
+  transition: 0.5s;
+}
+.footer-link ul li a:hover{
+  color:#E84A5F;
+}
+.footer-link ul li{
+  padding-bottom: 10px;
+}
+.footer-top-one img{
+  margin-bottom: 20px;
+
+}
+.footer-bottom{
+  background-color: #0f2e52;
+  padding: 20px 0px 0px 0px;
+}
+.footer-bottom-left{
+  float: left;
+}
+.footer-bottom-left p{
+  font-size: 13px;
+}
+.footer-bottom-left a{
+  color:#E84A5F;
+}
+.footer-bottom-right{
+  float: right;
+}
+.footer-bottom-right a{
+  padding-left: 10px;
+  color:#fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+/*
+============================
+welcome page banner site design
+=======================
+*/
+
+#welcome-page-banner{
+  padding: 70px 0px;
+  background-image: url('../images/banner/16229812595c68187b-e769-4ce0-af61-c787c4c0687e.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 166px;
+}
+#welcome-page-banner::before{
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+}
+ .breadcrumb li.active{
+  color: #ffb606;
+}
+.breadcrumb a, .breadcrumb li {
+  color: #ffffff;
+}
+.breadcrumb {
+  background-color: transparent;
+  margin-top: 100px;
+  text-align: center;
+  font-size: 30px;
+
+}
+/* ===============
+Welcome to the University of Dhaka start
+================= */
+#welcome-part{
+  padding: 50px 0px;
+  background-color: #ffffff;
+}
+.publish-content p{
+  font-size: 15px;
+  color:#ffb606;
+  float: right;
+}
+
+.content-heading h2{
+  font-size: 25px;
+  color:#000;
+  padding-bottom: 25px;
+}
+.content-heading p{
+  font-size: 15px;
+  font-weight: 500;
+  text-align: justify;
+  color:#333333b4;
+}
+.content-heading img{
+  padding-bottom: 35px;
+  height: auto;
+  width: 500px;
+}
+.welcome-content-right{
+  border:1px solid #80808086;
+  padding: 0px 0px 70px 0px;
+}
+.welcome-content-right .welcome-slide h2{
+  background-color: #22b9b6f5;
+  font-size: 25px;
+  color:#333;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px 10px;
+}
+.welcome-content-right .welcome-slide .right-slide-content h5{
+  font-size: 16px;
+  color:#333;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 10px;
+ 
+}
+.right-slide-content{
+  border-bottom: 1px solid #808080d2;
+  padding: 20px;
+}
+.right-slide-content:last-child{
+  border-bottom: none;
+}
+.welcome-content-right .welcome-btn, .view-btn {
+  padding: -1px 43px;
+
+}
+.welcome-content-right .welcome-slide .right-slide-content span{
+  font-size: 12px;
+  color:#333;
+  font-weight: 700; 
+ 
+}
+
+.icon-bar {
+  position: fixed;
+   top:50%;
+   z-index: 999;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+  transform: rotate(45deg);
+  
+}
+
+.icon-bar a:hover {
+  background-color: #E84A5F;
+  transform: rotate(35deg);
+  
+}
+.icon-bar i{
+  transition: 0.5s;
+  font-size: 20px;
+}
+.icon-bar i:hover {
+  background-color: #E84A5F;
+  transform: rotate(360deg);
+  color:#000;
+  
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+/* ==============
+DU Students' Celebrating their Graduation Moment
+=============== */
+#Graduation-page-banner{
+  padding: 70px 0px;
+  background-image: url('../images/banner/162886798416287945131620211411PrimeMinisterGoldMedalAward-Copy.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#Graduation-page-banner::before{
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+}
+.content-heading h4{
+  font-size: 20px;
+  font-weight: 700;
+  color:#000;
+  padding: 20px 0px;
+  text-transform: capitalize;
+}
+.content-heading span{
+  font-size: 14px;
+  color:#000000d2;
+  margin: 30px 0px;
+}
+/* =================
+The Glorious Journey
+==================== */
+#Glorious-page-banner{
+  padding: 70px 0px;
+  background-image: url('../images/banner/16229812595c68187b-e769-4ce0-af61-c787c4c0687e.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#Glorious-page-banner::before{
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+}
+
+
+
+
+
+
+/* ======================
+the Vice Chancellor page start
+======================= */
+#voice-Chancellor-page{
+  padding: 250px 0px;
+  background-image: url('../images/01.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#voice-Chancellor-page::before{
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+}
+.banner-text h2{
+  font-size: 55px;
+  color:#fff;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: capitalize;
+  padding-top: 20px;
+}
+#Vice-Chancellor-link{
+  padding: 50px 0px;
+  background-color: #E84A5F;
+ 
+}
+#Vice-Chancellor-link a h3{
+  font-size: 35px;
+  color:#fff;
+  transition: 0.5s;
+}
+#Vice-Chancellor-link a h3:hover{
+  color:#002147;
+}
+/* =====================
+Message from the Vice Chancellor strat start
+=================== */
+#Vice-Chancellor-Message{
+background-color: #002147;
+padding: 50px 0px;
+}
+#Vice-Chancellor-Message .line-header h2{
+  color:#fff;
+}
+.message-text-vice-chancellor{
+  margin-top: 30px;
+}
+.message-text-vice-chancellor img{
+  float: left;
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+.content-voice-chancellor p{
+  color:#f5f5f5;
+  font-size: 14px;
+  text-align: justify;
+}
+
+/* =================================
+Vice Chancellor's Profile strat
+================================= */
+
+#vice-chancellor-profile{
+  background-color: #fff;
+  padding:50px 0px;
+}
+.vice-profile-header h2{
+  font-size: 30px;
+  color:#002147;
+  font-weight: 700;
+  padding-bottom: 40px;
+}
+.voice-chancellor-profile-content p{
+  font-size: 15px;
+  font-weight: 400;
+  color:#000;
+  text-align: justify;
+}
+.voice-chancellor-profile-content h4{
+  font-size: 16px;
+}
+.voice-chancellor-profile-content ul li{
+  list-style-type: square;
+  font-size: 16px;
+  color:#000;
+  padding:10px 0px;
+  margin-left: 60px;
+}
+.voice-btn-profile a{
+  padding: 12px 30px;
+  border:2px solid #E84A5F;
+  display: inline-block;
+   margin-top:20px;
+   color:#000;
+   text-transform: capitalize;
+   font-weight: 600;
+   transition: 0.5s;
+}
+.voice-btn-profile a:hover{
+  background-color: #002147;
+  color:#fff;
+  border:none;
+}
+.voice-chancellor-profile-box{
+  border-top: 3px solid #E84A5F;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+}
+/* =======================
+Vice Chancellor Speech & Quotes strat
+========================= */
+#Vice-Chancellor-Speech-part{
+  padding: 70px 0px;
+  background-color: #f7f7f7;
+}
+
+.Vice-Chancellor-Speech-box {
+  background: #fff;
+  padding: 0px 0px 30px 0px;
+  text-align: center;
+  position: relative;
+  box-shadow: 1px 4px 20px -2px rgb(0 0 0 / 10%);
+  border-bottom: 5px solid #00325a;
+}
+.Vice-Chancellor-Speech-box:hover {
+  border-bottom: 5px solid #2f2f2f;
+}
+
+.Vice-Chancellor-Speech-box .pic {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+}
+.Vice-Chancellor-Speech-box .pic:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #00325a;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 1;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+.Vice-Chancellor-Speech-box:hover .pic:before {
+  height: 100%;
+  background: #2f2f2f;
+}
+.Vice-Chancellor-Speech-box .pic:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ffffff00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.3s linear 0s;
+}
+.Vice-Chancellor-Speech-box:hover .pic:after {
+  background: #E84A5F;
+}
+.Vice-Chancellor-Speech-box .pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+  position: relative;
+  z-index: 2;
+}
+.Vice-Chancellor-Speech-box:hover .pic img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+
+.Vice-Chancellor-Speech-box p{
+  font-size: 18px;
+  font-weight: 600;
+  color:#000;
+  padding: 8px 20px;
+}
+.author-name h4{
+  font-size: 16px;
+  font-weight: 800;
+  color:#000;
+}
+.author-name span{
+  font-size: 14px;
+  font-weight: 500;
+  color:#333333cc;
+ 
+}
+/* =====================================
+Vice Chancellor Photo Gallery start
+======================== */
+
+#Vice-Chancellor-Photo-Gallery-part{
+  padding: 70px 0px;
+  background-color: #f7f7f7ab;
+}
+
+.work-nav ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.work-nav ul li{
+  color:#444444;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.work-nav ul li.mixitup-control-active{
+  color:#ffb606;
+  font-weight: 700;
+}
+.work-nav ul li::after{
+  content: '';
+  width: 2px;
+  height: 20px;
+  background-color: #444444;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+.work-nav ul li.active{
+  color:#8bc34a;
+}
+.work-nav ul li:last-child::after{
+  width: 0;
+  height: 0;
+}
+#work .col-lg-4 {
+  padding: 3px;
+  
+}
+.gallery-item img {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+.gallery-item{
+position: relative;
+
+}
+.overlay-gallery{
+position: absolute;
+top:0;
+left:0;
+right: 0;
+bottom: 0;
+opacity:0;
+transition: 0.5s;
+justify-content: center;
+background-color:#0f2e52ed;
+opacity: 0.3;
+text-align: center;
+transform: scale(0);
+}
+.overlay-gallery a {
+font-size: 50px;
+color: #fff;
+position: absolute;
+display: inline-block;
+top: 40%;
+text-align: center;
+left: 50%;
+transform: translate(-50% , -50%);
+top: 50%;
+}
+.overlay-gallery p{
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 25px;
+  padding:0 10px 10px 10px;
+}
+.gallery-item:hover .overlay-gallery{
+opacity:1;
+color:#8bc34a;
+transform: scale(1);
+}
+
+.vbox-close {
+right: 10px;
+font-size: 50px;
+}
+
+/* <!-- ====================
+Vice Chancellor Contact start
+======================= --> */
+#Vice-Chancellor-Contact-part{
+  padding: 70px 0px;
+  background-color: #f7f7f777;
+}
+.contact-box i{
+  font-size: 35px;
+  color:#E84A5F;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border:2px dotted #E84A5F;
+  margin-bottom: 30px;
+  transition: 0.5s;
+}
+.contact-info h4{
+  font-size: 22px;
+  font-weight: 700;
+  color:#3B5998;
+  text-transform: uppercase;
+}
+.contact-info ul li{
+  font-size: 14px;
+  font-weight: 500;
+  color:#000;
+  text-transform: uppercase;
+}
+.contact-box:hover i{
+  background-color: #002147af;
+  border-color: #ffb606;
+  color:#fffaf0;
+}
+.contact-background {
+  background-color: #f1eeee;
+  padding: 30px;
+}
+.location-info h4{
+  font-size: 22px;
+  font-weight: 600;
+  color:#002147;
+  text-transform: uppercase;
+  margin-top:50px;
+  margin-bottom:40px;
+
+}
+.location-info ul li{
+  font-size: 15px;
+  color:#2f2e2e;
+  font-weight: 300;
+  padding: 8px 0px;
+}
+.location-info .map iframe{
+  width: 100%;
+  height: 400px;
+  border:7px solid #fff;
+}
+
+
+
+
+
+
+/* ====================
+Profile of Dr. Md Akhtaruzzaman single pages
+==================== */
+#voice-profile-home{
+  padding: 70px 0px;
+  background-image: url('../images/banner/16229812595c68187b-e769-4ce0-af61-c787c4c0687e.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#voice-profile-home::before{
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+}
+#voice-main-profile{
+  padding: 80px 0px;
+  background-color: #fff;
+  text-align: center;
+}
+.profile-left-voice{
+  border:2px dotted #0f2e52d0;
+  padding: 20px;
+}
+#voice-main-profile .profile-left-voice img{
+  border-bottom: 2px solid #E84A5F;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+.profile-info h4{
+  font-size: 20px;
+  font-weight: 700;
+  color:#0f2e52;
+  padding-bottom: 10px;
+}
+.profile-info span{
+  font-size: 15px;
+  font-weight: 400;
+  color:gray;
+  padding-bottom: 10px;
+}
+.profile-info p{
+  font-size:14px;
+  font-weight: 300;
+  color:#000;
+  
+}
+.warpper{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab{
+  cursor: pointer;
+  padding:10px 20px;
+  margin:0px 2px;
+  background:#fafafa;
+  display:inline-block;
+  color:#000;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+.panels{
+  background:#fffffff6;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  width:100%;
+  border-radius:3px;
+  overflow:hidden;
+  padding:20px;  
+}
+.panel{
+  display:none;
+  animation: fadein .8s;
+}
+.panel ul li{
+  font-size: 15px;
+  padding: 5px 0px;
+  color:#000;
+
+}
+.panel span{
+  font-size: 16px;
+  padding: 10px 0px;
+  color:#000;
+  font-weight: 700;
+
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.panel-title{
+  font-size:1.5em;
+  font-weight:bold
+}
+.radio{
+  display:none;
+}
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel,
+#five:checked ~ .panels #five-panel,
+#six:checked ~ .panels #six-panel,
+#seven:checked ~ .panels #seven-panel{
+  display:block
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab,
+#five:checked ~ .tabs #five-tab,
+#six:checked ~ .tabs #six-tab,
+#seven:checked ~ .tabs #seven-tab{
+  background:#22b9b6f5;
+  color:#fff;
+  border-top: 3px solid #0f2e52;
+}
+
+
+
+
+
+
+
+
+/* ==============================
+Pro-Vice Chancellor page design
+====================== */
+
+/* =================Pro-Vice Chancellor page banner============= */
+
+#Pro-Vice-Chancellor-banner, #welcome-message-banner, #latest-news-view-banner, #latest-event-view-banner, #Research-news-view-banner, #Featured-News-Event-view-banner, #Student-Achievements-view-banner{
+  background-image: url('../images/banner/16229812595c68187b-e769-4ce0-af61-c787c4c0687e.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  padding: 80px 0px;
+}
+#Notice-view-banner{
+  background-image: url('../images/banner/notice_banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  padding: 80px 0px;
+}
+#Pro-Vice-Chancellor-banner::before, #welcome-message-banner::before, #latest-news-view-banner::before, #latest-event-view-banner::before, #Notice-view-banner::before, #Research-news-view-banner::before, #Featured-News-Event-view-banner::before, #Student-Achievements-view-banner::before{
+  content:'';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+}
+
+
+#Pro-Vice-Chancellor-part{
+  padding: 80px 0px;
+  background-color: #fff;
+}
+.pro-vice-chancellor-box{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-top: 3px solid #ffb606;
+  border-bottom: 3px solid #ffb606;
+}
+
+.pro-vice-chancellor-images img{
+  float: left;
+  margin-right: 30px;
+  width: 230px;
+  border: 5px solid #002147;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+.pro-vice-chancellor-title-info h2{
+  color:#0f2e52;
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding-bottom:15px;
+}
+.pro-vice-chancellor-title-info h4{
+  color:#0f2e52;
+  font-size:22px;
+  font-weight: 300;
+  text-transform: capitalize;
+  padding-bottom:10px;
+}
+.pro-vice-chancellor-title-info span{
+  color:#0f2e52;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: capitalize;
+  
+}
+.pro-vice-content p{
+  margin-top: 20px;
+  color:#000;
+  font-size: 15px;
+  font-weight:400;
+  text-transform: capitalize;
+  text-align: justify;
+}
+.pro-vice-content h5{
+  margin-top: 20px;
+  color:#000;
+  font-size:18px;
+  font-weight: 900;
+  text-transform: capitalize;
+  text-align: justify;
+}
+.pro-vice-content ul li{
+  padding: 8px 0px;
+  color:#000000c7;
+  font-size:14px;
+  text-transform: capitalize;
+  text-align: justify;
+}
+.list-style ul li{
+  list-style-type: square;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* ================================================
+welcome_message pages design start
+================================== */
+
+#welcome-dhaka-part{
+  padding: 80px 0px;
+  background-attachment: #fff;
+}
+.welcome-massage-heading h2{
+font-size: 30px;
+font-weight: 400;
+text-transform: capitalize;
+color:#000;
+margin-bottom: 20px;
+}
+.welcome-massage-heading h3{
+  font-size: 22px;
+  font-weight:800;
+  text-transform: capitalize;
+  color:#002147;
+  margin-bottom: 20px;
+  font-style: oblique;
+  }
+  .welcome-massage-heading p{
+    font-size: 14px;
+    font-weight:400;
+    text-transform: capitalize;
+    color:rgba(0, 0, 0, 0.589);
+    margin-bottom: 20px;
+    text-align: left;
+  
+  }
+  .welcome-massage-images-one img{
+    float: left;
+    margin-right: 20px;
+    height: 500px;
+    width: 350px;
+  }
+  .welcome-massage-content-one p{
+    font-size: 14px;
+    font-weight:400;
+    text-transform: capitalize;
+    color:rgba(0, 0, 0, 0.589);
+    margin-bottom: 20px;
+    text-align:justify;
+    margin-bottom: 20px;
+  
+  }
+  
+  .welcome-massage-content-one img{
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+
+/* ==========================
+all latest news view page design start and all latest event view page design start
+========================== */
+#latest-news-view-part, #Notice-view-part, #Research-news-view-part, #Featured-News-Event-view-part{
+  padding: 80px 0px;
+  background-color: #f3f0f0;
+}
+.latest-news-heading, .latest-event-heading, .Notice-view-heading, .Research-news-heading, .Featured-News-Event-news-heading, .Student-Achievements-heading{
+  background-color: #118b88f5;
+  height:50px;
+  padding:10px 15px;
+  text-align: center;
+  color:#fff;
+  border-radius: 8px;
+}
+.latest-news-heading h3, .latest-event-heading h3, .Notice-view-heading h3, .Research-news-heading h3,.Featured-News-Event-news-heading h3, .Student-Achievements-heading h3{
+  float: left;
+  font-size:18px;
+  font-weight: 700;
+}
+.latest-news-heading span, .latest-event-heading span, .Notice-view-heading span, .Research-news-heading span{
+  float: right;
+  background-color: #fff;
+  padding: 3px 15px;
+  border-radius: 15px;
+  color:#E84A5F;
+  transition: 0.5s;
+}
+.latest-news-heading span:hover, .latest-event-heading span:hover, .Notice-view-heading span:hover, .Research-news-heading span:hover{
+  background-color: #7ca7da17;
+}
+.latest-news-heading a, .latest-event-heading a, .Notice-view-heading a, .Research-news-heading a {
+  color:#E84A5F;
+}
+.latest-news-heading i, .latest-event-heading i, .Notice-view-heading i, .Research-news-heading i{
+  margin-left: 10px;
+  color:#E84A5F;
+}
+.news-view-btn, .event-view-btn, .Notice-view-btn, .Research-view-btn {
+  color: #fff;
+  background: #002147;
+  border: none;
+  padding: 8px 15px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 14px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: 14px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: 14px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: 14px;
+}
+input[type=date].form-control, input[type=datetime-local].form-control, input[type=month].form-control, input[type=time].form-control {
+  font-size: 14px;
+}
+
+#latest-news-view-part .news-info h2, #latest-event-view-part .event-info h2{
+  height: 170px;
+}
+ #Research-news-view-part .Research-info h2, .Student-Achievements-info h2 {
+  height: 250px;
+}
+#latest-news-view-part .news-box, #latest-event-view-part .event-box, #Research-news-view-part .Research-box, .Featured-News-Event-box, .Student-Achievements-box {
+  margin-bottom: 40px;
+}
+  .pagination-2 .page-number {
+    padding: 2px 2px;
+    background-color: #f3f4f2;
+    color:#fff;
+  }
+  .pagination-2 li a {
+    color:#000;
+  }
+  .pagination-2 .page-number:hover {
+    background-color: #d9dcd6;
+  }
+  
+  .pagination-2 .active {
+    border-radius: 4px;
+    background-color: #16425b;
+  }
+  
+  .pagination-2 .active:hover {
+    background-color: #16425b;
+  }
+  .pagination-2 li{
+    display: inline-block;
+  }
+  .pagination-2 .active a {
+    color: #f3f4f2;
+  }
+  
+
+.useful-link{
+  border:2px dotted #efefef;
+  padding: 20px;
+}
+.useful-link h3{
+  font-size:18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color:#002147;
+  margin-bottom: 15px;
+}
+.useful-link ul li{
+  list-style-type: square;
+  margin-left: 10px;
+}
+.useful-link ul li a{
+  font-size: 14px;
+  font-weight: 500;
+  color:#000000dc;
+  padding: 5px 0px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.useful-link ul li a:hover{
+  color:#E84A5F;
+}
+
+
+
+/* ========================
+all Notice-view-part start
+=========================== */
+.Notice-box{
+  padding: 8px;
+  width: 100%;
+}
+.Notice-box .Notice-btn-item .btn-read {
+  width: 130px;
+  font-size: 13px;
+  margin-top: -5px;
+  height: 40px;
+  line-height: 40px;
+}
+.Notice-item  li.date-time{
+  float: left;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 300;
+  color:#808080;
+}
+li.Notice-btn-item{
+  float:right;
+  display: inline-block;
+}
+.Notice-item h2{
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color:#002147;
+  padding: 20px 0px;
+  transition: 0.5s;
+}
+.Notice-item h2:hover{
+  color:#E84A5F;
+}
+.Notice-box hr {
+  margin-top:4rem;
+  margin-bottom: 2rem;
+}
+
+/*contact*/
+
+.map-size{
+  width: 635px;
+  height: 454px;
+}
+
+
+
+
+
+/* ================================
+about pages design start
+============================ */
+#about-part{
+  padding: 80px 0px;
+}
+
+#accordion .accordion-header {
+  padding: 15px 0px;
+  color:#002147;
+  margin: 15px 0px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+}
+
+#accordion .accordion-header::before {
+  content: '\002B';
+  font-weight: 700;
+  font-size: 30px;
+  left: 96%;
+  position: absolute;
+}
+
+#accordion .accordion-header:not(.collapsed):before {
+  content: '\2212';
+  color: #fff;
+}
+
+#accordion .accordion-header:not(.collapsed) {
+  background: #002147;
+}
+
+#accordion .accordion-header:not(.collapsed) h3 {
+  color: #fff;
+}
+
+#accordion h3 {
+  padding: 0px 30px;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: var(--black-900);
+}
+
+.accordion-body p {
+  color: #333;
+  font-size: 14px;
+  font-weight: 300;
+ 
+}
+  
+.committee-according-image img{
+  float: left;
+  width:200px;
+}
+.according-image img{
+  width:200px;
+}
+.according-details {
+    margin-left: 34%;
+    padding: 0px;
+}
+
+.committee-accordion-item {
+  width: 1101px;
+}
+
+.committee-according-details {
+    margin-left: 24%;
+    padding: 0px;
+}
+
+
+.accordion-body {
+  background: #8080802a;
+  padding: 30px;
+  margin: -10px 0px 0px;
+}
+.about-right{
+border:1px solid rgba(128, 128, 128, 0.397);
+padding: 20px;
+}
+.about-right h3{
+  font-size: 20px;
+  font-weight: 600;
+ color: #002147;
+ text-transform: uppercase;
+}
+.about-right ul li{
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 0px;
+  color:#333;
+}
+.about-right ul li a{
+  color:#333;
+  transition: 0.5s;
+  text-transform: capitalize;
+}
+.about-right ul li a:hover{
+  color:#E84A5F;
+  padding-left: 2px;
+}
+.about-notable-box, .about-List-Vice-Chancellors-box{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-bottom: 3px solid #0f2e52;
+  border-top: 3px solid #0f2e52
+}
+.notable-content h3, .List-Vice-Chancellors-content h3{
+  font-size: 22px;
+  font-weight: 500;
+  color:#0f2e52;
+  text-transform: capitalize;
+  padding-bottom: 50px;
+  
+}
+.notable-item{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-bottom:2px solid #0f2e52;
+  border-top:2px solid #0f2e52
+}
+.notable-item img{
+  width: 150px;
+  height: 150px;
+  border:5px solid #E84A5F;
+}
+.notable-item-info h5{
+  margin-top: 10px;
+  font-size:18px;
+  font-weight: 500;
+  color:#0f2e52;
+  text-transform: capitalize;
+}
+.notable-item-info p{
+  margin-top: 10px;
+  font-size:18px;
+  font-weight: 600;
+  color:#000;
+  text-transform: capitalize;
+}
+.notable-item-info{
+  background-color: #eeeeee;
+  padding: 30px;
+  margin-top: 10px;
+}
+.notable-single-content-top img{
+  float: left;
+  width: 200px;
+  height: 200px;
+  border:5px solid #002147;
+  margin-right: 30px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.title-single p{
+  font-size: 25px;
+  font-weight: 600;
+  color:#000;
+  text-transform: capitalize;
+
+}
+.title-single h5{
+  font-size: 20px;
+  font-weight:500;
+  color:#002147;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+
+}
+.notable-single-content-bottom p{
+  font-size: 15px;
+  font-weight:500;
+  color:#333;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  text-align: justify;
+
+}
+#about-part .table td, .table th {
+  vertical-align: middle;
+  font-weight: 700;
+}
+.mission-headding h2{
+  font-size: 28px;
+  color: #000;
+  text-transform: uppercase;
+}
+.mission-para p{
+  font-size: 16px;
+  text-align: justify;
+  color: #333;
+}
+
+/* ===============================
+Academic part University of Dhaka start
+========================================= */
+
+#academic-part{
+  padding: 80px 0px;
+  background-color: #f3f0f0;
+}
+#academic-part #accordion .accordion-header::before {
+  content: '\002B';
+  left: 85%;
+}
+
+#accordion ul li {
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: 300;
+  color: #333;
+  margin: 12px 0px;
+}
+#accordion .accordion-header {
+  margin: 0px 0px 15px 0px;
+}
+#academic-part .form-control {
+  padding: 27px .75rem;
+  border: 1px solid #efefef;
+  border-radius: 0px;
+}
+.academic-reset{
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  background-color: #002147;
+  padding: 15px 20px;
+  transition: 0.5s;
+  text-transform:capitalize;
+  height: 56px;
+  color: white;
+  
+}
+.academic-reset:hover{
+  background-color: #002147de;
+}
+.academic-reset a{
+  color: #fff;
+}
+.academic-reset i{
+  margin-right: 10px;
+}
+.form-control:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 0 rgba(0,123,255,.25);
+}
+.content-items h4{
+  font-size: 18px;
+  font-weight: 600;
+  color:#002147;
+  padding-bottom: 20px;
+}
+.single-item .content{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding:30px 30px;
+}
+.single-item{
+  margin-bottom: 30px;
+}
+.content .info h4{
+  font-size: 18px;
+  font-weight: 600;
+  color:#000 !important;
+  padding-bottom: 20px;
+}
+.blog-area .info .content .tags a {
+  text-decoration: underline;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  
+}
+.sidebar-item.tags ul li a {
+  border: 1px solid #e7e7e7;
+  display: inline-block;
+  font-weight: 500;
+  margin-top: 8px;
+  margin-right: 5px;
+  padding: 7px 20px;
+  text-transform: capitalize;
+  font-size: 13px;
+  background: #fafafa;
+  color: #666666;
+}
+.sidebar-item.tags ul li {
+  display: inline-block;
+}
+.academic-single-left-info h2{
+  font-size: 30px;
+  font-weight: 700;
+  color:#002147 !important;
+  padding-bottom:40px;
+}
+.academic-meta{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+}
+.academic-catagory{
+  float: left;
+  margin-right:20px;
+  padding-right: 20px;
+  border-right: 1px solid #e7e7e7
+}
+.academic-catagory span, .academic-rating span{
+  font-size: 16px;
+  font-weight: 700;
+  color:#002147;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+.academic-catagory ul li, .academic-rating ul li{
+  font-size: 14px;
+  font-weight:400;
+  text-transform: capitalize;
+  color:#000;
+  padding-top: 10px;
+}
+.academic-rating i{
+  margin-right:7px;
+  font-size: 18px;
+  color:#E84A5F;
+}
+.tabs-item h3{
+  font-size: 18px;
+  font-weight:600;
+  text-transform: capitalize;
+  color:#000;
+  padding-bottom: 10px;
+}
+.tabs-item h2{
+  font-size:35px;
+  font-weight:600;
+  text-transform: capitalize;
+  color:#1C4370;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.tabs-item h4{
+  font-size:25px;
+  font-weight:600;
+  text-transform: capitalize;
+  color:#1C4370;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.tabs-item p{
+  font-size:16px;
+  font-weight:400;
+  text-transform: capitalize;
+  color:#333;
+  padding-bottom: 5px;
+}
+.tabs-item ul li{
+  font-size:16px;
+  font-weight:400;
+  text-transform: capitalize;
+  color:#333;
+  padding-bottom: 5px;
+  margin-left: 20px;
+}
+#academic-part .panel #accordion .accordion-header::before {
+    content: '\002B';
+    left: 96%;
+}
+.panel h3{
+  font-size:16px;
+  font-weight:700;
+  text-transform: capitalize;
+  color:#333;
+  padding-bottom: 15px;
+  
+}
+.accordion-body .title{
+  font-size:13px;
+  font-weight:400;
+  text-transform: capitalize;
+  color:#333;
+  padding-bottom: 15px;
+}
+.accordion-body .title a{
+  font-size:13px;
+  font-weight:700;
+  text-transform: capitalize;
+  color:#333;
+  padding-bottom: 15px;
+}
+.panel ul li a{
+  font-size:14px;
+  color:#333;
+  text-decoration: underline;
+}
+/* =====================
+ Academic part department University of Dhaka start
+================= */
+
+.academic-department-box{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.academic-department-box img{
+width: 100%;
+height: 270px;
+}
+.academic-department-box h2{
+  font-size:18px;
+  font-weight:700;
+  text-transform: capitalize;
+  color:#002147;
+  padding:20px 0px;
+  cursor:pointer;
+  transition: 0.5s;
+  }
+  .academic-department-box h2:hover{
+    color:#ffb606;
+    }
+    select.selectpicker {
+      height: 56px;
+      padding: 0px 10px;
+      width: 100%;
+      border-color: #efefef;
+  }
+
+  /* ======================
+   gallery part University of Dhaka start
+   ======================  */
+   #gallery-part{
+     padding: 80px 0px;
+     background-color: #fffaf0;
+   }
+#gallery-part .line-header h2{
+  color:#002147;
+}
+#gallery-part .work-nav ul li {
+  color: #002147;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+#gallery-part .work-nav ul li.mixitup-control-active {
+  color: #ffff;
+  font-weight: 700;
+  background-color: #002147;
+  padding: 7px 40px;
+  border-radius: 25px;
+}
+#gallery-part .work-nav ul li::after {
+  content: '';
+  width: 0px;
+  height: 20px;
+  background-color: #444444;
+  position: absolute;
+  right: 0;
+  top: 0px;
+}
+
+
+/* ====================
+ Contact Us part University of Dhaka start
+ ==================== */
+#Contact-part{
+  padding: 80px 0px;
+}
+#Contact-part .line-header h2{
+  color:#002147;
+}
+.contact-vice-Chancellor{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-bottom: 3px solid #002147;
+  border-top: 3px solid #002147;
+}
+.contact-vice-Chancellor img{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border:4px solid #002147;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.vice-chancellor-contact-info ul li{
+  font-size: 18px;
+  color:#808080;
+  font-weight: 300;
+  padding: 5px 0px;
+}
+.vice-chancellor-contact-info span{
+  font-size: 15px;
+  color:#000;
+  font-weight: 700;
+  padding: 5px 0px;
+}
+.vice-chancellor-contact-info ul li a{
+  font-size: 16px;
+  color:#333;
+  font-weight: 300;
+  padding: 5px 0px;
+}
+
+/* =====================
+ du login part University of Dhaka start
+ ================== */
+#du-login-part{
+  padding: 80px 0px;
+   
+}
+span.psw {
+  font-size: 16px;
+  font-weight: 500;
+  color:#333;
+}
+.main{
+	width: 100%;
+	height: 500px;
+	background: red;
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+.main .signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+.main label {
+  color: #00325a;
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 60px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+.main input {
+  width: 65%;
+  height: 32px;
+  background: #e0dede;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.main button, .forgot-main button{
+	padding: 10px 30px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #E84A5F;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+.main button:hover{
+	background: #6d44b8;
+}
+.main .login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.main.login label{
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+
+
+
+
+
+/* ========================
+du forgot password part University of Dhaka start
+=================== */
+
+#du-forgot-part, #student-forgot-part{
+  padding: 80px 0px;
+   
+}
+.forgot-main{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+}
+.forgot-icone i{
+  font-size: 80px;
+  color:#E84A5F;
+  padding-bottom: 30px;
+}
+.forgot-main h3{
+  font-size: 18px;
+  font-weight: 600;
+  color:#000;
+}
+.forgot-main p{
+  font-size: 14px;
+  font-weight: 500;
+  color:#333;
+}
+.forgot-main input{
+  width: 65%;
+  height: 32px;
+  background: #e0dede;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.forgot-footer h5 {
+  margin-top: 2em;
+  font-size: 14px;
+  font-weight: 500;
+  color:#333;
+ }
+ .forgot-footer h5 a{
+  font-size: 14px;
+  font-weight: 700;
+  color:#002147;
+ }
+
+ /* ========================
+student forgot password part University of Dhaka start
+=================== */
+
+.student-forgot{
+  background: rgb(238,174,229);
+  background: radial-gradient(circle, rgba(238,174,229,0.4430147058823529) 59%, rgba(148,187,233,1) 63%);
+}
+
+
+ /* ==================
+  student login part University of Dhaka start
+ ========================= */
+#student-login-part{
+  padding: 80px 0px;
+}
+
+ .login-wrap{
+	width:100%;
+	margin:auto;
+	max-width:525px;
+	min-height:670px;
+	position:relative;
+	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,0.9360119047619048) 0%, rgba(205,147,22,0.9360119047619048) 100%);
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+	display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+}
+.login-html .tab {
+  font-size: 20px;
+  margin-right: 15px;
+  padding-bottom: 5px;
+  margin: 0 15px 24px 0;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+.login-html .sign-in:checked + .tab, .login-html .sign-up:checked + .tab {
+  color: #fff;
+  border-color: #E84A5F;
+  background-color: #000;
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.login-form .group .button{
+	width: 100%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #E84A5F;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+.login-form .group .button:hover{
+	background: #6d44b8;
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input{
+	width:100%;
+	color:#000;
+	display:block;
+  font-weight: 600;
+}
+.login-form .group .input
+{
+	width:100%;
+  height:40px;
+  background: #e0dede;
+  margin: 20px auto;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+
+.login-form .group input[data-type="password"]{
+	text-security:circle;
+	-webkit-text-security:circle;
+}
+.login-form .group .label {
+  color: #fff;
+  font-size: 12px;
+}
+
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+	color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+	background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+	transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
+}
+
+.login-html .hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk a{
+	text-align:center;
+  color:#fff;
+  display: inline-block;
+}
+
+
+
+
+ 
+/*
+============================
+back top to btn
+=======================
+*/
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 15px;
+  bottom: 15px;
+  text-decoration: none !important;
+  z-index:990;
+}
+
+.back-to-top i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  background:#22b9b6f5;
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s;
+  animation: bounceTop_01 3s infinite;
+}
+
+.back-to-top i:hover {
+  background: rgba(51, 51, 51, 0.65);
+  color: #fff;
+}
+
+
