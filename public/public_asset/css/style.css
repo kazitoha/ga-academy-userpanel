@@ -20,18 +20,17 @@ body {
     font-weight: 500;
     overflow-x: hidden;
     background: #f3f0f0;
-    line-height: 24px;
+    line-height: 32px;
     color: #E84A5F;
-
   }
 h1,h2,h3,h4,h5,h6{
-    font-size: 25px; 
+    font-size: 25px;
 }
 img {
     max-width: 100%;
     vertical-align: middle !important;
   }
-  
+
   ul {
     list-style: none;
   }
@@ -107,7 +106,7 @@ navbar part start
   text-transform: capitalize;
   position: relative;
   transition: 0.5s;
-  
+
 }
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
@@ -132,7 +131,7 @@ navbar part start
 .menu_bg {
   background-color:#f3f0f0;
   box-shadow: 0px 5px 15px #000;
-  
+
 }
 .menu_bg .nav-item .nav-link{
   color:#000;
@@ -189,7 +188,7 @@ navbar part start
   color:#fff;
   font-weight: 300px;
 
- 
+
 }
 #home-part .home-content-left h2{
   font-size:25px;
@@ -291,7 +290,7 @@ Vice Chancellor and pro Vice Chancellor section strat
   padding: 0px 0px 50px 0px;
 }
 .voice-left-chanecllor{
-  padding:40px 10px;
+  padding:16px 10px;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
   transition: 0.7s;
 }
@@ -307,13 +306,13 @@ Vice Chancellor and pro Vice Chancellor section strat
   color:rgb(20, 18, 18);
   font-weight: 700;
   padding-top: 15px;
-  
+
 }
 .voice-images-box h5, .pro-voice-box h5{
   font-size: 15px;
   color:#000;
   font-weight: 800;
-  
+
 }
 .voice-right-chanecllorr, .pro-voice-chanecllor{
   padding: 22px 20px;
@@ -387,12 +386,12 @@ our mission start
 }
 .mission-button a:hover{
   color: #fff;
-   
+
  }
 .mission-button a{
  color: #000;
  transition: 0.5s;
-  
+
 }
 .mission-right img {
   width: 100%;
@@ -462,7 +461,7 @@ student admission part start
   background-color: #dd4c39a3;
   color: #fff;
   border: none;
-  
+
 }
 
 /* =====================
@@ -471,7 +470,7 @@ counter part start
 
 #counter_part{
   padding:80px 0px 0px 0px;
-  
+
 }
 .line-header{
   padding-bottom: 50px;
@@ -569,7 +568,7 @@ Welcome to University of Dhaka start
   font-weight: 600;
   transition: 0.7s;
   border-radius: 15px;
-  
+
 }
 .welcome-btn:hover{
   color:#fff;
@@ -580,7 +579,7 @@ Welcome to University of Dhaka start
  z-index: 1;
  color: #000;
  font-size: 30px;
-  
+
 }
 .laibery-video{
   background-image: url("../images/du_library.jpg");
@@ -590,7 +589,7 @@ Welcome to University of Dhaka start
   background-position: center;
   vertical-align: middle;
   position: relative;
-  
+
 }
 .btn-1 {
   background: #fff;
@@ -636,7 +635,7 @@ announcement part start
 ======================= */
 #announce-part{
   background-color: #f8e5e5;
-  
+
 }
 .announce-box {
   background: #fff;
@@ -691,7 +690,7 @@ Latest News part start
 .checked {
   color: orange;
 }
-  
+
 .news-info .date-line, .event-info .date-line, .Research-info .date-line, .Featured-News-Event-info .date-line, .Student-Achievements-info .date-line, .announce-info .date-line{
  border-bottom: 1px solid #808080bc;
  padding: 30px;
@@ -720,7 +719,7 @@ Latest News part start
 .news-box, .event-box, .Research-box, .Featured-News-Event-box, .Student-Achievements-box{
   padding-bottom: 30px;
   box-shadow: 0 0 10px #cccccc;
- 
+
 }
 
 .owl-carousel .owl-theme .owl-news{
@@ -814,7 +813,7 @@ Recent and Upcoming Events part start
 }
 .event-bottom{
   padding-top: 20px !important;
- 
+
 }
 .date-event{
   float: left;
@@ -831,7 +830,7 @@ Recent and Upcoming Events part start
   color:#333;
   font-weight: 500;
 }
-  
+
 .event-heading{
   padding: 0px 0px 0px 106px;
   font-size: 20px;
@@ -840,7 +839,7 @@ Recent and Upcoming Events part start
 }
 .news-info .event-heading h2{
   font-size:16px;
-  
+
 }
 .event-news{
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -858,7 +857,7 @@ Recent and Upcoming Events part start
 .notice-content{
   border-bottom: 1px solid #e7e7e7;
   padding: 20px;
- 
+
 }
 
 .notice-content h3{
@@ -888,7 +887,7 @@ Recent and Upcoming Events part start
   margin-top: 10px;
   z-index: 0;
 }
-/*=========================== 
+/*===========================
 teachers part start
 =============================== */
 
@@ -935,7 +934,7 @@ teachers part start
   color: white;
   transform: rotateY(180deg);
   text-align: center;
-  
+
 }
 .teachers-card-back img{
   width: 100%;
@@ -1062,7 +1061,7 @@ FEATURED- NEWS & EVENTS part start
 .feature-news-event-content h3, .heading-feature h2{
   font-size: 20px;
   color: #000;
- 
+
 }
 .feature-news-event-left{
   border:2px solid #e7e7e7;
@@ -1308,7 +1307,7 @@ Welcome to the University of Dhaka start
   font-weight: 400;
   text-align: center;
   margin-top: 10px;
- 
+
 }
 .right-slide-content{
   border-bottom: 1px solid #808080d2;
@@ -1324,8 +1323,8 @@ Welcome to the University of Dhaka start
 .welcome-content-right .welcome-slide .right-slide-content span{
   font-size: 12px;
   color:#333;
-  font-weight: 700; 
- 
+  font-weight: 700;
+
 }
 
 .icon-bar {
@@ -1342,13 +1341,13 @@ Welcome to the University of Dhaka start
   color: white;
   font-size: 20px;
   transform: rotate(45deg);
-  
+
 }
 
 .icon-bar a:hover {
   background-color: #E84A5F;
   transform: rotate(35deg);
-  
+
 }
 .icon-bar i{
   transition: 0.5s;
@@ -1358,7 +1357,7 @@ Welcome to the University of Dhaka start
   background-color: #E84A5F;
   transform: rotate(360deg);
   color:#000;
-  
+
 }
 
 .facebook {
@@ -1474,7 +1473,7 @@ the Vice Chancellor page start
 #Vice-Chancellor-link{
   padding: 50px 0px;
   background-color: #E84A5F;
- 
+
 }
 #Vice-Chancellor-link a h3{
   font-size: 35px;
@@ -1651,7 +1650,7 @@ Vice Chancellor Speech & Quotes strat
   font-size: 14px;
   font-weight: 500;
   color:#333333cc;
- 
+
 }
 /* =====================================
 Vice Chancellor Photo Gallery start
@@ -1698,7 +1697,7 @@ Vice Chancellor Photo Gallery start
 }
 #work .col-lg-4 {
   padding: 3px;
-  
+
 }
 .gallery-item img {
   width: 100%;
@@ -1872,7 +1871,7 @@ Profile of Dr. Md Akhtaruzzaman single pages
   font-size:14px;
   font-weight: 300;
   color:#000;
-  
+
 }
 .warpper{
   display:flex;
@@ -1897,7 +1896,7 @@ Profile of Dr. Md Akhtaruzzaman single pages
   width:100%;
   border-radius:3px;
   overflow:hidden;
-  padding:20px;  
+  padding:20px;
 }
 .panel{
   display:none;
@@ -2030,7 +2029,7 @@ Pro-Vice Chancellor page design
   font-size: 15px;
   font-weight: 800;
   text-transform: capitalize;
-  
+
 }
 .pro-vice-content p{
   margin-top: 20px;
@@ -2098,7 +2097,7 @@ margin-bottom: 20px;
     color:rgba(0, 0, 0, 0.589);
     margin-bottom: 20px;
     text-align: left;
-  
+
   }
   .welcome-massage-images-one img{
     float: left;
@@ -2114,9 +2113,9 @@ margin-bottom: 20px;
     margin-bottom: 20px;
     text-align:justify;
     margin-bottom: 20px;
-  
+
   }
-  
+
   .welcome-massage-content-one img{
     float: left;
     margin-right: 20px;
@@ -2208,12 +2207,12 @@ input[type=date].form-control, input[type=datetime-local].form-control, input[ty
   .pagination-2 .page-number:hover {
     background-color: #d9dcd6;
   }
-  
+
   .pagination-2 .active {
     border-radius: 4px;
     background-color: #16425b;
   }
-  
+
   .pagination-2 .active:hover {
     background-color: #16425b;
   }
@@ -2223,7 +2222,7 @@ input[type=date].form-control, input[type=datetime-local].form-control, input[ty
   .pagination-2 .active a {
     color: #f3f4f2;
   }
-  
+
 
 .useful-link{
   border:2px dotted #efefef;
@@ -2354,9 +2353,9 @@ about pages design start
   color: #333;
   font-size: 14px;
   font-weight: 300;
- 
+
 }
-  
+
 .committee-according-image img{
   float: left;
   width:200px;
@@ -2421,7 +2420,7 @@ padding: 20px;
   color:#0f2e52;
   text-transform: capitalize;
   padding-bottom: 50px;
-  
+
 }
 .notable-item{
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -2539,7 +2538,7 @@ Academic part University of Dhaka start
   text-transform:capitalize;
   height: 56px;
   color: white;
-  
+
 }
 .academic-reset:hover{
   background-color: #002147de;
@@ -2578,7 +2577,7 @@ Academic part University of Dhaka start
   margin-right: 5px;
   margin-bottom: 5px;
   font-weight: 500;
-  
+
 }
 .sidebar-item.tags ul li a {
   border: 1px solid #e7e7e7;
@@ -2678,7 +2677,7 @@ Academic part University of Dhaka start
   text-transform: capitalize;
   color:#333;
   padding-bottom: 15px;
-  
+
 }
 .accordion-body .title{
   font-size:13px;
@@ -2816,7 +2815,7 @@ height: 270px;
  ================== */
 #du-login-part{
   padding: 80px 0px;
-   
+
 }
 span.psw {
   font-size: 16px;
@@ -2897,7 +2896,7 @@ span.psw {
 	transform: translateY(-500px);
 }
 #chk:checked ~ .login label{
-	transform: scale(1);	
+	transform: scale(1);
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);
@@ -2913,7 +2912,7 @@ du forgot password part University of Dhaka start
 
 #du-forgot-part, #student-forgot-part{
   padding: 80px 0px;
-   
+
 }
 .forgot-main{
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -3146,7 +3145,7 @@ student forgot password part University of Dhaka start
 
 
 
- 
+
 /*
 ============================
 back top to btn
