@@ -10,6 +10,17 @@ $('.home_slider').owlCarousel({
     nav: true,
     navText: [$('.owl-navigation .owl-nav-prev'), $('.owl-navigation .owl-nav-next')],
 });
+   // / owl carousle js----
+   $('.voice_parts').owlCarousel({
+    loop: true,
+    autoplay: true,
+    items:1,
+    autoplayTimeout: 7000,
+    // animateIn: 'fadeIn',
+
+    dots: true,
+    nav: false,
+});
 
 // news slider----
 $('.owl-news').owlCarousel({

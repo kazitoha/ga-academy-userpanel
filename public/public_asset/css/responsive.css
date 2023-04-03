@@ -36,8 +36,11 @@
     }
     .home-content-left, .home-content-right {
         margin-top: 80px;
-        width:370px;
         text-align: center;
+    }
+    .voice-left-chanecllor {
+        margin-bottom: 20px;
+       
     }
     .owl-theme .owl-nav [class*=owl-] {
         top: -301px;

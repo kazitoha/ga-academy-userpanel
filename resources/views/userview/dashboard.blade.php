@@ -65,59 +65,97 @@
 
 <!-- =============Vice Chancellor and pro Vice Chancellor section strat============= -->
 
-    <section id="Vice-Chancellor-part">
-        <div class="container">
-
-
-            <div class="row">
+<section id="Vice-Chancellor-part">
+    <div class="owl-carousel owl-theme voice_parts">
+        <div>
+            <div class="container">
+            <div class="row item-2">
                 <div class="col-lg-3 col-md-3 text-center">
                     <div class="voice-left-chanecllor">
-                        <a href="{{url('/')}}">
+                        <a href="Vice-Chancellor.html">
                         <div class="voice-images-box">
-                            <img src="{{asset('public_asset/images/dashboard_image/chairman.jpg')}}"  alt=""><br><P></P>
-                            <h5>সভাপতি</h5>
+                            <img src="images/professor/prinsi.png" alt="">
+                            <p>Professor Dr. Md. Akhtaruzzaman</p>
+                            <h5>principle</h5>
                         </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9">
-                    <div class="voice-right-chanecllorr">
-                        <h4>সভাপতির বাণী</h4>
-                        <p>শিক্ষাক্ষেত্রে প্রায় শত বছরের সাক্ষী ফেনী গিরিশ-অক্ষয় একাডেমির ডাইনামিক ওয়েবসাইট ও সফট্ওয়্যার চালু হচ্ছে বিধায় আমি যারপরনাই আনন্দাভিভ‚ত। এ স্কুলের চলমান শ্রীবৃদ্ধিতে ভ‚মিকা রাখতে পারায় আমি নিজেকে ধন্য মনে করছি। উন্নয়ন একটি চলমান প্রক্রিয়া। অনাগত ভবিষ্যতেও পরিবর্তনশীল পৃথিবীর সময়-উপযোগী শিক্ষাব্যবস্থাপনা যোগান দেয়ার কাজে আমরা কুন্ঠিত হবো না।
-                            এ স্কুলের শিক্ষা-ব্যবস্থায় বর্তমান ডিজিটাল প্রযুক্তি সর্বদা হালনাগাদ রাখার জন্য এবং নিয়মিত অনুসরণ করার জন্য সংশ্লিষ্ট সকলকে অনুরোধ করছি।
-                            মহান আল্লাহ্ আমাদের সহায় হোন।</p>
-                        </div>
+                    <a href="#"><div class="voice-right-chanecllorr">
+                        <h4>Message from the principle</h4>
+                        <p>ফেনী গিরিশ-অক্ষয় একাডেমি বাংলাদেশের একটি ঐতিহ্যবাহী মাধ্যমিক শিক্ষা-প্রতিষ্ঠান হিসেবে শিক্ষাপ্রসারে গুরুত্বপূর্ণ অবদান রেখে আসছে। এ প্রাচীন বিদ্যাপীঠটি ১৯১৪ খ্রিষ্টাব্দে ফেনী ইনস্টিটিউশন নামে স্থাপিত হয়। পরবর্তীতে ১৯৩৩ খ্রিষ্টাব্দে এর প্রতিষ্ঠাতা ও দাতা যথাক্রমে স্বর্গীয় গিরিশ চন্দ্র মালাকার ও অক্ষয় কুমার মজুমদার-এর নামানুসারে ফেনী গিরিশ-অক্ষয় একাডেমি নামকরণ করা হয়। প্রতিষ্ঠাকাল থেকে স্কুলটি শিক্ষায় বহুমাত্রিক সুনামের স্বাক্ষর রেখেছে।
+                            বর্তমান সরকার শিক্ষাকে সর্বোচ্চ গুরুত্ব প্রদান করছে। তাই পরিপূর্ণ শিক্ষা এখন সময়ের দাবী। আধুনিক তথ্য-প্রযুক্তির যুগ বিবেচনায় শিক্ষায় আনা হয়েছে এক বৈপ্লবিক পরিবর্তন। ডিজিটাইলেজশন তারই অংশ । এই প্রক্রিয়ার সাথে সংগতিবিধান নিমিত্ত স্কুলে খোলা হচ্ছে ডাইনামিক ওভেবসাইট এবং চালু করা হচ্ছে ডিজিটাল সফট্ওয়্যার। আশা করি, সংশ্লিষ্ট সকলের সহযোগিতায় ডিজিটাল ব্যবস্থাপনায় আমাদের প্রিয় স্কুলটি হালনাগাদ থাকবে এবং সহজে ও দ্রæতভাবে সকলের নিকট শিক্ষা-সেবা পৌঁছে দিতে সক্ষম হবে। স্কুলের সর্বাঙ্গীন উন্নতিতে অকুন্ঠ ও সক্রিয় ভূমিকা রাখার জন্য ম্যানেজিং কমিটিসহ সকলের প্রতি কৃতজ্ঞতা জ্ঞাপন করছি। </p>
+                            <a href="Vice-Chancellor.html" class="voice-btn">read more</a>
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <a href="#"><div class="pro-voice-chanecllor text-center">
-                            <div class="pro-voice-box">
-                                <img src="{{asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg')}}" alt="">
-                                <p></p>
-                                <h5>প্রধান শক্ষিক</h5>
-                            </div>
                         </div>
-                    </a>
+                       </a>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <a href="#"><div class="pro-voice-chanecllor text-center">
-                            <div class="pro-voice-box">
-                                <img src="images/professor/Momtaj.jpg" alt="">
-                                <p></p>
-                                <h5>বিদ্যোৎসাহী সদস্যের বাণী</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
+              </div>
+          </div>
         </div>
+        <div>
+            <div class="container">
+            <div class="row item-2">
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class="voice-left-chanecllor">
+                        <a href="Vice-Chancellor.html">
+                        <div class="voice-images-box">
+                            <img src="images/professor/prinsi.png" alt="">
+                            <p>Professor Dr. Md. Akhtaruzzaman</p>
+                            <h5>principle</h5>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <a href="#"><div class="voice-right-chanecllorr">
+                        <h4>Message from the principle</h4>
+                        <p>Welcome to the University of Dhaka’s website, featuring the oldest, largest and the premier multidisciplinary university of Bangladesh! 
+                            Founded in 1921, The University of Dhaka has always had the mission of uplifting the educational standards of the people of the region. It was initially meant to provide tertiary education to people who didn’t have access to higher studies till then. Subsequently, it has contributed significantly to the socio-cultural and political development of what was once East Bengal and then East Pakistan, and is now Bangladesh.
+                            Since its establishment, the university has been fulfilling the hopes and aspirations  ...</p>
+                            <a href="Vice-Chancellor.html" class="voice-btn">read more</a>
+
+                        </div>
+                       </a>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div>
+            <div class="container">
+            <div class="row item-2">
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class="voice-left-chanecllor">
+                        <a href="Vice-Chancellor.html">
+                        <div class="voice-images-box">
+                            <img src="images/professor/prinsi.png" alt="">
+                            <p>Professor Dr. Md. Akhtaruzzaman</p>
+                            <h5>principle</h5>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <a href="#"><div class="voice-right-chanecllorr">
+                        <h4>Message from the principle</h4>
+                        <p>Welcome to the University of Dhaka’s website, featuring the oldest, largest and the premier multidisciplinary university of Bangladesh! 
+                            Founded in 1921, The University of Dhaka has always had the mission of uplifting the educational standards of the people of the region. It was initially meant to provide tertiary education to people who didn’t have access to higher studies till then. Subsequently, it has contributed significantly to the socio-cultural and political development of what was once East Bengal and then East Pakistan, and is now Bangladesh.
+                            Since its establishment, the university has been fulfilling the hopes and aspirations  ...</p>
+                            <a href="Vice-Chancellor.html" class="voice-btn">read more</a>
+
+                        </div>
+                       </a>
+                </div>
+              </div>
+          </div>
+        </div>
+
+              
+          </div>
     </section>
 
-
+<!-- =============Vice Chancellor and pro Vice Chancellor section finsh============= -->
 
 
 <!-- =====================counter part start=================== -->
