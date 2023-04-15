@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="header-title">Default Datatable</h4>
+                <h4 class="header-title">Notice List Table</h4>
                
                 <form  method="post" action="{{route('search.notice')}}">
                     @csrf
@@ -32,9 +32,10 @@
                     </tr>
                     </thead>
                     <tbody>
+                        @php $i=0; @endphp
                      @forelse($allNotice as $value)     
                         <tr> 
-                            <td>{{$value['id']}}</td>
+                            <td>{{++$i}}</td>
                             <td>{{$value['title']}}</td>
                             <td><textarea class="form-control">{{$value['description']}}</textarea></td>
                             <td>{{$value['created_at']}}</td>

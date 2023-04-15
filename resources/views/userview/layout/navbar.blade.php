@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('public_asset/css/style.css')}}">
      <!-- responsive css strat------- -->
      <link rel="stylesheet" href="{{asset('public_asset/css/responsive.css')}}">
+     <link rel="stylesheet" href="{{asset('public_asset/css/scroll_slider.css')}}">
      <!-- font awosome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -237,5 +238,6 @@ Developed and Maintained By <a href="#">MagpieTeam.</a></p>
 <script src="{{asset('public_asset/js/popper.min.js')}}"></script>
 <!-- ----mixitup js------------ -->
 <script src="{{asset('public_asset/js/mixitup.min.js')}}"></script>
+<script src="{{asset('public_asset/js/scroll_slider.js')}}"></script>
 
 </html>

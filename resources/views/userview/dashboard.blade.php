@@ -68,7 +68,7 @@
 <section id="Vice-Chancellor-part">
     <div class="owl-carousel owl-theme voice_parts">
         <div>
-            <div class="container">
+            <div class="container navbar-toggle.collapsed">
             <div class="row item-2">
                 <div class="col-lg-3 col-md-3 text-center">
                     <div class="voice-left-chanecllor">
@@ -103,13 +103,13 @@
           </div>
         </div>
         <div>
-            <div class="container">
+            <div class="container navbar-toggle.collapsed">
             <div class="row item-2">
                 <div class="col-lg-3 col-md-3 text-center">
                     <div class="voice-left-chanecllor">
                         <div class="voice-images-box">
-                            <img src="images/professor/Momtaj.jpg" alt="">
-                            <p></p>
+                            <img src="{{asset('public_asset/images/bahar_uddin_bahar.jpg')}}" alt="">
+                            <p>বাহার উদ্দিন বাহার</p>
                             <h5>বিদ্যোৎসাহী সদস্যের বাণী</h5>
                         </div>
                     </div>
@@ -129,11 +129,7 @@
                             ডিজিটাল ব্যবস্থাপনার যথাযথ উন্নয়ন ও
                             আধুনিকীকরণের বিকল্প নেই। এর সফল বাস্তবায়নে
                             আমরা অঙ্গীকারাবদ্ধ। এজন্য সংশ্লিষ্ট সকলের
-                            আন্তরিক সহযোগিতা একান্তভাবে কাম্য।
-                            
-                            ফটো
-                            
-                            শুভেচ্ছান্তে,</p>
+                            আন্তরিক সহযোগিতা একান্তভাবে কাম্য।</p>
                         </div>
                 </div>
               </div>
@@ -141,12 +137,12 @@
         </div>
         <div>
             <div class="container">
-            <div class="row item-2">
+            <div class="row item-2  navbar-toggle.collapsed">
                 <div class="col-lg-3 col-md-3 text-center">
                     <div class="voice-left-chanecllor">
                         <div class="voice-images-box">
                             <img src="{{asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg')}}" alt="">
-                            <p></p>
+                            <p>মোঃ তাজুল ইসলাম চৌধুরী</p>
                             <h5>প্রধান শক্ষিক</h5>
                         </div>
                     </div>
@@ -163,25 +159,24 @@
                             কুমার মজুমদার-এর নামানুসারে ফেনী গিরিশ-
                             অক্ষয় একাডেমি নামকরণ করা হয়। প্রতিষ্ঠাকাল
                             থেকে স্কুলটি শিক্ষায় বহুমাত্রিক সুনামের স্বাক্ষর
-                            রেখেছে।
-                            
-                            ফটো
-                            
-                            বর্তমান সরকার শিক্ষাকে সর্বোচ্চ গুরুত্ব প্রদান
-                            করছে। তাই পরিপূর্ণ শিক্ষা এখন সময়ের দাবী।
-                            আধুনিক তথ্য-প্রযুক্তির যুগ বিবেচনায় শিক্ষায়
-                            আনা হয়েছে এক বৈপ্লবিক পরিবর্তন।
-                            ডিজিটাইলেজশন তারই অংশ । এই প্রক্রিয়ার
-                            সাথে সংগতিবিধান নিমিত্ত স্কুলে খোলা হচ্ছে
-                            ডাইনামিক ওভেবসাইট এবং চালু করা হচ্ছে
-                            ডিজিটাল সফট্ধসঢ়;ওয়্যার। আশা করি, সংশ্লিষ্ট
-                            সকলের সহযোগিতায় ডিজিটাল ব্যবস্থাপনায়
-                            আমাদের প্রিয় স্কুলটি হালনাগাদ থাকবে এবং
-                            সহজে ও দ্রæতভাবে সকলের নিকট শিক্ষা-সেবা
-                            পৌঁছে দিতে সক্ষম হবে। স্কুলের সর্বাঙ্গীন
-                            উন্নতিতে অকুন্ঠ ও সক্রিয় ভূমিকা রাখার জন্য
-                            ম্যানেজিং কমিটিসহ সকলের প্রতি কৃতজ্ঞতা
-                            জ্ঞাপন করছি।</p>
+                            রেখেছে। বর্তমান সরকার শিক্ষাকে সর্বোচ্চ গুরুত্ব প্রদান
+                            করছে। তাই পরিপূর্ণ শিক্ষা এখন সময়ের দাবী। 
+                            <div class="collapse" id="collapseExample" style="color:rgba(51, 51, 51, 0.794)">
+                              <p>আধুনিক তথ্য-প্রযুক্তির যুগ বিবেচনায় শিক্ষায়
+                                আনা হয়েছে এক বৈপ্লবিক পরিবর্তন। আধুনিক তথ্য-প্রযুক্তির যুগ বিবেচনায় শিক্ষায়
+                                 আনা হয়েছে এক বৈপ্লবিক পরিবর্তন। 
+                                 ডিজিটাইলেজশন তারই অংশ । এই প্রক্রিয়ার সাথে সংগতিবিধান নিমিত্ত স্কুলে খোলা হচ্ছে ডাইনামিক ওভেবসাইট এবং চালু করা হচ্ছে
+                                ডিজিটাল সফট্ধসঢ়;ওয়্যার। আশা করি, সংশ্লিষ্ট
+                                সকলের সহযোগিতায় ডিজিটাল ব্যবস্থাপনায়
+                                আমাদের প্রিয় স্কুলটি হালনাগাদ থাকবে এবং
+                                সহজে ও দ্রæতভাবে সকলের নিকট শিক্ষা-সেবা
+                                পৌঁছে দিতে সক্ষম হবে। স্কুলের সর্বাঙ্গীন
+                                উন্নতিতে অকুন্ঠ ও সক্রিয় ভূমিকা রাখার জন্য
+                                ম্যানেজিং কমিটিসহ সকলের প্রতি কৃতজ্ঞতা
+                                জ্ঞাপন করছি। </p>
+                            </div><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Read more.
+                              </a></p>
                         </div>
                 </div>
               </div>
@@ -221,13 +216,13 @@
                             <div class="couter-box">
                                <i class="fas fa-user-shield"></i>
                                <h1><span class="counter">3</span></h1>
-                               <h3>Total Department</h3>
+                               <h3>Total Groups</h3>
                            </div>
                         </div>
                         <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                             <div class="couter-box">
                                <i class="fas fa-users"></i>
-                               <h1><span class="counter">3000</span></h1>
+                               <h1><span class="counter">2700</span></h1>
                                <h3>Regular Students</h3>
                            </div>
                         </div>
@@ -243,6 +238,96 @@
             </div>
         </section>
 <!-- ================counter part finish=========================== -->
+
+
+<section class="pt-5 pb-5" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="line-header" style="padding-bottom: 16px">
+                    <h2>Facilities</h2>
+                    <div class="under-bottom"></div>
+                </div>
+            </div>
+            <style>
+        
+        .heading{
+            font-size:20px;
+            font-weight:600;
+            color:#3D5AFE;
+        
+        }
+        
+          .line1{
+            color:#000;
+            font-size:12px;
+        
+          }
+           .line2{
+            color:#000;
+            font-size:12px;
+            
+          }
+           .line3{
+            color:#000;
+            font-size:12px;
+            
+          }
+        
+          .cards{
+        
+            transition: all 0.2s ease;
+            cursor: pointer;
+            
+        
+          }
+            
+        
+        
+        .cards:hover{
+        
+            box-shadow: 5px 6px 6px 2px #e9ecef;
+            transform: scale(1.1);
+        }
+        
+            </style>
+            <div class="col-md-3 border-right">
+                <div class="cards">      
+                    <div class="first bg-white p-4 text-center">
+                        <img height="100px" height="100px" src="{{asset('public_asset/images/computer_lab.jpg')}}"/>
+                        <h5>Computer Lab</h5>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-md-3 border-right">
+                <div class="cards">      
+                   <div class="first bg-white p-4 text-center">
+                       <img height="100px" height="100px" src="{{asset('public_asset/images/library.jpg')}}"/>
+                       <h5>Library</h5>
+                   </div>
+                </div>  
+            </div>
+
+            <div class="col-md-3 border-right">
+                <div class="cards">
+               <div class=" second bg-white p-4 text-center">
+                 <img height="100px" height="100px" src="{{asset('public_asset/images/laboratories.jpg')}}"/>
+                        <h5>Laboratories</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="cards">
+                  <div class=" third bg-white p-4 text-center">
+                         <img height="100px" height="100px" src="{{asset('public_asset/images/guide_teacher.jpg')}}"/>
+                        <h4>Guide Teacher</h4>
+                  </div>
+                 </div>      
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -269,7 +354,11 @@
                      <img src="{{asset('storage/notice_files/'.$value->file_path)}}" alt="">
                     @endif
                     <div class="images-content-feature">
-                        <a href="{{route('single.notice',base64_encode($value->id))}}"><h2>{{$i++.".".$value->title}}</h2></a>
+                        <a href="{{route('single.notice',base64_encode($value->id))}}">
+                            <div class="container">
+                                <h2>{{$i++.".".$value->title}}</h2>
+                            </div>
+                        </a>
                            <a href="{{route('single.notice',base64_encode($value->id))}}" class="welcome-btn btn-block">read more <i class="fas fa-check-circle"></i></a>
                        </div>
                     </div>
@@ -294,7 +383,7 @@
                    <div class="feature-event-right-details">
                     <a href="#">
                    <div class="feature-images-right-details">
-                       <a href="{{route('single.notice',base64_encode($value->id))}}"> <h4>{{$i++.".".$value->title}}</h4> </a>
+                       <a href="{{route('single.notice',base64_encode($value->id))}}"> <p>{{$i++.".".$value->title}}</p> </a>
                        <span><i class="fas fa-book-open"></i>  {{$value->created_at->format('d-M-Y')}}</span></a>
                    </div>
                 @endforeach
@@ -314,73 +403,16 @@
 
 
 
-<!-- ==========Facilities============= -->
-<section class="pt-5 pb-3" style="color:#161515">
-    <div class="container">
-        <div class="col-6">
-                <h3 class="mb-3"><img src="{{asset('public_asset/facilities.png')}}"></h3>
-            </div>
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <!-- <h5 class="card-title">Special title treatment</h5> -->
-                    <p class="card-text"><i class="fa fa-arrow-right" aria-hidden="true"></i> Guide Teacher
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <!-- <h3 class="card-title"></h3> -->
-                    <p class="card-text"><i class="fa fa-arrow-right" aria-hidden="true"></i> Computer Lab
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <!-- <h5 class="card-title">Special title treatment</h5> -->
-                    <p class="card-text"><i class="fa fa-arrow-right" aria-hidden="true"></i> Laboratories
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <!-- <h5 class="card-title">Special title treatment</h5> -->
-                    <p class="card-text"><i class="fa fa-arrow-right" aria-hidden="true"></i> Library
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-    </div>
-</section>
-<!-- ==========Facilities finish============= -->
+
+
+
+
+
 
 
 <!-- ==========Latest News part start============= -->
-<section class="pt-5 pb-5" style="color:#161515">
+<section class="pt-5 pb-5" style="color:#000000">
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -451,7 +483,13 @@
 </section>
 <!-- ==========Latest News part finish============= -->
 
-
+<script>
+    $(document).ready(function(){
+    $(".navbar-toggle.collapsed").click(function(){
+        alert("Clicked.");
+    });
+});
+</script>
 
 
 @endsection
