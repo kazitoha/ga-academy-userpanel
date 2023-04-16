@@ -7,6 +7,13 @@
             <div class="card-body">
 
                 <h4 class="header-title d-flex justify-content-center">Add Event</h4>
+                @if ($errors->any())
+                 <div class="alert alert-danger" role="alert">
+                     @foreach ($errors->all() as $error)
+                         <li>{{$error}}</li>
+                     @endforeach
+                 </div>
+                @endif
 
                 <form class="custom-validation" action="{{route('event.update')}}" method="post" enctype="multipart/form-data" >
                     @csrf
@@ -25,7 +32,7 @@
                     <div class="form-group">
                         <label>Event image</label>
                         <div>
-                            <input type="file" class="form-control" name="event_image" value="{{old('event_image')}}" />
+                            <input type="file" class="form-control" name="event_image[]" value="{{old('event_image')}}" multiple/>
                         </div>
                     </div>
                     <div class="form-group">

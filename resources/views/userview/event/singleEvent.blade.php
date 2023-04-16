@@ -39,8 +39,15 @@
                         <div class="panel" id="two-panel">
                             <h3>Event Images</h3>
                              <div id="accordion">
+                              {{-- @foreach($event_images as $value) --}}
+                                    <a class="venobox" data-gall="gallery01" href="{{asset('storage/event_files/'.$single_event_data->file_path)}}">
+                                      <img src="{{asset('storage/event_files/'.$single_event_data->file_path)}}" style="height: 150px; width: 250px; padding: 5px;">
+                                    </a>
+                                    <a class="venobox" data-gall="gallery01" href="{{asset('storage/event_files/'.$single_event_data->file_path)}}">
+                                      <img src="{{asset('storage/event_files/'.$single_event_data->file_path)}}" style="height: 150px; width: 250px; padding: 5px;">
+                                    </a>
+                            {{-- @endforeach --}}
 
-                               <img src="{{asset('storage/event_files/'.$single_event_data->file_path)}}" style="height: 150px; width: 250px; padding: 5px;">
 
                              </div>
 

@@ -200,7 +200,7 @@
                                 <span>Notice</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('notice.view')}}">Notice</a></li>
+                                <li><a href="{{route('notice.view')}}">Add Notice</a></li>
                                 <li><a href="{{route('notice.list')}}">Notice List</a></li>
                             </ul>
                         </li>
@@ -210,7 +210,7 @@
                                 <span>Event</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('event.view')}}">Event</a></li>
+                                <li><a href="{{route('event.view')}}">Add Event</a></li>
                                 <li><a href="{{route('event.list')}}">Event List</a></li>
                             </ul>
                         </li>   

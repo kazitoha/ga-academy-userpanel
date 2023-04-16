@@ -16,7 +16,7 @@
                  </div>
                 @endif
 
-                <form class="custom-validation" action="{{route('event.store')}}" method="post" enctype="multipart/form-data" >
+                <form class="custom-validation" action="{{route('event.store')}}" method="post" enctype="multipart/form-data" novalidate>
                     @csrf
                     <div class="form-group">
                         <label>Event Name</label>
@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <label>Event image</label>
                         <div>
-                            <input type="file" class="form-control" name="event_image" value="{{old('event_image')}}" />
+                            <input type="file" class="form-control" name="event_image[]"   value="{{old('event_image')}}" multiple/>
                         </div>
                     </div>
                     <div class="form-group">

@@ -251,40 +251,25 @@
             </div>
             <style>
         
-        .heading{
+        .facilities_heading{
             font-size:20px;
             font-weight:600;
             color:#3D5AFE;
         
         }
         
-          .line1{
-            color:#000;
-            font-size:12px;
-        
-          }
-           .line2{
-            color:#000;
-            font-size:12px;
-            
-          }
-           .line3{
-            color:#000;
-            font-size:12px;
-            
-          }
-        
-          .cards{
+          .facilities_cards{
         
             transition: all 0.2s ease;
             cursor: pointer;
             
+            
         
           }
             
         
         
-        .cards:hover{
+        .facilities_cards:hover{
         
             box-shadow: 5px 6px 6px 2px #e9ecef;
             transform: scale(1.1);
@@ -292,7 +277,7 @@
         
             </style>
             <div class="col-md-3 border-right">
-                <div class="cards">      
+                <div class="facilities_cards">      
                     <div class="first bg-white p-4 text-center">
                         <img height="100px" height="100px" src="{{asset('public_asset/images/computer_lab.jpg')}}"/>
                         <h5>Computer Lab</h5>
@@ -301,7 +286,7 @@
             </div>
 
             <div class="col-md-3 border-right">
-                <div class="cards">      
+                <div class="facilities_cards">      
                    <div class="first bg-white p-4 text-center">
                        <img height="100px" height="100px" src="{{asset('public_asset/images/library.jpg')}}"/>
                        <h5>Library</h5>
@@ -310,7 +295,7 @@
             </div>
 
             <div class="col-md-3 border-right">
-                <div class="cards">
+                <div class="facilities_cards">
                <div class=" second bg-white p-4 text-center">
                  <img height="100px" height="100px" src="{{asset('public_asset/images/laboratories.jpg')}}"/>
                         <h5>Laboratories</h5>
@@ -318,7 +303,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="cards">
+                <div class="facilities_cards">
                   <div class=" third bg-white p-4 text-center">
                          <img height="100px" height="100px" src="{{asset('public_asset/images/guide_teacher.jpg')}}"/>
                         <h4>Guide Teacher</h4>
