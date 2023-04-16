@@ -39,14 +39,21 @@
                         <div class="panel" id="two-panel">
                             <h3>Event Images</h3>
                              <div id="accordion">
-                              {{-- @foreach($event_images as $value) --}}
-                                    <a class="venobox" data-gall="gallery01" href="{{asset('storage/event_files/'.$single_event_data->file_path)}}">
-                                      <img src="{{asset('storage/event_files/'.$single_event_data->file_path)}}" style="height: 150px; width: 250px; padding: 5px;">
+                               @php
+                               $get_the_file_name_in_array = explode(",", $single_event_data->file_path);
+                              
+                              @endphp
+                              @foreach($get_the_file_name_in_array as $value)
+                               @php 
+                                      $file_name = str_replace(array('[', ']', '"'), " ", $value);
+                                      $path = 'storage/event_files/'.$file_name;
+                                      $path = str_replace(' ', '', $path);
+                               @endphp
+
+                                    <a class="venobox" data-gall="gallery01" href="{{asset($path)}}">
+                                      <img src="{{asset($path)}}" style="height: 150px; width: 250px; padding: 5px;">
                                     </a>
-                                    <a class="venobox" data-gall="gallery01" href="{{asset('storage/event_files/'.$single_event_data->file_path)}}">
-                                      <img src="{{asset('storage/event_files/'.$single_event_data->file_path)}}" style="height: 150px; width: 250px; padding: 5px;">
-                                    </a>
-                            {{-- @endforeach --}}
+                            @endforeach
 
 
                              </div>

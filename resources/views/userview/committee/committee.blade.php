@@ -5,7 +5,7 @@
 
 
  <!-- ======home and banner section start======= -->
-    <section id="welcome-page-banner">
+    <section id="latest-news-view-banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

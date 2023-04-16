@@ -62,6 +62,8 @@
 </section>
 <!-- ======home and banner section finish======= -->
 <br>
+{{-- <marquee>Welcome to Feni G.A. Academy</marquee> --}}
+
 
 <!-- =============Vice Chancellor and pro Vice Chancellor section strat============= -->
 
@@ -189,9 +191,8 @@
 
 <!-- =============Vice Chancellor and pro Vice Chancellor section finsh============= -->
 
-
 <!-- =====================counter part start=================== -->
-        <section id="counter_part">
+<section id="counter_part">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

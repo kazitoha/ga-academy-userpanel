@@ -2,7 +2,7 @@
 
  @section('userview-navbar')
     <!-- ======home and banner section start======= -->
-    <section id="welcome-page-banner">
+    <section id="latest-news-view-banner">
         <div class="container">
             
         </div>

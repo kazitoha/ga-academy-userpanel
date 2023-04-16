@@ -2,7 +2,7 @@
 
  @section('userview-navbar')
     <!-- ======home and banner section start======= -->
-    <section id="welcome-page-banner">
+    <section id="event-page-banner">
         <div class="container">
             
         </div>
@@ -18,7 +18,7 @@
                         <input type="text" placeholder="Enter program name" class="form-control" value="" name="programName" id="programName" required>
                     </div>
                     <div class="col-lg-3">
-                        <button class="academic-reset">
+                        <button class="academic-reset" style="border-radius: 10px;">
                             <i class="fas fa-sync-alt"></i>reset filter
                        </button>
                        <p></p>

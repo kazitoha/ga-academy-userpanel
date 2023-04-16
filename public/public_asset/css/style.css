@@ -1242,16 +1242,16 @@ welcome page banner site design
 =======================
 */
 
-#welcome-page-banner{
+#event-page-banner{
   padding: 70px 0px;
-  background-image: url('../images/banner/16229812595c68187b-e769-4ce0-af61-c787c4c0687e.jpg');
+  background-image: url('../images/event_image.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   height: 166px;
 }
-#welcome-page-banner::before{
+#event-page-banner::before{
   content:'';
   position:absolute;
   width: 100%;
@@ -1986,13 +1986,14 @@ Pro-Vice Chancellor page design
   padding: 80px 0px;
 }
 #Notice-view-banner{
-  background-image: url('../images/banner/notice_banner.jpg');
+  background-image: url('../images/school_images.jpg');
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
   background-size: cover;
   padding: 80px 0px;
 }
+
 #Pro-Vice-Chancellor-banner::before, #welcome-message-banner::before, #latest-news-view-banner::before, #latest-event-view-banner::before, #Notice-view-banner::before, #Research-news-view-banner::before, #Featured-News-Event-view-banner::before, #Student-Achievements-view-banner::before{
   content:'';
   position:absolute;
@@ -2163,7 +2164,7 @@ all latest news view page design start and all latest event view page design sta
 .latest-news-heading span, .latest-event-heading span, .Notice-view-heading span, .Research-news-heading span{
   float: right;
   background-color: #fff;
-  padding: 3px 15px;
+  padding: 0px 15px;
   border-radius: 15px;
   color:#E84A5F;
   transition: 0.5s;
