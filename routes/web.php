@@ -21,37 +21,40 @@ Route::get('auth/login', function () {
     return redirect('/login');
 });
 
+//dashboard
+Route::get('/', 'App\Http\Controllers\Userpanel\DashboardController@DashboardView');
 
-Route::get('/','App\Http\Controllers\Userpanel\DashboardController@DashboardView');
+//notice
+Route::get('notice', 'App\Http\Controllers\Userpanel\NoticeController@NoticeView')->name('notice');
+Route::get('single/notice/{id}', 'App\Http\Controllers\Userpanel\NoticeController@NoticeSingle')->name('single.notice');
+Route::get('select/notice/{id}', 'App\Http\Controllers\Userpanel\NoticeController@NoticeCategory');
 
+//news
+Route::get('news', 'App\Http\Controllers\Userpanel\NewsController@NoticeView')->name('news');
 
-Route::get('notice','App\Http\Controllers\Userpanel\NoticeController@NoticeView')->name('notice');
-Route::get('single/notice/{id}','App\Http\Controllers\Userpanel\NoticeController@NoticeSingle')->name('single.notice');
+//event
+Route::get('event', 'App\Http\Controllers\Userpanel\EventController@EventView')->name('event');
+Route::get('single/event/{id}', 'App\Http\Controllers\Userpanel\EventController@SingleEvent')->name('single.event');
+Route::post('search-event', 'App\Http\Controllers\Userpanel\EventController@SearchEvent')->name('search.event.userview');
 
-Route::get('event','App\Http\Controllers\Userpanel\EventController@EventView')->name('event');
-Route::get('single/event/{id}','App\Http\Controllers\Userpanel\EventController@SingleEvent')->name('single.event');
+//gallery
+Route::get('gallery', 'App\Http\Controllers\Userpanel\GalleryController@GalleryView')->name('gallery');
 
-Route::post('search-event','App\Http\Controllers\Userpanel\EventController@SearchEvent')->name('search.event.userview');
+//teacher&staff
+Route::get('teacher&staff', 'App\Http\Controllers\Userpanel\StaffController@StaffView')->name('teacher');
+Route::get('select/office/{id}', 'App\Http\Controllers\Userpanel\StaffController@selectOffice');
 
-Route::get('gallery','App\Http\Controllers\Userpanel\GalleryController@GalleryView')->name('gallery');
+//calendar
+Route::get('academic/calendar', 'App\Http\Controllers\Userpanel\AcademicController@AcademicCalendarView')->name('academic.calendar');
 
-Route::get('teacher&staff','App\Http\Controllers\Userpanel\StaffController@StaffView')->name('teacher');
+//guardians
+Route::get('honorable/guardians', 'App\Http\Controllers\Userpanel\HonorableGuardiansController@HonorableGuardiansView')->name('honorable.guardians');
 
-Route::get('select/office/{id}','App\Http\Controllers\Userpanel\StaffController@selectOffice');
+//committee
+Route::get('about/committee', 'App\Http\Controllers\Userpanel\CommitteeController@CommitteeView')->name('about.committee');
 
-Route::get('academic/calendar','App\Http\Controllers\Userpanel\AcademicController@AcademicCalendarView')->name('academic.calendar');
+//history
+Route::get('history', 'App\Http\Controllers\Userpanel\HistoryController@historyView')->name('history');
 
-Route::get('honorable/guardians','App\Http\Controllers\Userpanel\HonorableGuardiansController@HonorableGuardiansView')->name('honorable.guardians');
-
-Route::get('about/committee','App\Http\Controllers\Userpanel\CommitteeController@CommitteeView')->name('about.committee');
-
-Route::get('history','App\Http\Controllers\Userpanel\HistoryController@historyView')->name('history');
-Route::get('contact','App\Http\Controllers\Userpanel\ContactController@ContactView')->name('contact');
-
-
-
-
-
-
-
-
+//contact
+Route::get('contact', 'App\Http\Controllers\Userpanel\ContactController@ContactView')->name('contact');

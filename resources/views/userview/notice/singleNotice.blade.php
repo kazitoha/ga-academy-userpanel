@@ -2,11 +2,11 @@
 
  @section('userview-navbar')
      <!-- ======home and banner section start======= -->
-    <section id="welcome-page-banner">
+    <section id="Notice-view-banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                
+
                 </div>
             </div>
         </div>
@@ -26,8 +26,8 @@
                             <h2>{{$single_notice->title}}</h2>
 
                             <p>{{$single_notice->description}}</p>
-                            <img src="{{asset('storage/notice_files/'.$single_notice->file_path)}}" alt="" style="overflow:scroll; height:auto; width:auto">  
-                           
+                            <img src="{{asset('storage/notice_files/'.$single_notice->file_path)}}" alt="" style="overflow:scroll; height:auto; width:auto">
+
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         <div class="welcome-slide" style="overflow:scroll; height:661px;">
                             <h2>NOTICE LIST</h2>
 
-                 @foreach($notice_paginate as $value)           
+                 @foreach($notice_paginate as $value)
                             <div class="right-slide-content text-center">
                                 <a href="{{route('single.notice',base64_encode($value->id))}}"><h5>{{$value->title}}</h5></a>
                                 <span>Published: {{$value->created_at->format('d-M-Y')}}</span>

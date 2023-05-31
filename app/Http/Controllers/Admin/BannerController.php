@@ -19,9 +19,9 @@ class BannerController extends Controller
     function BannerStore(Request $request){
        $request->validate([
         'title'               =>'required|max:60',
-        'banner_file'         =>'required|mimes:jpeg,png,jpg,gif,svg,|max:5120',
+        'banner_file'         =>'required|mimes:jpeg,png,jpg,gif,svg,|max:8020',
       ]);
-       
+
        $last_insert_id=banner::insertGetId([
         'banner_title'=>$request->title,
         'created_at'=>Carbon::now(),

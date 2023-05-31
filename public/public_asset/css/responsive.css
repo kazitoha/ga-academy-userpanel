@@ -1,5 +1,5 @@
 /* // Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
     #home-part{
       overflow: hidden;
       z-index: 1;
@@ -25,7 +25,7 @@
         margin-right: 20px;
          }
         .navbar-nav{
-          background: #000;
+          background: #393b3f;
           padding: 20px;
           text-align: center;
           margin-top: 30px;
@@ -35,12 +35,13 @@
         padding: 80px 0px 80px 0px;
     }
     .home-content-left, .home-content-right {
-        margin-top: 80px;
+        margin-top: 88px;
         text-align: center;
+        width: 373px;
     }
     .voice-left-chanecllor {
         margin-bottom: 20px;
-       
+
     }
     .owl-theme .owl-nav [class*=owl-] {
         top: -301px;
@@ -48,14 +49,14 @@
     }
     .voice-left-chanecllor {
         margin-bottom: 20px;
-       
+
     }
     .voice-right-chanecllorr, .pro-voice-chanecllor {
         padding: 40px 22px;
     }
     .line-header h2 {
         font-size: 25px;
-     
+
     }
     .couter-box {
         margin-bottom: 60px;
@@ -101,7 +102,7 @@
     }
     .form-control {
         margin-bottom: 10px;
-       
+
     }
     .pagination-2 .page-number {
         margin-bottom: 12px;
@@ -111,7 +112,7 @@
     }
     .notable-single-content-top img {
         float: none;
-        
+
     }
     .title-single p {
         font-size: 20px;
@@ -130,7 +131,7 @@
     }
     .mission-button button {
         font-size: 13px;
-        float: left;        
+        float: left;
         padding: 5px 25px;
     }
     .mission-left {
@@ -160,7 +161,7 @@
         }
         .main button, .forgot-main button{
             font-size: 14px;
-            
+
         }
         .forgot-main input {
             width: 100%;
@@ -168,7 +169,7 @@
         .login-html {
             height: 145%;
             padding: 90px 70px 90px 70px;
-         
+
         }
         #student-login-part {
             padding: 165px 0px;
@@ -190,18 +191,37 @@
             margin: 0 auto;
             margin-left: 46px;
         }
+        .committee-according-image{
+            padding-left: 63px;
+            padding-bottom: 18px;
+            float: center;
+            width: 243px;
+        }
+        .committee-according-image img{
+            float: center;
+            width:220px;
+        }
         .according-details {
             margin-left: -3%;
             text-align: center;
             margin-top: 10px !importent;
         }
+        .according-details-name{
+            padding-top: 157px;
+        }
         #accordion .accordion-header::before {
             content: '\002B';
             font-weight: 700;
             font-size: 30px;
-            left: 81%;
+            left: 90%;
             position: absolute;
         }
+        #accordion h3{
+            padding: 0px 30px;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+
         .view-btn-student {
             top: 112%;
         }
@@ -209,12 +229,18 @@
           width: 372px;
           height: 432px;
         }
+        .work-nav ul{
+            margin: 0;
+            padding: 0;
+            display: block;
+            justify-content: center;
+          }
 
 
  }
 
 /* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) { 
+@media (min-width: 576px) and (max-width: 767.98px) {
     .navbar-light .navbar-toggler {
         color: #ffb606;
         border-color: transparent;
@@ -235,7 +261,7 @@
         margin-right: 20px;
          }
         .navbar-nav{
-          background: #000;
+          background: #393b3f;
           padding: 20px;
           text-align: center;
           margin-top: 30px;
@@ -280,11 +306,11 @@
 }
 .banner-text h2 {
     font-size: 30px;
-   
+
 }
 #voice-Chancellor-page {
     padding:150px 0px;
-   
+
 }
 #Vice-Chancellor-link a h3 {
     font-size: 30px;
@@ -294,7 +320,7 @@
 }
 .pro-vice-chancellor-title-info h4 {
     font-size: 18px;
-   
+
 }
 .pro-vice-chancellor-title-info h2 {
     font-size: 21px;
@@ -319,7 +345,7 @@
 }
 .form-control {
     margin-bottom: 10px;
-   
+
 }
 .pagination-2 .page-number {
     margin-bottom: 12px;
@@ -329,7 +355,7 @@
 }
 .notable-single-content-top img {
     float: none;
-    
+
 }
 .title-single p {
     font-size: 20px;
@@ -344,7 +370,7 @@
 }
 .mission-button button {
     font-size: 13px;
-    float: left;        
+    float: left;
     padding: 5px 25px;
 }
 .mission-left {
@@ -384,7 +410,7 @@
         margin-right: 20px;
          }
         .navbar-nav{
-          background: #000;
+          background: #393b3f;
           padding: 20px;
           text-align: center;
           margin-top: 30px;
@@ -401,7 +427,7 @@
         background-color: transparent;
     }
     .voice-right-chanecllorr, .pro-voice-chanecllor {
-        padding: 75px 20px; 
+        padding: 75px 20px;
        }
        .welcome-btn, .view-btn {
         margin-bottom: 40px;
@@ -422,7 +448,7 @@
     }
     .feature-right-images img {
         margin-left: 20px;
-        
+
     }
     .feature-event-news-rights {
         padding-bottom: 100px;
@@ -435,11 +461,11 @@
     }
     .banner-text h2 {
         font-size: 40px;
-       
+
     }
     #voice-Chancellor-page {
         padding:150px 0px;
-       
+
     }
     #Vice-Chancellor-link a h3 {
         font-size: 30px;
@@ -452,14 +478,14 @@
     }
     .form-control {
         margin-bottom: 10px;
-       
+
     }
     .useful-link {
         margin-top: 60px;
     }
     .title-single p {
         font-size: 20px;
-       
+
     }
     .mission-left .mission-heading h2 {
         text-align: center;
@@ -471,7 +497,7 @@
     }
     .mission-button button {
         font-size: 13px;
-        float: left;        
+        float: left;
         padding: 5px 25px;
     }
     .mission-left {
@@ -484,12 +510,12 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .event-heading{  
+    .event-heading{
      height:270px;
    }
    .news-info .event-heading h2{
     font-size:14px;
-    
+
   }
   .feature-right-images img {
     margin-top: 49px;
@@ -497,7 +523,7 @@
     .Vice-Chancellor-Speech-box .pic {
         width:150px;
         height: 150px;
-        
+
       }
       .mission-left .mission-heading h2 {
         text-align: center;
@@ -509,7 +535,7 @@
     }
     .mission-button button {
         font-size: 13px;
-        float: left;        
+        float: left;
         padding: 5px 25px;
     }
     .mission-left {

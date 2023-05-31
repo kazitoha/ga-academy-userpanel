@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <nav aria-label="breadcrumb">
-                        
+
                       </nav>
                 </div>
             </div>
@@ -36,14 +36,14 @@
                     <li data-mixitup-control data-filter=".offices">offices</li>
                     <li data-mixitup-control data-filter=".teachers">Teachers</li>
                     <li data-mixitup-control data-filter=".other">others</li>
-                    
-                   
+
+
                 </ul>
             </div>
             <!-- gallery--- -->
             <div class="row pt-5 gallery-filter">
               @foreach($gallery_infos as $value)
-                @php 
+                @php
                   if($value->category == 1){
                     $category = "offices";
                   }elseif($value->category == 2){
@@ -65,14 +65,14 @@
                 </div>
               @endforeach
 
-              
+
                 </div>
             </div>
         </div>
     </section>
 
   <!-- ========== gallery part University of Dhaka finish========== -->
-  
+
 <script type="text/javascript">
     $("img").lazyload({
         effect : "fadeIn"

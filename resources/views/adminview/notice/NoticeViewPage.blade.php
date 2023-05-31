@@ -19,11 +19,19 @@
                 <form class="custom-validation" action="{{route('notice.store')}}" method="post" enctype="multipart/form-data" >
                     @csrf
                     <div class="form-group">
+                        <label>Category</label>
+                        <select class=" form-control"  @error ('category')is-invalid @enderror" aria-label="Default select example" name="category">
+                              <option selected disabled>Select Category</option>
+                              <option value="1">Teacher's Notice</option>
+                              <option value="2">Students Notice</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label>Title</label>
                         <input type="text" maxlength="120" class="form-control @error ('title')is-invalid @enderror"  placeholder="Type something" name="title" value="{{old('title')}}" required/>
                     </div>
 
-                    
+
                     <div class="form-group">
                         <label>File</label>
                         <div>
@@ -52,7 +60,7 @@
         </div>
     </div> <!-- end col -->
 
-</div> <!-- end row --> 
+</div> <!-- end row -->
 
 
 

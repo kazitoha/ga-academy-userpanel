@@ -10,15 +10,21 @@
 
                 <form class="custom-validation" action="{{route('notice.update')}}" method="post" enctype="multipart/form-data">
                     @csrf
-
                     <input type="hidden" class="form-control" name="update_id" value="{{base64_encode($noticeGetData->id)}}"/>
-
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select class=" form-control"  @error ('category')is-invalid @enderror" aria-label="Default select example" name="category">
+                              <option disabled>Select Category</option>
+                              <option value="1" @if($noticeGetData->category==1) selected @endif>Teacher's Notice</option>
+                              <option value="2" @if($noticeGetData->category==2) selected @endif>Students Notice</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Title</label>
                         <input type="text" class="form-control @error ('title')is-invalid @enderror"  placeholder="Type something" name="title" value="{{$noticeGetData['title']}}" required/>
                     </div>
 
-                    
+
                     <div class="form-group">
                         <label>File</label>
                         <div>
@@ -44,7 +50,7 @@
         </div>
     </div> <!-- end col -->
 
-</div> <!-- end row --> 
+</div> <!-- end row -->
 
 
 

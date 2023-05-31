@@ -1,7 +1,7 @@
 @extends('userview/layout/navbar')
 
  @section('userview-navbar')
- 
+
 
 
 
@@ -38,13 +38,13 @@
 
                           <div class="committee-according-image">
                             @if(!$value->file_path==null)
-                            <img src="{{ asset('storage/staff_info_files/'.$value->file_path) }}" class="card-img-top" alt="..." style="width: 164px; height: 164px;border-radius: 25%;" >
+                            <img src="{{ asset('storage/staff_info_files/'.$value->file_path) }}" class="card-img-top" alt="..." style="width: 164px; height: 164px;border-radius: 6%;" >
                             @else
-                             <img src="{{ asset('public_asset/images/dummy_img/default_staff_img.jpg') }}" class="card-img-top" alt="..." style="width: 164px; height: 164px;border-radius: 25%;" >
-                             @endif
-                          </div>  
+                             <img src="{{ asset('public_asset/images/dummy_img/default_staff_img.jpg') }}" class="card-img-top" alt="..." style="width: 164px; height: 164px;border-radius: 6%;" >
+                            @endif
+                          </div>
                           <div class="according-details">
-                            <h4>{{$value->name}}</h4>
+                            <h4 class="according-details-name">{{$value->name}}</h4>
                             <b style="color:#5c5454;">Email: {{$value->email}}</b><br>
                             <b style="color:#5c5454;">Designation:  {{$value->designation}}</b><br>
                             <b style="color:#5c5454;">Phone: {{$value->phone}}</b><br>
@@ -57,16 +57,16 @@
                         </div>
                       </div>
                     </div>
-                  @endforeach  
+                  @endforeach
 
 
 
                   </div>
             </div>
-             @php 
+             @php
                $url=Route::current()->uri;
              @endphp
-             
+
 
             <div class="col-lg-4">
               <div class="useful-link">
@@ -76,7 +76,7 @@
                       <li ><a href="{{ url('select/office/1')}}"><b @if($id ==1) style="color:red" @endif>Teacher</b></a></li>
                       <li ><a href="{{ url('select/office/2')}}"><b @if($id==2) style="color:red" @endif>Staff</b></a></li>
 
-                      
+
                   </ul>
               </div>
           </div>

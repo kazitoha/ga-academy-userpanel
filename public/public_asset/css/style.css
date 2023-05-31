@@ -98,7 +98,7 @@ navbar part start
 
 .navbar .nav-item .nav-link {
   padding-left: 16px;
-  padding-right: 16px;
+  padding-right: 12px;
   margin-left: 10px;
   color: #fff;
   font-size: 16px;
@@ -174,7 +174,7 @@ navbar part start
   position:absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgb(46 43 43 / 70%);
   left: 0;
   top: 0;
 }
@@ -294,7 +294,7 @@ Vice Chancellor and pro Vice Chancellor section strat
   margin-bottom: 10px;
     margin-top: 10px;
     border-radius: 10px;
- 
+
 }
 .voice-left-chanecllor{
   padding:40px 10px;
@@ -319,13 +319,13 @@ Vice Chancellor and pro Vice Chancellor section strat
   color:rgb(20, 18, 18);
   font-weight: 700;
   padding-top: 15px;
-  
+
 }
 .voice-images-box h5, .pro-voice-box h5{
   font-size: 15px;
   color:#000;
   font-weight: 800;
-  
+
 }
 .voice-right-chanecllorr, .pro-voice-chanecllor{
   padding: 40px 20px;
