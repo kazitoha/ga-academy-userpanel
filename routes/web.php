@@ -30,7 +30,8 @@ Route::get('single/notice/{id}', 'App\Http\Controllers\Userpanel\NoticeControlle
 Route::get('select/notice/{id}', 'App\Http\Controllers\Userpanel\NoticeController@NoticeCategory');
 
 //news
-Route::get('news', 'App\Http\Controllers\Userpanel\NewsController@NoticeView')->name('news');
+Route::get('news', 'App\Http\Controllers\Userpanel\NewsController@NewsView')->name('news');
+Route::get('single/news/{id}', 'App\Http\Controllers\Userpanel\NewsController@SingleNews')->name('single.news');
 
 //event
 Route::get('event', 'App\Http\Controllers\Userpanel\EventController@EventView')->name('event');

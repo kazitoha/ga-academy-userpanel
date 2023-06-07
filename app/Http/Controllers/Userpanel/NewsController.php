@@ -9,10 +9,16 @@ use Illuminate\Support\Carbon;
 
 class NewsController extends Controller
 {
-    function NoticeView()
+    function NewsView()
     {
-        echo Carbon::now();
-        // $allNews=news::all();
-        // return view('adminview/notice/NoticeListPage', compact('allNotice'));
+        $allNews = news::paginate(10);
+        return view('userview.news.news', compact('allNews'));
+    }
+    function SingleNews($id)
+    {
+        $id = base64_decode($id);
+        $single_news = news::find($id);
+        $news_paginate = news::paginate(10);
+        return view('userview.news.singleNews', compact('single_news', 'news_paginate'));
     }
 }

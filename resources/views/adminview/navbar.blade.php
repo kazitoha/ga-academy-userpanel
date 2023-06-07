@@ -233,6 +233,17 @@
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="mdi mdi-folder-information-outline"></i>
+                            <span>News</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{route('news.view')}}">Add News</a></li>
+                            <li><a href="{{route('news.list')}}">News List</a></li>
+                        </ul>
+                    </li>
+
 
                     <li>
                         <a href="javascript: void(0);" class="waves-effect">
@@ -257,9 +268,6 @@
                         </ul>
                     </li>
 
-
-
-
                     <li>
                         <a href="{{ route('gallery.view') }}" class="waves-effect">
                             <i class="mdi mdi-image"></i>
@@ -267,18 +275,6 @@
                         </a>
                     </li>
 
-
-
-                    {{-- <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="mdi mdi-folder-information-outline"></i>
-                                <span>About</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('notice.view')}}">About</a></li>
-                                <li><a href="{{route('notice.list')}}">About List</a></li>
-                            </ul>
-                        </li>  --}}
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">

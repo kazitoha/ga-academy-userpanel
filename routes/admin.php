@@ -61,7 +61,7 @@ Route::prefix('/admin')
 
    // event
    Route::get('event','App\Http\Controllers\Admin\EventController@EventView')->name('event.view');
-   Route::post('event','App\Http\Controllers\Admin\EventController@EventStore')->name('event.store');
+   Route::post('event/store','App\Http\Controllers\Admin\EventController@EventStore')->name('event.store');
 
    Route::get('event/list','App\Http\Controllers\Admin\EventController@EventList')->name('event.list');
 
@@ -72,6 +72,27 @@ Route::prefix('/admin')
    Route::post('update/event','App\Http\Controllers\Admin\EventController@UpdateEvent')->name('event.update');
 
    Route::get('delete/event/{id}','App\Http\Controllers\Admin\EventController@EventDelete')->name('event.delete');
+
+
+
+
+
+
+
+   //news
+   Route::get('news','App\Http\Controllers\Admin\NewsController@NewsView')->name('news.view');
+
+   Route::post('news/store','App\Http\Controllers\Admin\NewsController@NewsStore')->name('news.store');
+
+   Route::get('news/list','App\Http\Controllers\Admin\NewsController@NewsList')->name('news.list');
+
+   Route::get('news/search','App\Http\Controllers\Admin\NewsController@SearchNews')->name('search.news');
+
+   Route::get('news/edit/{id}','App\Http\Controllers\Admin\NewsController@NewsEdit')->name('news.edit');
+
+   Route::post('news/update','App\Http\Controllers\Admin\NewsController@NewsUpdate')->name('news.update');
+
+   Route::get('news/delete/{id}','App\Http\Controllers\Admin\NewsController@NewsDelete')->name('news.delete');
 
 
 
