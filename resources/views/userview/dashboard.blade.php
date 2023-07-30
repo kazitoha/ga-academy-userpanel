@@ -576,6 +576,7 @@
                         @foreach ($notice_data as $value)
                             @if ($i == 5)
                             @break
+                            @php $i++ @endphp
                         @endif
                         <div class="feature-left-images-box">
                             @if ($value->file_path == null)
@@ -587,7 +588,7 @@
                             <div class="images-content-feature">
                                 <a href="{{ route('single.notice', base64_encode($value->id)) }}">
                                     <div class="container">
-                                        <h2>{{ $i++ . '.' . $value->title }}</h2>
+                                        <h2>{{$value->title }}</h2>
                                     </div>
                                 </a>
                                 <a href="{{ route('single.notice', base64_encode($value->id)) }}"

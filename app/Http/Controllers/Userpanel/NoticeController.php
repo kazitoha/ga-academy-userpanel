@@ -15,7 +15,7 @@ class NoticeController extends Controller
     function NoticeSingle($id){
         $id=base64_decode($id);
         $single_notice=notices::find($id);
-        $notice_paginate=notices::paginate(10);
+        $notice_paginate=notices::orderBy('id', 'desc')->paginate(10);
         return view('userview/notice/singleNotice',compact('single_notice','notice_paginate'));
     }
     function NoticeCategory($id){

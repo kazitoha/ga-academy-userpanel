@@ -11,7 +11,7 @@ class NewsController extends Controller
 {
     function NewsView()
     {
-        $allNews = news::paginate(10);
+        $allNews = news::orderBy('id', 'desc')->paginate(10);
         return view('userview.news.news', compact('allNews'));
     }
     function SingleNews($id)

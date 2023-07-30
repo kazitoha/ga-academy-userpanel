@@ -16,36 +16,49 @@ class NoticeController extends Controller
     }
     function NoticeStore(Request $request)
     {
-        // dd($request->all());
-        $request->validate([
-            'category'      =>'required',
-            'title'         => 'required|string',
-            'description'   => 'nullable',
-            'file_name'     => 'nullable|mimes:jpeg,png,jpg,gif,svg,pdf|max:5120',
-        ]);
+
+        $request->validate(
+            [
+                'category'      => 'required',
+                'title'         => 'required|string',
+                'description'   => 'nullable',
+                'image_file'     => 'nullable|array|max:3',
+                'image_file.*'   => 'mimes:jpeg,png,jpg,gif,svg',
+                'pdf_file'      => 'nullable|mimes:pdf',
+            ],
+            [
+                'image_file'    => 'The Image must not have more than 3 items.',
+            ]
+        );
 
         $last_insert_id = notices::insertGetId([
             'title'         => $request->title,
             'description'   => $request->description,
-            'category'      =>$request->category,
+            'category'      => $request->category,
             'created_at'    => Carbon::now(),
         ]);
 
-
-        if ($request->hasFile('file_name')) {
-            $main_img = $request->file_name;
+        if ($request->hasFile('pdf_file')) {
+            $main_img = $request->pdf_file;
             //get file extension $extension
-            $extension = $request->file('file_name')->extension();
+            $extension = $request->file('pdf_file')->extension();
             $rename_image = $last_insert_id . "." . $extension;
-
-            if ($extension == "pdf") {   //1st $filepath we define the file location and then move it.
-                $filePath = public_path('/storage/notice_files');
-                $main_img->move($filePath,  $rename_image);
-            } else {
-                Image::make($main_img)->save(base_path('public/storage/notice_files/' . $rename_image));
-            }
-            notices::find($last_insert_id)->update(['file_path' => $rename_image,]);
+            $filePath = public_path('/storage/notice_files');
+            $main_img->move($filePath,  $rename_image);
         }
+
+        if ($request->hasFile('image_file')) {
+            $images_file = $request->image_file;
+            $image_names = [];
+            foreach ($images_file as $key => $image_file) {
+                $extension = $image_file->extension();
+                $rename_image = $last_insert_id . "." . $extension;
+                $image_names[] = $key . "_" . $rename_image;
+                Image::make($image_file)->save(base_path('public/storage/notice_files/' . $rename_image));
+            }
+        }
+
+        notices::find($last_insert_id)->update(['file_path' => $image_names,]);
         return back()->with('message', 'Notice Inserted Successfully.');
     }
     function NoticeList(Request $request)
@@ -80,7 +93,7 @@ class NoticeController extends Controller
             'title'         => 'required|string',
             'description'   => 'nullable',
             'file_name'     => 'nullable|mimes:jpeg,png,jpg,gif,svg,pdf|max:5120',
-            'category'      =>'required',
+            'category'      => 'required',
         ]);
         //this is for decrypting id
         $update_id = base64_decode($request->update_id);
@@ -88,7 +101,7 @@ class NoticeController extends Controller
         notices::find($update_id)->update([
             'title'   => $request->title,
             'description' => $request->description,
-            'category'      =>$request->category,
+            'category'      => $request->category,
             'created_at' => Carbon::now(),
         ]);
 

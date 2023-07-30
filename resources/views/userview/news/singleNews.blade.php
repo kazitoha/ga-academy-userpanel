@@ -26,7 +26,9 @@
                             <h2>{{$single_news->title}}</h2>
 
                             <p>{{$single_news->description}}</p>
-                            <img src="{{asset('storage/news_files/'.$single_news->file_path)}}" alt="" style="overflow:scroll; height:auto; width:auto">
+                            @if($single_news->file_path != null)
+                             <img src="{{asset('storage/news_files/'.$single_news->file_path)}}" alt="" style="overflow:scroll; height:auto; width:auto">
+                            @endif
 
                         </div>
                     </div>

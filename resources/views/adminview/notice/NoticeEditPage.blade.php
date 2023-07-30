@@ -34,7 +34,7 @@
                     <div class="form-group">
                         <label>Description</label>
                         <div>
-                            <textarea required class="form-control @error ('description')is-invalid @enderror" name="description" rows="5">{{$noticeGetData->description}}</textarea>
+                            <textarea class="form-control @error ('description')is-invalid @enderror" name="description" rows="5">{{$noticeGetData->description}}</textarea>
                         </div>
                     </div>
                     <div class="form-group mb-0">
@@ -50,8 +50,30 @@
         </div>
     </div> <!-- end col -->
 
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="header-title d-flex justify-content-center">Notice Image</h4>
+
+               {{-- <img src="{{ asset('storage/notice_files/9.jpg') }}" class="form-control" style="height: 352px"> --}}
+
+               <div class="position-relative gallery-content">
+                <div class="demo-img">
+                    <img src="{{asset('storage/notice_files')}}/{{$noticeGetData->file_path}}" alt="" class="img-fluid mx-auto d-block rounded"><br>
+                </div>
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-icon">
+                        <i class="ti-zoom-in text-white"></i>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
 </div> <!-- end row -->
-
-
 
 @endsection
