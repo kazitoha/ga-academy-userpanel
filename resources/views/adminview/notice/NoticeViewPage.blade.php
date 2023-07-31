@@ -56,13 +56,11 @@
                                 <label>Images</label>
                                 <input class="form-control @error('image_file[]')is-invalid @enderror" name="image_file[]"
                                     type="file" multiple>
-                                {{-- <input type="file" class="form-control" name="file_name" value="{{old('file_name')}}" /> --}}
                             </div>
                             <div id="pdf">
                                 <label>Pdf</label>
                                 <input class="form-control @error('pdf_file')is-invalid @enderror" name="pdf_file"
                                     type="file">
-                                {{-- <input type="file" class="form-control" name="file_name" value="{{old('file_name')}}" /> --}}
                             </div>
                         </div>
                         <div class="form-group">
@@ -89,43 +87,6 @@
         </div> <!-- end col -->
 
     </div> <!-- end row -->
-    <style>
-
-        #img{
-            display: none;
-        }
-        #pdf{
-            display: none;
-        }
-
-    </style>
-    <script>
-
-        function inputImg() {
-            // var img = document.getElementById("flexRadioDefault1").value;
-            pdf.style.display = "none";
-            var img = document.getElementById("img");
-            if (img.style.display === "block") {
-                img.style.display = "none";
-            } else {
-                img.style.display = "block";
-            }
-
-
-        }
-
-        function inputPdf() {
-            // var pdf = document.getElementById("flexRadioDefault2").value;
-            img.style.display = "none";
-            var pdf = document.getElementById("pdf");
-            if (pdf.style.display === "block") {
-                pdf.style.display = "none";
-            } else {
-                pdf.style.display = "block";
-            }
-
-        }
-    </script>
 
 
 @endsection

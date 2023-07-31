@@ -239,8 +239,8 @@
                             <span>News</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{route('news.view')}}">Add News</a></li>
-                            <li><a href="{{route('news.list')}}">News List</a></li>
+                            <li><a href="{{ route('news.view') }}">Add News</a></li>
+                            <li><a href="{{ route('news.list') }}">News List</a></li>
                         </ul>
                     </li>
 
@@ -342,7 +342,8 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-right d-none d-sm-block">
-                            Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRwQncjStzfPxssNZPPPJrWxnGvvZwczZSPxMrTfsrGJnbvxcwfSjKMRvlxnfBQcmmzjFJWP">TeamNexio</a>
+                            Crafted with <i class="mdi mdi-heart text-danger"></i> by <a
+                                href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRwQncjStzfPxssNZPPPJrWxnGvvZwczZSPxMrTfsrGJnbvxcwfSjKMRvlxnfBQcmmzjFJWP">TeamNexio</a>
                         </div>
                     </div>
                 </div>
@@ -388,8 +389,8 @@
 
     <!-- Responsive Table js -->
     <script src="{{ asset('admin_asset/assets/libs/RWD-Table-Patterns/js/rwd-table.min.js') }}"></script>
-     <!-- Init js -->
-     <script src="{{asset('admin_asset/assets/js/pages/table-responsive.init.js')}}"></script>
+    <!-- Init js -->
+    <script src="{{ asset('admin_asset/assets/js/pages/table-responsive.init.js') }}"></script>
 
 
 
@@ -429,6 +430,45 @@
             toastr.warning("{{ session('warning') }}");
         @endif
     </script>
+
+
+    {{-- notice image or pdf setting script --}}
+    <style>
+        #img {
+            display: none;
+        }
+        #pdf {
+            display: none;
+        }
+    </style>
+    <script>
+        function inputImg() {
+            pdf.style.display = "none";
+            var img = document.getElementById("img");
+            if (img.style.display === "block") {
+                img.style.display = "none";
+            } else {
+                img.style.display = "block";
+            }
+
+
+        }
+
+        function inputPdf() {
+            // var pdf = document.getElementById("flexRadioDefault2").value;
+            img.style.display = "none";
+            var pdf = document.getElementById("pdf");
+            if (pdf.style.display === "block") {
+                pdf.style.display = "none";
+            } else {
+                pdf.style.display = "block";
+            }
+
+        }
+    </script>
+    {{-- end notice image or pdf setting script --}}
+
+
 
 </body>
 
