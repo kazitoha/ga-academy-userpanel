@@ -62,8 +62,8 @@ class NoticeController extends Controller
             }
             $files_names = serialize($image_names);
             notices::find($last_insert_id)->update(['file_path' => $files_names,]);
-            return back()->with('message', 'Notice Inserted Successfully.');
         }
+        return back()->with('message', 'Notice Inserted Successfully.');
     }
     function NoticeList(Request $request)
     {
@@ -150,8 +150,8 @@ class NoticeController extends Controller
             }
             $files_names = serialize($image_names);
             notices::find($update_id)->update(['file_path' => $files_names,]);
-            return back()->with('message', 'Data Update Successfully.');
         }
+        return back()->with('message', 'Data Update Successfully.');
     }
 
 

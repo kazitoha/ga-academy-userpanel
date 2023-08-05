@@ -94,14 +94,15 @@
                                 @foreach ($images as $key => $value)
                                     @php
                                         $explode_file = explode('.', $value[0]);
+                                        $extension=end($explode_file);
                                     @endphp
 
-                                    @if ($explode_file[1] == 'jpg' || $explode_file[1] == 'png' || $explode_file[1] == 'jpeg')
+                                    @if ($extension == 'jpg' || $explode_file[1] == 'png' || $explode_file[1] == 'jpeg')
                                         <img src="{{ asset('storage/notice_files') }}/{{ $value[0] }}" alt=""
                                             class="img-fluid mx-auto d-block rounded"><br>
                                     @endif
 
-                                    @if ($explode_file[1] == 'pdf')
+                                    @if ($extension == 'pdf')
                                         <iframe src="{{ asset('storage/notice_files') }}/{{ $value[0] }}" width="100%"
                                             height="600px"></iframe>
                                     @endif

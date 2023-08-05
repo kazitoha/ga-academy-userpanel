@@ -44,9 +44,12 @@ Route::get('gallery', 'App\Http\Controllers\Userpanel\GalleryController@GalleryV
 //teacher&staff
 Route::get('teacher&staff', 'App\Http\Controllers\Userpanel\StaffController@StaffView')->name('teacher');
 Route::get('select/office/{id}', 'App\Http\Controllers\Userpanel\StaffController@selectOffice');
-
+//testimonial
+Route::get('academic/testimonial', 'App\Http\Controllers\Userpanel\TestimonialController@TestimonialView')->name('academic.testimonial');
+Route::get('academic/apply/testimonial', 'App\Http\Controllers\Userpanel\TestimonialController@TestimonialStore')->name('apply.for.testimonial');
 //calendar
 Route::get('academic/calendar', 'App\Http\Controllers\Userpanel\AcademicController@AcademicCalendarView')->name('academic.calendar');
+
 
 //guardians
 Route::get('honorable/guardians', 'App\Http\Controllers\Userpanel\HonorableGuardiansController@HonorableGuardiansView')->name('honorable.guardians');

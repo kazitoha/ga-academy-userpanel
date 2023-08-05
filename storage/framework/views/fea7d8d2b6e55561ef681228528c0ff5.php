@@ -1,6 +1,4 @@
-@extends('userview/layout/navbar')
-
-@section('userview-navbar')
+<?php $__env->startSection('userview-navbar'); ?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 
@@ -34,14 +32,14 @@
 
 
 
-            @foreach ($banner_datas as $key => $banner_row)
+            <?php $__currentLoopData = $banner_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $banner_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="bakground"
-                    style="background-image: url(storage/banner/{{ $banner_row->file_path }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                    style="background-image: url(storage/banner/<?php echo e($banner_row->file_path); ?>); background-position: center; background-repeat: no-repeat; background-size: cover;">
                     <div class="container">
                         <div class="row item banner-text-box">
                             <div class="col-lg-7 col-md-7 col-sm-7">
                                 <div class="home-content-left">
-                                    <h4 style="color:white;">{{ $banner_row->banner_title }}</h4>
+                                    <h4 style="color:white;"><?php echo e($banner_row->banner_title); ?></h4>
 
                                 </div>
                             </div>
@@ -52,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
 
@@ -63,7 +61,7 @@
     </section>
     <!-- ======home and banner section finish======= -->
     <br>
-    {{-- <marquee>Welcome to Feni G.A. Academy</marquee> --}}
+    
 
 
     <!-- =============Vice Chancellor and pro Vice Chancellor section strat============= -->
@@ -76,7 +74,7 @@
                         <div class="col-lg-3 col-md-3 text-center">
                             <div class="voice-left-chanecllor">
                                 <div class="voice-images-box">
-                                    <img src="{{ asset('public_asset/images/dashboard_image/chairman.jpg') }}"
+                                    <img src="<?php echo e(asset('public_asset/images/dashboard_image/chairman.jpg')); ?>"
                                         alt="">
                                     <p>মোহাম্মদ ইউছুপ</p>
                                     <h5>সভাপতি</h5>
@@ -108,7 +106,7 @@
                         <div class="col-lg-3 col-md-3 text-center">
                             <div class="voice-left-chanecllor">
                                 <div class="voice-images-box">
-                                    <img src="{{ asset('public_asset/images/bahar_uddin_bahar.jpg') }}" alt="">
+                                    <img src="<?php echo e(asset('public_asset/images/bahar_uddin_bahar.jpg')); ?>" alt="">
                                     <p>বাহার উদ্দিন বাহার</p>
                                     <h5>বিদ্যোৎসাহী সদস্যের</h5>
                                 </div>
@@ -138,7 +136,7 @@
                         <div class="col-lg-3 col-md-3 text-center">
                             <div class="voice-left-chanecllor">
                                 <div class="voice-images-box">
-                                    <img src="{{ asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg') }}"
+                                    <img src="<?php echo e(asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg')); ?>"
                                         alt="">
                                     <p>মোঃ তাজুল ইসলাম চৌধুরী</p>
                                     <h5>প্রধান শক্ষিক</h5>
@@ -183,13 +181,13 @@
 
 
     <!-- =====================counter part start=================== -->
-    @php
+    <?php
 
     $client = new GuzzleHttp\Client();
     $res = $client->get('https://portal.fenigaacademy.edu.bd/api/student_count');
     $total_student=$res->getBody();
 
-    @endphp
+    ?>
     <section id="counter_part">
         <div class="container">
             <div class="row">
@@ -221,14 +219,14 @@
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                         <div class="couter-box">
                             <i class="fas fa-users"></i>
-                            <h1><span class="counter">{{$total_student}}</span></h1>
+                            <h1><span class="counter"><?php echo e($total_student); ?></span></h1>
                             <h3>Regular Students</h3>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                         <div class="couter-box">
                             <i class="fas fa-school"></i>
-                            <h1><span class="counter">{{ $officeStaff }}</span></h1>
+                            <h1><span class="counter"><?php echo e($officeStaff); ?></span></h1>
                             <h3>teachers</h3>
                         </div>
                     </div>
@@ -579,32 +577,32 @@
                         </div>
                     </div>
                     <div class="owl-carousel owl-theme feature-event-news">
-                        @php $i=1; @endphp
+                        <?php $i=1; ?>
 
-                        @foreach ($notice_data as $value)
-                            @if ($i == 5)
-                            @break
+                        <?php $__currentLoopData = $notice_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($i == 5): ?>
+                            <?php break; ?>
 
-                            @php $i++ @endphp
-                        @endif
+                            <?php $i++ ?>
+                        <?php endif; ?>
                         <div class="feature-left-images-box">
-                            @if ($value->file_path == null)
-                                <img src="{{ asset('public_asset/images/dummy_img/notice_defult.png') }}"
+                            <?php if($value->file_path == null): ?>
+                                <img src="<?php echo e(asset('public_asset/images/dummy_img/notice_defult.png')); ?>"
                                     alt="">
-                            @elseif(!$value->file_path == null)
-                                <img src="{{ asset('storage/notice_files/' . $value->file_path) }}" alt="">
-                            @endif
+                            <?php elseif(!$value->file_path == null): ?>
+                                <img src="<?php echo e(asset('storage/notice_files/' . $value->file_path)); ?>" alt="">
+                            <?php endif; ?>
                             <div class="images-content-feature">
-                                <a href="{{ route('single.notice', base64_encode($value->id)) }}">
+                                <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>">
                                     <div class="container">
-                                        <h2>{{ $value->title }}</h2>
+                                        <h2><?php echo e($value->title); ?></h2>
                                     </div>
                                 </a>
-                                <a href="{{ route('single.notice', base64_encode($value->id)) }}"
+                                <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>"
                                     class="welcome-btn btn-block">read more <i class="fas fa-check-circle"></i></a>
                             </div>
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 </div>
             </div>
@@ -618,26 +616,26 @@
 
 
 
-                    @foreach ($notice_data as $value)
-                        @if (!$i == 5)
-                        @break
-                    @endif
+                    <?php $__currentLoopData = $notice_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(!$i == 5): ?>
+                        <?php break; ?>
+                    <?php endif; ?>
                     <div class="feature-event-right-details">
                         <a href="#">
                             <div class="feature-images-right-details">
-                                <a href="{{ route('single.notice', base64_encode($value->id)) }}">
-                                    <p><b>{{ $i++ . '.' . $value->title }}</b></p>
+                                <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>">
+                                    <p><b><?php echo e($i++ . '.' . $value->title); ?></b></p>
                                 </a>
                                 <span><i class="fas fa-book-open"></i>
-                                    {{ $value->created_at->format('d-M-Y') }}</span>
+                                    <?php echo e($value->created_at->format('d-M-Y')); ?></span>
                         </a>
                     </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
             </div>
             <div class="all-view">
-                <a href="{{ url('notice') }}" class="view-btn-student">view all <i
+                <a href="<?php echo e(url('notice')); ?>" class="view-btn-student">view all <i
                         class="fas fa-angle-double-right"></i></a>
             </div>
         </div>
@@ -679,32 +677,32 @@
 
                 <div class="carousel-inner">
 
-                    @php
+                    <?php
                         $e = 0;
-                    @endphp
-                    @foreach ($event_datas as $key => $event_data)
-                        @php $e++; @endphp
-                        @if ($e == 1)
-                            <div class="carousel-item @if ($key == 0) active @endif">
+                    ?>
+                    <?php $__currentLoopData = $event_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $event_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $e++; ?>
+                        <?php if($e == 1): ?>
+                            <div class="carousel-item <?php if($key == 0): ?> active <?php endif; ?>">
                                 <div class="row">
-                        @endif
+                        <?php endif; ?>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                @if (!$event_data->file_path == null)
-                                    <img src="{{ asset('storage/event_files/' . $event_data->file_path) }}"
+                                <?php if(!$event_data->file_path == null): ?>
+                                    <img src="<?php echo e(asset('storage/event_files/' . $event_data->file_path)); ?>"
                                         height="150" width="350" alt="">
-                                @elseif($event_data->file_path == null)
-                                    <img src="{{ asset('public_asset/default_event.png') }}" height="150"
+                                <?php elseif($event_data->file_path == null): ?>
+                                    <img src="<?php echo e(asset('public_asset/default_event.png')); ?>" height="150"
                                         width="350" alt="">
-                                @endif
+                                <?php endif; ?>
                                 <a href="">
                                     <div class="card-body"
                                         style=" height: 217px; width: auto; overflow-y: scroll; ">
                                         <h4 class="card-title"></h4>
                                         <p class="card-text">
-                                            <a href="{{ route('single.event', base64_encode($event_data->id)) }}"
+                                            <a href="<?php echo e(route('single.event', base64_encode($event_data->id))); ?>"
                                                 style="color:black;">
-                                                @php echo limit_text($event_data->event_name, 10); @endphp
+                                                <?php echo limit_text($event_data->event_name, 10); ?>
                                         </p>
                                 </a>
                             </div>
@@ -713,12 +711,12 @@
                         </div>
                 </div>
 
-                @if ($e == 3)
+                <?php if($e == 3): ?>
             </div>
         </div>
-        @php $e=0; @endphp
-        @endif
-        @endforeach
+        <?php $e=0; ?>
+        <?php endif; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     </div>
 </div>
@@ -740,4 +738,6 @@
         effect: "fadeIn"
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\ga-academy-userpanel\resources\views/userview/dashboard.blade.php ENDPATH**/ ?>

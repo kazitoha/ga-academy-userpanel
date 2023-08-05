@@ -68,6 +68,7 @@
                 Academic
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item @if($url == 'academic/testimonial') active @endif" href="{{route('academic.testimonial')}}">Apply For Testimonial</a>
                 <a class="dropdown-item @if($url == 'academic/calendar') active @endif" href="{{route('academic.calendar')}}">Academic Calendar</a>
                 <a class="dropdown-item @if($url == 'honorable/guardians') active @endif" href="{{route('honorable.guardians')}}">Honorable Guardians</a>
 

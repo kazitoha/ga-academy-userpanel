@@ -86,7 +86,7 @@ class EventController extends Controller
       'event_image.*' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:7120',
       'about_event' => 'required',
     ]);
-    //this is for decrypting id  
+    //this is for decrypting id
     $update_id = base64_decode($request->update_id);
 
     event::find($update_id)->update([

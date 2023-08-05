@@ -28,22 +28,31 @@
                         <div class="content-heading">
                             <h2>{{ $single_notice->title }}</h2>
 
-                            <p>{{ $single_notice->description }}</p>
-                            @php
-                                $file_name = $single_notice->file_path;
-                                if (!$single_notice->file_path == null) {
-                                    $file_name = $single_notice->file_path;
-                                }
-                                $file_type_explode = explode('.', $file_name);
-                                $extension = end($file_type_explode);
-                            @endphp
+                            <p>@php echo $single_notice->description @endphp</p>
 
-                            @if ($extension == 'pdf')
-                                <iframe src="{{ asset('storage/notice_files/' . $single_notice->file_path) }}"
-                                    width="100%" height="600px"></iframe>
+
+                            @php
+                                $file_names = unserialize($single_notice['file_path']);
+                            @endphp
+                            @if(!empty($file_names)){
+
+                                @foreach ($file_names as $key => $value)
+                                @php
+                                    $explode_file = explode('.', $value[0]);
+                                    $extension = end($explode_file);
+                                @endphp
+
+                                @if ($extension == 'jpg' || $explode_file[1] == 'png' || $explode_file[1] == 'jpeg')
+                                    <img src="{{ asset('storage/notice_files') }}/{{ $value[0] }}" alt=""><br>
+                                @endif
+
+                                @if ($extension == 'pdf')
+                                    <iframe src="{{ asset('storage/notice_files') }}/{{ $value[0] }}" width="100%"
+                                        height="600px"></iframe>
+                                @endif
+                            @endforeach
+
                             @endif
-                            <img src="{{ asset('storage/notice_files/' . $single_notice->file_path) }}" alt=""
-                                style="overflow:scroll; height:auto; width:auto">
 
                         </div>
                     </div>
