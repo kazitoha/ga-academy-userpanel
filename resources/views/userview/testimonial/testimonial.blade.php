@@ -29,7 +29,7 @@
                                 </div>
                             @endif
 
-                            <form class="pt-4" action="{{ route('apply.for.testimonial') }}" novalidate>
+                            <form class="pt-4" action="{{ route('apply.for.testimonial') }}">
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="row mb-4">
                                     <div class="col">
@@ -122,9 +122,13 @@
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example1">Exam Name <b
                                                     class="text-danger">*</b></label>
-                                            <input type="text" value="{{ old('exam_name') }} " name="exam_name"
-                                                id="form6Example1"
-                                                class="form-control @error('exam_name')is-invalid @enderror" required />
+
+                                            <select class="form-control @error('exam_name')is-invalid @enderror"
+                                                name="exam_name" aria-label="Default select example">
+                                                <option selected disabled>Open this select menu</option>
+                                                <option value="1">J.S.C</option>
+                                                <option value="2">S.S.C</option>
+                                            </select>
                                             @error('exam_name')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -135,7 +139,8 @@
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example2">Exam Year <b
                                                     class="text-danger">*</b></label>
-                                            <input type="number" min="1930" max="{{date("Y")}}" step="1" value="{{ old('exam_year') }} " name="exam_year"
+                                            <input type="number" min="1930" max="{{ date('Y') }}"
+                                                step="1" value="{{ old('exam_year') }} " name="exam_year"
                                                 id="form6Example2"
                                                 class="form-control @error('exam_year')is-invalid @enderror" required />
                                             @error('exam_year')
@@ -230,9 +235,10 @@
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example1">GPA <b
                                                     class="text-danger">*</b></label>
-                                            <input type="number" max="5.00" step="0.1" value="{{ old('gpa') }}" name="gpa"
-                                                id="form6Example1" pattern="[0-9]*[.,]?[0-9]*" class="form-control @error('gpa')is-invalid @enderror"
-                                                required />
+                                            <input type="number" max="5.00" step="0.1"
+                                                value="{{ old('gpa') }}" name="gpa" id="form6Example1"
+                                                pattern="[0-9]*[.,]?[0-9]*"
+                                                class="form-control @error('gpa')is-invalid @enderror" required />
                                             @error('gpa')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror

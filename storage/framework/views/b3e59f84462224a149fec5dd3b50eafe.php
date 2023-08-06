@@ -41,7 +41,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse justify-content-md-right" id="navbarNavDropdown">
         <ul class="navbar-nav m-auto">
           <li class="nav-item">
             <a class="nav-link  <?php if($url == '/'): ?> active <?php endif; ?>" href="<?php echo e(url('/')); ?>">Home</a>
@@ -68,7 +68,6 @@
                 Academic
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item <?php if($url == 'academic/testimonial'): ?> active <?php endif; ?>" href="<?php echo e(route('academic.testimonial')); ?>">Apply For Testimonial</a>
                 <a class="dropdown-item <?php if($url == 'academic/calendar'): ?> active <?php endif; ?>" href="<?php echo e(route('academic.calendar')); ?>">Academic Calendar</a>
                 <a class="dropdown-item <?php if($url == 'honorable/guardians'): ?> active <?php endif; ?>" href="<?php echo e(route('honorable.guardians')); ?>">Honorable Guardians</a>
 
@@ -88,8 +87,15 @@
 
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://portal.fenigaacademy.edu.bd/">Login</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle <?php if($url == 'about/committee' || $url == 'history'||$url == 'gallery'|| $url == 'contact'): ?> active <?php endif; ?>" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                Links
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item " href="https://portal.fenigaacademy.edu.bd/">Login</a>
+                <a class="dropdown-item <?php if($url == 'academic/testimonial'): ?> active <?php endif; ?>" href="<?php echo e(route('academic.testimonial')); ?>">Apply For Testimonial</a>
+
+            </div>
           </li>
 
         </ul>

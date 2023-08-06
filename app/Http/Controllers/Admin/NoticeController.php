@@ -19,12 +19,13 @@ class NoticeController extends Controller
 
         $request->validate(
             [
-                'category'      => 'required',
-                'title'         => 'required|string',
-                'description'   => 'nullable',
+                'category'       => 'required',
+                'title'          => 'required|string',
+                'description'    => 'nullable',
                 'image_file'     => 'nullable|array|max:3',
                 'image_file.*'   => 'mimes:jpeg,png,jpg,gif,svg',
-                'pdf_file'      => 'nullable|mimes:pdf',
+                'pdf_file'       => 'nullable|mimes:pdf',
+                'file_sys_ver'   =>'2',
             ],
             [
                 'image_file'    => 'The Image must not have more than 3 items.',

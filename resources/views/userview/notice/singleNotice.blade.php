@@ -29,29 +29,52 @@
                             <h2>{{ $single_notice->title }}</h2>
 
                             <p>@php echo $single_notice->description @endphp</p>
-
-
-                            @php
-                                $file_names = unserialize($single_notice['file_path']);
-                            @endphp
-                            @if(!empty($file_names)){
-
-                                @foreach ($file_names as $key => $value)
+                            @if ($single_notice->file_sys_ver == 1)
                                 @php
-                                    $explode_file = explode('.', $value[0]);
-                                    $extension = end($explode_file);
+                                    $file_name = $single_notice->file_path;
+                                    if (!$single_notice->file_path == null) {
+                                        $file_name = $single_notice->file_path;
+                                    }
+                                    $file_type_explode = explode('.', $file_name);
+                                    $extension = end($file_type_explode);
                                 @endphp
 
-                                @if ($extension == 'jpg' || $explode_file[1] == 'png' || $explode_file[1] == 'jpeg')
-                                    <img src="{{ asset('storage/notice_files') }}/{{ $value[0] }}" alt=""><br>
-                                @endif
-
                                 @if ($extension == 'pdf')
-                                    <iframe src="{{ asset('storage/notice_files') }}/{{ $value[0] }}" width="100%"
-                                        height="600px"></iframe>
+                                    <iframe src="{{ asset('storage/notice_files/' . $single_notice->file_path) }}"
+                                        width="100%" height="600px"></iframe>
                                 @endif
-                            @endforeach
+                                @if ($extension == 'png' || $extension == 'jpg' || $extension == 'jpeg')
+                                    <img src="{{ asset('storage/notice_files/' . $single_notice->file_path) }}"
+                                        alt="" style="overflow:scroll; height:auto; width:auto">
+                                @endif
+                            @endif
 
+
+                            {{-- file system v2 --}}
+
+
+                            @if ($single_notice->file_sys_ver == 2)
+                                @php
+                                    $file_names = unserialize($single_notice['file_path']);
+                                @endphp
+                                @if (!empty($file_names))
+                                    @foreach ($file_names as $key => $value)
+                                        @php
+                                            $explode_file = explode('.', $value[0]);
+                                            $extension = end($explode_file);
+                                        @endphp
+
+                                        @if ($extension == 'jpg' || $explode_file[1] == 'png' || $explode_file[1] == 'jpeg')
+                                            <img src="{{ asset('storage/notice_files') }}/{{ $value[0] }}"
+                                                alt=""><br>
+                                        @endif
+
+                                        @if ($extension == 'pdf')
+                                            <iframe src="{{ asset('storage/notice_files') }}/{{ $value[0] }}"
+                                                width="100%" height="600px"></iframe>
+                                        @endif
+                                    @endforeach
+                                @endif
                             @endif
 
                         </div>

@@ -28,7 +28,7 @@
                                 </div>
                             <?php endif; ?>
 
-                            <form class="pt-4" action="<?php echo e(route('apply.for.testimonial')); ?>" novalidate>
+                            <form class="pt-4" action="<?php echo e(route('apply.for.testimonial')); ?>">
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="row mb-4">
                                     <div class="col">
@@ -205,16 +205,20 @@ unset($__errorArgs, $__bag); ?>
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example1">Exam Name <b
                                                     class="text-danger">*</b></label>
-                                            <input type="text" value="<?php echo e(old('exam_name')); ?> " name="exam_name"
-                                                id="form6Example1"
-                                                class="form-control <?php $__errorArgs = ['exam_name'];
+
+                                            <select class="form-control <?php $__errorArgs = ['exam_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" required />
+unset($__errorArgs, $__bag); ?>"
+                                                name="exam_name" aria-label="Default select example">
+                                                <option selected disabled>Open this select menu</option>
+                                                <option value="1">J.S.C</option>
+                                                <option value="2">S.S.C</option>
+                                            </select>
                                             <?php $__errorArgs = ['exam_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -232,7 +236,8 @@ unset($__errorArgs, $__bag); ?>
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example2">Exam Year <b
                                                     class="text-danger">*</b></label>
-                                            <input type="number" min="1930" max="<?php echo e(date("Y")); ?>" step="1" value="<?php echo e(old('exam_year')); ?> " name="exam_year"
+                                            <input type="number" min="1930" max="<?php echo e(date('Y')); ?>"
+                                                step="1" value="<?php echo e(old('exam_year')); ?> " name="exam_year"
                                                 id="form6Example2"
                                                 class="form-control <?php $__errorArgs = ['exam_year'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -425,16 +430,17 @@ unset($__errorArgs, $__bag); ?>
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example1">GPA <b
                                                     class="text-danger">*</b></label>
-                                            <input type="number" max="5.00" step="0.1" value="<?php echo e(old('gpa')); ?>" name="gpa"
-                                                id="form6Example1" pattern="[0-9]*[.,]?[0-9]*" class="form-control <?php $__errorArgs = ['gpa'];
+                                            <input type="number" max="5.00" step="0.1"
+                                                value="<?php echo e(old('gpa')); ?>" name="gpa" id="form6Example1"
+                                                pattern="[0-9]*[.,]?[0-9]*"
+                                                class="form-control <?php $__errorArgs = ['gpa'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>"
-                                                required />
+unset($__errorArgs, $__bag); ?>" required />
                                             <?php $__errorArgs = ['gpa'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

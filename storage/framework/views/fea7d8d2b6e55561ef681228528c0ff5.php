@@ -183,9 +183,10 @@
     <!-- =====================counter part start=================== -->
     <?php
 
-    $client = new GuzzleHttp\Client();
-    $res = $client->get('https://portal.fenigaacademy.edu.bd/api/student_count');
-    $total_student=$res->getBody();
+        // $client = new GuzzleHttp\Client();
+        // $res = $client->get('https://portal.fenigaacademy.edu.bd/api/student_count');
+        // $total_student = $res->getBody();
+        $total_student=2001;
 
     ?>
     <section id="counter_part">
@@ -664,13 +665,16 @@
             <h3 class="mb-3">Events</h3>
         </div>
         <div class="col-6 text-right">
-            <a class="btn btn-color mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
-                data-slide="prev">
-                <i class="fa fa-arrow-left"></i>
-            </a>
-            <a class="btn btn-color mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                <i class="fa fa-arrow-right"></i>
-            </a>
+            <?php if(count($event_datas) > 3): ?>
+                <a class="btn btn-color mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                    data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-color mb-3 " href="#carouselExampleIndicators2" role="button"
+                    data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            <?php endif; ?>
         </div>
         <div class="col-12">
             <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
