@@ -10,7 +10,17 @@
         </div>
     </section>
     <!-- ======home and banner section finish======= -->
-
+    <?php if($errors->all()): ?>
+    <div class="card">
+      <div class="card-header">
+        <div class="alert alert-danger">
+        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <li><?php echo e($error); ?></li>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
     <!-- ==========Welcome to the University of Dhaka start====== -->
     <section id="welcome-part">
         <div class="container">
@@ -21,6 +31,8 @@
                             <h2 class="text-center tex-danger">Online Apply For Testimonial</h2>
                             <hr>
 
+
+
                             <?php if(session('success_msg')): ?>
                                 <div class="alert alert-success" role="alert">
                                     <?php echo e(session('success_msg')); ?>
@@ -28,7 +40,7 @@
                                 </div>
                             <?php endif; ?>
 
-                            <form class="pt-4" action="<?php echo e(route('apply.for.testimonial')); ?>">
+                            <form class="pt-4" action="<?php echo e(route('apply.for.testimonial')); ?>" >
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="row mb-4">
                                     <div class="col">
@@ -216,8 +228,8 @@ endif;
 unset($__errorArgs, $__bag); ?>"
                                                 name="exam_name" aria-label="Default select example">
                                                 <option selected disabled>Open this select menu</option>
-                                                <option value="1">J.S.C</option>
-                                                <option value="2">S.S.C</option>
+                                                <option value="1" <?php echo e(old('exam_name') == 1 ? "selected" : ""); ?>>JSC</option>
+                                                <option value="2" <?php echo e(old('exam_name') == 2 ? "selected" : ""); ?>>SSC</option>
                                             </select>
                                             <?php $__errorArgs = ['exam_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -232,13 +244,13 @@ unset($__errorArgs, $__bag); ?>
                                         </div>
                                     </div>
 
+
                                     <div class="col">
                                         <div class="form-outline">
-                                            <label class="form-label text-dark" for="form6Example2">Exam Year <b
+                                            <label class="form-label text-dark" for="form6Example2">Exam Year. <b
                                                     class="text-danger">*</b></label>
-                                            <input type="number" min="1930" max="<?php echo e(date('Y')); ?>"
-                                                step="1" value="<?php echo e(old('exam_year')); ?> " name="exam_year"
-                                                id="form6Example2"
+                                            <input type="number" placeholder="YYYY" name="exam_year"
+                                                id="form6Example2" value="<?php echo e(old('exam_year')); ?>"
                                                 class="form-control <?php $__errorArgs = ['exam_year'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -259,6 +271,9 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                         </div>
                                     </div>
+
+
+
                                     <div class="col">
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example2">Group <b
@@ -273,9 +288,9 @@ endif;
 unset($__errorArgs, $__bag); ?>"
                                                 name="group" aria-label="Default select example">
                                                 <option selected disabled>Open this select menu</option>
-                                                <option value="1">Science</option>
-                                                <option value="2">Commerce</option>
-                                                <option value="3">Arts</option>
+                                                <option value="1" <?php echo e(old('group') == 1 ? "selected" : ""); ?> >Science</option>
+                                                <option value="2" <?php echo e(old('group') == 2 ? "selected" : ""); ?>>Commerce</option>
+                                                <option value="3" <?php echo e(old('group') == 3 ? "selected" : ""); ?>>Arts</option>
                                             </select>
                                             <?php $__errorArgs = ['group'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -348,16 +363,19 @@ unset($__errorArgs, $__bag); ?>
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example2">Session <b
                                                     class="text-danger">*</b></label>
-                                            <input type="text" value="<?php echo e(old('session')); ?>" name="session"
-                                                id="form6Example2"
-                                                class="form-control <?php $__errorArgs = ['session'];
+                                                    <select class="form-control <?php $__errorArgs = ['session'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" required />
+unset($__errorArgs, $__bag); ?>"
+                                                    name="session" aria-label="Default select example">
+                                                    <option selected disabled>Open this select menu</option>
+                                                    <option value="1" <?php echo e(old('session') == 1 ? "selected" : ""); ?>>2023-2022</option>
+                                                    <option value="2" <?php echo e(old('session') == 2 ? "selected" : ""); ?>>2021-2022</option>
+                                                </select>
                                             <?php $__errorArgs = ['session'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -373,64 +391,12 @@ unset($__errorArgs, $__bag); ?>
                                 </div>
 
                                 <div class="row mb-4">
-                                    <div class="col">
-                                        <div class="form-outline">
-                                            <label class="form-label text-dark" for="form6Example2">Exam Centre <b
-                                                    class="text-danger">*</b></label>
-                                            <input type="text" value="<?php echo e(old('exam_centre')); ?>" name="exam_centre"
-                                                id="form6Example2"
-                                                class="form-control <?php $__errorArgs = ['exam_centre'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" required />
-                                            <?php $__errorArgs = ['exam_centre'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                <span class="text-danger"><?php echo e($message); ?></span>
-                                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-outline">
-                                            <label class="form-label text-dark" for="form6Example2">Exam Centre Code <b
-                                                    class="text-danger">*</b></label>
-                                            <input type="text" value="<?php echo e(old('exam_centre_code')); ?>"
-                                                name="exam_centre_code" id="form6Example2"
-                                                class="form-control <?php $__errorArgs = ['exam_centre_code'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>"
-                                                required />
-                                            <?php $__errorArgs = ['exam_centre_code'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                <span class="text-danger"><?php echo e($message); ?></span>
-                                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                        </div>
-                                    </div>
+
                                     <div class="col">
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example1">GPA <b
                                                     class="text-danger">*</b></label>
-                                            <input type="number" max="5.00" step="0.1"
+                                            <input type="number" min="1" max="5.00" step="0.1"
                                                 value="<?php echo e(old('gpa')); ?>" name="gpa" id="form6Example1"
                                                 pattern="[0-9]*[.,]?[0-9]*"
                                                 class="form-control <?php $__errorArgs = ['gpa'];
@@ -492,6 +458,11 @@ unset($__errorArgs, $__bag); ?>
             </div>
         </div>
     </section>
+
+    <script>
+        document.querySelector("input[type=number]")
+        .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+     </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\ga-academy-userpanel\resources\views/userview/testimonial/testimonial.blade.php ENDPATH**/ ?>
