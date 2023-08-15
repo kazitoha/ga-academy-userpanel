@@ -10,17 +10,7 @@
         </div>
     </section>
     <!-- ======home and banner section finish======= -->
-    <?php if($errors->all()): ?>
-    <div class="card">
-      <div class="card-header">
-        <div class="alert alert-danger">
-        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <li><?php echo e($error); ?></li>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </div>
-      </div>
-    </div>
-  <?php endif; ?>
+    
     <!-- ==========Welcome to the University of Dhaka start====== -->
     <section id="welcome-part">
         <div class="container">
