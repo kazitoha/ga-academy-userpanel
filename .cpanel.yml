@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/fenigaacadem/demo.fenigaacademy.edu.bd/
+    - /bin/cp * $DEPLOYPATH

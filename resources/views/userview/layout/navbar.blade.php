@@ -88,7 +88,7 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle @if($url == 'about/committee' || $url == 'history'||$url == 'gallery'|| $url == 'contact') active @endif" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle @if($url == 'academic/testimonial') active @endif" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                 Links
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

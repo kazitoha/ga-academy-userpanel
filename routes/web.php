@@ -21,8 +21,16 @@ Route::get('auth/login', function () {
     return redirect('/login');
 });
 
+Route::get('register', function () {
+    return redirect('/');
+});
+Route::get('public/register', function () {
+    return redirect('/');
+});
+
 //dashboard
 Route::get('/', 'App\Http\Controllers\Userpanel\DashboardController@DashboardView');
+
 
 //notice
 Route::get('notice', 'App\Http\Controllers\Userpanel\NoticeController@NoticeView')->name('notice');
