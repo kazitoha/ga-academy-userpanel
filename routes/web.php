@@ -20,7 +20,6 @@ Route::get('/', function () {
 Route::get('auth/login', function () {
     return redirect('/login');
 });
-
 Route::get('register', function () {
     return redirect('/');
 });
@@ -30,7 +29,6 @@ Route::get('public/register', function () {
 
 //dashboard
 Route::get('/', 'App\Http\Controllers\Userpanel\DashboardController@DashboardView');
-
 
 //notice
 Route::get('notice', 'App\Http\Controllers\Userpanel\NoticeController@NoticeView')->name('notice');
@@ -48,7 +46,9 @@ Route::post('search-event', 'App\Http\Controllers\Userpanel\EventController@Sear
 
 //gallery
 Route::get('gallery', 'App\Http\Controllers\Userpanel\GalleryController@GalleryView')->name('gallery');
-
+//সুবর্ণ জয়ন্তী কর্নার
+Route::get('golden-jubilee-independence-corner', 'App\Http\Controllers\Userpanel\IndependenceCornerController@IndependenceCornerView')->name('independence-corner');
+Route::get('bongobondhu/corner', 'App\Http\Controllers\Userpanel\IndependenceCornerController@BongobondhuCornerView')->name('bongobondhu-corner');
 //teacher&staff
 Route::get('teacher&staff', 'App\Http\Controllers\Userpanel\StaffController@StaffView')->name('teacher');
 Route::get('select/office/{id}', 'App\Http\Controllers\Userpanel\StaffController@selectOffice');

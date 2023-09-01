@@ -25,7 +25,6 @@ class NoticeController extends Controller
                 'image_file'     => 'nullable|array|max:3',
                 'image_file.*'   => 'mimes:jpeg,png,jpg,gif,svg',
                 'pdf_file'       => 'nullable|mimes:pdf',
-                'file_sys_ver'   =>'2',
             ],
             [
                 'image_file'    => 'The Image must not have more than 3 items.',
@@ -36,6 +35,7 @@ class NoticeController extends Controller
             'title'         => $request->title,
             'description'   => $request->description,
             'category'      => $request->category,
+            'file_sys_ver'   =>'2',
             'created_at'    => Carbon::now(),
         ]);
 

@@ -37,7 +37,7 @@
      <!-- Navbar part start -->
   <nav class="navbar navbar-expand-lg navbar-light sticky_top">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="{{asset('public_asset/images/logo.jpg')}}" alt="" class="img-fluid" style="width: 79px;"></a>
+      <a class="navbar-brand" href="#"><img src="{{asset('public_asset/Untitled-2.png')}}" alt="" class="img-fluid" style="width: 177px;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -47,6 +47,7 @@
             <a class="nav-link  @if($url == '/') active @endif" href="{{url('/')}}">Home</a>
           </li>
 
+
           <li class="nav-item">
             <a class="nav-link @if($url == 'notice'|| $url == 'single/notice/{id}') active @endif" href="{{route('notice')}}">notice</a>
           </li>
@@ -54,19 +55,24 @@
             <a class="nav-link @if($url == 'news'|| $url == 'single/news/{id}') active @endif" href="{{route('news')}}">News</a>
           </li>
 
+
           <li class="nav-item">
             <a class="nav-link @if($url == 'event' || $url == 'single/event/{id}') active @endif" href="{{route('event')}}">Event</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link @if($url == 'teacher&staff' || $url=='select/office/{id}') active @endif" href="{{route('teacher')}}">Teacher & Staff</a>
-          </li>
+
 
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle @if($url == 'academic/calendar'||$url == 'honorable/guardians') active @endif" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                 Academic
             </a>
+            <li class="nav-item">
+                <a class="nav-link @if($url == 'golden-jubilee-independence-corner') active @endif" href="{{route('independence-corner')}}">সুবর্ণ জয়ন্তী কর্নার</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link @if($url == 'bongobondhu/corner') active @endif" href="{{route('bongobondhu-corner')}}">বঙ্গবন্ধু কর্নার</a>
+              </li>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item @if($url == 'academic/calendar') active @endif" href="{{route('academic.calendar')}}">Academic Calendar</a>
                 <a class="dropdown-item @if($url == 'honorable/guardians') active @endif" href="{{route('honorable.guardians')}}">Honorable Guardians</a>
@@ -76,10 +82,11 @@
 
 
            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle @if($url == 'about/committee' || $url == 'history'||$url == 'gallery'|| $url == 'contact') active @endif" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle @if($url == 'about/committee' || $url == 'history'||$url == 'gallery'|| $url == 'contact' || $url == 'teacher&staff') active @endif" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                 About
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item @if($url == 'teacher&staff' || $url=='select/office/{id}') active @endif" href="{{route('teacher')}}">Teacher & Staff</a>
                 <a class="dropdown-item @if($url == 'about/committee') active @endif" href="{{route('about.committee')}}">About Committee</a>
                 <a class="dropdown-item @if($url == 'history') active @endif" href="{{route('history')}}">About School</a>
                 <a class="dropdown-item @if($url == 'gallery') active @endif" href="{{route('gallery')}}">gallerys</a>
@@ -88,7 +95,7 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle @if($url == 'academic/testimonial') active @endif" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle @if($url == 'about/committee' || $url == 'history'||$url == 'gallery'|| $url == 'contact') active @endif" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                 Links
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

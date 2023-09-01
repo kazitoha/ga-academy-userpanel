@@ -13,7 +13,7 @@ File: Icons Css File
   font-weight: normal;
   font-style: normal; }
 
-.mdi:before,.table-rep-plugin .btn-group.pull-right {
+.mdi:before,
 .mdi-set {
   display: inline-block;
   font: normal normal normal 24px/1 "Material Design Icons";

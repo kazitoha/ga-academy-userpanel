@@ -1,4 +1,4 @@
-AddHandler application/x-httpd-php80 .php
+AddHandler application/x-httpd-php81 .php
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !^public
 RewriteRule ^(.*)$ public/$1 [L]

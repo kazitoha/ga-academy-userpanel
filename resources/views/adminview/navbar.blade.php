@@ -73,7 +73,7 @@
                             </span>
                             <span class="logo-lg">
                                 <img src="{{ asset('public_asset/images/logo.jpg') }}" alt=""
-                                    style="width: 73px; height: 64px;">
+                                    style="width: 73px; height: 64px; margin-top: 5px;">
                             </span>
                         </a>
                     </div>
@@ -86,7 +86,8 @@
                     <!-- App Search-->
                     <form class="app-search d-none d-lg-block">
                         <div class="position-relative">
-                            <input type="text" class="form-control" placeholder="Search...">
+                            <input type="text" id="searchbar" onkeyup="search_animal()" name="search"
+                                class="form-control" placeholder="Search...">
                             <span class="mdi mdi-magnify"></span>
                         </div>
                     </form>
@@ -199,76 +200,78 @@
                 <ul class="metismenu list-unstyled" id="side-menu">
                     <li class="menu-title">Menu</li>
 
-                    <li>
+                    <li class="search_bar">
                         <a href="{{ url('admin/dashboard') }}" class="waves-effect">
                             <i class="mdi mdi-view-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="search_bar">
                         <a href="{{ url('/') }}" class="waves-effect" target="_blank">
                             <i class="mdi mdi-internet-explorer"></i>
                             <span>Visit Website</span>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-note-text"></i>
                             <span>Notice</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('notice.view') }}">Add Notice</a></li>
-                            <li><a href="{{ route('notice.list') }}">Notice List</a></li>
+                            <li class="search_bar"><a href="{{ route('notice.view') }}">Add Notice</a></li>
+                            <li class="search_bar"><a href="{{ route('notice.list') }}">Notice List</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-message-text-clock-outline"></i>
                             <span>Event</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('event.view') }}">Add Event</a></li>
-                            <li><a href="{{ route('event.list') }}">Event List</a></li>
+                            <li class="search_bar"><a href="{{ route('event.view') }}">Add Event</a></li>
+                            <li class="search_bar"><a href="{{ route('event.list') }}">Event List</a></li>
                         </ul>
                     </li>
 
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-folder-information-outline"></i>
                             <span>News</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('news.view') }}">Add News</a></li>
-                            <li><a href="{{ route('news.list') }}">News List</a></li>
+                            <li class="search_bar"><a href="{{ route('news.view') }}">Add News</a></li>
+                            <li class="search_bar"><a href="{{ route('news.list') }}">News List</a></li>
                         </ul>
                     </li>
 
 
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="waves-effect">
                             <i class="mdi mdi-smart-card-outline"></i>
                             <span class="badge badge-pill badge-success float-right">2</span>
                             <span>Teacher & Stuff Info</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('staff.view') }}">Add Teacher & Stuff Info</a></li>
-                            <li><a href="{{ route('staff.list') }}">Teacher & Stuff List</a></li>
+                            <li class="search_bar"><a href="{{ route('staff.view') }}">Add Teacher & Stuff Info</a>
+                            </li>
+                            <li class="search_bar"><a href="{{ route('staff.list') }}">Teacher & Stuff List</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="waves-effect">
                             <i class="mdi mdi-account-multiple-outline"></i>
                             <span class="badge badge-pill badge-success float-right">2</span>
                             <span>Committee</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('committee.view') }}">Add Committee Member </a></li>
-                            <li><a href="{{ route('committee.list') }}">Committee List</a></li>
+                            <li class="search_bar"><a href="{{ route('committee.view') }}">Add Committee Member </a>
+                            </li>
+                            <li class="search_bar"><a href="{{ route('committee.list') }}">Committee List</a></li>
                         </ul>
                     </li>
 
-                    <li>
+                    <li class="search_bar">
                         <a href="{{ route('gallery.view') }}" class="waves-effect">
                             <i class="mdi mdi-image"></i>
                             <span>Gallery</span>
@@ -276,13 +279,13 @@
                     </li>
 
 
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-note-text"></i>
                             <span>Website Settings</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('banner.view') }}">Banner</a></li>
+                            <li class="search_bar"><a href="{{ route('banner.view') }}">Banner</a></li>
                         </ul>
                     </li>
 
@@ -437,6 +440,7 @@
         #img {
             display: none;
         }
+
         #pdf {
             display: none;
         }
@@ -464,6 +468,20 @@
                 pdf.style.display = "block";
             }
 
+        }
+
+        function search_animal() {
+            let input = document.getElementById('searchbar').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('search_bar');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                } else {
+                    x[i].style.display = "list-item";
+                }
+            }
         }
     </script>
     {{-- end notice image or pdf setting script --}}

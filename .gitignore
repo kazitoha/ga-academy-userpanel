@@ -1,9 +1,6 @@
 /node_modules
 /public/hot
 /vendor
-.env
-.env.backup
-.env.production
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

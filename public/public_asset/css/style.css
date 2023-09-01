@@ -96,10 +96,11 @@ navbar part start
   color: #fff;
 }
 
+
 .navbar .nav-item .nav-link {
   padding-left: 16px;
   padding-right: 12px;
-  margin-left: 10px;
+  margin-left: 8px;
   color: #fff;
   font-size: 16px;
   font-weight: 400;
@@ -107,6 +108,10 @@ navbar part start
   position: relative;
   transition: 0.5s;
 
+}
+
+.notice_div {
+    padding-left: 15px;
 }
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
@@ -2987,9 +2992,7 @@ student forgot password part University of Dhaka start
 #student-login-part{
   padding: 80px 0px;
 }
-/* #navbarNavDropdown{
-    padding-left: 157px;
-} */
+
  .login-wrap{
 	width:100%;
 	margin:auto;

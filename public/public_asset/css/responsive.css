@@ -1,243 +1,306 @@
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    #home-part{
-      overflow: hidden;
-      z-index: 1;
-      height:311px;
+    #home-part {
+        overflow: hidden;
+        z-index: 1;
+        height: 311px;
     }
+
     .navbar-light .navbar-toggler {
         color: #ffb606;
         border-color: transparent;
         font-size: 30px;
         background: #fff;
     }
-      .navbar.menu_bg .navbar-toggler,
-      .navbar.menu_bg .navbar-nav{
-        background-color:#0b0b0bf5;
-        box-shadow:#333;
+
+    .navbar.menu_bg .navbar-toggler,
+    .navbar.menu_bg .navbar-nav {
+        background-color: #0b0b0bf5;
+        box-shadow: #333;
         font-size: 27px;
-        color:#fff;
-      }
-      .menu_bg .nav-item .nav-link {
         color: #fff;
     }
-       .navbar-toggler {
+
+    .menu_bg .nav-item .nav-link {
+        color: #fff;
+    }
+
+    .navbar-toggler {
         margin-right: 20px;
-         }
-        .navbar-nav{
-          background: #393b3f;
-          padding: 20px;
-          text-align: center;
-          margin-top: 30px;
-          border-radius: 20px;
-        }
+    }
+
+    .navbar-nav {
+        background: #393b3f;
+        padding: 20px;
+        text-align: center;
+        margin-top: 30px;
+        border-radius: 20px;
+    }
+
     .bakground {
         padding: 80px 0px 80px 0px;
     }
-    .home-content-left, .home-content-right {
+
+    .home-content-left,
+    .home-content-right {
         margin-top: 88px;
         text-align: center;
         width: 373px;
     }
+
     .voice-left-chanecllor {
         margin-bottom: 20px;
 
     }
+
     .owl-theme .owl-nav [class*=owl-] {
         top: -301px;
         background-color: transparent;
     }
+
     .voice-left-chanecllor {
         margin-bottom: 20px;
 
     }
-    .voice-right-chanecllorr, .pro-voice-chanecllor {
+
+    .voice-right-chanecllorr,
+    .pro-voice-chanecllor {
         padding: 40px 22px;
     }
+
     .line-header h2 {
         font-size: 25px;
 
     }
+
     .couter-box {
         margin-bottom: 60px;
     }
+
     .counter-main {
         padding: 74px 0px 50px 0px;
     }
-    .welcome-btn, .view-btn {
+
+    .welcome-btn,
+    .view-btn {
         margin-bottom: 40px;
     }
+
     .event-news {
         margin-bottom: 40px;
     }
+
     #footer-part {
         padding: 70px 0px 0px 0px;
     }
+
     .profile-left-voice {
         margin-bottom: 60px;
     }
+
     .pro-vice-chancellor-title-info h4 {
         font-size: 17px;
     }
+
     .pro-vice-chancellor-title-info h2 {
         font-size: 18px;
     }
-    .breadcrumb a, .breadcrumb li {
+
+    .breadcrumb a,
+    .breadcrumb li {
         font-size: 20px;
     }
+
     .welcome-massage-heading h2 {
         font-size: 26px;
     }
+
     .welcome-massage-images-one img {
         float: none;
-        margin-right:0px;
+        margin-right: 0px;
         height: 400px;
         width: 100%;
         margin-bottom: 20px;
     }
+
     .welcome-massage-content-one img {
         float: none;
-        margin-right:0px;
+        margin-right: 0px;
         margin-bottom: 20px;
     }
+
     .form-control {
         margin-bottom: 10px;
 
     }
+
     .pagination-2 .page-number {
         margin-bottom: 12px;
     }
+
     .useful-link {
         margin-top: 60px;
     }
+
     .notable-single-content-top img {
         float: none;
 
     }
+
     .title-single p {
         font-size: 20px;
     }
+
     .voice-btn {
         float: right;
         margin-top: -17px;
     }
+
     .mission-left .mission-heading h2 {
         text-align: center;
         font-size: 25px;
     }
+
     .mission-left .mission-heading .under-bottom {
         left: 50%;
         transform: translate(-50%);
     }
+
     .mission-button button {
         font-size: 13px;
         float: left;
         padding: 5px 25px;
     }
+
     .mission-left {
         margin-bottom: 30px;
     }
+
     .mission-right img {
         margin-top: -16px;
     }
+
     .mission-left p {
         font-size: 14px;
     }
+
     #admission-part h2 {
         font-size: 22px;
         text-align: center;
     }
+
     .admission-box h3 {
         font-size: 20px;
-        }
-        .admission-box p {
-            font-size: 14px;
-        }
-        .content-join p {
-            font-size: 9px;
-        }
-        .admission-box {
-            margin-top: 25px;
-        }
-        .main button, .forgot-main button{
-            font-size: 14px;
+    }
 
-        }
-        .forgot-main input {
-            width: 100%;
-        }
-        .login-html {
-            height: 145%;
-            padding: 90px 70px 90px 70px;
+    .admission-box p {
+        font-size: 14px;
+    }
 
-        }
-        #student-login-part {
-            padding: 165px 0px;
-        }
-        #voice-Chancellor-page {
-            padding: 100px 0px;
-        }
-        .banner-text h2 {
-            font-size: 25px;
-        }
-        #Vice-Chancellor-link a h3 {
-            font-size: 22px;
-        }
-        .vice-profile-header h2 {
-            font-size: 25px;
-        }
-        .according-image {
-            float: none;
-            margin: 0 auto;
-            margin-left: 46px;
-        }
-        .committee-according-image{
-            padding-left: 63px;
-            padding-bottom: 18px;
-            float: center;
-            width: 243px;
-        }
-        .committee-according-image img{
-            float: center;
-            width:220px;
-        }
-        .according-details {
-            margin-left: -3%;
-            text-align: center;
-            margin-top: 10px !importent;
-        }
-        .according-details-name{
-            padding-top: 157px;
-        }
-        #accordion .accordion-header::before {
-            content: '\002B';
-            font-weight: 700;
-            font-size: 30px;
-            left: 90%;
-            position: absolute;
-        }
-        #accordion h3{
-            padding: 0px 30px;
-            font-size: 14px;
-            text-transform: capitalize;
-        }
+    .content-join p {
+        font-size: 9px;
+    }
 
-        .view-btn-student {
-            top: 112%;
-        }
-        .map-size{
-          width: 372px;
-          height: 432px;
-        }
-        .work-nav ul{
-            margin: 0;
-            padding: 0;
-            display: block;
-            justify-content: center;
-          }
+    .admission-box {
+        margin-top: 25px;
+    }
+
+    .main button,
+    .forgot-main button {
+        font-size: 14px;
+
+    }
+
+    .forgot-main input {
+        width: 100%;
+    }
+
+    .login-html {
+        height: 145%;
+        padding: 90px 70px 90px 70px;
+
+    }
+
+    #student-login-part {
+        padding: 165px 0px;
+    }
+
+    #voice-Chancellor-page {
+        padding: 100px 0px;
+    }
+
+    .banner-text h2 {
+        font-size: 25px;
+    }
+
+    #Vice-Chancellor-link a h3 {
+        font-size: 22px;
+    }
+
+    .vice-profile-header h2 {
+        font-size: 25px;
+    }
+
+    .according-image {
+        float: none;
+        margin: 0 auto;
+        margin-left: 46px;
+    }
+
+    .committee-according-image {
+        padding-left: 63px;
+        padding-bottom: 18px;
+        float: center;
+        width: 243px;
+    }
+
+    .committee-according-image img {
+        float: center;
+        width: 220px;
+    }
+
+    .according-details {
+        margin-left: -3%;
+        text-align: center;
+        margin-top: 10px !importent;
+    }
+
+    .according-details-name {
+        padding-top: 157px;
+    }
+
+    #accordion .accordion-header::before {
+        content: '\002B';
+        font-weight: 700;
+        font-size: 30px;
+        left: 90%;
+        position: absolute;
+    }
+
+    #accordion h3 {
+        padding: 0px 30px;
+        font-size: 14px;
+        text-transform: capitalize;
+    }
+
+    .view-btn-student {
+        top: 112%;
+    }
+
+    .map-size {
+        width: 372px;
+        height: 432px;
+    }
+
+    .work-nav ul {
+        margin: 0;
+        padding: 0;
+        display: block;
+        justify-content: center;
+    }
 
 
- }
+}
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -247,141 +310,179 @@
         font-size: 30px;
         background: #fff;
     }
-      .navbar.menu_bg .navbar-toggler,
-      .navbar.menu_bg .navbar-nav{
-        background-color:#0b0b0bf5;
-        box-shadow:#333;
+
+    .navbar.menu_bg .navbar-toggler,
+    .navbar.menu_bg .navbar-nav {
+        background-color: #0b0b0bf5;
+        box-shadow: #333;
         font-size: 27px;
-        color:#fff;
-      }
-      .menu_bg .nav-item .nav-link {
         color: #fff;
     }
-       .navbar-toggler {
+
+    .menu_bg .nav-item .nav-link {
+        color: #fff;
+    }
+
+    .navbar-toggler {
         margin-right: 20px;
-         }
-        .navbar-nav{
-          background: #393b3f;
-          padding: 20px;
-          text-align: center;
-          margin-top: 30px;
-          border-radius: 20px;
-        }
+    }
+
+    .navbar-nav {
+        background: #393b3f;
+        padding: 20px;
+        text-align: center;
+        margin-top: 30px;
+        border-radius: 20px;
+    }
+
     .bakground {
         padding: 90px 0px 90px 0px;
     }
+
     .owl-theme .owl-nav [class*=owl-] {
         top: -351px;
         background-color: transparent;
     }
+
     .voice-left-chanecllor {
         margin-bottom: 20px;
     }
+
     .line-header h2 {
         font-size: 30px;
     }
+
     .couter-box {
-    margin-bottom: 60px;
-}
-.counter-main {
-    padding: 74px 0px 50px 0px;
-}
-.welcome-btn, .view-btn {
-    margin-bottom: 40px;
-}
-.event-news {
-    margin-bottom: 40px;
-}
-.view-btn-student {
-    top: 120%;
-}
-#footer-part {
-    padding: 70px 0px 0px 0px;
-}
-.contact-box{
-    padding-bottom: 30px;
-}
-.location-info {
-    text-align: center;
-}
-.banner-text h2 {
-    font-size: 30px;
+        margin-bottom: 60px;
+    }
 
-}
-#voice-Chancellor-page {
-    padding:150px 0px;
+    .counter-main {
+        padding: 74px 0px 50px 0px;
+    }
 
-}
-#Vice-Chancellor-link a h3 {
-    font-size: 30px;
-}
-.profile-left-voice {
-    margin-bottom: 60px;
-}
-.pro-vice-chancellor-title-info h4 {
-    font-size: 18px;
+    .welcome-btn,
+    .view-btn {
+        margin-bottom: 40px;
+    }
 
-}
-.pro-vice-chancellor-title-info h2 {
-    font-size: 21px;
-}
-.pro-vice-content h5 {
-    font-size: 16px;
-}
-.welcome-massage-heading h2 {
-    font-size: 26px;
-}
-.welcome-massage-images-one img {
-    float: none;
-    margin-right:0px;
-    height: 400px;
-    width: 100%;
-    margin-bottom: 20px;
-}
-.welcome-massage-content-one img {
-    float: none;
-    margin-right:0px;
-    margin-bottom: 20px;
-}
-.form-control {
-    margin-bottom: 10px;
+    .event-news {
+        margin-bottom: 40px;
+    }
 
-}
-.pagination-2 .page-number {
-    margin-bottom: 12px;
-}
-.useful-link {
-    margin-top: 60px;
-}
-.notable-single-content-top img {
-    float: none;
+    .view-btn-student {
+        top: 120%;
+    }
 
-}
-.title-single p {
-    font-size: 20px;
-}
-.mission-left .mission-heading h2 {
-    text-align: center;
-    font-size: 25px;
-}
-.mission-left .mission-heading .under-bottom {
-    left: 50%;
-    transform: translate(-50%);
-}
-.mission-button button {
-    font-size: 13px;
-    float: left;
-    padding: 5px 25px;
-}
-.mission-left {
-    margin-bottom: 30px;
-}
-.mission-right {
-    margin-top: 45px;
-}
-.map-size{
-      width: 345px;
-      height: 432px;
+    #footer-part {
+        padding: 70px 0px 0px 0px;
+    }
+
+    .contact-box {
+        padding-bottom: 30px;
+    }
+
+    .location-info {
+        text-align: center;
+    }
+
+    .banner-text h2 {
+        font-size: 30px;
+
+    }
+
+    #voice-Chancellor-page {
+        padding: 150px 0px;
+
+    }
+
+    #Vice-Chancellor-link a h3 {
+        font-size: 30px;
+    }
+
+    .profile-left-voice {
+        margin-bottom: 60px;
+    }
+
+    .pro-vice-chancellor-title-info h4 {
+        font-size: 18px;
+
+    }
+
+    .pro-vice-chancellor-title-info h2 {
+        font-size: 21px;
+    }
+
+    .pro-vice-content h5 {
+        font-size: 16px;
+    }
+
+    .welcome-massage-heading h2 {
+        font-size: 26px;
+    }
+
+    .welcome-massage-images-one img {
+        float: none;
+        margin-right: 0px;
+        height: 400px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .welcome-massage-content-one img {
+        float: none;
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
+
+    }
+
+    .pagination-2 .page-number {
+        margin-bottom: 12px;
+    }
+
+    .useful-link {
+        margin-top: 60px;
+    }
+
+    .notable-single-content-top img {
+        float: none;
+
+    }
+
+    .title-single p {
+        font-size: 20px;
+    }
+
+    .mission-left .mission-heading h2 {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .mission-left .mission-heading .under-bottom {
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .mission-button button {
+        font-size: 13px;
+        float: left;
+        padding: 5px 25px;
+    }
+
+    .mission-left {
+        margin-bottom: 30px;
+    }
+
+    .mission-right {
+        margin-top: 45px;
+    }
+
+    .map-size {
+        width: 345px;
+        height: 432px;
     }
 }
 
@@ -393,172 +494,244 @@
         font-size: 30px;
         background: #fff;
     }
-      .navbar.menu_bg .navbar-toggler,
-      .navbar.menu_bg .navbar-nav{
-        background-color:#0b0b0bf5;
-        box-shadow:#333;
+
+    .navbar.menu_bg .navbar-toggler,
+    .navbar.menu_bg .navbar-nav {
+        background-color: #0b0b0bf5;
+        box-shadow: #333;
         font-size: 27px;
-        color:#fff;
-      }
-      .view-btn-student {
-            top: 120%;
-       }
-      .menu_bg .nav-item .nav-link {
         color: #fff;
     }
-       .navbar-toggler {
+
+    .view-btn-student {
+        top: 120%;
+    }
+
+    .menu_bg .nav-item .nav-link {
+        color: #fff;
+    }
+
+    .navbar-toggler {
         margin-right: 20px;
-         }
-        .navbar-nav{
-          background: #393b3f;
-          padding: 20px;
-          text-align: center;
-          margin-top: 30px;
-          border-radius: 20px;
-        }
+    }
+
+    .navbar-nav {
+        background: #393b3f;
+        padding: 20px;
+        text-align: center;
+        margin-top: 30px;
+        border-radius: 20px;
+    }
+
     .bakground {
         padding: 100px 0px 100px 0px;
     }
+
     #home-part .home-content-left h2 {
         font-size: 22px;
-      }
+    }
+
     .owl-theme .owl-nav [class*=owl-] {
         top: -301px;
         background-color: transparent;
     }
-    .voice-right-chanecllorr, .pro-voice-chanecllor {
+
+    .voice-right-chanecllorr,
+    .pro-voice-chanecllor {
         padding: 75px 20px;
-       }
-       .welcome-btn, .view-btn {
+    }
+
+    .welcome-btn,
+    .view-btn {
         margin-bottom: 40px;
     }
+
     .notice-slider {
         margin-top: 30px;
     }
+
     .card {
         margin-bottom: 38px;
     }
+
     .feature-event-news-rights {
         margin-top: 76px;
     }
+
     .feature-images-right-details {
         float: none;
         padding: 30px 66px 0px 166px;
         width: 65%;
     }
+
     .feature-right-images img {
         margin-left: 20px;
 
     }
+
     .feature-event-news-rights {
         padding-bottom: 100px;
     }
+
     .icon-bar {
-         top:90%;
-      }
-      .location-info {
+        top: 90%;
+    }
+
+    .location-info {
         text-align: center;
     }
+
     .banner-text h2 {
         font-size: 40px;
 
     }
+
     #voice-Chancellor-page {
-        padding:150px 0px;
+        padding: 150px 0px;
 
     }
+
     #Vice-Chancellor-link a h3 {
         font-size: 30px;
     }
+
     .profile-left-voice {
         margin-bottom: 60px;
     }
+
     .pro-vice-chancellor-title-info h2 {
         font-size: 20px;
     }
+
     .form-control {
         margin-bottom: 10px;
 
     }
+
     .useful-link {
         margin-top: 60px;
     }
+
     .title-single p {
         font-size: 20px;
 
     }
+
     .mission-left .mission-heading h2 {
         text-align: center;
         font-size: 25px;
     }
+
     .mission-left .mission-heading .under-bottom {
         left: 50%;
         transform: translate(-50%);
     }
+
     .mission-button button {
         font-size: 13px;
         float: left;
         padding: 5px 25px;
     }
+
+
     .mission-left {
         margin-bottom: 30px;
     }
-    .committee-accordion-item{
+
+    .committee-accordion-item {
         width: 690px;
+    }
+
+    .notice_div {
+        padding-left: 15px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1193px;
     }
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .event-heading{
-     height:270px;
-   }
-   .news-info .event-heading h2{
-    font-size:14px;
-
-  }
-  .feature-right-images img {
-    margin-top: 49px;
+    .event-heading {
+        height: 270px;
     }
+
+    .notice_div {
+        padding-left: 15px;
+    }
+
+    .news-info .event-heading h2 {
+        font-size: 14px;
+
+    }
+
+    .feature-right-images img {
+        margin-top: 49px;
+    }
+
     .Vice-Chancellor-Speech-box .pic {
-        width:150px;
+        width: 150px;
         height: 150px;
 
-      }
-      .mission-left .mission-heading h2 {
+    }
+
+    .mission-left .mission-heading h2 {
         text-align: center;
         font-size: 25px;
     }
+
     .mission-left .mission-heading .under-bottom {
         left: 50%;
         transform: translate(-50%);
     }
+
+
     .mission-button button {
         font-size: 13px;
         float: left;
         padding: 5px 25px;
     }
+
+    .notice_div {
+        padding-left: 15px;
+    }
+
     .mission-left {
         margin-bottom: 30px;
     }
-    .map-size{
-      width: 345px;
-      height: 432px;
+
+    .map-size {
+        width: 345px;
+        height: 432px;
     }
- }
+}
 
 /* // Extra large devices (large desktops, 1200px and up) */
 
- @media (max-width: 375px) {
-    .home-content-left{
+@media (max-width: 375px) {
+    .home-content-left {
         width: 320px;
     }
-    .owl-nav-prev{
-      background-color: transparent;
+
+    .owl-nav-prev {
+        background-color: transparent;
     }
 
-    .map-size{
-      width: 345px;
-      height: 432px;
+    .notice_div {
+        padding-left: 15px;
+    }
+
+    .map-size {
+        width: 345px;
+        height: 432px;
     }
 }
