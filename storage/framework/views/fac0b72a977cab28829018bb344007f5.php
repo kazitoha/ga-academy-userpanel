@@ -6,10 +6,9 @@
 
     <section id="home-part">
 
-        <div class="owl-carousel owl-theme home_slider" >
+        <div class="owl-carousel owl-theme home_slider">
             <div class="bakground"
                 style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
-
             </div>
 
             <?php $__currentLoopData = $banner_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $banner_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -20,7 +19,13 @@
 
     </section>
     <!-- ======home and banner section finish======= -->
-    <marquee>A scrolling text created with HTML Marquee element.</marquee>
+    <div>
+        <div class="marquee-teg">
+            <marquee>A scrolling text created with HTML Marquee element.</marquee>
+        </div>
+
+    </div>
+
 
     
 

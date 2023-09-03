@@ -8,10 +8,9 @@
 
     <section id="home-part">
 
-        <div class="owl-carousel owl-theme home_slider" >
+        <div class="owl-carousel owl-theme home_slider">
             <div class="bakground"
                 style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
-
             </div>
 
             @foreach ($banner_datas as $key => $banner_row)
@@ -22,7 +21,13 @@
 
     </section>
     <!-- ======home and banner section finish======= -->
-    <marquee>A scrolling text created with HTML Marquee element.</marquee>
+    <div>
+        <div class="marquee-teg">
+            <marquee>A scrolling text created with HTML Marquee element.</marquee>
+        </div>
+
+    </div>
+
 
     {{-- <marquee>Welcome to Feni G.A. Academy</marquee> --}}
 

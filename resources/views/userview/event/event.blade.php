@@ -4,7 +4,7 @@
     <!-- ======home and banner section start======= -->
     <section id="event-page-banner">
         <div class="container">
-            
+
         </div>
     </section>
   <!-- ======home and banner section finish======= -->
@@ -13,7 +13,7 @@
         <div class="container">
             <form action="{{route('search.event.userview')}}" method="post">
                 @csrf
-                <div class="row pb-5 ">
+                <div class="row pb-0">
                     <div class="col-lg-9">
                         <input type="text" placeholder="Enter program name" class="form-control" value="" name="programName" id="programName" required>
                     </div>
@@ -26,7 +26,7 @@
                 </div>
             </form>
             <div class="row">
-                <div class="blog-content col-lg-12 col-md-6 md-pt-5">
+                <div class="blog-content col-lg-9 col-md-6 md-pt-0">
                     <div class="col-sm-offset-4 col-sm-4">
                         <img class="loadlater" src="images/loaderNew.gif" style="height: 50px;display: none">
                     </div>
@@ -47,14 +47,14 @@
                         </div>
 
                         @endforeach
-                      
+
                         <div class="pagination" style="text-align:center;">
                             <ul class="pagination-2">
                               <div class="container">
                               {{ $all_event->links("pagination::bootstrap-4") }}
-                              </div>  
+                              </div>
                             </ul>
-                          </div>      
+                          </div>
                      </div>
                  </div>
                     <!-- End Blog Items -->

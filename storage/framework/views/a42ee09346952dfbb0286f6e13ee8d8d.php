@@ -1,10 +1,8 @@
-
-
  <?php $__env->startSection('userview-navbar'); ?>
     <!-- ======home and banner section start======= -->
     <section id="event-page-banner">
         <div class="container">
-            
+
         </div>
     </section>
   <!-- ======home and banner section finish======= -->
@@ -13,7 +11,7 @@
         <div class="container">
             <form action="<?php echo e(route('search.event.userview')); ?>" method="post">
                 <?php echo csrf_field(); ?>
-                <div class="row pb-5 ">
+                <div class="row pb-0">
                     <div class="col-lg-9">
                         <input type="text" placeholder="Enter program name" class="form-control" value="" name="programName" id="programName" required>
                     </div>
@@ -26,7 +24,7 @@
                 </div>
             </form>
             <div class="row">
-                <div class="blog-content col-lg-12 col-md-6 md-pt-5">
+                <div class="blog-content col-lg-9 col-md-6 md-pt-0">
                     <div class="col-sm-offset-4 col-sm-4">
                         <img class="loadlater" src="images/loaderNew.gif" style="height: 50px;display: none">
                     </div>
@@ -47,15 +45,15 @@
                         </div>
 
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                      
+
                         <div class="pagination" style="text-align:center;">
                             <ul class="pagination-2">
                               <div class="container">
                               <?php echo e($all_event->links("pagination::bootstrap-4")); ?>
 
-                              </div>  
+                              </div>
                             </ul>
-                          </div>      
+                          </div>
                      </div>
                  </div>
                     <!-- End Blog Items -->
@@ -69,4 +67,5 @@
 
 
   <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\local\resources\views/userview/event/event.blade.php ENDPATH**/ ?>

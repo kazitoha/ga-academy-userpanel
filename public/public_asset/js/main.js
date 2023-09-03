@@ -5,11 +5,14 @@ $('.home_slider').owlCarousel({
     loop: true,
     autoplay: true,
     items:1,
-    autoplayTimeout: 5000,
-    dots: false,
+    autoplayTimeout: 6000,
     nav: true,
     navText: [$('.owl-navigation .owl-nav-prev'), $('.owl-navigation .owl-nav-next')],
+
+
 });
+
+
    // / owl carousle js----
    $('.voice_parts').owlCarousel({
     loop: true,

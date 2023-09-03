@@ -55,7 +55,7 @@
                     width: 150px;">
                 </div>
                 <div class="col-6 text-center m-auto">
-                    <span class="mb-0 mt-2" style="color:#7b7b7b; font-weight: bold; font-size: 30px;">Feni
+                    <span class="mb-0 mt-2" style="color:#666666; font-weight: bold; font-size: 30px;">Feni
                         Girish-Akshay Academy</span>
                 </div>
                 <div class="col-3 text-right m-auto" style="padding-right: 28px;">
@@ -131,6 +131,8 @@
                                 About
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item d-lg-block d-xl-none <?php if($url == 'contact'): ?> active <?php endif; ?>"
+                                    href="<?php echo e(route('contact')); ?>">Contact</a>
                                 <a class="dropdown-item <?php if($url == 'teachers' || $url == 'select/teachers/{id}'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('teacher')); ?>">Teacher</a>
                                 <a class="dropdown-item <?php if($url == 'staff' || $url == 'select/staff/{id}'): ?> active <?php endif; ?>"
@@ -141,8 +143,7 @@
                                     href="<?php echo e(route('history')); ?>">About School</a>
                                 <a class="dropdown-item <?php if($url == 'gallery'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('gallery')); ?>">gallerys</a>
-                                <a class="dropdown-item d-none d-lg-block d-xl-none <?php if($url == 'contact'): ?> active <?php endif; ?>"
-                                    href="<?php echo e(route('contact')); ?>">Contact</a>
+
 
                             </div>
                         </li>
@@ -153,7 +154,7 @@
                                 Links
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item d-none d-lg-block d-xl-none" href="https://portal.fenigaacademy.edu.bd/">Login</a>
+                                <a class="dropdown-item d-lg-block d-xl-none" href="https://portal.fenigaacademy.edu.bd/">Login</a>
                                 <a class="dropdown-item <?php if($url == 'academic/testimonial'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('academic.testimonial')); ?>">Apply For Testimonial</a>
 

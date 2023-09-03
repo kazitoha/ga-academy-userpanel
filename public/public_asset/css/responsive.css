@@ -6,8 +6,13 @@
         height: 242px;
     }
 
+
+    .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+        color: #3aa7a5;
+    }
+
     .navbar-light .navbar-toggler {
-        color: #ffb606;
+        color: #3aa7a5;
         border-color: transparent;
         font-size: 30px;
         background: #fff;
@@ -41,7 +46,7 @@
         color: rgb(38 35 35);
     }
     .home_slider{
-        margin-top: 80px;
+        margin-top: 77px;
     }
 
     .bakground {
@@ -312,7 +317,7 @@
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .navbar-light .navbar-toggler {
-        color: #ffb606;
+        color: #3aa7a5;
         border-color: transparent;
         font-size: 30px;
         background: #fff;
@@ -323,7 +328,7 @@
         color: rgb(38 35 35);
     }
     .home_slider{
-        margin-top: 80px;
+        margin-top: 77px;
     }
 
     .navbar.menu_bg .navbar-toggler,
@@ -504,7 +509,7 @@
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .navbar-light .navbar-toggler {
-        color: #ffb606;
+        color: #3aa7a5;
         border-color: transparent;
         font-size: 30px;
         background: #fff;
@@ -514,7 +519,7 @@
         color: rgb(38 35 35);
     }
     .home_slider{
-        margin-top: 80px;
+        margin-top: 77px;
     }
 
     .navbar.menu_bg .navbar-toggler,
@@ -691,7 +696,7 @@
         color: rgb(38 35 35);
     }
     .home_slider{
-        margin-top: 80px;
+        margin-top: 77px;
     }
 
     .notice_div {
@@ -755,7 +760,7 @@
         color: rgb(38 35 35);
     }
     .home_slider{
-        margin-top: 80px;
+        margin-top: 77px;
     }
 
     .owl-nav-prev {
@@ -779,6 +784,6 @@
         color: rgb(38 35 35);
     }
     .home_slider{
-        margin-top: 80px;
+        margin-top: 77px;
     }
 }
