@@ -8,6 +8,14 @@
 
                 <h4 class="header-title d-flex justify-content-center">Add Teacher & Staff</h4>
 
+                @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </div>
+                    @endif
+
                 <form class="custom-validation" action="{{route('staff.update')}}" method="post" enctype="multipart/form-data" novalidate>
                     @csrf
 
@@ -15,10 +23,22 @@
 
                     <div class="form-group">
                         <label>Category</label>
-                        <select class="form-control form-select @error ('select_category')is-invalid @enderror" aria-label="Default select example" name="select_category" required>
-                      <option @if($staffGetData->category == 1) selected @endif value="1">Teacher</option>
-                      <option @if($staffGetData->category == 2) selected @endif value="2">Staff</option>
-                    </select>
+                        <select class="form-control form-select @error('select_category')is-invalid @enderror"
+                            aria-label="Default select example" name="select_category" onchange="yesnoCheck(this);" onclick="yesnoCheck(this);"
+                            >
+                            <option @if($staffGetData->category == 1) selected @endif value="1">Teacher</option>
+                            <option @if($staffGetData->category == 2) selected @endif value="2">Staff</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="ifYes" style="display: none;">
+                        <label>Groups</label>
+                        <select class="form-control form-select @error('select_category')is-invalid @enderror"
+                            aria-label="Default select example" name="group">
+                            <option @if($staffGetData->group == 1) selected @endif value="1">Science</option>
+                            <option @if($staffGetData->group == 2) selected @endif value="2">Business studies</option>
+                            <option @if($staffGetData->group == 3) selected @endif value="3">Humanities</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -34,7 +54,7 @@
                         <input type="email" name="email"  class="form-control @error ('email')is-invalid @enderror" value="{{$staffGetData->email}}" placeholder="Enter email">
                     </div>
 
-                    
+
                     <label>Phone</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -80,7 +100,7 @@
         </div>
     </div> <!-- end col -->
 
-</div> <!-- end row --> 
+</div> <!-- end row -->
 
 <script type="text/javascript">
     imgInp.onchange = evt => {
@@ -90,6 +110,15 @@
       }
     }
 
+</script>
+<script type="text/javascript">
+    function yesnoCheck(that) {
+        if (that.value == "1") {
+            document.getElementById("ifYes").style.display = "block";
+        } else {
+            document.getElementById("ifYes").style.display = "none";
+        }
+    }
 </script>
 
 @endsection

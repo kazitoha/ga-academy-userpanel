@@ -70,11 +70,11 @@
 
             <div class="col-lg-4">
               <div class="useful-link">
-                  <h3>Teacher & Staff </h3>
+                  <h3>Useful links</h3>
                   <ul>
-                    <li ><a href="{{ url('/teacher&staff') }}"><b @if($url =="teacher&staff") style="color:red" @endif>All</b></li>
-                      <li ><a href="{{ url('select/office/1')}}"><b @if($id ==1) style="color:red" @endif>Teacher</b></a></li>
-                      <li ><a href="{{ url('select/office/2')}}"><b @if($id==2) style="color:red" @endif>Staff</b></a></li>
+                    <li ><a href="{{ url('/notice') }}"><b>Notice</b></li>
+                      <li ><a href="{{ url('news')}}"><b>News</b></a></li>
+                      <li ><a href="{{ url('event')}}"><b>Event</b></a></li>
 
 
                   </ul>

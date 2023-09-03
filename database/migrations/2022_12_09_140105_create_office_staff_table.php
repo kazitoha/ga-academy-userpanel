@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->longText('name')->nullable();
             $table->longText('category')->nullable();
+            $table->longText('group')->nullable();
             $table->longText('designation')->nullable();
             $table->longText('email')->nullable();
             $table->longText('phone')->nullable();

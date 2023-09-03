@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class officeStaff extends Model
 {
     use HasFactory;
-    protected $fillable=['category','name','email', 'phone', 'designation', 'file_path', 'about', 'created_at', 'updated_at'];
+    protected $fillable=['category','group','name','email', 'phone', 'designation', 'file_path', 'about', 'created_at', 'updated_at'];
 
 }

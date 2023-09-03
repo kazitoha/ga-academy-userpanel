@@ -126,16 +126,8 @@
                         </button>
                     </div>
 
-
-
-
                     <div class="dropdown d-inline-block">
-
                         <span class="inline-flex rounded-md">
-
-
-
-
                             <?php if(Laravel\Jetstream\Jetstream::managesProfilePhotos()): ?>
                                 <button type="button" class="btn header-item waves-effect"
                                     id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true"
@@ -200,14 +192,6 @@
                             </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
             </div>
     </div>
 

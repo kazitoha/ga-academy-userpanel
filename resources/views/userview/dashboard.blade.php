@@ -5,28 +5,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 
     <!-- ======home and banner section start======= -->
-    <div class="owl-navigation">
-        <span class="owl-nav-prev"><i class="fas fa-chevron-left"></i></span>
-        <span class="owl-nav-next"><i class="fas fa-chevron-right"></i></i></span>
-    </div>
+
     <section id="home-part">
 
-        <div class="owl-carousel owl-theme home_slider">
+        <div class="owl-carousel owl-theme home_slider" style="margin-top: 121px;">
             <div class="bakground"
                 style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
-                <div class="container">
-                    <div class="row item banner-text-box">
-                        <div class="col-lg-7 col-md-7 col-sm-7">
-                            <div class="home-content-left">
-                                <h4 style="color:white; ">Welcome to the Feni Girish-Akshay Academy.</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-5">
-
-                        </div>
-
-                    </div>
-                </div>
 
             </div>
 
@@ -37,34 +21,14 @@
             @foreach ($banner_datas as $key => $banner_row)
                 <div class="bakground"
                     style="background-image: url(storage/banner/{{ $banner_row->file_path }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
-                    <div class="container">
-                        <div class="row item banner-text-box">
-                            <div class="col-lg-7 col-md-7 col-sm-7">
-                                <div class="home-content-left">
-                                    <h4 style="color:white;">{{ $banner_row->banner_title }}</h4>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
             @endforeach
 
-
-
-
-
-
-
     </section>
     <!-- ======home and banner section finish======= -->
-    <br>
-    {{-- <marquee>Welcome to Feni G.A. Academy</marquee> --}}
+    <marquee>A scrolling text created with HTML Marquee element.</marquee>
 
+    {{-- <marquee>Welcome to Feni G.A. Academy</marquee> --}}
 
     <!-- =============Vice Chancellor and pro Vice Chancellor section strat============= -->
 
@@ -188,7 +152,7 @@
         // $client = new GuzzleHttp\Client();
         // $res = $client->get('https://portal.fenigaacademy.edu.bd/api/student_count');
         // $total_student = $res->getBody();
-        $total_student=2001;
+        $total_student = 2001;
 
     @endphp
     <section id="counter_part">
@@ -213,11 +177,13 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
-                        <div class="couter-box">
-                            <i class="fas fa-user-shield"></i>
-                            <h1><span class="counter">3</span></h1>
-                            <h3>Total Groups</h3>
-                        </div>
+                        <a href="{{ route('group.view') }}">
+                            <div class="couter-box">
+                                <i class="fas fa-user-shield"></i>
+                                <h1><span class="counter">3</span></h1>
+                                <h3>Total Groups</h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                         <div class="couter-box">

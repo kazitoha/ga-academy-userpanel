@@ -12,11 +12,17 @@ use App\Models\officeStaff;
 
 class DashboardController extends Controller
 {
-    function DashboardView(){
-      $officeStaff=officeStaff::get()->where("category","=", 1)->count();
-      $notice_data=notices::take(10)->orderBy('id','DESC')->get();
-      $event_datas=event::take(9)->orderBy('id','DESC')->get();
-      $banner_datas=banner::take(3)->orderBy('id','DESC')->get();
-      return view('userview.dashboard',compact('notice_data','event_datas','banner_datas','officeStaff'));
+    function DashboardView()
+    {
+        $officeStaff = officeStaff::get()->where("category", "=", 1)->count();
+        $notice_data = notices::take(10)->orderBy('id', 'DESC')->get();
+        $event_datas = event::take(9)->orderBy('id', 'DESC')->get();
+        $banner_datas = banner::take(3)->orderBy('id', 'DESC')->get();
+        return view('userview.dashboard', compact('notice_data', 'event_datas', 'banner_datas', 'officeStaff'));
+    }
+
+    function group()
+    {
+        return view('userview.group');
     }
 }

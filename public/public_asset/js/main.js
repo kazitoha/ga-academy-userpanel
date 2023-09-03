@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     // / owl carousle js----
 $('.home_slider').owlCarousel({
     loop: true,
@@ -37,7 +37,7 @@ $('.owl-news').owlCarousel({
       0:{
           items:1
       },
-     
+
       600:{
           items:1
       },
@@ -128,7 +128,7 @@ $('.voice-owl').owlCarousel({
 
 
 
-  
+
 //    stickytop menu
 $(window).scroll(function(){
     var scrolling=$(this).scrollTop();
@@ -140,10 +140,10 @@ $(window).scroll(function(){
            sticky .removeClass('menu_bg');
      }
   });
-  
+
   // Add scrollspy to <body>
   $('body').scrollspy({target: ".navbar", offset: 150});
-  
+
   var html_body = $('html, body');
   $('nav a').on('click', function () {
   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -166,14 +166,14 @@ $(window).scroll(function(){
       $('.back-to-top').fadeOut();
     }
   });
- 
+
   $('.back-to-top').click(function() {
     $('html, body').animate({
       scrollTop: 0
     },2000);
     return false;
   });
- 
+
   // counter js start---
   $('.counter').counterUp({
     delay: 10,
@@ -181,7 +181,7 @@ $(window).scroll(function(){
   });
   $('.counter').addClass('animated fadeInDownBig');
   $('h3').addClass('animated fadeIn');
-    
+
 
   // venobox jss
 $('.venobox').venobox({

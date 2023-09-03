@@ -50,13 +50,16 @@ Route::get('gallery', 'App\Http\Controllers\Userpanel\GalleryController@GalleryV
 Route::get('golden-jubilee-independence-corner', 'App\Http\Controllers\Userpanel\IndependenceCornerController@IndependenceCornerView')->name('independence-corner');
 Route::get('bongobondhu/corner', 'App\Http\Controllers\Userpanel\IndependenceCornerController@BongobondhuCornerView')->name('bongobondhu-corner');
 //teacher&staff
-Route::get('teacher&staff', 'App\Http\Controllers\Userpanel\StaffController@StaffView')->name('teacher');
-Route::get('select/office/{id}', 'App\Http\Controllers\Userpanel\StaffController@selectOffice');
+Route::get('staff', 'App\Http\Controllers\Userpanel\TeacherStaffController@StaffView')->name('staff');
+Route::get('select/teacher/{id}', 'App\Http\Controllers\Userpanel\TeacherStaffController@selectTeacher');
+Route::get('teachers', 'App\Http\Controllers\Userpanel\TeacherStaffController@teachers')->name('teacher');
 //testimonial
 Route::get('academic/testimonial', 'App\Http\Controllers\Userpanel\TestimonialController@TestimonialView')->name('academic.testimonial');
 Route::get('academic/apply/testimonial', 'App\Http\Controllers\Userpanel\TestimonialController@TestimonialStore')->name('apply.for.testimonial');
 //calendar
 Route::get('academic/calendar', 'App\Http\Controllers\Userpanel\AcademicController@AcademicCalendarView')->name('academic.calendar');
+// group
+Route::get('group', 'App\Http\Controllers\Userpanel\DashboardController@group')->name('group.view');
 
 
 //guardians
