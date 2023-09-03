@@ -8,15 +8,11 @@
 
     <section id="home-part">
 
-        <div class="owl-carousel owl-theme home_slider" style="margin-top: 121px;">
+        <div class="owl-carousel owl-theme home_slider" style="margin-top: 57px;">
             <div class="bakground"
                 style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
 
             </div>
-
-
-
-
 
             @foreach ($banner_datas as $key => $banner_row)
                 <div class="bakground"

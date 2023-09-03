@@ -6,15 +6,11 @@
 
     <section id="home-part">
 
-        <div class="owl-carousel owl-theme home_slider" style="margin-top: 121px;">
+        <div class="owl-carousel owl-theme home_slider" style="margin-top: 57px;">
             <div class="bakground"
                 style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
 
             </div>
-
-
-
-
 
             <?php $__currentLoopData = $banner_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $banner_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="bakground"

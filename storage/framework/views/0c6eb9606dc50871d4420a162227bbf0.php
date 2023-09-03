@@ -46,8 +46,8 @@
 
 
 
-    <div class="main-nav sticky_top d-md-block d-md-none d-sm-none" style="position: fixed">
-        <div class="d-sm-none d-md-block d-md-none d-lg-block" style="background: #f8f7f7">
+    <div class="sticky_top" style="position: fixed">
+        <div class="d-none d-lg-block d-xl-block" style="background: #f8f7f7">
             <div class="row">
                 <div class="col-3 m-auto">
                     <img src="<?php echo e(asset('public_asset/images/Untitled-2.png')); ?>" alt="" class="img-fluid"
@@ -67,6 +67,12 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
+                <a class="navbar-brand navbar-mobile-logo" href="#"><img src="<?php echo e(asset('public_asset/images/Untitled-2.png')); ?>"
+                    alt="" class="img-fluid" style="width: 162px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="collapse navbar-collapse justify-content-md-right" id="navbarNavDropdown">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">

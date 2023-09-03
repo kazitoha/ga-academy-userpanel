@@ -15,14 +15,14 @@
 
     .navbar.menu_bg .navbar-toggler,
     .navbar.menu_bg .navbar-nav {
-        background-color: #0b0b0bf5;
+        background-color: #efefef;
         box-shadow: #333;
         font-size: 27px;
         color: #fff;
     }
 
     .menu_bg .nav-item .nav-link {
-        color: #fff;
+        color: #060606;
     }
 
     .navbar-toggler {
@@ -30,7 +30,7 @@
     }
 
     .navbar-nav {
-        background: #393b3f;
+        background: #efefef;
         padding: 20px;
         text-align: center;
         margin-top: 30px;
@@ -313,14 +313,14 @@
 
     .navbar.menu_bg .navbar-toggler,
     .navbar.menu_bg .navbar-nav {
-        background-color: #0b0b0bf5;
+        background-color: #efefef;
         box-shadow: #333;
         font-size: 27px;
         color: #fff;
     }
 
     .menu_bg .nav-item .nav-link {
-        color: #fff;
+        color: #060606;
     }
 
     .navbar-toggler {
@@ -328,7 +328,7 @@
     }
 
     .navbar-nav {
-        background: #393b3f;
+        background: #efefef;
         padding: 20px;
         text-align: center;
         margin-top: 30px;
@@ -497,7 +497,7 @@
 
     .navbar.menu_bg .navbar-toggler,
     .navbar.menu_bg .navbar-nav {
-        background-color: #0b0b0bf5;
+        background-color: #efefef;
         box-shadow: #333;
         font-size: 27px;
         color: #fff;
@@ -508,7 +508,7 @@
     }
 
     .menu_bg .nav-item .nav-link {
-        color: #fff;
+        color: #060606;
     }
 
     .navbar-toggler {
@@ -516,7 +516,7 @@
     }
 
     .navbar-nav {
-        background: #393b3f;
+        background: #efefef;
         padding: 20px;
         text-align: center;
         margin-top: 30px;
@@ -733,5 +733,10 @@
     .map-size {
         width: 345px;
         height: 432px;
+    }
+}
+@media (max-width: 991px){
+    .navbar-mobile-logo{
+        display: block;
     }
 }
