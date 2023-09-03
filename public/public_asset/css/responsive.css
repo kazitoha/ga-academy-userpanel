@@ -3,7 +3,7 @@
     #home-part {
         overflow: hidden;
         z-index: 1;
-        height: 311px;
+        height: 242px;
     }
 
     .navbar-light .navbar-toggler {
@@ -35,6 +35,13 @@
         text-align: center;
         margin-top: 30px;
         border-radius: 20px;
+    }
+
+    .navbar .nav-item .nav-link{
+        color: rgb(38 35 35);
+    }
+    .home_slider{
+        margin-top: 80px;
     }
 
     .bakground {
@@ -311,6 +318,14 @@
         background: #fff;
     }
 
+
+    .navbar .nav-item .nav-link{
+        color: rgb(38 35 35);
+    }
+    .home_slider{
+        margin-top: 80px;
+    }
+
     .navbar.menu_bg .navbar-toggler,
     .navbar.menu_bg .navbar-nav {
         background-color: #efefef;
@@ -495,6 +510,13 @@
         background: #fff;
     }
 
+    .navbar .nav-item .nav-link{
+        color: rgb(38 35 35);
+    }
+    .home_slider{
+        margin-top: 80px;
+    }
+
     .navbar.menu_bg .navbar-toggler,
     .navbar.menu_bg .navbar-nav {
         background-color: #efefef;
@@ -665,6 +687,13 @@
         height: 270px;
     }
 
+    .navbar .nav-item .nav-link{
+        color: rgb(38 35 35);
+    }
+    .home_slider{
+        margin-top: 80px;
+    }
+
     .notice_div {
         padding-left: 15px;
     }
@@ -722,6 +751,13 @@
         width: 320px;
     }
 
+    .navbar .nav-item .nav-link{
+        color: rgb(38 35 35);
+    }
+    .home_slider{
+        margin-top: 80px;
+    }
+
     .owl-nav-prev {
         background-color: transparent;
     }
@@ -738,5 +774,11 @@
 @media (max-width: 991px){
     .navbar-mobile-logo{
         display: block;
+    }
+    .navbar .nav-item .nav-link{
+        color: rgb(38 35 35);
+    }
+    .home_slider{
+        margin-top: 80px;
     }
 }

@@ -141,7 +141,7 @@
                                     href="{{ route('history') }}">About School</a>
                                 <a class="dropdown-item @if ($url == 'gallery') active @endif"
                                     href="{{ route('gallery') }}">gallerys</a>
-                                <a class="dropdown-item @if ($url == 'contact') active @endif"
+                                <a class="dropdown-item d-none d-lg-block d-xl-none @if ($url == 'contact') active @endif"
                                     href="{{ route('contact') }}">Contact</a>
 
                             </div>
@@ -153,7 +153,7 @@
                                 Links
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item " href="https://portal.fenigaacademy.edu.bd/">Login</a>
+                                <a class="dropdown-item d-none d-lg-block d-xl-none" href="https://portal.fenigaacademy.edu.bd/">Login</a>
                                 <a class="dropdown-item @if ($url == 'academic/testimonial') active @endif"
                                     href="{{ route('academic.testimonial') }}">Apply For Testimonial</a>
 

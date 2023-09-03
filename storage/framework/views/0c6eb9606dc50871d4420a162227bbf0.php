@@ -141,7 +141,7 @@
                                     href="<?php echo e(route('history')); ?>">About School</a>
                                 <a class="dropdown-item <?php if($url == 'gallery'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('gallery')); ?>">gallerys</a>
-                                <a class="dropdown-item <?php if($url == 'contact'): ?> active <?php endif; ?>"
+                                <a class="dropdown-item d-none d-lg-block d-xl-none <?php if($url == 'contact'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('contact')); ?>">Contact</a>
 
                             </div>
@@ -153,7 +153,7 @@
                                 Links
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item " href="https://portal.fenigaacademy.edu.bd/">Login</a>
+                                <a class="dropdown-item d-none d-lg-block d-xl-none" href="https://portal.fenigaacademy.edu.bd/">Login</a>
                                 <a class="dropdown-item <?php if($url == 'academic/testimonial'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('academic.testimonial')); ?>">Apply For Testimonial</a>
 
