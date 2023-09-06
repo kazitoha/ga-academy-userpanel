@@ -86,8 +86,8 @@
                     <!-- App Search-->
                     <form class="app-search d-none d-lg-block">
                         <div class="position-relative">
-                            <input type="text" id="searchbar" onkeyup="search_animal()" name="search"
-                                class="form-control" placeholder="Search...">
+                            <input type="text" id="searchbar" onkeyup="search()" name="search" class="form-control"
+                                placeholder="Search...">
                             <span class="mdi mdi-magnify"></span>
                         </div>
                     </form>
@@ -215,6 +215,18 @@
                         <ul class="sub-menu" aria-expanded="false">
                             <li class="search_bar"><a href="{{ route('event.view') }}">Add Event</a></li>
                             <li class="search_bar"><a href="{{ route('event.list') }}">Event List</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="search_bar">
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="mdi mdi-message-text-clock-outline"></i>
+                            <span>Independence Corner</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li class="search_bar"><a href="{{ route('GoldenJubileeIndependenceCorner') }}">সুবর্ণ
+                                    জয়ন্তী কর্নার</a></li>
+                            <li class="search_bar"><a href="{{ route('bongobondhu.corner') }}">বঙ্গবন্ধু কর্নার</a></li>
                         </ul>
                     </li>
 
@@ -351,11 +363,10 @@
     <script src="{{ asset('admin_asset/assets/libs/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ asset('admin_asset/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('admin_asset/assets/libs/node-waves/waves.min.js') }}"></script>
+    <script src="{{ asset('admin_asset/assets/libs/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('admin_asset/assets/js/pages/form-editor.init.js') }}">
 
-
-
-    <!-- apexcharts -->
-    <script src="{{ asset('admin_asset/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+    <script src = "{{ asset('admin_asset/assets/libs/apexcharts/apexcharts.min.js') }}" >
 
     <script src="{{ asset('admin_asset/assets/libs/slick-slider/slick/slick.min.js') }}"></script>
 
@@ -378,8 +389,6 @@
     <script src="{{ asset('admin_asset/assets/libs/RWD-Table-Patterns/js/rwd-table.min.js') }}"></script>
     <!-- Init js -->
     <script src="{{ asset('admin_asset/assets/js/pages/table-responsive.init.js') }}"></script>
-
-
 
 
     <script src="{{ asset('admin_asset/assets/js/app.js') }}"></script>
@@ -454,7 +463,7 @@
 
         }
 
-        function search_animal() {
+        function search() {
             let input = document.getElementById('searchbar').value
             input = input.toLowerCase();
             let x = document.getElementsByClassName('search_bar');

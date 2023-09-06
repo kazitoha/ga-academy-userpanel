@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('banner_title')->nullable();
             $table->longText('banner_description')->nullable();
             $table->string('file_path')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

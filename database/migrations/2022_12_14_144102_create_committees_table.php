@@ -21,6 +21,7 @@ return new class extends Migration
             $table->longText('designation')->nullable();
             $table->string('file_path')->nullable();
             $table->longText('about')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

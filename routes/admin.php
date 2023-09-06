@@ -97,6 +97,13 @@ Route::prefix('/admin')
 
 
 
+   //independenceCorner
+
+   Route::get('Golden-Jubilee-Independence-Corner','App\Http\Controllers\Admin\IndependenceCornerController@GoldenJubileeIndependenceCorner')->name('GoldenJubileeIndependenceCorner');
+   Route::post('Golden-Jubilee-Independence-Corner/store','App\Http\Controllers\Admin\IndependenceCornerController@GoldenJubileeIndependenceStore')->name('GoldenJubileeIndependenceCorner.store');
+   //বঙ্গবন্ধু কর্নার
+   Route::get('bongobondhu/corner','App\Http\Controllers\Admin\IndependenceCornerController@Bongobondhu')->name('bongobondhu.corner');
+   Route::post('bongobondhu/store','App\Http\Controllers\Admin\IndependenceCornerController@BongobondhuStore')->name('bongobondhu.store');
 
 
    // office and stuff

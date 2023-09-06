@@ -39,6 +39,7 @@
                                             <td>
                                                 <textarea cols="120" class="form-control">{{ $value['title'] }}</textarea>
                                             </td>
+
                                             {{-- <td>
                                                 <textarea class="form-control">{{ $value['description'] }}</textarea>
                                             </td> --}}

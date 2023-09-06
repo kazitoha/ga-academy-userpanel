@@ -19,6 +19,7 @@ return new class extends Migration
             $table->longText('event_date')->nullable();
             $table->longText('about_event')->nullable();
             $table->string('file_path')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

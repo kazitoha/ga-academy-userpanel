@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('title')->nullable();
             $table->longText('description')->nullable();
             $table->longText('file_path')->nullable();
+            $table->longText('slug')->nullable();
             $table->longText('category')->default(2);
             $table->timestamps();
         });

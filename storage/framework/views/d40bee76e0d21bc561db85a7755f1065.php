@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('adminpanel-navbar'); ?>
     <div class="row">
         <div class="container">
@@ -39,6 +37,7 @@
                                             <td>
                                                 <textarea cols="120" class="form-control"><?php echo e($value['title']); ?></textarea>
                                             </td>
+
                                             
                                             <td><?php echo e($value['created_at']); ?></td>
                                             <td>

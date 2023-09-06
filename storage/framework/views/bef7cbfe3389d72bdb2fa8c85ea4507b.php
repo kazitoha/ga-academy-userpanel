@@ -24,7 +24,8 @@
                             <div class="under-bottom"></div>
                         </div>
                         <div class="mission-para mt-5">
-                          <?php  echo $GoldenJubileeData->description ?>
+                          <?php echo $GoldenJubileeData->description; ?>
+
                         </div>
                         <div
                             style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); box-sizing: inherit; margin: 0px; padding: 5px 10px; background-color: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204);">
@@ -45,4 +46,4 @@
     <!-- ==========about history outline University of Dhaka finish========== -->
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\local\resources\views/userview/independenceCorner/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\local\resources\views/userview/independenceCorner/GoldenJubileeIndependenceCorner.blade.php ENDPATH**/ ?>

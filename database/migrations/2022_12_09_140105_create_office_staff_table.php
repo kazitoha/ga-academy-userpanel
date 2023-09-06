@@ -23,6 +23,7 @@ return new class extends Migration
             $table->longText('phone')->nullable();
             $table->string('file_path')->nullable();
             $table->longText('about')->nullable();
+            $table->longText('slug')->nullable();
             $table->timestamps();
         });
     }

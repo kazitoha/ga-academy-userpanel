@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\Userpanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\bongobondhu;
+use App\Models\GoldenJubileeIndependence;
 use Illuminate\Http\Request;
 
 class IndependenceCornerController extends Controller
 {
     function IndependenceCornerView(){
-        return view('userview.independenceCorner.index');
+        $GoldenJubileeData = GoldenJubileeIndependence::find(1);
+        return view('userview.independenceCorner.GoldenJubileeIndependenceCorner',compact('GoldenJubileeData'));
     }
 
     function BongobondhuCornerView(){
-        return view('userview.independenceCorner.bongobondhu');
+        $bongobondhuData = bongobondhu::find(1);
+        return view('userview.independenceCorner.bongobondhu',compact('bongobondhuData'));
     }
 }

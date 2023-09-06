@@ -8,28 +8,22 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('golden_jubilee_independences', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->string('description');
-            $table->string('file_path');
-            $table->string('slug');
+            $table->string('slug')->default('golden_jubilee_independences');
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('golden_jubilee_independences');
     }
 };
