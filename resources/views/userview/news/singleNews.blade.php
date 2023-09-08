@@ -40,7 +40,7 @@
 
                  @foreach($news_paginate as $value)
                             <div class="right-slide-content text-center">
-                                <a href="{{route('single.news',base64_encode($value->id))}}"><h5>{{$value->title}}</h5></a>
+                                <a href="{{route('single.news',$value->slug)}}"><h5>{{$value->title}}</h5></a>
                                 <span>Published: {{$value->created_at->format('d-M-Y')}}</span>
                             </div>
                  @endforeach

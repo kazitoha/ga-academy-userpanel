@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class news extends Model
 {
     use HasFactory;
-    protected $fillable =['title','description','file_path'];
+    protected $fillable =['title','description','file_path','slug'];
 
 }

@@ -162,14 +162,14 @@ navbar part start
 /* <!-- ======home and banner section start======= --> */
 #home-part{
   overflow: hidden;
-  z-index: 1;
-  height:450px;
+  z-index: 999;
 }
 .bakground{
-  padding:194px 0px;
-  position: relative;
+  padding:194px 0px 0px 0px;
+  height: 480px;
+  /* position: relative; */
 }
-.bakground::before{
+/* .bakground::before{
   content:'';
   position:absolute;
   width: 100%;
@@ -177,7 +177,7 @@ navbar part start
   background: rgb(46 43 43 / 70%);
   left: 0;
   top: 0;
-}
+} */
 .home-content-left, .home-content-right{
   margin-top: 40px;
   width:664px;
@@ -234,7 +234,7 @@ navbar part start
 background: #E84A5F;
 }
 .owl-theme .owl-dots, .owl-theme .owl-nav {
-margin-top: 149px;
+margin-top: -23px;
 z-index: 999;
 position: relative;
 }

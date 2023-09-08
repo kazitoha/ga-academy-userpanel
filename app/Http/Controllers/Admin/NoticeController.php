@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\notices;
 use Carbon\Carbon;
 use Image;
@@ -14,13 +15,14 @@ class NoticeController extends Controller
     {
         return view('adminview/notice/NoticeViewPage');
     }
+
     function NoticeStore(Request $request)
     {
 
         $request->validate(
             [
                 'category'       => 'required',
-                'title'          => 'required|string',
+                'title'          => 'required|string|unique:notices',
                 'description'    => 'nullable',
                 'image_file'     => 'nullable|array|max:3',
                 'image_file.*'   => 'mimes:jpeg,png,jpg,gif,svg',
@@ -35,7 +37,8 @@ class NoticeController extends Controller
             'title'         => $request->title,
             'description'   => $request->description,
             'category'      => $request->category,
-            'file_sys_ver'   =>'2',
+            'slug'          => Str::slug($request->title),
+            'file_sys_ver'  => '2',
             'created_at'    => Carbon::now(),
         ]);
 
@@ -95,14 +98,14 @@ class NoticeController extends Controller
     function NoticeUpdate(Request $request)
     {
         $request->validate(
-            [
+
                 'category'      => 'required',
                 'title'         => 'required|string',
                 'description'   => 'nullable',
                 'image_file'     => 'nullable|array|max:3',
                 'image_file.*'   => 'mimes:jpeg,png,jpg,gif,svg',
                 'pdf_file'      => 'nullable|mimes:pdf',
-            ],
+            ,
             [
                 'image_file'    => 'The Image must not have more than 3 items.',
             ]
@@ -112,10 +115,11 @@ class NoticeController extends Controller
         $update_id = base64_decode($request->update_id);
 
         notices::find($update_id)->update([
-            'title'   => $request->title,
+            'title'       => $request->title,
             'description' => $request->description,
-            'category'      => $request->category,
-            'created_at' => Carbon::now(),
+            'category'    => $request->category,
+            'slug'          => Str::slug($request->title),
+            'created_at'  => Carbon::now(),
         ]);
 
 

@@ -12,12 +12,14 @@ class NoticeController extends Controller
         $notice=notices::orderBy('id','DESC')->Paginate(10);
         return view('userview/notice/notice',compact('notice'));
     }
-    function NoticeSingle($id){
-        $id=base64_decode($id);
-        $single_notice=notices::find($id);
+
+    function NoticeSingle($slug){
+        $single_notice=notices::where('slug',$slug)->get();
+        $single_notice=$single_notice[0];
         $notice_paginate=notices::orderBy('id', 'desc')->paginate(10);
         return view('userview/notice/singleNotice',compact('single_notice','notice_paginate'));
     }
+
     function NoticeCategory($id){
         $notice=notices::where('category', $id)->Paginate(10);
         return view('userview/notice/notice',compact('notice','id'));

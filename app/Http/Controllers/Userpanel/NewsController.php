@@ -14,10 +14,10 @@ class NewsController extends Controller
         $allNews = news::orderBy('id', 'desc')->paginate(10);
         return view('userview.news.news', compact('allNews'));
     }
-    function SingleNews($id)
+    function SingleNews($slug)
     {
-        $id = base64_decode($id);
-        $single_news = news::find($id);
+        $single_news = news::where('slug',$slug)->get();
+        $single_news = $single_news[0];
         $news_paginate = news::paginate(10);
         return view('userview.news.singleNews', compact('single_news', 'news_paginate'));
     }

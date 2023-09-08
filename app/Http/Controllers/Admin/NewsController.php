@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\news;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Models\news;
 use Carbon\Carbon;
 use Image;
 
@@ -18,13 +19,14 @@ class NewsController extends Controller
     {
         //   dd($request->all());
         $request->validate([
-            'title'         => 'required|string',
+            'title'         => 'required|string|unique:news',
             'description'   => 'nullable',
             'file_name'     => 'nullable|mimes:jpeg,png,jpg,gif,svg,pdf|max:5120',
         ]);
         $last_insert_id = news::insertGetId([
             'title'         => $request->title,
             'description'   => $request->description,
+            'slug'          => Str::slug($request->title),
             'created_at'    => Carbon::now(),
         ]);
 
@@ -78,9 +80,10 @@ class NewsController extends Controller
         $update_id = base64_decode($request->update_id);
 
         news::find($update_id)->update([
-            'title'   => $request->title,
+            'title'       => $request->title,
             'description' => $request->description,
-            'created_at' => Carbon::now(),
+            'slug'        => Str::slug($request->title),
+            'created_at'  => Carbon::now(),
         ]);
 
 

@@ -13,9 +13,9 @@ class EventController extends Controller
         $all_event=event::orderBy('id','DESC')->Paginate(10);
         return view('userview/event/event',compact('all_event'));
     }
-    function SingleEvent($id){
-      $id=base64_decode($id);
-      $single_event_data=event::find($id);
+    function SingleEvent($slug){
+      $single_event_data=event::where('slug',$slug)->get();
+      $single_event_data=$single_event_data[0];
       return view('userview/event/singleEvent',compact('single_event_data'));
     }
 
@@ -32,7 +32,7 @@ class EventController extends Controller
         ->orWhere('event_date','LIKE','%'.$searchinput.'%')
         ->Paginate();
       }
-      
+
 
 
       return view('userview/event/event',compact('all_event'));

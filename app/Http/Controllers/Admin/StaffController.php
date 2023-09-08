@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\officeStaff;
 use Carbon\Carbon;
 use Image;
@@ -125,6 +126,7 @@ class StaffController extends Controller
             'email'          => $request->email,
             'phone'          => $request->phone,
             'about'          => $request->about,
+
 
         ]);
 

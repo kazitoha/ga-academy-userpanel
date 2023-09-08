@@ -85,7 +85,7 @@
 
                             <?php $__currentLoopData = $notice_paginate; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="right-slide-content text-center">
-                                    <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>">
+                                    <a href="<?php echo e(route('single.notice', $value->slug)); ?>">
                                         <h5><?php echo e($value->title); ?></h5>
                                     </a>
                                     <span>Published: <?php echo e($value->created_at->format('d-M-Y')); ?></span>

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class notices extends Model
 {
     use HasFactory;
-    protected $fillable =['title','description','file_path','category'];
+    protected $fillable =['title','description','file_path','slug','category'];
 }

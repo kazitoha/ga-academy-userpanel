@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('userview-navbar'); ?>
     <!-- ======home and banner section start welcome_message======= -->
     <section id="Notice-view-banner">
@@ -37,7 +35,7 @@
                                 <ul>
                                     <li class="date-time"><?php echo e($value->created_at->format('d-M-Y')); ?></li>
                                     <li class="Notice-btn-item"><a
-                                        href="<?php echo e(route('single.news', base64_encode($value->id))); ?>" target="blank"
+                                        href="<?php echo e(route('single.news', $value->slug)); ?>" target="blank"
                                         class="btn-read">+ read more....</a></li>
                                 </ul>
                             </div>
@@ -55,8 +53,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
             </div>
         </div>
     </section>

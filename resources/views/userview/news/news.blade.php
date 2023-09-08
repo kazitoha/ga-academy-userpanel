@@ -37,7 +37,7 @@
                                 <ul>
                                     <li class="date-time">{{ $value->created_at->format('d-M-Y') }}</li>
                                     <li class="Notice-btn-item"><a
-                                        href="{{ route('single.news', base64_encode($value->id)) }}" target="blank"
+                                        href="{{ route('single.news', $value->slug) }}" target="blank"
                                         class="btn-read">+ read more....</a></li>
                                 </ul>
                             </div>
@@ -54,22 +54,6 @@
                         </ul>
                     </div>
                 </div>
-                {{-- @php
-                    $url = Route::current()->uri;
-                @endphp
-
-                <div class="col-lg-4">
-                    <div class="useful-link">
-                        <h3>Category</h3>
-                        <ul>
-                            <li><a href="{{ url('/notice') }}"><b @if ($url == 'notice') @php $id=''; @endphp style="color:red" @endif>All</b></li>
-                            <li><a href="{{ url('select/notice/1') }}"><b @if($id == 1) style="color:rgb(220, 52, 52)" @endif>Teacher's Notice</b></a></li>
-                            <li><a href="{{ url('select/notice/2') }}"><b @if($id ==2) style="color:rgb(220, 52, 52)" @endif>Student's Notice</b></a></li>
-
-                        </ul>
-                    </div>
-                </div> --}}
-
             </div>
         </div>
     </section>

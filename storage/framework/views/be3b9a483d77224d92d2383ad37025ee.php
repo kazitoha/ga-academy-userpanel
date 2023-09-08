@@ -1,5 +1,3 @@
-
-
  <?php $__env->startSection('userview-navbar'); ?>
      <!-- ======home and banner section start======= -->
     <section id="Notice-view-banner">
@@ -40,7 +38,7 @@
 
                  <?php $__currentLoopData = $news_paginate; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="right-slide-content text-center">
-                                <a href="<?php echo e(route('single.news',base64_encode($value->id))); ?>"><h5><?php echo e($value->title); ?></h5></a>
+                                <a href="<?php echo e(route('single.news',$value->slug)); ?>"><h5><?php echo e($value->title); ?></h5></a>
                                 <span>Published: <?php echo e($value->created_at->format('d-M-Y')); ?></span>
                             </div>
                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -87,7 +87,7 @@
 
                             @foreach ($notice_paginate as $value)
                                 <div class="right-slide-content text-center">
-                                    <a href="{{ route('single.notice', base64_encode($value->id)) }}">
+                                    <a href="{{ route('single.notice', $value->slug) }}">
                                         <h5>{{ $value->title }}</h5>
                                     </a>
                                     <span>Published: {{ $value->created_at->format('d-M-Y') }}</span>

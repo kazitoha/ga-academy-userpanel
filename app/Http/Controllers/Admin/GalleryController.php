@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\gallery;
 use Carbon\Carbon;
 use Image;
@@ -34,6 +35,7 @@ class GalleryController extends Controller
           $last_insert_id =gallery::insertGetId([
              'category'      =>$request->category,
              'title'         =>$request->title,
+             'slug'          =>Str::slug($request->title),
              'created_at'    =>Carbon::now(),
           ]);
 
@@ -63,13 +65,14 @@ class GalleryController extends Controller
 
      $request->validate([
         'category'      =>'required|string',
-        'title'         =>'required|string',
+        'title'         =>'required|string|unique:gallery',
         'file_name'     =>'mimes:jpeg,png,jpg,gif,svg,pdf|max:5120',
       ]);
 
       $update_id=base64_decode($request->edit_id);
       gallery::find($update_id)->update([
             'category'=>$request->category,
+            'slug'       =>Str::slug($request->title),
             'title'   =>$request->title,
        ]);
 

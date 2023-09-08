@@ -38,7 +38,7 @@
                                 <div class="info">
                                     <div class="content">
                                         <h4><?php echo e($value->event_name); ?></h4>
-                                            <a href="<?php echo e(route('single.event', base64_encode($value->id))); ?>" class="btn-read">+ read more....</a>
+                                            <a href="<?php echo e(route('single.event', $value->slug)); ?>" class="btn-read">+ read more....</a>
                                     </div>
                                 </div>
                             </div>
