@@ -148,7 +148,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle @if ($url == 'about/committee' || $url == 'history' || $url == 'gallery' || $url == 'contact') active @endif"
+                            <a class="nav-link dropdown-toggle @if ($url == 'academic/testimonial') active @endif"
                                 id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
                                 Links

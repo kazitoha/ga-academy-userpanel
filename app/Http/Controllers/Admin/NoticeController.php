@@ -98,6 +98,7 @@ class NoticeController extends Controller
     function NoticeUpdate(Request $request)
     {
         $request->validate(
+            [
 
                 'category'      => 'required',
                 'title'         => 'required|string',
@@ -105,7 +106,7 @@ class NoticeController extends Controller
                 'image_file'     => 'nullable|array|max:3',
                 'image_file.*'   => 'mimes:jpeg,png,jpg,gif,svg',
                 'pdf_file'      => 'nullable|mimes:pdf',
-            ,
+            ],
             [
                 'image_file'    => 'The Image must not have more than 3 items.',
             ]
