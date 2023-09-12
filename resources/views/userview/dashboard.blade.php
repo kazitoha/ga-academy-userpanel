@@ -547,14 +547,16 @@
                         </div>
                     </div>
                     <div class="owl-carousel owl-theme feature-event-news">
-                        @php $i=1; @endphp
+                        @php
+                            $i=1;
+
+                        @endphp
 
                         @foreach ($notice_data as $value)
                             @if ($i == 5)
-                            @break
-
-                            @php $i++ @endphp
-                        @endif
+                                @break
+                                @php $i++; @endphp
+                            @endif
                         <div class="feature-left-images-box">
                             @if ($value->file_path == null)
                                 <img src="{{ asset('public_asset/images/dummy_img/notice_defult.png') }}"
@@ -563,12 +565,12 @@
                                 <img src="{{ asset('storage/notice_files/' . $value->file_path) }}" alt="">
                             @endif
                             <div class="images-content-feature">
-                                <a href="{{ route('single.notice', base64_encode($value->id)) }}">
+                                <a href="{{ route('single.notice', $value->slug) }}">
                                     <div class="container">
                                         <h2>{{ $value->title }}</h2>
                                     </div>
                                 </a>
-                                <a href="{{ route('single.notice', base64_encode($value->id)) }}"
+                                <a href="{{ route('single.notice', $value->slug) }}"
                                     class="welcome-btn btn-block">read more <i class="fas fa-check-circle"></i></a>
                             </div>
                         </div>
@@ -593,7 +595,7 @@
                     <div class="feature-event-right-details">
                         <a href="#">
                             <div class="feature-images-right-details">
-                                <a href="{{ route('single.notice', base64_encode($value->id)) }}">
+                                <a href="{{ route('single.notice', $value->slug) }}">
                                     <p><b>{{ $i++ . '.' . $value->title }}</b></p>
                                 </a>
                                 <span><i class="fas fa-book-open"></i>

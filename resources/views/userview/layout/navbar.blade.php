@@ -67,8 +67,9 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand navbar-mobile-logo" href="#"><img src="{{ asset('public_asset/images/Untitled-2.png') }}"
-                    alt="" class="img-fluid" style="width: 162px;"></a>
+                <a class="navbar-brand navbar-mobile-logo" href="#"><img
+                        src="{{ asset('public_asset/images/Untitled-2.png') }}" alt="" class="img-fluid"
+                        style="width: 162px;"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
@@ -100,12 +101,21 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
+                                    href="{{ route('academic.calendar') }}">Syllabus</a>
+                                <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
+                                    href="{{ route('academic.calendar') }}">Class Routine
+                                </a>
+                                <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
                                     href="{{ route('academic.calendar') }}">Academic Calendar</a>
                                 <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
                                     href="{{ route('group.view') }}">Groups</a>
                                 <a class="dropdown-item @if ($url == 'honorable/guardians') active @endif"
                                     href="{{ route('honorable.guardians') }}">Honorable Guardians</a>
                             </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @if ($url == 'admission') active @endif"
+                                href="{{ route('admission.view') }}">Admission</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @if ($url == 'golden-jubilee-independence-corner') active @endif"
@@ -115,19 +125,18 @@
                             <a class="nav-link @if ($url == 'bongobondhu/corner') active @endif"
                                 href="{{ route('bongobondhu-corner') }}">বঙ্গবন্ধু কর্নার</a>
                         </li>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
-                                href="{{ route('academic.calendar') }}">Academic Calendar</a>
-                            <a class="dropdown-item @if ($url == 'honorable/guardians') active @endif"
-                                href="{{ route('honorable.guardians') }}">Honorable Guardians</a>
-
-                        </div>
-                        </li>
 
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle @if ($url == 'about/committee' || $url == 'history' || $url == 'gallery' || $url == 'contact' || $url == 'staff' || $url == 'teachers') active @endif"
-                                id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle @if (
+                                $url == 'about/committee' ||
+                                    $url == 'history' ||
+                                    $url == 'gallery' ||
+                                    $url == 'contact' ||
+                                    $url == 'staff' ||
+                                    $url == 'teachers') active @endif"
+                                id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
                                 About
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -154,7 +163,8 @@
                                 Links
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item d-lg-block d-xl-none" href="https://portal.fenigaacademy.edu.bd/">Login</a>
+                                <a class="dropdown-item d-lg-block d-xl-none"
+                                    href="https://portal.fenigaacademy.edu.bd/">Login</a>
                                 <a class="dropdown-item @if ($url == 'academic/testimonial') active @endif"
                                     href="{{ route('academic.testimonial') }}">Apply For Testimonial</a>
 
@@ -281,15 +291,11 @@
                                         target="_blank"><strong><i class="fa fa-facebook-official"
                                                 aria-hidden="true"></i> Facebook</strong></a>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
         <div class="footer-bottom">
             <div class="container">

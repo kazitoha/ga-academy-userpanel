@@ -64,6 +64,8 @@ Route::get('group', 'App\Http\Controllers\Userpanel\DashboardController@group')-
 
 //guardians
 Route::get('honorable/guardians', 'App\Http\Controllers\Userpanel\HonorableGuardiansController@HonorableGuardiansView')->name('honorable.guardians');
+// admission
+Route::get('admission', 'App\Http\Controllers\Userpanel\AdmissionController@admissionView')->name('admission.view');
 
 //committee
 Route::get('about/committee', 'App\Http\Controllers\Userpanel\CommitteeController@CommitteeView')->name('about.committee');

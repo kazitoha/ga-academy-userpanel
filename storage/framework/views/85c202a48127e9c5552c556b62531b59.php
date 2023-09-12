@@ -70,9 +70,9 @@
               <div class="useful-link">
                   <h3>Useful links</h3>
                   <ul>
-                    <li ><a href="<?php echo e(url('/teacher&staff')); ?>"><b>Notice</b></li>
-                      <li ><a href="<?php echo e(url('select/office/1')); ?>"><b>News</b></a></li>
-                      <li ><a href="<?php echo e(url('select/office/2')); ?>"><b>Event</b></a></li>
+                    <li ><a href="<?php echo e(url('/notice')); ?>"><b>Notice</b></li>
+                      <li ><a href="<?php echo e(url('news')); ?>"><b>News</b></a></li>
+                      <li ><a href="<?php echo e(url('event')); ?>"><b>Event</b></a></li>
 
 
                   </ul>

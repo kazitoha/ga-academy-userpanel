@@ -169,15 +169,15 @@ navbar part start
   height: 480px;
   /* position: relative; */
 }
-/* .bakground::before{
+.bakground::before{
   content:'';
   position:absolute;
   width: 100%;
   height: 100%;
-  background: rgb(46 43 43 / 70%);
+  background: rgba(98, 96, 96, 0.226);
   left: 0;
   top: 0;
-} */
+}
 .home-content-left, .home-content-right{
   margin-top: 40px;
   width:664px;

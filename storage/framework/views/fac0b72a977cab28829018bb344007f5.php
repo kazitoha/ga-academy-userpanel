@@ -545,15 +545,21 @@
                         </div>
                     </div>
                     <div class="owl-carousel owl-theme feature-event-news">
-                        <?php $i=1; ?>
+                        <?php
+                            $i=1;
+
+                        ?>
 
                         <?php $__currentLoopData = $notice_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <?php if($i == 5): ?>
-                            <?php break; ?>
-
-                            <?php $i++ ?>
-                        <?php endif; ?>
+                                <?php break; ?>
+                                <?php $i++; ?>
+                            <?php endif; ?>
                         <div class="feature-left-images-box">
+                            <?php
+                             $file_names = unserialize($value->file_path);
+                                  print_r($file_names);
+                            ?>
                             <?php if($value->file_path == null): ?>
                                 <img src="<?php echo e(asset('public_asset/images/dummy_img/notice_defult.png')); ?>"
                                     alt="">
@@ -561,12 +567,12 @@
                                 <img src="<?php echo e(asset('storage/notice_files/' . $value->file_path)); ?>" alt="">
                             <?php endif; ?>
                             <div class="images-content-feature">
-                                <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>">
+                                <a href="<?php echo e(route('single.notice', $value->slug)); ?>">
                                     <div class="container">
                                         <h2><?php echo e($value->title); ?></h2>
                                     </div>
                                 </a>
-                                <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>"
+                                <a href="<?php echo e(route('single.notice', $value->slug)); ?>"
                                     class="welcome-btn btn-block">read more <i class="fas fa-check-circle"></i></a>
                             </div>
                         </div>
@@ -591,7 +597,7 @@
                     <div class="feature-event-right-details">
                         <a href="#">
                             <div class="feature-images-right-details">
-                                <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>">
+                                <a href="<?php echo e(route('single.notice', $value->slug)); ?>">
                                     <p><b><?php echo e($i++ . '.' . $value->title); ?></b></p>
                                 </a>
                                 <span><i class="fas fa-book-open"></i>
