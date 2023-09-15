@@ -7,9 +7,11 @@
     <section id="home-part">
 
         <div class="owl-carousel owl-theme home_slider">
+            <?php if($banner_datas==null): ?>
             <div class="bakground"
                 style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
             </div>
+            <?php endif; ?>
 
             <?php $__currentLoopData = $banner_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $banner_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="bakground"
@@ -159,7 +161,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="line-header">
-                        <h2>feni academy in Numbers</h2>
+
+                        <h2 style="<?php if(strlen(websiteSetting()->school_name) <= 50): ?> font-size: 29px; <?php else: ?> font-size: 26px; <?php endif; ?>"><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->school_name); ?><?php else: ?> <?php echo e("School Name"); ?><?php endif; ?> in Numbers</h2>
                         <div class="under-bottom"></div>
                     </div>
                 </div>
@@ -547,7 +550,6 @@
                     <div class="owl-carousel owl-theme feature-event-news">
                         <?php
                             $i=1;
-
                         ?>
 
                         <?php $__currentLoopData = $notice_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -556,10 +558,6 @@
                                 <?php $i++; ?>
                             <?php endif; ?>
                         <div class="feature-left-images-box">
-                            <?php
-                             $file_names = unserialize($value->file_path);
-                                  print_r($file_names);
-                            ?>
                             <?php if($value->file_path == null): ?>
                                 <img src="<?php echo e(asset('public_asset/images/dummy_img/notice_defult.png')); ?>"
                                     alt="">
@@ -631,6 +629,7 @@
 
 
 <!-- ==========Latest News part start============= -->
+<?php if(count($event_datas) > 0): ?>
 <section class="pt-5 pb-5" style="color:#000000">
 <div class="container">
     <div class="row">
@@ -701,6 +700,7 @@
 </div>
 </div>
 </section>
+<?php endif; ?>
 <!-- ==========Latest News part finish============= -->
 
 <script>

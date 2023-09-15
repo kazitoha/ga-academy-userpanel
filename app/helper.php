@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\notices;
+use App\Models\website_settings;
 
 function changeDateFormate($date, $date_format)
 {
@@ -21,4 +22,12 @@ function divide_file_name($id)
     $old_files_names = notices::find($id)->file_path;
     $old_files_names = unserialize($old_files_names);
     return $old_files_names;
+}
+function websiteSetting()
+{
+    $website_data = website_settings::find(1);
+    if ($website_data == null) {
+        $website_data = '';
+    }
+    return $website_data;
 }

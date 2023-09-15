@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feni Girish-Akshay Academy</title>
+    <title>@if(!empty(websiteSetting())){{websiteSetting()->school_name}}@else {{"School Name"}}@endif</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('public_asset/images/logo.jpg') }}">
     <!-- fontawesome link---- -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/all.min.css') }}">
@@ -49,16 +49,15 @@
     <div class="sticky_top" style="position: fixed">
         <div class="d-none d-lg-block d-xl-block" style="background: #f8f7f7">
             <div class="row">
-                <div class="col-3 m-auto">
+                <div class="col-2 m-auto">
                     <img src="{{ asset('public_asset/images/Untitled-2.png') }}" alt="" class="img-fluid"
                         style="padding: 1px;
                     width: 150px;">
                 </div>
-                <div class="col-6 text-center m-auto">
-                    <span class="mb-0 mt-2" style="color:#666666; font-weight: bold; font-size: 30px;">Feni
-                        Girish-Akshay Academy</span>
+                <div class="col-8 text-center m-auto">
+                    <span class="mb-0 mt-2" style="color:#666666; font-weight: bold; @if(strlen(websiteSetting()->school_name) <= 50) font-size: 29px; @else font-size: 26px; @endif ">@if(!empty(websiteSetting())){{websiteSetting()->school_name}}@else {{"School Name"}}@endif</span>
                 </div>
-                <div class="col-3 text-right m-auto" style="padding-right: 28px;">
+                <div class="col-2 text-right m-auto" style="padding-right: 28px;">
                     <a href="https://portal.fenigaacademy.edu.bd/" type="button" class="btn btn-outline-info">Login</a>
                     <a href="{{ route('contact') }}" type="button"
                         class="btn btn-outline-info @if ($url == 'contact') active @endif">Contact</a>
@@ -276,18 +275,17 @@
                             <ul>
                                 <li>
                                     <a
-                                        href="https://www.google.com/maps/place/Feni+G.A+Academy+High+School/@23.5318253,90.3112127,9z/data=!4m20!1m13!4m12!1m4!2m2!1d90.3465982!2d23.798594!4e1!1m6!1m2!1s0x3753684a4dda6d49:0x5f77b51a97434e52!2sFeni+G.A+Academy+High+School,+Feni+Road,+Feni!2m2!1d91.4019886!2d23.021804!3m5!1s0x3753684a4dda6d49:0x5f77b51a97434e52!8m2!3d23.0217988!4d91.4019039!16s%2Fg%2F1tdmndxv"><i
-                                            class="fa fa-map-marker" aria-hidden="true"></i> Feni Girish-Akshay
-                                        Academy High School, Academy Road, Feni 3900</a>
+                                        href="{{route('contact')}}"><i
+                                            class="fa fa-map-marker" aria-hidden="true"></i> @if(!empty(websiteSetting())){{websiteSetting()->address}}@else {{"School Address"}}@endif</a>
                                 </li>
                                 <li>
                                     <strong><a
-                                            href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCGDWZxWqjsTKPPtqHrWNsZfjzPRNkrgmfRJSVKrJcTmKGvNdTHTNHrpsvnNGNfcLBPXqV"><i
+                                            href=""><i
                                                 class="fa fa-envelope-o" aria-hidden="true"></i>
-                                            gaa.feni@yahoo.com</a></strong>
+                                                @if(!empty(websiteSetting())){{websiteSetting()->email}}@else {{"School@email.com"}}@endif</a></strong>
                                 </li>
                                 <li>
-                                    <a href="https://www.facebook.com/people/Feni-Girish-Akshay-Academy-Online/100063830446203/?paipv=0&eav=AfbM8dq5z9zoX5eI3Fpt9RpmzuBO4YmYX4Jm1-gZ0bpuR4qYioiyzSbBqiESEsyi60U&_rdr"
+                                    <a href="@if(!empty(websiteSetting())){{websiteSetting()->facebook_link}}@else {{"facebook.com"}}@endif"
                                         target="_blank"><strong><i class="fa fa-facebook-official"
                                                 aria-hidden="true"></i> Facebook</strong></a>
                                 </li>

@@ -24,7 +24,8 @@ Route::prefix('/admin')
     ])->group(function () {
 
 
-
+      //delete all thinks in table for new project
+      Route::get('notice', 'App\Http\Controllers\Admin\NoticeController@NoticeView')->name('notice.view');
 
 
         // dashboard
@@ -40,7 +41,8 @@ Route::prefix('/admin')
 
 
         // common function
-        Route::get('add/slug/to/all', 'App\Http\Controllers\Admin\CommonController@AddSlug');
+        Route::get('delete/all/table/data', 'App\Http\Controllers\Admin\websiteSettingsController@DeleteAll');
+
 
 
         // Notice
@@ -155,4 +157,9 @@ Route::prefix('/admin')
         Route::get('banner', 'App\Http\Controllers\Admin\BannerController@BannerView')->name('banner.view');
         Route::post('banner/store', 'App\Http\Controllers\Admin\BannerController@BannerStore')->name('banner.store');
         Route::get('banner/delete/{id}', 'App\Http\Controllers\Admin\BannerController@BannerDelete')->name('banner.delete');
+
+        //website settings
+        Route::get('website/settings', 'App\Http\Controllers\Admin\websiteSettingsController@websiteSettingView')->name('school.setting');
+        Route::post('store/school/name/and/logo', 'App\Http\Controllers\Admin\websiteSettingsController@storeSchoolNameAndLogo')->name('store.school.website.settings');
+
     });

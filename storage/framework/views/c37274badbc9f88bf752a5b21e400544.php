@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-
-    <title><?php echo $url=Route::current()->uri; ?> | <?php echo e(config('app.name', 'Laravel')); ?></title>
+    <title><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->school_name); ?><?php else: ?> <?php echo e("School Name"); ?><?php endif; ?> | <?php echo $url=Route::current()->uri; ?> </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
@@ -309,6 +308,8 @@
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li class="search_bar"><a href="<?php echo e(route('banner.view')); ?>">Banner</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('school.setting')); ?>">Setting School</a></li>
+
                         </ul>
                     </li>
 
@@ -364,7 +365,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        2022 © FENI GIRISH-AKSHAY ACADEMY.
+                        2022 © <?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->school_name); ?><?php else: ?> <?php echo e("School Name"); ?><?php endif; ?>.
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-right d-none d-sm-block">

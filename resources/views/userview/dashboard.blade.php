@@ -9,9 +9,11 @@
     <section id="home-part">
 
         <div class="owl-carousel owl-theme home_slider">
+            @if($banner_datas==null)
             <div class="bakground"
                 style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
             </div>
+            @endif
 
             @foreach ($banner_datas as $key => $banner_row)
                 <div class="bakground"
@@ -161,7 +163,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="line-header">
-                        <h2>feni academy in Numbers</h2>
+
+                        <h2 style="@if(strlen(websiteSetting()->school_name) <= 50) font-size: 29px; @else font-size: 26px; @endif">@if(!empty(websiteSetting())){{websiteSetting()->school_name}}@else {{"School Name"}}@endif in Numbers</h2>
                         <div class="under-bottom"></div>
                     </div>
                 </div>
@@ -549,7 +552,6 @@
                     <div class="owl-carousel owl-theme feature-event-news">
                         @php
                             $i=1;
-
                         @endphp
 
                         @foreach ($notice_data as $value)
@@ -629,6 +631,7 @@
 
 
 <!-- ==========Latest News part start============= -->
+@if (count($event_datas) > 0)
 <section class="pt-5 pb-5" style="color:#000000">
 <div class="container">
     <div class="row">
@@ -699,6 +702,7 @@
 </div>
 </div>
 </section>
+@endif
 <!-- ==========Latest News part finish============= -->
 
 <script>
