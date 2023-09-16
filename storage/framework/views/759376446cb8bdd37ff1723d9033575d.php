@@ -13,7 +13,7 @@
                         </div>
                     <?php endif; ?>
                     <form class="needs-validation" action="<?php echo e(route('store.school.website.settings')); ?>" method="post"
-                        novalidate>
+                    enctype="multipart/form-data" novalidate>
                         <?php echo csrf_field(); ?>
                         <div class="row">
                             <div class="col-md-12 mb-3">
@@ -141,10 +141,29 @@ unset($__errorArgs, $__bag); ?>"
                     </center>
                     <hr>
                         <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="validationCustom02">Chairman Name</label>
+                                <input type="text" class="form-control <?php $__errorArgs = ['chairman_name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="validationCustom02" name="chairman_name"
+                                    value=" <?php if(!empty($website_data)): ?> <?php echo e($website_data->chairman_name); ?> <?php endif; ?>" required>
+                            </div>
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"></label>
                                 <label>Chairman Speech</label>
-                                <textarea id="textarea" class="form-control" maxlength="225" name="chairman_speech" rows="3"
+                                <textarea id="textarea" class="form-control <?php $__errorArgs = ['chairman_speech'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" maxlength="225" name="chairman_speech" rows="3"
                                     placeholder="This textarea has a limit of 225 chars."><?php if(!empty($website_data)): ?> <?php echo e($website_data->chairman_speech); ?> <?php endif; ?></textarea>
                             </div>
                             <div class="col-md-6 mb-3">
@@ -158,11 +177,32 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
                                     id="validationCustom01" name="chairman_image" required>
+                                    <?php if(!empty($website_data->chairman_image)): ?><span class="text-danger">One image is already uploaded</span><?php endif; ?>
+
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="validationCustom02">Head Teacher Name</label>
+                                <input type="text" class="form-control <?php $__errorArgs = ['head_teacher_name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="validationCustom02" name="head_teacher_name"
+                                    value="<?php if(!empty($website_data)): ?> <?php echo e($website_data->head_teacher_name); ?> <?php endif; ?>" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"></label>
                                 <label>Head Teacher Speech</label>
-                                <textarea id="textarea" class="form-control" maxlength="225" rows="3" name="head_teacher_speech"
+                                <textarea id="textarea" class="form-control <?php $__errorArgs = ['head_teacher_speech'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" maxlength="225" rows="3" name="head_teacher_speech"
                                     placeholder="This textarea has a limit of 225 chars."><?php if(!empty($website_data)): ?> <?php echo e($website_data->head_teacher_speech); ?> <?php endif; ?></textarea>
 
                             </div>
@@ -178,6 +218,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
                                     id="validationCustom01" name="head_teacher_image" required>
+                                    <?php if(!empty($website_data->head_teacher_image)): ?><span class="text-danger">One image is already uploaded</span><?php endif; ?>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01">Total Student</label>

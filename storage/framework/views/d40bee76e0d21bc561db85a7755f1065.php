@@ -23,9 +23,9 @@
                                     <tr>
                                         <th>Id</th>
                                         <th data-priority="1">Title</th>
-                                        
-                                        <th data-priority="1">Notice Date</th>
-                                        <th data-priority="1">Action</th>
+                                        <th data-priority="3">Headline</th>
+                                        <th data-priority="2">Notice Date</th>
+                                        <th data-priority="4">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -38,7 +38,13 @@
                                                 <textarea cols="120" class="form-control"><?php echo e($value['title']); ?></textarea>
                                             </td>
 
-                                            
+                                            <td>
+                                                <?php if($value->headline_status == 0): ?>
+                                                <a href="<?php echo e(route('notice.headline.on',base64_encode($value->id))); ?>" class="btn btn-outline-secondary">Off</a>
+                                                <?php elseif($value->headline_status == 1): ?>
+                                                <a href="<?php echo e(route('notice.headline.off',base64_encode($value->id))); ?>" class="btn btn-outline-success">On</a>
+                                                <?php endif; ?>
+                                            </td>
                                             <td><?php echo e($value['created_at']); ?></td>
                                             <td>
 

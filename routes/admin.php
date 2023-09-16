@@ -52,6 +52,8 @@ Route::prefix('/admin')
         Route::post('notice/insert', 'App\Http\Controllers\Admin\NoticeController@NoticeStore')->name('notice.store');
 
         Route::get('notice/list', 'App\Http\Controllers\Admin\NoticeController@NoticeList')->name('notice.list');
+        Route::get('notice/headline/on/{id}', 'App\Http\Controllers\Admin\NoticeController@NoticeHeadlineOn')->name('notice.headline.on');
+        Route::get('notice/headline/off/{id}', 'App\Http\Controllers\Admin\NoticeController@NoticeHeadlineOff')->name('notice.headline.off');
         Route::post('notice/search', 'App\Http\Controllers\Admin\NoticeController@SearchNotice')->name('search.notice');
 
         Route::get('notice/Edit/{id}', 'App\Http\Controllers\Admin\NoticeController@NoticeEdit')->name('notice.edit');

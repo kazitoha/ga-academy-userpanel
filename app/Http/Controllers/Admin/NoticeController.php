@@ -87,6 +87,24 @@ class NoticeController extends Controller
         return view('adminview/notice/NoticeListPage', compact('allNotice'));
     }
 
+    function NoticeHeadlineOn($id)
+    {
+        $id = base64_decode($id);
+        notices::find($id)->update([
+            'headline_status' => 1,
+        ]);
+        return back()->with('message', 'Notice Head Line is Active Successfully.');
+    }
+
+    function NoticeHeadlineOff($id)
+    {
+        $id = base64_decode($id);
+        $noticeGetData = notices::find($id)->update([
+            'headline_status' => 0,
+        ]);
+        return back()->with('message', 'Notice Head Line is Deactive Successfully.');
+    }
+
 
     function NoticeEdit($id)
     {

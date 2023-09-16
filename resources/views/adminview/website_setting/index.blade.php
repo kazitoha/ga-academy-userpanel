@@ -15,7 +15,7 @@
                         </div>
                     @endif
                     <form class="needs-validation" action="{{ route('store.school.website.settings') }}" method="post"
-                        novalidate>
+                    enctype="multipart/form-data" novalidate>
                         @csrf
                         <div class="row">
                             <div class="col-md-12 mb-3">
@@ -115,21 +115,33 @@
                     </center>
                     <hr>
                         <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="validationCustom02">Chairman Name</label>
+                                <input type="text" class="form-control @error('chairman_name')is-invalid @enderror" id="validationCustom02" name="chairman_name"
+                                    value=" @if (!empty($website_data)) {{ $website_data->chairman_name }} @endif" required>
+                            </div>
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"></label>
                                 <label>Chairman Speech</label>
-                                <textarea id="textarea" class="form-control" maxlength="225" name="chairman_speech" rows="3"
+                                <textarea id="textarea" class="form-control @error('chairman_speech')is-invalid @enderror" maxlength="225" name="chairman_speech" rows="3"
                                     placeholder="This textarea has a limit of 225 chars.">@if (!empty($website_data)) {{ $website_data->chairman_speech }} @endif</textarea>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01">Chairman Image</label>
                                 <input type="file" class="form-control @error('chairman_image')is-invalid @enderror"
                                     id="validationCustom01" name="chairman_image" required>
+                                    @if (!empty($website_data->chairman_image))<span class="text-danger">One image is already uploaded</span>@endif
+
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="validationCustom02">Head Teacher Name</label>
+                                <input type="text" class="form-control @error('head_teacher_name')is-invalid @enderror" id="validationCustom02" name="head_teacher_name"
+                                    value="@if (!empty($website_data)) {{ $website_data->head_teacher_name }} @endif" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"></label>
                                 <label>Head Teacher Speech</label>
-                                <textarea id="textarea" class="form-control" maxlength="225" rows="3" name="head_teacher_speech"
+                                <textarea id="textarea" class="form-control @error('head_teacher_speech')is-invalid @enderror" maxlength="225" rows="3" name="head_teacher_speech"
                                     placeholder="This textarea has a limit of 225 chars.">@if (!empty($website_data)) {{ $website_data->head_teacher_speech }} @endif</textarea>
 
                             </div>
@@ -138,6 +150,7 @@
                                 <input type="file"
                                     class="form-control @error('head_teacher_image')is-invalid @enderror"
                                     id="validationCustom01" name="head_teacher_image" required>
+                                    @if (!empty($website_data->head_teacher_image))<span class="text-danger">One image is already uploaded</span>@endif
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01">Total Student</label>

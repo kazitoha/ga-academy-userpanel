@@ -25,9 +25,9 @@
                                     <tr>
                                         <th>Id</th>
                                         <th data-priority="1">Title</th>
-                                        {{-- <th data-priority="3">Description</th> --}}
-                                        <th data-priority="1">Notice Date</th>
-                                        <th data-priority="1">Action</th>
+                                        <th data-priority="3">Headline</th>
+                                        <th data-priority="2">Notice Date</th>
+                                        <th data-priority="4">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,9 +40,13 @@
                                                 <textarea cols="120" class="form-control">{{ $value['title'] }}</textarea>
                                             </td>
 
-                                            {{-- <td>
-                                                <textarea class="form-control">{{ $value['description'] }}</textarea>
-                                            </td> --}}
+                                            <td>
+                                                @if($value->headline_status == 0)
+                                                <a href="{{route('notice.headline.on',base64_encode($value->id))}}" class="btn btn-outline-secondary">Off</a>
+                                                @elseif($value->headline_status == 1)
+                                                <a href="{{route('notice.headline.off',base64_encode($value->id))}}" class="btn btn-outline-success">On</a>
+                                                @endif
+                                            </td>
                                             <td>{{ $value['created_at'] }}</td>
                                             <td>
 
