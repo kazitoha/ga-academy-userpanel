@@ -6,6 +6,13 @@
         height: 476px;
     }
 
+    .img-fluid {
+        margin-left: 18px;
+        margin-top: 2px;
+        padding: 1px;
+        width: 165px;
+    }
+
     .owl-theme .owl-dots,
     .owl-theme .owl-nav {
         margin-top: -117px;
@@ -332,6 +339,13 @@
         background: #fff;
     }
 
+    .img-fluid {
+        margin-left: 18px;
+        margin-top: 2px;
+        padding: 1px;
+        width: 165px;
+    }
+
 
     .navbar .nav-item .nav-link {
         color: rgb(38 35 35);
@@ -525,6 +539,13 @@
         background: #fff;
     }
 
+    .img-fluid {
+        margin-left: 18px;
+        margin-top: 2px;
+        padding: 1px;
+        width: 165px;
+    }
+
     .navbar .nav-item .nav-link {
         color: rgb(38 35 35);
     }
@@ -695,12 +716,26 @@
     .container-xl {
         max-width: 1193px;
     }
+
+    .img-fluid {
+        margin-left: 18px;
+        margin-top: 2px;
+        padding: 1px;
+        width: 165px;
+    }
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .event-heading {
         height: 270px;
+    }
+
+    .img-fluid {
+        margin-left: 18px;
+        margin-top: 2px;
+        padding: 1px;
+        width: 165px;
     }
 
     .navbar .nav-item .nav-link {
@@ -768,6 +803,13 @@
         width: 320px;
     }
 
+    .img-fluid {
+        margin-left: 18px;
+        margin-top: 2px;
+        padding: 1px;
+        width: 165px;
+    }
+
     .navbar .nav-item .nav-link {
         color: rgb(38 35 35);
     }
@@ -793,6 +835,13 @@
 @media (max-width: 991px) {
     .navbar-mobile-logo {
         display: block;
+    }
+
+    .img-fluid {
+        margin-left: 18px;
+        margin-top: 2px;
+        padding: 1px;
+        width: 165px;
     }
 
     .navbar .nav-item .nav-link {

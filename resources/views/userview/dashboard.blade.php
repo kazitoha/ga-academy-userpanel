@@ -25,7 +25,7 @@
     <!-- ======home and banner section finish======= -->
     <div>
         <div class="marquee-teg">
-            <marquee style="color: rgb(216, 132, 132)">
+            <marquee style="color: rgb(238, 95, 95)">
                 @foreach ($headline_notices as $headline_notice)
                  <b>{{$headline_notice->title}}</b> <a href="{{ route('single.notice', $headline_notice->slug) }}"><u>Read More.</u></a>&nbsp;&nbsp;&nbsp;&nbsp;
                 @endforeach
@@ -47,8 +47,10 @@
                         <div class="col-lg-3 col-md-3 text-center">
                             <div class="voice-left-chanecllor">
                                 <div class="voice-images-box">
-                                    <img src="{{ asset('public_asset/images/dashboard_image/chairman.jpg') }}"
+                                    @if(!empty(websiteSetting()->chairman_image))
+                                    <img src="{{ asset('storage/dashboard_files/chairman_image.jpg') }}"
                                         alt="">
+                                    @endif
                                     <p>@if(!empty(websiteSetting())){{websiteSetting()->chairman_name}}@else {{"Chairman Name"}}@endif</p>
                                     <h5>সভাপতি</h5>
                                 </div>

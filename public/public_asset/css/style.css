@@ -127,6 +127,8 @@ navbar part start
 .img-fluid{
   margin-left: 18px;
   margin-top: 2px;
+  padding: 1px;
+  width: 165px;
 }
 .menu_bg {
   background-color:#f3f0f0;

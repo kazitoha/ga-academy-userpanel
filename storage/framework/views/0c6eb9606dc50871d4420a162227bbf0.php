@@ -50,9 +50,7 @@
         <div class="d-none d-lg-block d-xl-block" style="background: #f8f7f7">
             <div class="row">
                 <div class="col-2 m-auto">
-                    <img src="<?php echo e(asset('public_asset/images/Untitled-2.png')); ?>" alt="" class="img-fluid"
-                        style="padding: 1px;
-                    width: 150px;">
+                    <img src="<?php echo e(asset('public_asset/images/Untitled-2.png')); ?>" alt="" class="img-fluid">
                 </div>
                 <div class="col-8 text-center m-auto">
                     <span class="mb-0 mt-2" style="color:#666666; font-weight: bold; <?php if(strlen(websiteSetting()->school_name) <= 50): ?> font-size: 29px; <?php else: ?> font-size: 26px; <?php endif; ?> "><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->school_name); ?><?php else: ?> <?php echo e("School Name"); ?><?php endif; ?></span>

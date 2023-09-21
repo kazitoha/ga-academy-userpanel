@@ -32,7 +32,7 @@
                                     <h2><?php echo e($value->title); ?></h2>
                                 </a>
                                 <ul>
-                                    <li class="date-time"><?php echo e($value->created_at->format('d-M-Y')); ?></li>
+                                    <li class="date-time">Published Date: <?php echo e($value->created_at->format('d-M-Y')); ?></li>
                                     <li class="Notice-btn-item"><a
                                             href="<?php echo e(route('single.notice', $value->slug)); ?>" target="blank"
                                             class="btn-read">+ read more....</a></li>

@@ -34,7 +34,7 @@
                                     <h2>{{ $value->title }}</h2>
                                 </a>
                                 <ul>
-                                    <li class="date-time">{{ $value->created_at->format('d-M-Y') }}</li>
+                                    <li class="date-time">Published Date: {{ $value->created_at->format('d-M-Y') }}</li>
                                     <li class="Notice-btn-item"><a
                                             href="{{ route('single.notice', $value->slug) }}" target="blank"
                                             class="btn-read">+ read more....</a></li>

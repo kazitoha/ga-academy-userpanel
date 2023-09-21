@@ -23,7 +23,7 @@
     <!-- ======home and banner section finish======= -->
     <div>
         <div class="marquee-teg">
-            <marquee style="color: rgb(216, 132, 132)">
+            <marquee style="color: rgb(238, 95, 95)">
                 <?php $__currentLoopData = $headline_notices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $headline_notice): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                  <b><?php echo e($headline_notice->title); ?></b> <a href="<?php echo e(route('single.notice', $headline_notice->slug)); ?>"><u>Read More.</u></a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -45,8 +45,10 @@
                         <div class="col-lg-3 col-md-3 text-center">
                             <div class="voice-left-chanecllor">
                                 <div class="voice-images-box">
-                                    <img src="<?php echo e(asset('public_asset/images/dashboard_image/chairman.jpg')); ?>"
+                                    <?php if(!empty(websiteSetting()->chairman_image)): ?>
+                                    <img src="<?php echo e(asset('storage/dashboard_files/chairman_image.jpg')); ?>"
                                         alt="">
+                                    <?php endif; ?>
                                     <p><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->chairman_name); ?><?php else: ?> <?php echo e("Chairman Name"); ?><?php endif; ?></p>
                                     <h5>সভাপতি</h5>
                                 </div>
