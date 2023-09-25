@@ -3,4 +3,5 @@ event_files/*
 gallery/*
 notice_files/*
 staff_info_files/*
+testimonial/*
 !.gitignore

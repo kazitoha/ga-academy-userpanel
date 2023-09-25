@@ -41,8 +41,9 @@
                                 </div>
                             @endif
 
-                            <form class="pt-4" action="{{ route('apply.for.testimonial') }}" >
-                                <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <form class="pt-4" action="{{ route('apply.for.testimonial') }}" method="post" enctype="multipart/form-data">
+                                <!-- 2 column grid layout with text inputs for the first and last names -->.
+                                @csrf
                                 <div class="row mb-4">
                                     <div class="col">
                                         <div class="form-outline">
@@ -248,6 +249,19 @@
                                     @error('date_of_birth')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label text-dark" for="form6Example6">Attachment file <b
+                                            class="text-danger">*</b></label>
+                                    <input type="file" value="{{ old('attachment_file') }}" name="attachment_file"
+                                        id="form6Example6"
+                                        class="form-control @error('attachment_file')is-invalid @enderror" required />
+                                    @error('attachment_file')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                       <span class="text-danger">Upload your registration card.</span>
+
+
                                 </div>
 
                                 <!-- Submit button -->

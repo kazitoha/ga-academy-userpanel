@@ -55,7 +55,7 @@ Route::get('select/teacher/{id}', 'App\Http\Controllers\Userpanel\TeacherStaffCo
 Route::get('teachers', 'App\Http\Controllers\Userpanel\TeacherStaffController@teachers')->name('teacher');
 //testimonial
 Route::get('academic/testimonial', 'App\Http\Controllers\Userpanel\TestimonialController@TestimonialView')->name('academic.testimonial');
-Route::get('academic/apply/testimonial', 'App\Http\Controllers\Userpanel\TestimonialController@TestimonialStore')->name('apply.for.testimonial');
+Route::post('academic/apply/testimonial', 'App\Http\Controllers\Userpanel\TestimonialController@TestimonialStore')->name('apply.for.testimonial');
 //calendar
 Route::get('academic/calendar', 'App\Http\Controllers\Userpanel\AcademicController@AcademicCalendarView')->name('academic.calendar');
 // group

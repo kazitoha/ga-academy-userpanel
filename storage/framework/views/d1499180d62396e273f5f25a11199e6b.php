@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('userview-navbar'); ?>
     <!-- ======home and banner section start======= -->
     <section id="Notice-view-banner">
@@ -32,8 +30,9 @@
                                 </div>
                             <?php endif; ?>
 
-                            <form class="pt-4" action="<?php echo e(route('apply.for.testimonial')); ?>" >
-                                <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <form class="pt-4" action="<?php echo e(route('apply.for.testimonial')); ?>" method="post" enctype="multipart/form-data">
+                                <!-- 2 column grid layout with text inputs for the first and last names -->.
+                                <?php echo csrf_field(); ?>
                                 <div class="row mb-4">
                                     <div class="col">
                                         <div class="form-outline">
@@ -435,6 +434,33 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label text-dark" for="form6Example6">Attachment file <b
+                                            class="text-danger">*</b></label>
+                                    <input type="file" value="<?php echo e(old('attachment_file')); ?>" name="attachment_file"
+                                        id="form6Example6"
+                                        class="form-control <?php $__errorArgs = ['attachment_file'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" required />
+                                    <?php $__errorArgs = ['attachment_file'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                        <span class="text-danger"><?php echo e($message); ?></span>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                       <span class="text-danger">Upload your registration card.</span>
+
+
                                 </div>
 
                                 <!-- Submit button -->
