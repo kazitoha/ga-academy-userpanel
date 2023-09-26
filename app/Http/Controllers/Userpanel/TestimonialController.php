@@ -33,7 +33,7 @@ class TestimonialController extends Controller
             'session'           => 'required',
             'gpa'               => 'required|min:1|max:5',
             'date_of_birth'     => 'required',
-            'attachment_file'   => 'mimes:jpeg,png,jpg,gif,svg,pdf',
+            'attachment_file'   => 'required|mimes:jpeg,png,jpg,gif,svg,pdf',
 
 
         ]);

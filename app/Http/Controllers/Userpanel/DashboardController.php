@@ -26,4 +26,13 @@ class DashboardController extends Controller
     {
         return view('userview.group');
     }
+    function SiteMap(){
+        $notice_datas = notices::orderBy('id','DESC')->get();
+        $event_datas = event::orderBy('id','DESC')->get();
+        return response()->view('userview.sitemap', [
+            'notice_datas' => $notice_datas,
+            'event_datas' => $event_datas,
+        ])->header('Content-Type', 'text/xml');
+        // return view('userview.sitemap', compact('notice_datas', 'event_datas'));
+    }
 }

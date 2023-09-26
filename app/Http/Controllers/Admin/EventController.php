@@ -19,7 +19,7 @@ class EventController extends Controller
     function EventStore(Request $request)
     {
         $request->validate([
-            'event_name' => 'required|unique:event',
+            'event_name' => 'required|unique:events',
             'event_date' => 'required',
             'event_image.*' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:9120',
             'about_event' => 'required',
