@@ -75,8 +75,8 @@ Route::get('history', 'App\Http\Controllers\Userpanel\HistoryController@historyV
 
 //contact
 Route::get('contact', 'App\Http\Controllers\Userpanel\ContactController@ContactView')->name('contact');
-//sitemap_xml
 
+//sitemap_xml
 Route::get('sitemap.xml', 'App\Http\Controllers\Userpanel\DashboardController@SiteMap');
 
 

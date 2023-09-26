@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('adminpanel-navbar'); ?>
     <div class="row">
         <div class="col-lg-6">
@@ -88,6 +86,7 @@ unset($__errorArgs, $__bag); ?>" name="pdf_file"
                                     type="file">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label>Description</label>
                             <div>
@@ -98,7 +97,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" name="description" rows="5"><?php echo e($noticeGetData->description); ?></textarea>
+unset($__errorArgs, $__bag); ?>" id="elm1" name="description" rows="5"><?php echo e($noticeGetData->description); ?></textarea>
                             </div>
                         </div>
                         <div class="form-group mb-0">

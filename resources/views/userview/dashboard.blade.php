@@ -9,10 +9,10 @@
     <section id="home-part">
 
         <div class="owl-carousel owl-theme home_slider">
-            @if($banner_datas==null)
-            <div class="bakground"
-                style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
-            </div>
+            @if ($banner_datas == null)
+                <div class="bakground"
+                    style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
+                </div>
             @endif
 
             @foreach ($banner_datas as $key => $banner_row)
@@ -27,7 +27,9 @@
         <div class="marquee-teg">
             <marquee style="color: rgb(238, 95, 95)">
                 @foreach ($headline_notices as $headline_notice)
-                 <b>{{$headline_notice->title}}</b> <a href="{{ route('single.notice', $headline_notice->slug) }}"><u>Read More.</u></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b>{{ $headline_notice->title }}</b> <a
+                        href="{{ route('single.notice', $headline_notice->slug) }}"><u>Read
+                            More.</u></a>&nbsp;&nbsp;&nbsp;&nbsp;
                 @endforeach
             </marquee>
         </div>
@@ -47,11 +49,16 @@
                         <div class="col-lg-3 col-md-3 text-center">
                             <div class="voice-left-chanecllor">
                                 <div class="voice-images-box">
-                                    @if(!empty(websiteSetting()->chairman_image))
-                                    <img src="{{ asset('storage/dashboard_files/chairman_image.jpg') }}"
-                                        alt="">
+                                    @if (!empty(websiteSetting()->chairman_image))
+                                        <img src="{{ asset('storage/dashboard_files/chairman_image.jpg') }}" alt="">
                                     @endif
-                                    <p>@if(!empty(websiteSetting())){{websiteSetting()->chairman_name}}@else {{"Chairman Name"}}@endif</p>
+                                    <p>
+                                        @if (!empty(websiteSetting()))
+                                            {{ websiteSetting()->chairman_name }}
+                                        @else
+                                            {{ 'Chairman Name' }}
+                                        @endif
+                                    </p>
                                     <h5>সভাপতি</h5>
                                 </div>
                             </div>
@@ -60,7 +67,13 @@
                             <a href="#">
                                 <div class="voice-right-chanecllorr">
                                     <h4>সভাপতির বাণী</h4>
-                                    <p>@if(!empty(websiteSetting())){{websiteSetting()->chairman_speech}}@else {{" "}}@endif</p>
+                                    <p>
+                                        @if (!empty(websiteSetting()))
+                                            {{ websiteSetting()->chairman_speech }}
+                                        @else
+                                            {{ ' ' }}
+                                        @endif
+                                    </p>
                                 </div>
                             </a>
                         </div>
@@ -76,7 +89,13 @@
                                 <div class="voice-images-box">
                                     <img src="{{ asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg') }}"
                                         alt="">
-                                    <p>@if(!empty(websiteSetting())){{websiteSetting()->head_teacher_name}}@else {{"Head Teacher Name"}}@endif</p>
+                                    <p>
+                                        @if (!empty(websiteSetting()))
+                                            {{ websiteSetting()->head_teacher_name }}
+                                        @else
+                                            {{ 'Head Teacher Name' }}
+                                        @endif
+                                    </p>
                                     <h5>প্রধান শক্ষিক</h5>
                                 </div>
                             </div>
@@ -84,7 +103,13 @@
                         <div class="col-lg-9 col-md-9">
                             <div class="voice-right-chanecllorr">
                                 <h4>প্রধান শিক্ষকের বাণী</h4>
-                                <p>@if(!empty(websiteSetting())){{websiteSetting()->head_teacher_speech}}@else {{" "}}@endif</p>
+                                <p>
+                                    @if (!empty(websiteSetting()))
+                                        {{ websiteSetting()->head_teacher_speech }}
+                                    @else
+                                        {{ ' ' }}
+                                    @endif
+                                </p>
                                 </p>
                             </div>
                         </div>
@@ -114,7 +139,13 @@
                 <div class="col-lg-12">
                     <div class="line-header">
 
-                        <h2 style="@if(strlen(websiteSetting()->school_name) <= 50) font-size: 29px; @else font-size: 26px; @endif">@if(!empty(websiteSetting())){{websiteSetting()->school_name}}@else {{"School Name"}}@endif in Numbers</h2>
+                        <h2 style="@if (strlen(websiteSetting()->school_name) <= 50) font-size: 29px; @else font-size: 26px; @endif">
+                            @if (!empty(websiteSetting()))
+                                {{ websiteSetting()->school_name }}
+                            @else
+                                {{ 'School Name' }}
+                            @endif in Numbers
+                        </h2>
                         <div class="under-bottom"></div>
                     </div>
                 </div>
@@ -126,7 +157,13 @@
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                         <div class="couter-box">
                             <i class="fas fa-university"></i>
-                            <h1><span class="counter">@if(!empty(websiteSetting())){{websiteSetting()->founded}}@else {{"0000"}}@endif</span></h1>
+                            <h1><span class="counter">
+                                    @if (!empty(websiteSetting()))
+                                        {{ websiteSetting()->founded }}
+                                    @else
+                                        {{ '0000' }}
+                                    @endif
+                                </span></h1>
                             <h3>Founded</h3>
                         </div>
                     </div>
@@ -142,7 +179,13 @@
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                         <div class="couter-box">
                             <i class="fas fa-users"></i>
-                            <h1><span class="counter">@if(!empty(websiteSetting())){{websiteSetting()->total_student}}@else {{"0"}}@endif</span></h1>
+                            <h1><span class="counter">
+                                    @if (!empty(websiteSetting()))
+                                        {{ websiteSetting()->total_student }}
+                                    @else
+                                        {{ '0' }}
+                                    @endif
+                                </span></h1>
                             <h3>Regular Students</h3>
                         </div>
                     </div>
@@ -226,9 +269,9 @@
                 <div class="col-md-3 border-right">
                     <div class="facilities_cards">
                         <div class="first bg-white p-4 text-center">
-                            <svg height="100px" width="100px" viewBox="0 0 503.467 503.467" version="1.1"
-                                id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" fill="#000000">
+                            <svg height="100px" width="100px" viewBox="0 0 503.467 503.467" version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xml:space="preserve" fill="#000000">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
@@ -501,16 +544,17 @@
                     </div>
                     <div class="owl-carousel owl-theme feature-event-news">
                         @php
-                            $i=1;
+                            $i = 1;
                         @endphp
 
                         @foreach ($notice_data as $value)
                             @if ($i == 5)
-                                @break
-                                @php $i++; @endphp
-                            @endif
+                            @break
+
+                            @php $i++; @endphp
+                        @endif
                         <div class="feature-left-images-box">
-                            @if ($value->file_path == null)
+                            @if ($value->file_path == null || $value->file_sys_ver == 2)
                                 <img src="{{ asset('public_asset/images/dummy_img/notice_defult.png') }}"
                                     alt="">
                             @elseif(!$value->file_path == null)
@@ -583,70 +627,69 @@
 <!-- ==========Latest News part start============= -->
 @if (count($event_datas) > 0)
 <section class="pt-5 pb-5" style="color:#000000">
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <h3 class="mb-3">Events</h3>
-        </div>
-        <div class="col-6 text-right">
-            @if (count($event_datas) > 3)
-                <a class="btn btn-color mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
-                    data-slide="prev">
-                    <i class="fa fa-arrow-left"></i>
-                </a>
-                <a class="btn btn-color mb-3 " href="#carouselExampleIndicators2" role="button"
-                    data-slide="next">
-                    <i class="fa fa-arrow-right"></i>
-                </a>
-            @endif
-        </div>
-        <div class="col-12">
-            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
-                <div class="carousel-inner">
-
-                    @php
-                        $e = 0;
-                    @endphp
-                    @foreach ($event_datas as $key => $event_data)
-                        @php $e++; @endphp
-                        @if ($e == 1)
-                            <div class="carousel-item @if ($key == 0) active @endif">
-                                <div class="row">
-                        @endif
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                @if (!$event_data->file_path == null)
-                                    <img src="{{ asset('storage/event_files/' . $event_data->file_path) }}"
-                                        height="150" width="350" alt="">
-                                @elseif($event_data->file_path == null)
-                                    <img src="{{ asset('public_asset/default_event.png') }}" height="150"
-                                        width="350" alt="">
-                                @endif
-                                <a href="">
-                                    <div class="card-body"
-                                        style=" height: 217px; width: auto; overflow-y: scroll; ">
-                                        <h4 class="card-title"></h4>
-                                        <p class="card-text">
-                                            <a href="{{ route('single.event', base64_encode($event_data->id)) }}"
-                                                style="color:black;">
-                                                @php echo limit_text($event_data->event_name, 10); @endphp
-                                        </p>
-                                </a>
-                            </div>
-                            </a>
-
-                        </div>
-                </div>
-
-                @if ($e == 3)
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="mb-3">Events</h3>
             </div>
-        </div>
-        @php $e=0; @endphp
-        @endif
-        @endforeach
+            <div class="col-6 text-right">
+                @if (count($event_datas) > 3)
+                    <a class="btn btn-color mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                        data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-color mb-3 " href="#carouselExampleIndicators2" role="button"
+                        data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                @endif
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
-    </div>
+                    <div class="carousel-inner">
+
+                        @php
+                            $e = 0;
+                        @endphp
+                        @foreach ($event_datas as $key => $event_data)
+                            @php $e++; @endphp
+                            @if ($e == 1)
+                                <div class="carousel-item @if ($key == 0) active @endif">
+                                    <div class="row">
+                            @endif
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    @if (!$event_data->file_path == null)
+                                        <img src="{{ asset('storage/event_files/' . $event_data->file_path) }}"
+                                            height="150" width="367" alt="">
+                                    @elseif($event_data->file_path == null)
+                                        <img src="{{ asset('public_asset/default_event.png') }}" height="150"
+                                            width="367" alt="">
+                                    @endif
+                                    <a href="">
+                                        <div class="card-body"
+                                            style=" height: 217px; width: auto; overflow-y: scroll; ">
+                                            <h4 class="card-title"></h4>
+                                            <p class="card-text">
+                                                <a href="{{ route('single.event', base64_encode($event_data->id)) }}"
+                                                    style="color:black;">
+                                                    @php echo limit_text($event_data->event_name, 10); @endphp
+                                            </p>
+                                    </a>
+                                </div>
+                                </a>
+
+                            </div>
+                    </div>
+                    @if ($e == 3)
+                </div>
+            </div>
+            @php $e=0; @endphp
+@endif
+@endforeach
+
+</div>
 </div>
 </div>
 </div>

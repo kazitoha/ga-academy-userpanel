@@ -82,7 +82,7 @@ class EventController extends Controller
     {
         $request->validate([
             'update_id' => 'required',
-            'event_name' => 'required|unique:event',
+            'event_name' => 'required',
             'event_date' => 'required',
             'event_image.*' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:7120',
             'about_event' => 'required',

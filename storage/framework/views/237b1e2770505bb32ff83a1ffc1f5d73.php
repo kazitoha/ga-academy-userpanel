@@ -32,7 +32,7 @@
                                 <h3><?php echo e($single_event_data->event_name); ?></h3>
 
                                 <h3 style="text-align:center; color: #d76b38;">Publication date: <?php echo e($single_event_data->event_date); ?></h3>
-                                <p><?php echo e($single_event_data->about_event); ?></p>
+                                <p><?php echo $single_event_data->about_event; ?></p>
 
                             </div>
                         </div>

@@ -26,7 +26,7 @@
                         <div class="content-heading">
                             <h2><?php echo e($single_notice->title); ?></h2>
 
-                            <p><?php echo $single_notice->description ?></p>
+                            <p><?php echo $single_notice->description; ?></p>
                             <?php if($single_notice->file_sys_ver == 1): ?>
                                 <?php
                                     $file_name = $single_notice->file_path;

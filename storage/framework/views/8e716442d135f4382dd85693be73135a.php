@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <?php $__currentLoopData = $notice_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notice_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <url>
-            <loc><?php echo e(url('/')); ?>/<?php echo e($notice_data->slug); ?></loc>
+            <loc><?php echo e(url('/')); ?>/single/notice/<?php echo e($notice_data->slug); ?></loc>
             <lastmod><?php echo e($notice_data->created_at->tz('UTC')->toAtomString()); ?></lastmod>
             <changefreq>daily</changefreq>
             <priority>0.8</priority>
@@ -10,7 +10,7 @@
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <?php $__currentLoopData = $event_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <url>
-            <loc><?php echo e(url('/')); ?>/<?php echo e($event_data->slug); ?></loc>
+            <loc><?php echo e(url('/')); ?>/single/event/<?php echo e($event_data->slug); ?></loc>
             <lastmod><?php echo e($event_data->created_at->tz('UTC')->toAtomString()); ?></lastmod>
             <changefreq>daily</changefreq>
             <priority>0.8</priority>

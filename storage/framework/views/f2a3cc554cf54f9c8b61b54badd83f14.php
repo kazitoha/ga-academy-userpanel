@@ -1,5 +1,3 @@
-
-
  <?php $__env->startSection('adminpanel-navbar'); ?>
 <div class="row">
     <div class="col-lg-6">
@@ -41,8 +39,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"  placeholder="Type something" name="event_date" value="<?php echo e($eventGetData->event_date); ?>" required/>
                     </div>
-                    
-                    
+
+
                     <div class="form-group">
                         <label>Event image</label>
                         <div>
@@ -59,7 +57,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" name="about_event" value="" rows="5"><?php echo e($eventGetData->about_event); ?></textarea>
+unset($__errorArgs, $__bag); ?>" id="elm1" name="about_event" value="" rows="5"><?php echo e($eventGetData->about_event); ?></textarea>
                         </div>
                     </div>
                     <div class="form-group mb-0">
@@ -76,9 +74,10 @@ unset($__errorArgs, $__bag); ?>" name="about_event" value="" rows="5"><?php echo
         </div>
     </div> <!-- end col -->
 
-</div> <!-- end row --> 
+</div> <!-- end row -->
 
 
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('adminview/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\local\resources\views/adminview/event/EventEditPage.blade.php ENDPATH**/ ?>

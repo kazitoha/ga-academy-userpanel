@@ -32,7 +32,7 @@
                                 <h3>{{$single_event_data->event_name}}</h3>
 
                                 <h3 style="text-align:center; color: #d76b38;">Publication date: {{$single_event_data->event_date}}</h3>
-                                <p>{{$single_event_data->about_event}}</p>
+                                <p>{!!$single_event_data->about_event!!}</p>
 
                             </div>
                         </div>

@@ -28,7 +28,7 @@
                         <div class="content-heading">
                             <h2>{{ $single_notice->title }}</h2>
 
-                            <p>@php echo $single_notice->description @endphp</p>
+                            <p>{!! $single_notice->description !!}</p>
                             @if ($single_notice->file_sys_ver == 1)
                                 @php
                                     $file_name = $single_notice->file_path;

@@ -63,11 +63,15 @@
                                     type="file">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="card">
+                            </div> <!-- end col -->
+                        </div>
                         <div class="form-group">
                             <label>Description</label>
                             <div>
-                                <textarea class="form-control @error('description')is-invalid @enderror" name="description"
-                                    value="{{ old('description') }}" rows="5"></textarea>
+                                <textarea class="form-control @error('description')is-invalid @enderror" id="elm1" name="description"
+                                 rows="5" >{{ old('description') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group mb-0">

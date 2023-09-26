@@ -27,8 +27,8 @@
                         <label>Event Date</label>
                         <input type="date" class="form-control @error ('event_date')is-invalid @enderror"  placeholder="Type something" name="event_date" value="{{$eventGetData->event_date }}" required/>
                     </div>
-                    
-                    
+
+
                     <div class="form-group">
                         <label>Event image</label>
                         <div>
@@ -38,7 +38,7 @@
                     <div class="form-group">
                          <label>About Event</label>
                         <div>
-                            <textarea required class="form-control @error('about_event')is-invalid @enderror" name="about_event" value="" rows="5">{{$eventGetData->about_event }}</textarea>
+                            <textarea required class="form-control @error('about_event')is-invalid @enderror" id="elm1" name="about_event" value="" rows="5">{{$eventGetData->about_event }}</textarea>
                         </div>
                     </div>
                     <div class="form-group mb-0">
@@ -55,7 +55,7 @@
         </div>
     </div> <!-- end col -->
 
-</div> <!-- end row --> 
+</div> <!-- end row -->
 
 
 

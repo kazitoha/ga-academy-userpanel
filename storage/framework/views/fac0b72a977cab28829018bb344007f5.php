@@ -7,10 +7,10 @@
     <section id="home-part">
 
         <div class="owl-carousel owl-theme home_slider">
-            <?php if($banner_datas==null): ?>
-            <div class="bakground"
-                style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
-            </div>
+            <?php if($banner_datas == null): ?>
+                <div class="bakground"
+                    style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
+                </div>
             <?php endif; ?>
 
             <?php $__currentLoopData = $banner_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $banner_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -25,7 +25,9 @@
         <div class="marquee-teg">
             <marquee style="color: rgb(238, 95, 95)">
                 <?php $__currentLoopData = $headline_notices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $headline_notice): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                 <b><?php echo e($headline_notice->title); ?></b> <a href="<?php echo e(route('single.notice', $headline_notice->slug)); ?>"><u>Read More.</u></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b><?php echo e($headline_notice->title); ?></b> <a
+                        href="<?php echo e(route('single.notice', $headline_notice->slug)); ?>"><u>Read
+                            More.</u></a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </marquee>
         </div>
@@ -46,10 +48,17 @@
                             <div class="voice-left-chanecllor">
                                 <div class="voice-images-box">
                                     <?php if(!empty(websiteSetting()->chairman_image)): ?>
-                                    <img src="<?php echo e(asset('storage/dashboard_files/chairman_image.jpg')); ?>"
-                                        alt="">
+                                        <img src="<?php echo e(asset('storage/dashboard_files/chairman_image.jpg')); ?>" alt="">
                                     <?php endif; ?>
-                                    <p><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->chairman_name); ?><?php else: ?> <?php echo e("Chairman Name"); ?><?php endif; ?></p>
+                                    <p>
+                                        <?php if(!empty(websiteSetting())): ?>
+                                            <?php echo e(websiteSetting()->chairman_name); ?>
+
+                                        <?php else: ?>
+                                            <?php echo e('Chairman Name'); ?>
+
+                                        <?php endif; ?>
+                                    </p>
                                     <h5>সভাপতি</h5>
                                 </div>
                             </div>
@@ -58,7 +67,15 @@
                             <a href="#">
                                 <div class="voice-right-chanecllorr">
                                     <h4>সভাপতির বাণী</h4>
-                                    <p><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->chairman_speech); ?><?php else: ?> <?php echo e(" "); ?><?php endif; ?></p>
+                                    <p>
+                                        <?php if(!empty(websiteSetting())): ?>
+                                            <?php echo e(websiteSetting()->chairman_speech); ?>
+
+                                        <?php else: ?>
+                                            <?php echo e(' '); ?>
+
+                                        <?php endif; ?>
+                                    </p>
                                 </div>
                             </a>
                         </div>
@@ -74,7 +91,15 @@
                                 <div class="voice-images-box">
                                     <img src="<?php echo e(asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg')); ?>"
                                         alt="">
-                                    <p><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->head_teacher_name); ?><?php else: ?> <?php echo e("Head Teacher Name"); ?><?php endif; ?></p>
+                                    <p>
+                                        <?php if(!empty(websiteSetting())): ?>
+                                            <?php echo e(websiteSetting()->head_teacher_name); ?>
+
+                                        <?php else: ?>
+                                            <?php echo e('Head Teacher Name'); ?>
+
+                                        <?php endif; ?>
+                                    </p>
                                     <h5>প্রধান শক্ষিক</h5>
                                 </div>
                             </div>
@@ -82,7 +107,15 @@
                         <div class="col-lg-9 col-md-9">
                             <div class="voice-right-chanecllorr">
                                 <h4>প্রধান শিক্ষকের বাণী</h4>
-                                <p><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->head_teacher_speech); ?><?php else: ?> <?php echo e(" "); ?><?php endif; ?></p>
+                                <p>
+                                    <?php if(!empty(websiteSetting())): ?>
+                                        <?php echo e(websiteSetting()->head_teacher_speech); ?>
+
+                                    <?php else: ?>
+                                        <?php echo e(' '); ?>
+
+                                    <?php endif; ?>
+                                </p>
                                 </p>
                             </div>
                         </div>
@@ -112,7 +145,15 @@
                 <div class="col-lg-12">
                     <div class="line-header">
 
-                        <h2 style="<?php if(strlen(websiteSetting()->school_name) <= 50): ?> font-size: 29px; <?php else: ?> font-size: 26px; <?php endif; ?>"><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->school_name); ?><?php else: ?> <?php echo e("School Name"); ?><?php endif; ?> in Numbers</h2>
+                        <h2 style="<?php if(strlen(websiteSetting()->school_name) <= 50): ?> font-size: 29px; <?php else: ?> font-size: 26px; <?php endif; ?>">
+                            <?php if(!empty(websiteSetting())): ?>
+                                <?php echo e(websiteSetting()->school_name); ?>
+
+                            <?php else: ?>
+                                <?php echo e('School Name'); ?>
+
+                            <?php endif; ?> in Numbers
+                        </h2>
                         <div class="under-bottom"></div>
                     </div>
                 </div>
@@ -124,7 +165,15 @@
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                         <div class="couter-box">
                             <i class="fas fa-university"></i>
-                            <h1><span class="counter"><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->founded); ?><?php else: ?> <?php echo e("0000"); ?><?php endif; ?></span></h1>
+                            <h1><span class="counter">
+                                    <?php if(!empty(websiteSetting())): ?>
+                                        <?php echo e(websiteSetting()->founded); ?>
+
+                                    <?php else: ?>
+                                        <?php echo e('0000'); ?>
+
+                                    <?php endif; ?>
+                                </span></h1>
                             <h3>Founded</h3>
                         </div>
                     </div>
@@ -140,7 +189,15 @@
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                         <div class="couter-box">
                             <i class="fas fa-users"></i>
-                            <h1><span class="counter"><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->total_student); ?><?php else: ?> <?php echo e("0"); ?><?php endif; ?></span></h1>
+                            <h1><span class="counter">
+                                    <?php if(!empty(websiteSetting())): ?>
+                                        <?php echo e(websiteSetting()->total_student); ?>
+
+                                    <?php else: ?>
+                                        <?php echo e('0'); ?>
+
+                                    <?php endif; ?>
+                                </span></h1>
                             <h3>Regular Students</h3>
                         </div>
                     </div>
@@ -224,9 +281,9 @@
                 <div class="col-md-3 border-right">
                     <div class="facilities_cards">
                         <div class="first bg-white p-4 text-center">
-                            <svg height="100px" width="100px" viewBox="0 0 503.467 503.467" version="1.1"
-                                id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" fill="#000000">
+                            <svg height="100px" width="100px" viewBox="0 0 503.467 503.467" version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xml:space="preserve" fill="#000000">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
@@ -499,16 +556,17 @@
                     </div>
                     <div class="owl-carousel owl-theme feature-event-news">
                         <?php
-                            $i=1;
+                            $i = 1;
                         ?>
 
                         <?php $__currentLoopData = $notice_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <?php if($i == 5): ?>
-                                <?php break; ?>
-                                <?php $i++; ?>
-                            <?php endif; ?>
+                            <?php break; ?>
+
+                            <?php $i++; ?>
+                        <?php endif; ?>
                         <div class="feature-left-images-box">
-                            <?php if($value->file_path == null): ?>
+                            <?php if($value->file_path == null || $value->file_sys_ver == 2): ?>
                                 <img src="<?php echo e(asset('public_asset/images/dummy_img/notice_defult.png')); ?>"
                                     alt="">
                             <?php elseif(!$value->file_path == null): ?>
@@ -581,70 +639,69 @@
 <!-- ==========Latest News part start============= -->
 <?php if(count($event_datas) > 0): ?>
 <section class="pt-5 pb-5" style="color:#000000">
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <h3 class="mb-3">Events</h3>
-        </div>
-        <div class="col-6 text-right">
-            <?php if(count($event_datas) > 3): ?>
-                <a class="btn btn-color mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
-                    data-slide="prev">
-                    <i class="fa fa-arrow-left"></i>
-                </a>
-                <a class="btn btn-color mb-3 " href="#carouselExampleIndicators2" role="button"
-                    data-slide="next">
-                    <i class="fa fa-arrow-right"></i>
-                </a>
-            <?php endif; ?>
-        </div>
-        <div class="col-12">
-            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
-                <div class="carousel-inner">
-
-                    <?php
-                        $e = 0;
-                    ?>
-                    <?php $__currentLoopData = $event_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $event_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php $e++; ?>
-                        <?php if($e == 1): ?>
-                            <div class="carousel-item <?php if($key == 0): ?> active <?php endif; ?>">
-                                <div class="row">
-                        <?php endif; ?>
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <?php if(!$event_data->file_path == null): ?>
-                                    <img src="<?php echo e(asset('storage/event_files/' . $event_data->file_path)); ?>"
-                                        height="150" width="350" alt="">
-                                <?php elseif($event_data->file_path == null): ?>
-                                    <img src="<?php echo e(asset('public_asset/default_event.png')); ?>" height="150"
-                                        width="350" alt="">
-                                <?php endif; ?>
-                                <a href="">
-                                    <div class="card-body"
-                                        style=" height: 217px; width: auto; overflow-y: scroll; ">
-                                        <h4 class="card-title"></h4>
-                                        <p class="card-text">
-                                            <a href="<?php echo e(route('single.event', base64_encode($event_data->id))); ?>"
-                                                style="color:black;">
-                                                <?php echo limit_text($event_data->event_name, 10); ?>
-                                        </p>
-                                </a>
-                            </div>
-                            </a>
-
-                        </div>
-                </div>
-
-                <?php if($e == 3): ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="mb-3">Events</h3>
             </div>
-        </div>
-        <?php $e=0; ?>
-        <?php endif; ?>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <div class="col-6 text-right">
+                <?php if(count($event_datas) > 3): ?>
+                    <a class="btn btn-color mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                        data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-color mb-3 " href="#carouselExampleIndicators2" role="button"
+                        data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                <?php endif; ?>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
-    </div>
+                    <div class="carousel-inner">
+
+                        <?php
+                            $e = 0;
+                        ?>
+                        <?php $__currentLoopData = $event_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $event_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php $e++; ?>
+                            <?php if($e == 1): ?>
+                                <div class="carousel-item <?php if($key == 0): ?> active <?php endif; ?>">
+                                    <div class="row">
+                            <?php endif; ?>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <?php if(!$event_data->file_path == null): ?>
+                                        <img src="<?php echo e(asset('storage/event_files/' . $event_data->file_path)); ?>"
+                                            height="150" width="367" alt="">
+                                    <?php elseif($event_data->file_path == null): ?>
+                                        <img src="<?php echo e(asset('public_asset/default_event.png')); ?>" height="150"
+                                            width="367" alt="">
+                                    <?php endif; ?>
+                                    <a href="">
+                                        <div class="card-body"
+                                            style=" height: 217px; width: auto; overflow-y: scroll; ">
+                                            <h4 class="card-title"></h4>
+                                            <p class="card-text">
+                                                <a href="<?php echo e(route('single.event', base64_encode($event_data->id))); ?>"
+                                                    style="color:black;">
+                                                    <?php echo limit_text($event_data->event_name, 10); ?>
+                                            </p>
+                                    </a>
+                                </div>
+                                </a>
+
+                            </div>
+                    </div>
+                    <?php if($e == 3): ?>
+                </div>
+            </div>
+            <?php $e=0; ?>
+<?php endif; ?>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+</div>
 </div>
 </div>
 </div>

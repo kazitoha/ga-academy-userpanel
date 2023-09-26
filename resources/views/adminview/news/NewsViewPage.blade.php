@@ -34,7 +34,7 @@
                     <div class="form-group">
                         <label>Description</label>
                         <div>
-                            <textarea required class="form-control @error('description')is-invalid @enderror" name="description" value="{{old('description')}}" rows="5"></textarea>
+                            <textarea required class="form-control @error('description')is-invalid @enderror" id="elm1" name="description" value="{{old('description')}}" rows="5"></textarea>
                         </div>
                     </div>
                     <div class="form-group mb-0">
