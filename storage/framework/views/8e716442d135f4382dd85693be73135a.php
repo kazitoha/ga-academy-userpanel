@@ -16,5 +16,13 @@
             <priority>0.8</priority>
         </url>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <?php $__currentLoopData = $news_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $news_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <url>
+        <loc><?php echo e(url('/')); ?>/single/news/<?php echo e($news_data->slug); ?></loc>
+        <lastmod><?php echo e($news_data->created_at->tz('UTC')->toAtomString()); ?></lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </urlset>
 <?php /**PATH D:\laragon\www\local\resources\views/userview/sitemap.blade.php ENDPATH**/ ?>

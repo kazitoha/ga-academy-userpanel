@@ -34,16 +34,16 @@
                             <hr>
 
 
-
                             @if (session('success_msg'))
                                 <div class="alert alert-success" role="alert">
                                     {{ session('success_msg') }}
                                 </div>
                             @endif
 
-                            <form class="pt-4" action="{{ route('apply.for.testimonial') }}" method="post" enctype="multipart/form-data">
-                                <!-- 2 column grid layout with text inputs for the first and last names -->.
-                                @csrf
+                            <form class="pt-4" action="{{ route('apply.for.testimonial') }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
+                                <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="row mb-4">
                                     <div class="col">
                                         <div class="form-outline">
@@ -131,27 +131,27 @@
                                 </div>
 
                                 <div class="row mb-4">
+                                    <!--<div class="col">-->
+                                    <!--    <div class="form-outline">-->
+                                    <!--        <label class="form-label text-dark" for="form6Example1">Exam Name <b-->
+                                    <!--                class="text-danger">*</b></label>-->
+
+                                    <!--        <select class="form-control @error('exam_name')is-invalid @enderror"-->
+                                    <!--            name="exam_name" aria-label="Default select example">-->
+                                    <!--            <option selected disabled>Open this select menu</option>-->
+                                    <!--            <option value="1" {{ old('exam_name') == 1 ? "selected" : "" }}>JSC</option>-->
+                                    <!--            <option value="2" {{ old('exam_name') == 2 ? "selected" : "" }}>SSC</option>-->
+                                    <!--        </select>-->
+                                    <!--        @error('exam_name')-->
+                                    <!--            <span class="text-danger">{{ $message }}</span>-->
+                                    <!--        @enderror-->
+                                    <!--    </div>-->
+                                    <!--</div>-->
+
+
                                     <div class="col">
                                         <div class="form-outline">
-                                            <label class="form-label text-dark" for="form6Example1">Exam Name <b
-                                                    class="text-danger">*</b></label>
-
-                                            <select class="form-control @error('exam_name')is-invalid @enderror"
-                                                name="exam_name" aria-label="Default select example">
-                                                <option selected disabled>Open this select menu</option>
-                                                <option value="1" {{ old('exam_name') == 1 ? "selected" : "" }}>JSC</option>
-                                                <option value="2" {{ old('exam_name') == 2 ? "selected" : "" }}>SSC</option>
-                                            </select>
-                                            @error('exam_name')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col">
-                                        <div class="form-outline">
-                                            <label class="form-label text-dark" for="form6Example2">Exam Year. <b
+                                            <label class="form-label text-dark" for="form6Example2">Exam Year <b
                                                     class="text-danger">*</b></label>
                                             <input type="number" placeholder="YYYY" name="exam_year"
                                                 id="form6Example2" value="{{ old('exam_year') }}"
@@ -172,8 +172,8 @@
                                                 name="group" aria-label="Default select example">
                                                 <option selected disabled>Open this select menu</option>
                                                 <option value="1" {{ old('group') == 1 ? "selected" : "" }} >Science</option>
-                                                <option value="2" {{ old('group') == 2 ? "selected" : "" }}>Commerce</option>
-                                                <option value="3" {{ old('group') == 3 ? "selected" : "" }}>Arts</option>
+                                                <option value="2" {{ old('group') == 2 ? "selected" : "" }}>Business Studies</option>
+                                                <option value="3" {{ old('group') == 3 ? "selected" : "" }}>Humanities</option>
                                             </select>
                                             @error('group')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -214,7 +214,7 @@
                                                     <select class="form-control @error('session')is-invalid @enderror"
                                                     name="session" aria-label="Default select example">
                                                     <option selected disabled>Open this select menu</option>
-                                                    <option value="1" {{ old('session') == 1 ? "selected" : "" }}>2023-2022</option>
+                                                    <option value="1" {{ old('session') == 1 ? "selected" : "" }}>2020-2021</option>
                                                     <option value="2" {{ old('session') == 2 ? "selected" : "" }}>2021-2022</option>
                                                 </select>
                                             @error('session')
@@ -230,9 +230,8 @@
                                         <div class="form-outline">
                                             <label class="form-label text-dark" for="form6Example1">GPA <b
                                                     class="text-danger">*</b></label>
-                                            <input type="number" min="1" max="5.00" step="0.1"
-                                                value="{{ old('gpa') }}" name="gpa" id="form6Example1"
-                                                pattern="[0-9]*[.,]?[0-9]*"
+                                            <input type="number"
+                                                value="{{ old('gpa') }}" name="gpa" id="form6Example1" step="0.01" max="5" 
                                                 class="form-control @error('gpa')is-invalid @enderror" required />
                                             @error('gpa')
                                                 <span class="text-danger">{{ $message }}</span>

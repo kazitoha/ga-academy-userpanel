@@ -16,4 +16,12 @@
             <priority>0.8</priority>
         </url>
     @endforeach
+    @foreach ($news_datas as $news_data)
+    <url>
+        <loc>{{ url('/') }}/single/news/{{ $news_data->slug }}</loc>
+        <lastmod>{{ $news_data->created_at->tz('UTC')->toAtomString() }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+@endforeach
 </urlset>

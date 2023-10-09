@@ -8,6 +8,7 @@ use App\Models\notices;
 use App\Models\event;
 use App\Models\banner;
 use App\Models\officeStaff;
+use App\Models\news;
 
 
 class DashboardController extends Controller
@@ -26,12 +27,15 @@ class DashboardController extends Controller
     {
         return view('userview.group');
     }
-    function SiteMap(){
-        $notice_datas = notices::orderBy('id','DESC')->get();
-        $event_datas = event::orderBy('id','DESC')->get();
+    function SiteMap()
+    {
+        $notice_datas = notices::orderBy('id', 'DESC')->get();
+        $event_datas = event::orderBy('id', 'DESC')->get();
+        $news_datas = news::orderBy('id', 'DESC')->get();
         return response()->view('userview.sitemap', [
             'notice_datas' => $notice_datas,
             'event_datas' => $event_datas,
+            'news_datas' => $news_datas,
         ])->header('Content-Type', 'text/xml');
         // return view('userview.sitemap', compact('notice_datas', 'event_datas'));
     }

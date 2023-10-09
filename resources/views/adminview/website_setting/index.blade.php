@@ -123,8 +123,8 @@
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"></label>
                                 <label>Chairman Speech</label>
-                                <textarea id="textarea" class="form-control @error('chairman_speech')is-invalid @enderror" maxlength="225" name="chairman_speech" rows="3"
-                                    placeholder="This textarea has a limit of 225 chars.">@if (!empty($website_data)) {{ $website_data->chairman_speech }} @endif</textarea>
+                                <textarea id="textarea" class="form-control @error('chairman_speech')is-invalid @enderror" name="chairman_speech" rows="3"
+                                    placeholder="This textarea.">@if (!empty($website_data)) {{ $website_data->chairman_speech }} @endif</textarea>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01">Chairman Image</label>

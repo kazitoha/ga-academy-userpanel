@@ -684,7 +684,7 @@
                                             style=" height: 217px; width: auto; overflow-y: scroll; ">
                                             <h4 class="card-title"></h4>
                                             <p class="card-text">
-                                                <a href="<?php echo e(route('single.event', base64_encode($event_data->id))); ?>"
+                                                <a href="<?php echo e(route('single.event', $event_data->slug)); ?>"
                                                     style="color:black;">
                                                     <?php echo limit_text($event_data->event_name, 10); ?>
                                             </p>

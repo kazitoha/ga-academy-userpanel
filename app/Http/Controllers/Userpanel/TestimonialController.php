@@ -25,7 +25,6 @@ class TestimonialController extends Controller
             'father_name_bd'    => 'required',
             'mother_name'       => 'required',
             'mother_name_bd'    => 'required',
-            'exam_name'         => 'required',
             'exam_year'         => 'required|integer|min:1930|max:' . $year,
             'group'             => 'required|min:1|max:3',
             'board_roll'        => 'required',
@@ -33,7 +32,7 @@ class TestimonialController extends Controller
             'session'           => 'required',
             'gpa'               => 'required|min:1|max:5',
             'date_of_birth'     => 'required',
-            'attachment_file'   => 'required|mimes:jpeg,png,jpg,gif,svg,pdf',
+            'attachment_file'   => 'required|mimes:jpeg,png,jpg,gif,svg,pdf|max:2024',
 
 
         ]);
@@ -45,7 +44,7 @@ class TestimonialController extends Controller
             'father_name_bd' => $request->father_name_bd,
             'mother_name' => $request->mother_name,
             'mother_name_bd' => $request->mother_name_bd,
-            'exam_name' => $request->exam_name,
+            'exam_name' => 2,
             'exam_year' => $request->exam_year,
             'group' => $request->group,
             'board_roll' => $request->board_roll,
@@ -65,11 +64,30 @@ class TestimonialController extends Controller
             $extension = $request->file('attachment_file')->extension();
             $rename_image = $last_insert_id . "." . $extension;
 
-            Image::make($main_img)->resize('800', '533')->save(base_path('public/storage/testimonial/' . $rename_image));
+            $upload_url = base_path('public/storage/testimonial').'/'.$rename_image;
+            $filename = $this->compress_image($_FILES["attachment_file"]["tmp_name"], $upload_url, 60);
+
+            // Image::make($main_img)->save(base_path('public/storage/testimonial/' . $rename_image));
 
             testimonial::find($last_insert_id)->update(['attachment_file' => $rename_image,]);
         }
 
         return back()->with('success_msg', 'Successfully applied application for testimonial.');
+
+
+        
+      
+    }
+
+      function compress_image($source_url, $destination_url, $quality) {
+        $info = getimagesize($source_url);
+            if ($info['mime'] == 'image/jpeg')
+                    $image = imagecreatefromjpeg($source_url);
+            elseif ($info['mime'] == 'image/gif')
+                    $image = imagecreatefromgif($source_url);
+            elseif ($info['mime'] == 'image/png')
+                    $image = imagecreatefrompng($source_url);
+            imagejpeg($image, $destination_url, $quality);
+        return $destination_url;
     }
 }
