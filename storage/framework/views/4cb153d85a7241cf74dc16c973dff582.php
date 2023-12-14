@@ -23,9 +23,8 @@
             <div class="row pt-2">
 
             </div>
-            <div class="row pt-3">
-                <div class="col-lg-8" style="box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);">
-
+            <div class="row pt-3 notice_div">
+                <div class="col-lg-9" style="box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);">
                     <?php $__currentLoopData = $notice; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="Notice-box">
                             <div class="Notice-item">
@@ -33,9 +32,9 @@
                                     <h2><?php echo e($value->title); ?></h2>
                                 </a>
                                 <ul>
-                                    <li class="date-time"><?php echo e($value->created_at->format('d-M-Y')); ?></li>
+                                    <li class="date-time">Published Date: <?php echo e($value->created_at->format('d-M-Y')); ?></li>
                                     <li class="Notice-btn-item"><a
-                                            href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>" target="blank"
+                                            href="<?php echo e(route('single.notice', $value->slug)); ?>" target="blank"
                                             class="btn-read">+ read more....</a></li>
                                 </ul>
                             </div>
@@ -57,7 +56,7 @@
                     $url = Route::current()->uri;
                 ?>
 
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="useful-link">
                         <h3>Category</h3>
                         <ul>

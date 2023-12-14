@@ -1,1 +1,0 @@
-<?php /**PATH D:\laragon\www\local\resources\views/navigation-menu.blade.php ENDPATH**/ ?>

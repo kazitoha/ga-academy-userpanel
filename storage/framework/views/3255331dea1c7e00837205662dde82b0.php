@@ -23,7 +23,7 @@
                         <div class="content-heading">
                             <h2><?php echo e($single_news->title); ?></h2>
 
-                            <p><?php echo e($single_news->description); ?></p>
+                            <p><?php echo $single_news->description; ?></p>
                             <?php if($single_news->file_path != null): ?>
                              <img src="<?php echo e(asset('storage/news_files/'.$single_news->file_path)); ?>" alt="" style="overflow:scroll; height:auto; width:auto">
                             <?php endif; ?>
@@ -58,4 +58,4 @@
 
  <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\local\resources\views/userview/news/singleNews.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\ga-academy-userpanel\resources\views/userview/news/singleNews.blade.php ENDPATH**/ ?>

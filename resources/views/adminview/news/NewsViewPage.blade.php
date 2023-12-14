@@ -16,9 +16,8 @@
                  </div>
                 @endif
 
-                <form class="custom-validation" action="{{route('news.store')}}" method="post" enctype="multipart/form-data" >
+                <form class="custom-validation" action="{{route('news.store')}}" method="post" enctype="multipart/form-data" novalidate>
                     @csrf
-
                     <div class="form-group">
                         <label>Title</label>
                         <input type="text" maxlength="120" class="form-control @error ('title')is-invalid @enderror"  placeholder="Type something" name="title" value="{{old('title')}}" required/>

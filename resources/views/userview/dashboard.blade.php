@@ -127,10 +127,10 @@
     <!-- =====================counter part start=================== -->
     @php
 
+        $total_student = 2001;
         // $client = new GuzzleHttp\Client();
         // $res = $client->get('https://portal.fenigaacademy.edu.bd/api/student_count');
         // $total_student = $res->getBody();
-        $total_student = 2001;
 
     @endphp
     <section id="counter_part">
@@ -533,7 +533,7 @@
 
 
 
-    <section id="feature-news-event-part">
+    {{-- <section id="feature-news-event-part">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -607,107 +607,140 @@
                         class="fas fa-angle-double-right"></i></a>
             </div>
         </div>
-    </div>
-</div>
-</div>
-</div>
-</section>
+    </div> --}}
 
+    <section id="latest-news-part">
+        <div class="container">
+            <div class="row" id="Notice-Side">
+                <div class="col-lg-4" style="padding-left:2px; padding-right: 5px;">
+                    <div class="card">
+                        <div class="card-body" style="padding-right: 1px; padding-left: 1px;">
+                            <h4 class="header-title" style="text-align: center;">Notice</h4>
 
+                            <div class="table-responsive" style="overflow:scroll; height:550px;">
+                                <table class="table table-striped">
+                                    <thead class="table">
+                                        <tr>
+                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">#</th>
+                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">Title</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php $i=1; @endphp
+                                        @foreach ($notice_data as $value)
+                                            <tr>
+                                                <th scope="row">{{ $i++ }}</th>
+                                                <td><a href="{{ url('single/notice') }}/{{ $value->slug }}"
+                                                        style="color:black;">{{ $value->title }}
+                                                        <br><i class="fas fa-calendar-alt" style="color:#ff8d00">
+                                                            {{ $value->created_at->format('d-M-Y') }}</i></a></td>
+                                            </tr>
+                                        @endforeach
 
-
-
-
-
-
-
-
-
-
-<!-- ==========Latest News part start============= -->
-@if (count($event_datas) > 0)
-<section class="pt-5 pb-5" style="color:#000000">
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <h3 class="mb-3">Events</h3>
-            </div>
-            <div class="col-6 text-right">
-                @if (count($event_datas) > 3)
-                    <a class="btn btn-color mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
-                        data-slide="prev">
-                        <i class="fa fa-arrow-left"></i>
-                    </a>
-                    <a class="btn btn-color mb-3 " href="#carouselExampleIndicators2" role="button"
-                        data-slide="next">
-                        <i class="fa fa-arrow-right"></i>
-                    </a>
-                @endif
-            </div>
-            <div class="col-12">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
-                    <div class="carousel-inner">
-
-                        @php
-                            $e = 0;
-                        @endphp
-                        @foreach ($event_datas as $key => $event_data)
-                            @php $e++; @endphp
-                            @if ($e == 1)
-                                <div class="carousel-item @if ($key == 0) active @endif">
-                                    <div class="row">
-                            @endif
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    @if (!$event_data->file_path == null)
-                                        <img src="{{ asset('storage/event_files/' . $event_data->file_path) }}"
-                                            height="150" width="367" alt="">
-                                    @elseif($event_data->file_path == null)
-                                        <img src="{{ asset('public_asset/default_event.png') }}" height="150"
-                                            width="367" alt="">
-                                    @endif
-                                    <a href="">
-                                        <div class="card-body"
-                                            style=" height: 217px; width: auto; overflow-y: scroll; ">
-                                            <h4 class="card-title"></h4>
-                                            <p class="card-text">
-                                                <a href="{{ route('single.event', $event_data->slug ) }}"
-                                                    style="color:black;">
-                                                    @php echo limit_text($event_data->event_name, 10); @endphp
-                                            </p>
-                                    </a>
-                                </div>
-                                </a>
-
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
                     </div>
-                    @if ($e == 3)
+                    <div class="col-md-12 text-center" style="padding: 10px;">
+                        <a href="{{ url('notice') }}" class="btn btn-warning" style="text-align:center;">view
+                            all</a>
+                    </div>
                 </div>
+
+                <div class="col-lg-4" style="padding-left:2px; padding-right: 5px;">
+                    <div class="card">
+                        <div class="card-body" style="padding-right: 1px; padding-left: 1px;">
+                            <h4 class="header-title" style="text-align: center;">Event</h4>
+
+                            <div class="table-responsive" style="overflow:scroll; height:550px;">
+                                <table class="table table-striped">
+                                    <thead class="table">
+                                        <tr>
+                                            <th scope="col table-header"style="position: sticky; top: -5px; background-color: white; text-align: center;">#</th>
+                                            <th scope="col"style="position: sticky; top: -5px; background-color: white; text-align: center;"> Title</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php $i=1; @endphp
+                                        @foreach ($event_datas as $value)
+                                            <tr>
+                                                <th scope="row">{{ $i++ }}</th>
+                                                <td><a href="{{ url('single/event') }}/{{ $value->slug }}"
+                                                        style="color:black;">
+
+                                                        {{ $value->event_name }}<br><i class="fas fa-calendar-alt"
+                                                            style="color:#ff8d00">
+                                                            @if (!$value->created_at == null)
+                                                                {{ $value->created_at->format('d-M-Y') }}
+                                                            @endif
+                                                        </i></a></td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center" style="padding: 10px;">
+                        <a href="{{ route('event') }}" class="btn btn-warning" style="text-align:center;">view all</a>
+                    </div>
+
+                </div>
+                <div class="col-lg-4" style="padding-right: 5px;padding-bottom: 10px; padding-left: 5px;">
+                    <div class="card">
+                        <div class="card-body" style="padding-right: 1px; padding-left: 2px;">
+                            <h4 class="header-title" style="text-align: center;">News</h4>
+                            <div class="table-responsive" style="overflow:scroll; height:550px;">
+                                <table class="table table-striped">
+                                    <thead class="table">
+                                        <tr>
+                                            <th scope="col"style="position: sticky; top: -5px; background-color: white;  text-align: center;">#</th>
+                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">Title</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php $i=1; @endphp
+                                        @foreach ($news_datas as $value)
+                                            <tr>
+                                                <th scope="row">{{ $i++ }}</th>
+                                                <td><a href="{{ url('single/news') }}/{{ $value->slug }}"
+                                                        style="color:black;">{{ $value->title }}
+                                                        <br><i class="fas fa-calendar-alt" style="color:#ff8d00">
+                                                            {{ $value->created_at->format('d-M-Y') }}</i></a></td>
+                                            </tr>
+                                        @endforeach
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center" style="padding: 10px;">
+                        <a href="{{ route('news') }}" class="btn btn-warning" style="text-align:center;">view
+                            all</a>
+                    </div>
+                </div>
+                <br>
             </div>
-            @php $e=0; @endphp
-@endif
-@endforeach
 
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-@endif
-<!-- ==========Latest News part finish============= -->
 
-<script>
-    $(document).ready(function() {
-        $(".navbar-toggle.collapsed").click(function() {
-            alert("Clicked.");
-        });
-    });
-</script>
-<script type="text/javascript">
-    $("img").lazyload({
-        effect: "fadeIn"
-    });
-</script>
-@endsection
+        </div>
+    </section>
+
+
+
+        <script>
+            $(document).ready(function() {
+                $(".navbar-toggle.collapsed").click(function() {
+                    alert("Clicked.");
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $("img").lazyload({
+                effect: "fadeIn"
+            });
+        </script>
+    @endsection

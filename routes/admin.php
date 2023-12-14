@@ -42,7 +42,7 @@ Route::prefix('/admin')
 
         // common function
         Route::get('delete/all/table/data', 'App\Http\Controllers\Admin\websiteSettingsController@DeleteAll');
-
+        Route::get('add_slug', 'App\Http\Controllers\Admin\websiteSettingsController@addSlugToOldFileSystem');
 
 
         // Notice

@@ -6,19 +6,25 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Models\website_settings;
 use Illuminate\Http\Request;
+use App\Models\notices;
+use App\Models\event;
+use App\Models\news;
 use Image;
 
 class websiteSettingsController extends Controller
 {
-    function websiteSettingView(){
-        $website_data=website_settings::find(1);
-        if($website_data == null){
-            $website_data='';
+
+    function websiteSettingView()
+    {
+        $website_data = website_settings::find(1);
+        if ($website_data == null) {
+            $website_data = '';
         }
-        return view('adminview.website_setting.index',compact('website_data'));
+        return view('adminview.website_setting.index', compact('website_data'));
     }
 
-    function storeSchoolNameAndLogo(Request $request){
+    function storeSchoolNameAndLogo(Request $request)
+    {
         // dd($request->all())
         $request->validate([
             'school_name'         => 'required|string',
@@ -42,47 +48,47 @@ class websiteSettingsController extends Controller
             'google_map_link'     => 'nullable|string',
 
         ]);
-        $website_data=website_settings::find(1);
-        if(empty($website_data)){
+        $website_data = website_settings::find(1);
+        if (empty($website_data)) {
             website_settings::create([
-                'school_name'             =>$request->school_name,
-                'primary_logo'            =>$request->primary_logo,
-                'primary_logo_height'     =>$request->primary_logo_height,
-                'primary_logo_width'      =>$request->primary_logo_width,
-                'secondary_logo'          =>$request->secondary_logo,
-                'chairman_name'           =>$request->chairman_name,
-                'chairman_speech'         =>$request->chairman_speech,
-                'head_teacher_name'       =>$request->head_teacher_name,
-                'head_teacher_speech'     =>$request->head_teacher_speech,
-                'founded'                 =>$request->founded,
-                'total_student'           =>$request->total_student,
-                'phone_number'            =>$request->phone_number,
-                'mobile_number'           =>$request->mobile_number,
-                'email'                   =>$request->email,
-                'facebook_link'           =>$request->facebook_link,
-                'address'                 =>$request->address,
-                'google_map_link'         =>$request->google_map_link,
+                'school_name'             => $request->school_name,
+                'primary_logo'            => $request->primary_logo,
+                'primary_logo_height'     => $request->primary_logo_height,
+                'primary_logo_width'      => $request->primary_logo_width,
+                'secondary_logo'          => $request->secondary_logo,
+                'chairman_name'           => $request->chairman_name,
+                'chairman_speech'         => $request->chairman_speech,
+                'head_teacher_name'       => $request->head_teacher_name,
+                'head_teacher_speech'     => $request->head_teacher_speech,
+                'founded'                 => $request->founded,
+                'total_student'           => $request->total_student,
+                'phone_number'            => $request->phone_number,
+                'mobile_number'           => $request->mobile_number,
+                'email'                   => $request->email,
+                'facebook_link'           => $request->facebook_link,
+                'address'                 => $request->address,
+                'google_map_link'         => $request->google_map_link,
             ]);
-        }else{
+        } else {
             // dd($request->all());
             website_settings::find(1)->update([
-                'school_name'             =>$request->school_name,
-                'primary_logo'            =>$request->primary_logo,
-                'primary_logo_height'     =>$request->primary_logo_height,
-                'primary_logo_width'      =>$request->primary_logo_width,
-                'secondary_logo'          =>$request->secondary_logo,
-                'chairman_name'           =>$request->chairman_name,
-                'chairman_speech'         =>$request->chairman_speech,
-                'head_teacher_name'       =>$request->head_teacher_name,
-                'head_teacher_speech'     =>$request->head_teacher_speech,
-                'founded'                 =>$request->founded,
-                'total_student'           =>$request->total_student,
-                'phone_number'            =>$request->phone_number,
-                'mobile_number'           =>$request->mobile_number,
-                'email'                   =>$request->email,
-                'facebook_link'           =>$request->facebook_link,
-                'address'                 =>$request->address,
-                'google_map_link'         =>$request->google_map_link,
+                'school_name'             => $request->school_name,
+                'primary_logo'            => $request->primary_logo,
+                'primary_logo_height'     => $request->primary_logo_height,
+                'primary_logo_width'      => $request->primary_logo_width,
+                'secondary_logo'          => $request->secondary_logo,
+                'chairman_name'           => $request->chairman_name,
+                'chairman_speech'         => $request->chairman_speech,
+                'head_teacher_name'       => $request->head_teacher_name,
+                'head_teacher_speech'     => $request->head_teacher_speech,
+                'founded'                 => $request->founded,
+                'total_student'           => $request->total_student,
+                'phone_number'            => $request->phone_number,
+                'mobile_number'           => $request->mobile_number,
+                'email'                   => $request->email,
+                'facebook_link'           => $request->facebook_link,
+                'address'                 => $request->address,
+                'google_map_link'         => $request->google_map_link,
             ]);
 
             if ($request->hasFile('chairman_image')) {
@@ -95,9 +101,8 @@ class websiteSettingsController extends Controller
                 if (!$chairman_image_name == null) {
                     unlink(base_path('public/storage/dashborad_files/' . $rename_image));
                 }
-                    Image::make($uploaded_chairman_image)->save(base_path('public/storage/dashborad_files/' . $rename_image));
-                    website_settings::find(1)->update(['chairman_image' => $rename_image,]);
-
+                Image::make($uploaded_chairman_image)->save(base_path('public/storage/dashborad_files/' . $rename_image));
+                website_settings::find(1)->update(['chairman_image' => $rename_image,]);
             }
             if ($request->hasFile('head_teacher_image')) {
                 $head_teacher_image_name = website_settings::find(1)->head_teacher_image;
@@ -109,17 +114,17 @@ class websiteSettingsController extends Controller
                 if (!$head_teacher_image_name == null) {
                     unlink(base_path('public/storage/dashborad_files/' . $rename_image));
                 }
-                    Image::make($uploaded_head_teacher_image)->save(base_path('public/storage/dashborad_files/' . $rename_image));
-                    website_settings::find(1)->update(['head_teacher_image' => $rename_image,]);
+                Image::make($uploaded_head_teacher_image)->save(base_path('public/storage/dashborad_files/' . $rename_image));
+                website_settings::find(1)->update(['head_teacher_image' => $rename_image,]);
             }
         }
 
 
         return back()->with('message', 'Website details updateds Successfully.');
-
     }
 
-    public function DeleteAll(){
+    public function DeleteAll()
+    {
         DB::table('website_settings')->truncate();
         DB::table('banners')->truncate();
         DB::table('gallery')->truncate();
@@ -131,6 +136,31 @@ class websiteSettingsController extends Controller
         DB::table('testimonials')->truncate();
 
         return back()->with('error', 'All table is data is deleted!.');
+    }
 
+    function addSlugToOldFileSystem()
+    {
+
+        // Combine notice queries for better readability
+        $headline_notices = notices::all();
+        foreach ($headline_notices as $value) {
+            notices::find($value->id)->update([
+                'slug' => $value->title."_".$value->id,
+            ]);
+        }
+
+        $event_datas = event::all();
+        foreach ($event_datas as $value) {
+            event::find($value->id)->update([
+                'slug' => $value->title."_".$value->id,
+            ]);
+        }
+
+        $news_datas = news::all();
+        foreach ($news_datas as $value) {
+            news::find($value->id)->update([
+                'slug' => $value->title."_".$value->id,
+            ]);
+        }
     }
 }

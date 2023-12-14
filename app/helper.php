@@ -2,6 +2,7 @@
 
 use App\Models\notices;
 use App\Models\website_settings;
+use Illuminate\Support\Facades\Cache;
 
 function changeDateFormate($date, $date_format)
 {
@@ -25,9 +26,7 @@ function divide_file_name($id)
 }
 function websiteSetting()
 {
-    $website_data = website_settings::find(1);
-    if ($website_data == null) {
-        $website_data = '';
-    }
-    return $website_data;
+    return Cache::remember('website_settings', now()->addHours(24), function () {
+        return website_settings::find(1) ?? '';
+    });
 }

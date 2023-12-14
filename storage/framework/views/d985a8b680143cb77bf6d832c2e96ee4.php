@@ -1,1 +1,0 @@
-<?php /**PATH D:\laragon\www\ga-academy-userpanel\resources\views/navigation-menu.blade.php ENDPATH**/ ?>

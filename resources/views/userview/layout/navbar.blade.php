@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@if(!empty(websiteSetting())){{websiteSetting()->school_name}}@else {{"School Name"}}@endif</title>
+    <title>
+        @if (!empty(websiteSetting()))
+            {{ websiteSetting()->school_name }}
+        @else
+            {{ 'School Name' }}
+        @endif
+    </title>
     <link rel="icon" type="image/x-icon" href="{{ asset('public_asset/images/logo.jpg') }}">
     <!-- fontawesome link---- -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/all.min.css') }}">
@@ -15,8 +21,8 @@
     <!-- venobox link------= -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/venobox.min.css') }}">
     <!-- bootstrap link============= -->
-    <link rel="stylesheet" href="{{ asset('public_asset/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin_asset/assets/css/bootstrap.min.css.map') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="{{ asset('admin_asset/assets/css/bootstrap.min.css.map') }}"> --}}
     <!-- main css link-------- -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/style.css') }}">
     <!-- responsive css strat------- -->
@@ -32,6 +38,10 @@
             position: fixed;
             z-index: 2;
             width: 100%;
+            background-color:
+                /* Add your desired background color */
+            ;
+            /* Add any other styling you need for the fixed navbar */
         }
     </style>
 </head>
@@ -53,7 +63,14 @@
                     <img src="{{ asset('public_asset/images/Untitled-2.png') }}" alt="" class="img-fluid">
                 </div>
                 <div class="col-8 text-center m-auto">
-                    <span class="mb-0 mt-2" style="color:#666666; font-weight: bold; @if(strlen(websiteSetting()->school_name) <= 50) font-size: 29px; @else font-size: 26px; @endif ">@if(!empty(websiteSetting())){{websiteSetting()->school_name}}@else {{"School Name"}}@endif</span>
+                    <span class="mb-0 mt-2"
+                        style="color:#666666; font-weight: bold; @if (strlen(websiteSetting()->school_name) <= 50) font-size: 29px; @else font-size: 26px; @endif ">
+                        @if (!empty(websiteSetting()))
+                            {{ websiteSetting()->school_name }}
+                        @else
+                            {{ 'School Name' }}
+                        @endif
+                    </span>
                 </div>
                 <div class="col-2 text-right m-auto" style="padding-right: 28px;">
                     <a href="https://portal.fenigaacademy.edu.bd/" type="button" class="btn btn-outline-info">Login</a>
@@ -161,7 +178,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item d-lg-block d-xl-none"
-                                    href="https://portal.fenigaacademy.edu.bd/">Login</a>
+                                    href="https://demo.portal.fenigaacademy.edu.bd">Login</a>
                                 <a class="dropdown-item @if ($url == 'academic/testimonial') active @endif"
                                     href="{{ route('academic.testimonial') }}">Apply For Testimonial</a>
 
@@ -272,18 +289,26 @@
                         <div class="footer-link">
                             <ul>
                                 <li>
-                                    <a
-                                        href="{{route('contact')}}"><i
-                                            class="fa fa-map-marker" aria-hidden="true"></i> @if(!empty(websiteSetting())){{websiteSetting()->address}}@else {{"School Address"}}@endif</a>
+                                    <a href="{{ route('contact') }}"><i class="fa fa-map-marker"
+                                            aria-hidden="true"></i>
+                                        @if (!empty(websiteSetting()))
+                                            {{ websiteSetting()->address }}
+                                        @else
+                                            {{ 'School Address' }}
+                                        @endif
+                                    </a>
                                 </li>
                                 <li>
-                                    <strong><a
-                                            href=""><i
-                                                class="fa fa-envelope-o" aria-hidden="true"></i>
-                                                @if(!empty(websiteSetting())){{websiteSetting()->email}}@else {{"School@email.com"}}@endif</a></strong>
+                                    <strong><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                            @if (!empty(websiteSetting()))
+                                                {{ websiteSetting()->email }}
+                                            @else
+                                                {{ 'School@email.com' }}
+                                            @endif
+                                        </a></strong>
                                 </li>
                                 <li>
-                                    <a href="@if(!empty(websiteSetting())){{websiteSetting()->facebook_link}}@else {{"facebook.com"}}@endif"
+                                    <a href="@if (!empty(websiteSetting())) {{ websiteSetting()->facebook_link }}@else {{ 'facebook.com' }} @endif"
                                         target="_blank"><strong><i class="fa fa-facebook-official"
                                                 aria-hidden="true"></i> Facebook</strong></a>
                                 </li>
@@ -336,5 +361,6 @@
 <!-- ----mixitup js------------ -->
 <script src="{{ asset('public_asset/js/mixitup.min.js') }}"></script>
 <script src="{{ asset('public_asset/js/scroll_slider.js') }}"></script>
+
 
 </html>

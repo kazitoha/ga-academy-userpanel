@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-
-    <title><?php echo $url=Route::current()->uri; ?> | <?php echo e(config('app.name', 'Laravel')); ?></title>
+    <title><?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->school_name); ?><?php else: ?> <?php echo e("School Name"); ?><?php endif; ?> | <?php echo $url=Route::current()->uri; ?> </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
@@ -56,7 +55,7 @@
                 <div class="d-flex">
                     <!-- LOGO -->
                     <div class="navbar-brand-box">
-                        <a href="index.html" class="logo logo-dark">
+                        <a href="#" class="logo logo-dark">
                             <span class="logo-sm">
                                 <img src="<?php echo e(asset('public_asset/images/logo.jpg')); ?>" alt="">
                             </span>
@@ -66,14 +65,14 @@
                             </span>
                         </a>
 
-                        <a href="index.html" class="logo logo-light">
+                        <a href="#" class="logo logo-light">
                             <span class="logo-sm">
                                 <img src="<?php echo e(asset('public_asset/images/logo.jpg')); ?>" alt=""
                                     style="width: -1px;height: 28px;">
                             </span>
                             <span class="logo-lg">
                                 <img src="<?php echo e(asset('public_asset/images/logo.jpg')); ?>" alt=""
-                                    style="width: 73px; height: 64px;">
+                                    style="width: 73px; height: 64px; margin-top: 5px;">
                             </span>
                         </a>
                     </div>
@@ -86,7 +85,8 @@
                     <!-- App Search-->
                     <form class="app-search d-none d-lg-block">
                         <div class="position-relative">
-                            <input type="text" class="form-control" placeholder="Search...">
+                            <input type="text" id="searchbar" onkeyup="search()" name="search" class="form-control"
+                                placeholder="Search...">
                             <span class="mdi mdi-magnify"></span>
                         </div>
                     </form>
@@ -125,16 +125,8 @@
                         </button>
                     </div>
 
-
-
-
                     <div class="dropdown d-inline-block">
-
                         <span class="inline-flex rounded-md">
-
-
-
-
                             <?php if(Laravel\Jetstream\Jetstream::managesProfilePhotos()): ?>
                                 <button type="button" class="btn header-item waves-effect"
                                     id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true"
@@ -199,14 +191,6 @@
                             </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
             </div>
     </div>
 
@@ -226,76 +210,90 @@
                 <ul class="metismenu list-unstyled" id="side-menu">
                     <li class="menu-title">Menu</li>
 
-                    <li>
+                    <li class="search_bar">
                         <a href="<?php echo e(url('admin/dashboard')); ?>" class="waves-effect">
                             <i class="mdi mdi-view-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="search_bar">
                         <a href="<?php echo e(url('/')); ?>" class="waves-effect" target="_blank">
                             <i class="mdi mdi-internet-explorer"></i>
                             <span>Visit Website</span>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-note-text"></i>
                             <span>Notice</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="<?php echo e(route('notice.view')); ?>">Add Notice</a></li>
-                            <li><a href="<?php echo e(route('notice.list')); ?>">Notice List</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('notice.view')); ?>">Add Notice</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('notice.list')); ?>">Notice List</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-message-text-clock-outline"></i>
                             <span>Event</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="<?php echo e(route('event.view')); ?>">Add Event</a></li>
-                            <li><a href="<?php echo e(route('event.list')); ?>">Event List</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('event.view')); ?>">Add Event</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('event.list')); ?>">Event List</a></li>
                         </ul>
                     </li>
 
-                    <li>
+                    <li class="search_bar">
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="mdi mdi-message-text-clock-outline"></i>
+                            <span>Independence Corner</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li class="search_bar"><a href="<?php echo e(route('GoldenJubileeIndependenceCorner')); ?>">সুবর্ণ
+                                    জয়ন্তী কর্নার</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('bongobondhu.corner')); ?>">বঙ্গবন্ধু কর্নার</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-folder-information-outline"></i>
                             <span>News</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="<?php echo e(route('news.view')); ?>">Add News</a></li>
-                            <li><a href="<?php echo e(route('news.list')); ?>">News List</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('news.view')); ?>">Add News</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('news.list')); ?>">News List</a></li>
                         </ul>
                     </li>
 
 
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="waves-effect">
                             <i class="mdi mdi-smart-card-outline"></i>
                             <span class="badge badge-pill badge-success float-right">2</span>
                             <span>Teacher & Stuff Info</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="<?php echo e(route('staff.view')); ?>">Add Teacher & Stuff Info</a></li>
-                            <li><a href="<?php echo e(route('staff.list')); ?>">Teacher & Stuff List</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('staff.view')); ?>">Add Teacher & Stuff Info</a>
+                            </li>
+                            <li class="search_bar"><a href="<?php echo e(route('staff.list')); ?>">Teacher & Stuff List</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="waves-effect">
                             <i class="mdi mdi-account-multiple-outline"></i>
                             <span class="badge badge-pill badge-success float-right">2</span>
                             <span>Committee</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="<?php echo e(route('committee.view')); ?>">Add Committee Member </a></li>
-                            <li><a href="<?php echo e(route('committee.list')); ?>">Committee List</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('committee.view')); ?>">Add Committee Member </a>
+                            </li>
+                            <li class="search_bar"><a href="<?php echo e(route('committee.list')); ?>">Committee List</a></li>
                         </ul>
                     </li>
 
-                    <li>
+                    <li class="search_bar">
                         <a href="<?php echo e(route('gallery.view')); ?>" class="waves-effect">
                             <i class="mdi mdi-image"></i>
                             <span>Gallery</span>
@@ -303,13 +301,15 @@
                     </li>
 
 
-                    <li>
+                    <li class="search_bar">
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-note-text"></i>
                             <span>Website Settings</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="<?php echo e(route('banner.view')); ?>">Banner</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('banner.view')); ?>">Banner</a></li>
+                            <li class="search_bar"><a href="<?php echo e(route('school.setting')); ?>">Setting School</a></li>
+
                         </ul>
                     </li>
 
@@ -365,7 +365,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        2022 © FENI GIRISH-AKSHAY ACADEMY.
+                        2022 © <?php if(!empty(websiteSetting())): ?><?php echo e(websiteSetting()->school_name); ?><?php else: ?> <?php echo e("School Name"); ?><?php endif; ?>.
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-right d-none d-sm-block">
@@ -391,11 +391,10 @@
     <script src="<?php echo e(asset('admin_asset/assets/libs/metismenu/metisMenu.min.js')); ?>"></script>
     <script src="<?php echo e(asset('admin_asset/assets/libs/simplebar/simplebar.min.js')); ?>"></script>
     <script src="<?php echo e(asset('admin_asset/assets/libs/node-waves/waves.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('admin_asset/assets/libs/tinymce/tinymce.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('admin_asset/assets/js/pages/form-editor.init.js')); ?>">
 
-
-
-    <!-- apexcharts -->
-    <script src="<?php echo e(asset('admin_asset/assets/libs/apexcharts/apexcharts.min.js')); ?>"></script>
+    <script src = "<?php echo e(asset('admin_asset/assets/libs/apexcharts/apexcharts.min.js')); ?>" >
 
     <script src="<?php echo e(asset('admin_asset/assets/libs/slick-slider/slick/slick.min.js')); ?>"></script>
 
@@ -418,8 +417,6 @@
     <script src="<?php echo e(asset('admin_asset/assets/libs/RWD-Table-Patterns/js/rwd-table.min.js')); ?>"></script>
     <!-- Init js -->
     <script src="<?php echo e(asset('admin_asset/assets/js/pages/table-responsive.init.js')); ?>"></script>
-
-
 
 
     <script src="<?php echo e(asset('admin_asset/assets/js/app.js')); ?>"></script>
@@ -464,6 +461,7 @@
         #img {
             display: none;
         }
+
         #pdf {
             display: none;
         }
@@ -491,6 +489,20 @@
                 pdf.style.display = "block";
             }
 
+        }
+
+        function search() {
+            let input = document.getElementById('searchbar').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('search_bar');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                } else {
+                    x[i].style.display = "list-item";
+                }
+            }
         }
     </script>
     

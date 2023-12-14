@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('adminpanel-navbar'); ?>
 <?php
 
@@ -110,4 +108,5 @@
 
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('adminview/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\ga-academy-userpanel\resources\views/adminview/dashboard.blade.php ENDPATH**/ ?>

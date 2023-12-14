@@ -3,66 +3,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 
     <!-- ======home and banner section start======= -->
-    <div class="owl-navigation">
-        <span class="owl-nav-prev"><i class="fas fa-chevron-left"></i></span>
-        <span class="owl-nav-next"><i class="fas fa-chevron-right"></i></i></span>
-    </div>
+
     <section id="home-part">
 
         <div class="owl-carousel owl-theme home_slider">
-            <div class="bakground"
-                style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
-                <div class="container">
-                    <div class="row item banner-text-box">
-                        <div class="col-lg-7 col-md-7 col-sm-7">
-                            <div class="home-content-left">
-                                <h4 style="color:white; ">Welcome to the Feni Girish-Akshay Academy.</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-5">
-
-                        </div>
-
-                    </div>
+            <?php if($banner_datas == null): ?>
+                <div class="bakground"
+                    style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
                 </div>
-
-            </div>
-
-
-
-
+            <?php endif; ?>
 
             <?php $__currentLoopData = $banner_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $banner_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="bakground"
                     style="background-image: url(storage/banner/<?php echo e($banner_row->file_path); ?>); background-position: center; background-repeat: no-repeat; background-size: cover;">
-                    <div class="container">
-                        <div class="row item banner-text-box">
-                            <div class="col-lg-7 col-md-7 col-sm-7">
-                                <div class="home-content-left">
-                                    <h4 style="color:white;"><?php echo e($banner_row->banner_title); ?></h4>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-
-
-
-
-
-
     </section>
     <!-- ======home and banner section finish======= -->
-    <br>
-    
+    <div>
+        <div class="marquee-teg">
+            <marquee style="color: rgb(238, 95, 95)">
+                <?php $__currentLoopData = $headline_notices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $headline_notice): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <b><?php echo e($headline_notice->title); ?></b> <a
+                        href="<?php echo e(route('single.notice', $headline_notice->slug)); ?>"><u>Read
+                            More.</u></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </marquee>
+        </div>
 
+    </div>
+
+
+    
 
     <!-- =============Vice Chancellor and pro Vice Chancellor section strat============= -->
 
@@ -74,9 +47,18 @@
                         <div class="col-lg-3 col-md-3 text-center">
                             <div class="voice-left-chanecllor">
                                 <div class="voice-images-box">
-                                    <img src="<?php echo e(asset('public_asset/images/dashboard_image/chairman.jpg')); ?>"
-                                        alt="">
-                                    <p>মোহাম্মদ ইউছুপ</p>
+                                    <?php if(!empty(websiteSetting()->chairman_image)): ?>
+                                        <img src="<?php echo e(asset('storage/dashboard_files/chairman_image.jpg')); ?>" alt="">
+                                    <?php endif; ?>
+                                    <p>
+                                        <?php if(!empty(websiteSetting())): ?>
+                                            <?php echo e(websiteSetting()->chairman_name); ?>
+
+                                        <?php else: ?>
+                                            <?php echo e('Chairman Name'); ?>
+
+                                        <?php endif; ?>
+                                    </p>
                                     <h5>সভাপতি</h5>
                                 </div>
                             </div>
@@ -85,46 +67,17 @@
                             <a href="#">
                                 <div class="voice-right-chanecllorr">
                                     <h4>সভাপতির বাণী</h4>
-                                    <p>শিক্ষাক্ষেত্রে প্রায় শত বছরের সাক্ষী ফেনী গিরিশ অক্ষয় একাডেমির ডাইনামিক ওয়েবসাইট ও
-                                        সফটওয়্যার চালু হচ্ছে বিধায় আমি যারপরনাই আনন্দাভিভূত। এ স্কুলের চলমান শ্রীবৃদ্ধিতে
-                                        ভূমিকা রাখতে পারায় আমি নিজেকে ধন্য মনে করছি। উন্নয়ন একটি চলমা প্রক্রিয়া। অনাগত
-                                        ভবিষ্যতেও পরিবর্তনশীল পৃথিবীর সময় উপযোগী শিক্ষাব্যবস্থাপনা যোগান দেয়ার কাজে আমরা
-                                        কুষ্ঠিত হবো না।
+                                    <p>
+                                        <?php if(!empty(websiteSetting())): ?>
+                                            <?php echo e(websiteSetting()->chairman_speech); ?>
 
-                                        এ স্কুলের শিক্ষা ব্যবস্থায় বর্তমান ডিজিটাল প্রযুক্তি সর্বদা হালনাগাদ রাখার জন্য এবং
-                                        নিয়মিত অনুসরণ করার জন্য সংশ্লিষ্ট সকলকে অনুরোধ করছি। I মহান আল্লাহ আমাদের সহায়
-                                        হোন।</p>
+                                        <?php else: ?>
+                                            <?php echo e(' '); ?>
+
+                                        <?php endif; ?>
+                                    </p>
                                 </div>
                             </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="container navbar-toggle.collapsed">
-                    <div class="row item-2">
-                        <div class="col-lg-3 col-md-3 text-center">
-                            <div class="voice-left-chanecllor">
-                                <div class="voice-images-box">
-                                    <img src="<?php echo e(asset('public_asset/images/bahar_uddin_bahar.jpg')); ?>" alt="">
-                                    <p>বাহার উদ্দিন বাহার</p>
-                                    <h5>বিদ্যোৎসাহী সদস্যের</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9">
-                            <div class="voice-right-chanecllorr">
-                                <h4>বিদ্যোৎসাহী সদস্যের বাণী</h4>
-                                <p>ফেনী গিরিশ অক্ষয় একাডেমি বর্তমানে বাংলাদেশের শিক্ষাক্ষেত্রে একটি আদর্শ হিসেবে অগ্রসর
-                                    হওয়ার প্রচেষ্টায় নিয়ত পরিচালিত হচ্ছে। এরই অংশ হিসেবে স্কুল কার্যক্রমে যোগ করা হচ্ছে
-                                    ডিজিটাল ব্যবস্থাপনা। চালু করা হচ্ছে ডাইনামিক ওয়েবসাইট ও সর্বাধুনিক সফটওয়্যার।
-                                    নিঃসন্দেহে এ যোগান শিক্ষণ-শিখন কার্যক্রমকে আরও সহজ ও কার্যকর করে তুলবে। আমরা চলমান
-                                    বিশ্বের পরিবর্তনশীল চাহিদার সাথে সংগতিবিধানে বিশ্বাসী। তাই ডিজিটাল ব্যবস্থাপনার যথাযথ
-                                    উন্নয়ন ও আধুনিকীকরণের বিকল্প নেই। এর সফল বাস্তবায়নে আমরা অঙ্গীকারাবদ্ধ। এজন্য
-                                    সংশ্লিষ্ট সকলের আন্তরিক সহযোগিতা
-
-                                    একান্তভাবে কাম্য।</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,7 +91,15 @@
                                 <div class="voice-images-box">
                                     <img src="<?php echo e(asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg')); ?>"
                                         alt="">
-                                    <p>মোঃ তাজুল ইসলাম চৌধুরী</p>
+                                    <p>
+                                        <?php if(!empty(websiteSetting())): ?>
+                                            <?php echo e(websiteSetting()->head_teacher_name); ?>
+
+                                        <?php else: ?>
+                                            <?php echo e('Head Teacher Name'); ?>
+
+                                        <?php endif; ?>
+                                    </p>
                                     <h5>প্রধান শক্ষিক</h5>
                                 </div>
                             </div>
@@ -146,27 +107,16 @@
                         <div class="col-lg-9 col-md-9">
                             <div class="voice-right-chanecllorr">
                                 <h4>প্রধান শিক্ষকের বাণী</h4>
-                                <p>ফেনী গিরিশ অক্ষয় একাডেমি বাংলাদেশের একটি ঐতিহ্যবাহী মাধ্যমিক শিক্ষা প্রতিষ্ঠান হিসেবে
-                                    শিক্ষাপ্রসারে গুরুত্বপূর্ণ অবদান রেখে। আসছে। এ প্রাচীন বিদ্যাপীঠটি ১৯১৪ খ্রিষ্টাব্দে
-                                    ফেনী ইনস্টিটিউশন নামে স্থাপিত হয়। পরবর্তীতে ১৯৩৩ খ্রিষ্টাব্দে এর প্রতিষ্ঠাতা ও দাতা
-                                    যথাক্রমে স্বর্গীয় গিরিশ চন্দ্র মালাকার ও অক্ষয় কুমার মজুমদার-এর নামানুসারে ফেনী গিরিশ
-                                    অক্ষয় একাডেমি নামকরণ করা হয়। প্রতিষ্ঠাকাল থেকে স্কুলটি শিক্ষায় বহুমাত্রিক সুনামের
-                                    স্বাক্ষর রেখেছে।
+                                <p>
+                                    <?php if(!empty(websiteSetting())): ?>
+                                        <?php echo e(websiteSetting()->head_teacher_speech); ?>
 
-                                    বর্তমান সরকার শিক্ষাকে সর্বোচ্চ গুরুত্ব প্রদান করছে। তাই পরিপূর্ণ শিক্ষা এখন সময়ের
-                                    দাবী।
-                                <div class="collapse" id="collapseExample" style="color:rgba(51, 51, 51, 0.794)">
-                                    <p>আধুনিক তথ্য প্রযুক্তির যুগ বিবেচনায় শিক্ষায় আনা হয়েছে এক বৈপ্লবিক পরিবর্তন।
-                                        ডিজিটাইলেজশন তারই অংশ । এই প্রক্রিয়ার সাথে সংগতিবিধান নিমিত্ত স্কুলে খোলা হচ্ছে
-                                        ডাইনামিক ওভেবসাইট এবং চালু করা হচ্ছে ডিজিটাল সফটওয়্যার। আশা করি, সংশ্লিষ্ট সকলের
-                                        সহযোগিতায় ডিজিটাল ব্যবস্থাপনায় আমাদের প্রিয় স্কুলটি হালনাগাদ থাকবে এবং সহজে ও
-                                        দ্রুতভাবে সকলের নিকট শিক্ষা সেবা পৌঁছে দিতে সক্ষম হবে। স্কুলের সর্বাঙ্গীন উন্নতিতে
-                                        অকুষ্ঠ ও সক্রিয় ভূমিকা রাখার জন্য ম্যানেজিং কমিটিসহ সকলের প্রতি কৃতজ্ঞতা জ্ঞাপন
-                                        করছি। </p>
-                                </div><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-                                    aria-controls="collapseExample">
-                                    Read more.
-                                </a></p>
+                                    <?php else: ?>
+                                        <?php echo e(' '); ?>
+
+                                    <?php endif; ?>
+                                </p>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -183,10 +133,10 @@
     <!-- =====================counter part start=================== -->
     <?php
 
+        $total_student = 2001;
         // $client = new GuzzleHttp\Client();
         // $res = $client->get('https://portal.fenigaacademy.edu.bd/api/student_count');
         // $total_student = $res->getBody();
-        $total_student=2001;
 
     ?>
     <section id="counter_part">
@@ -194,7 +144,16 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="line-header">
-                        <h2>feni academy in Numbers</h2>
+
+                        <h2 style="<?php if(strlen(websiteSetting()->school_name) <= 50): ?> font-size: 29px; <?php else: ?> font-size: 26px; <?php endif; ?>">
+                            <?php if(!empty(websiteSetting())): ?>
+                                <?php echo e(websiteSetting()->school_name); ?>
+
+                            <?php else: ?>
+                                <?php echo e('School Name'); ?>
+
+                            <?php endif; ?> in Numbers
+                        </h2>
                         <div class="under-bottom"></div>
                     </div>
                 </div>
@@ -206,21 +165,39 @@
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                         <div class="couter-box">
                             <i class="fas fa-university"></i>
-                            <h1><span class="counter">1914</span></h1>
+                            <h1><span class="counter">
+                                    <?php if(!empty(websiteSetting())): ?>
+                                        <?php echo e(websiteSetting()->founded); ?>
+
+                                    <?php else: ?>
+                                        <?php echo e('0000'); ?>
+
+                                    <?php endif; ?>
+                                </span></h1>
                             <h3>Founded</h3>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
-                        <div class="couter-box">
-                            <i class="fas fa-user-shield"></i>
-                            <h1><span class="counter">3</span></h1>
-                            <h3>Total Groups</h3>
-                        </div>
+                        <a href="<?php echo e(route('group.view')); ?>">
+                            <div class="couter-box">
+                                <i class="fas fa-user-shield"></i>
+                                <h1><span class="counter">3</span></h1>
+                                <h3>Total Groups</h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-lg-3 col-md-6 pb-md-5 pb-lg-0">
                         <div class="couter-box">
                             <i class="fas fa-users"></i>
-                            <h1><span class="counter"><?php echo e($total_student); ?></span></h1>
+                            <h1><span class="counter">
+                                    <?php if(!empty(websiteSetting())): ?>
+                                        <?php echo e(websiteSetting()->total_student); ?>
+
+                                    <?php else: ?>
+                                        <?php echo e('0'); ?>
+
+                                    <?php endif; ?>
+                                </span></h1>
                             <h3>Regular Students</h3>
                         </div>
                     </div>
@@ -304,9 +281,9 @@
                 <div class="col-md-3 border-right">
                     <div class="facilities_cards">
                         <div class="first bg-white p-4 text-center">
-                            <svg height="100px" width="100px" viewBox="0 0 503.467 503.467" version="1.1"
-                                id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" fill="#000000">
+                            <svg height="100px" width="100px" viewBox="0 0 503.467 503.467" version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xml:space="preserve" fill="#000000">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
@@ -568,180 +545,145 @@
 
 
 
-    <section id="feature-news-event-part">
+    
+
+    <section id="latest-news-part">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="feature-news-event-left">
-                        <div class="feature-news-event-content">
-                            <h3 class="float-left">FEATURED- <strong> Notices</strong></h3>
-                        </div>
-                    </div>
-                    <div class="owl-carousel owl-theme feature-event-news">
-                        <?php $i=1; ?>
+            <div class="row" id="Notice-Side">
+                <div class="col-lg-4" style="padding-left:2px; padding-right: 5px;">
+                    <div class="card">
+                        <div class="card-body" style="padding-right: 1px; padding-left: 1px;">
+                            <h4 class="header-title" style="text-align: center;">Notice</h4>
 
-                        <?php $__currentLoopData = $notice_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <?php if($i == 5): ?>
-                            <?php break; ?>
+                            <div class="table-responsive" style="overflow:scroll; height:550px;">
+                                <table class="table table-striped">
+                                    <thead class="table">
+                                        <tr>
+                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">#</th>
+                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">Title</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $i=1; ?>
+                                        <?php $__currentLoopData = $notice_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <tr>
+                                                <th scope="row"><?php echo e($i++); ?></th>
+                                                <td><a href="<?php echo e(url('single/notice')); ?>/<?php echo e($value->slug); ?>"
+                                                        style="color:black;"><?php echo e($value->title); ?>
 
-                            <?php $i++ ?>
-                        <?php endif; ?>
-                        <div class="feature-left-images-box">
-                            <?php if($value->file_path == null): ?>
-                                <img src="<?php echo e(asset('public_asset/images/dummy_img/notice_defult.png')); ?>"
-                                    alt="">
-                            <?php elseif(!$value->file_path == null): ?>
-                                <img src="<?php echo e(asset('storage/notice_files/' . $value->file_path)); ?>" alt="">
-                            <?php endif; ?>
-                            <div class="images-content-feature">
-                                <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>">
-                                    <div class="container">
-                                        <h2><?php echo e($value->title); ?></h2>
-                                    </div>
-                                </a>
-                                <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>"
-                                    class="welcome-btn btn-block">read more <i class="fas fa-check-circle"></i></a>
+                                                        <br><i class="fas fa-calendar-alt" style="color:#ff8d00">
+                                                            <?php echo e($value->created_at->format('d-M-Y')); ?></i></a></td>
+                                            </tr>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="feature-right-content">
-                    <div class="heading-feature text-center">
-                        <h2>Last Notices</h2>
+                    </div>
+                    <div class="col-md-12 text-center" style="padding: 10px;">
+                        <a href="<?php echo e(url('notice')); ?>" class="btn btn-warning" style="text-align:center;">view
+                            all</a>
                     </div>
                 </div>
-                <div class="feature-event-news-rights" style="overflow: scroll; height: 410px;">
 
+                <div class="col-lg-4" style="padding-left:2px; padding-right: 5px;">
+                    <div class="card">
+                        <div class="card-body" style="padding-right: 1px; padding-left: 1px;">
+                            <h4 class="header-title" style="text-align: center;">Event</h4>
 
+                            <div class="table-responsive" style="overflow:scroll; height:550px;">
+                                <table class="table table-striped">
+                                    <thead class="table">
+                                        <tr>
+                                            <th scope="col table-header"style="position: sticky; top: -5px; background-color: white; text-align: center;">#</th>
+                                            <th scope="col"style="position: sticky; top: -5px; background-color: white; text-align: center;"> Title</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $i=1; ?>
+                                        <?php $__currentLoopData = $event_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <tr>
+                                                <th scope="row"><?php echo e($i++); ?></th>
+                                                <td><a href="<?php echo e(url('single/event')); ?>/<?php echo e($value->slug); ?>"
+                                                        style="color:black;">
 
-                    <?php $__currentLoopData = $notice_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php if(!$i == 5): ?>
-                        <?php break; ?>
-                    <?php endif; ?>
-                    <div class="feature-event-right-details">
-                        <a href="#">
-                            <div class="feature-images-right-details">
-                                <a href="<?php echo e(route('single.notice', base64_encode($value->id))); ?>">
-                                    <p><b><?php echo e($i++ . '.' . $value->title); ?></b></p>
-                                </a>
-                                <span><i class="fas fa-book-open"></i>
-                                    <?php echo e($value->created_at->format('d-M-Y')); ?></span>
-                        </a>
-                    </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        <?php echo e($value->event_name); ?><br><i class="fas fa-calendar-alt"
+                                                            style="color:#ff8d00">
+                                                            <?php if(!$value->created_at == null): ?>
+                                                                <?php echo e($value->created_at->format('d-M-Y')); ?>
 
-
-            </div>
-            <div class="all-view">
-                <a href="<?php echo e(url('notice')); ?>" class="view-btn-student">view all <i
-                        class="fas fa-angle-double-right"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ==========Latest News part start============= -->
-<section class="pt-5 pb-5" style="color:#000000">
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <h3 class="mb-3">Events</h3>
-        </div>
-        <div class="col-6 text-right">
-            <?php if(count($event_datas) > 3): ?>
-                <a class="btn btn-color mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
-                    data-slide="prev">
-                    <i class="fa fa-arrow-left"></i>
-                </a>
-                <a class="btn btn-color mb-3 " href="#carouselExampleIndicators2" role="button"
-                    data-slide="next">
-                    <i class="fa fa-arrow-right"></i>
-                </a>
-            <?php endif; ?>
-        </div>
-        <div class="col-12">
-            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
-                <div class="carousel-inner">
-
-                    <?php
-                        $e = 0;
-                    ?>
-                    <?php $__currentLoopData = $event_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $event_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php $e++; ?>
-                        <?php if($e == 1): ?>
-                            <div class="carousel-item <?php if($key == 0): ?> active <?php endif; ?>">
-                                <div class="row">
-                        <?php endif; ?>
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <?php if(!$event_data->file_path == null): ?>
-                                    <img src="<?php echo e(asset('storage/event_files/' . $event_data->file_path)); ?>"
-                                        height="150" width="350" alt="">
-                                <?php elseif($event_data->file_path == null): ?>
-                                    <img src="<?php echo e(asset('public_asset/default_event.png')); ?>" height="150"
-                                        width="350" alt="">
-                                <?php endif; ?>
-                                <a href="">
-                                    <div class="card-body"
-                                        style=" height: 217px; width: auto; overflow-y: scroll; ">
-                                        <h4 class="card-title"></h4>
-                                        <p class="card-text">
-                                            <a href="<?php echo e(route('single.event', base64_encode($event_data->id))); ?>"
-                                                style="color:black;">
-                                                <?php echo limit_text($event_data->event_name, 10); ?>
-                                        </p>
-                                </a>
+                                                            <?php endif; ?>
+                                                        </i></a></td>
+                                            </tr>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </tbody>
+                                </table>
                             </div>
-                            </a>
 
                         </div>
+                    </div>
+                    <div class="col-md-12 text-center" style="padding: 10px;">
+                        <a href="<?php echo e(route('event')); ?>" class="btn btn-warning" style="text-align:center;">view all</a>
+                    </div>
+
                 </div>
+                <div class="col-lg-4" style="padding-right: 5px;padding-bottom: 10px; padding-left: 5px;">
+                    <div class="card">
+                        <div class="card-body" style="padding-right: 1px; padding-left: 2px;">
+                            <h4 class="header-title" style="text-align: center;">News</h4>
+                            <div class="table-responsive" style="overflow:scroll; height:550px;">
+                                <table class="table table-striped">
+                                    <thead class="table">
+                                        <tr>
+                                            <th scope="col"style="position: sticky; top: -5px; background-color: white;  text-align: center;">#</th>
+                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">Title</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $i=1; ?>
+                                        <?php $__currentLoopData = $news_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <tr>
+                                                <th scope="row"><?php echo e($i++); ?></th>
+                                                <td><a href="<?php echo e(url('single/news')); ?>/<?php echo e($value->slug); ?>"
+                                                        style="color:black;"><?php echo e($value->title); ?>
 
-                <?php if($e == 3): ?>
+                                                        <br><i class="fas fa-calendar-alt" style="color:#ff8d00">
+                                                            <?php echo e($value->created_at->format('d-M-Y')); ?></i></a></td>
+                                            </tr>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center" style="padding: 10px;">
+                        <a href="<?php echo e(route('news')); ?>" class="btn btn-warning" style="text-align:center;">view
+                            all</a>
+                    </div>
+                </div>
+                <br>
             </div>
+
+
         </div>
-        <?php $e=0; ?>
-        <?php endif; ?>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </section>
 
-    </div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- ==========Latest News part finish============= -->
 
-<script>
-    $(document).ready(function() {
-        $(".navbar-toggle.collapsed").click(function() {
-            alert("Clicked.");
-        });
-    });
-</script>
-<script type="text/javascript">
-    $("img").lazyload({
-        effect: "fadeIn"
-    });
-</script>
-<?php $__env->stopSection(); ?>
+
+        <script>
+            $(document).ready(function() {
+                $(".navbar-toggle.collapsed").click(function() {
+                    alert("Clicked.");
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $("img").lazyload({
+                effect: "fadeIn"
+            });
+        </script>
+    <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\ga-academy-userpanel\resources\views/userview/dashboard.blade.php ENDPATH**/ ?>
