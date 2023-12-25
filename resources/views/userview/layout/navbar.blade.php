@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,15 +20,16 @@
     <!-- venobox link------= -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/venobox.min.css') }}">
     <!-- bootstrap link============= -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    {{-- <link rel="stylesheet" href="{{ asset('admin_asset/assets/css/bootstrap.min.css.map') }}"> --}}
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> --}}
+    <link rel="stylesheet" href="{{ asset('admin_asset/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public_asset/css/font-awesome.min.css') }}">
     <!-- main css link-------- -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/style.css') }}">
     <!-- responsive css strat------- -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('public_asset/css/scroll_slider.css') }}">
     <!-- font awosome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
