@@ -27,9 +27,7 @@ Route::prefix('/admin')
       //delete all thinks in table for new project
       Route::get('notice', 'App\Http\Controllers\Admin\NoticeController@NoticeView')->name('notice.view');
 
-
         // dashboard
-
         Route::get('/', function () {
             return redirect('admin/dashboard');
         });
@@ -162,6 +160,9 @@ Route::prefix('/admin')
 
         //website settings
         Route::get('website/settings', 'App\Http\Controllers\Admin\websiteSettingsController@websiteSettingView')->name('school.setting');
-        Route::post('store/school/name/and/logo', 'App\Http\Controllers\Admin\websiteSettingsController@storeSchoolNameAndLogo')->name('store.school.website.settings');
+        Route::post('store/school/name', 'App\Http\Controllers\Admin\websiteSettingsController@storeSchoolName')->name('store.school.name');
+        Route::post('store/school/info', 'App\Http\Controllers\Admin\websiteSettingsController@storeSchoolInfo')->name('store.school.info');
+        Route::post('store/speech/info', 'App\Http\Controllers\Admin\websiteSettingsController@storeSpeechInfo')->name('store.speech.info');
+        Route::get('speech/delete/{id}', 'App\Http\Controllers\Admin\websiteSettingsController@speechDelete')->name('speech.delete');
 
     });
