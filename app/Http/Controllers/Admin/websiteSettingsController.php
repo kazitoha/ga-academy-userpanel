@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Models\website_settings;
@@ -43,34 +44,6 @@ class websiteSettingsController extends Controller
         }
 
 
-        // if ($request->hasFile('chairman_image')) {
-        //     $chairman_image_name = website_settings::find(1)->chairman_image;
-        //     $uploaded_chairman_image = $request->chairman_image;
-        //     $extension = $request->file('chairman_image')->extension();
-        //     $rename_image = "chairman_image." . $extension;
-
-
-        //     if (!$chairman_image_name == null) {
-        //         unlink(base_path('public/storage/dashborad_files/' . $rename_image));
-        //     }
-        //     Image::make($uploaded_chairman_image)->save(base_path('public/storage/dashborad_files/' . $rename_image));
-        //     website_settings::find(1)->update(['chairman_image' => $rename_image,]);
-        // }
-        // if ($request->hasFile('head_teacher_image')) {
-        //     $head_teacher_image_name = website_settings::find(1)->head_teacher_image;
-        //     $uploaded_head_teacher_image = $request->head_teacher_image;
-        //     $extension = $request->file('head_teacher_image')->extension();
-        //     $rename_image = "head_teacher_image." . $extension;
-
-
-        //     if (!$head_teacher_image_name == null) {
-        //         unlink(base_path('public/storage/dashborad_files/' . $rename_image));
-        //     }
-        //     Image::make($uploaded_head_teacher_image)->save(base_path('public/storage/dashborad_files/' . $rename_image));
-        //     website_settings::find(1)->update(['head_teacher_image' => $rename_image,]);
-        // }
-
-
         return back()->with('message', 'Website details updated Successfully.');
     }
 
@@ -94,6 +67,7 @@ class websiteSettingsController extends Controller
             'total_student' => $request->total_student,
             'founded' => $request->founded,
         ]);
+        Artisan::call('optimize:clear');
 
         return back()->with('message', 'Website details updated Successfully.');
 
@@ -103,12 +77,16 @@ class websiteSettingsController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'designation' => 'required',
+            'title'=> 'required',
             'speech' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,gif,svg,pdf|max:1024',
         ]);
 
         $speechId = speech::insertGetId([
             'name' => $request->name,
+            'designation' => $request->designation,
+            'title'=>$request->title,
             'speech' => $request->speech,
         ]);
 
@@ -120,7 +98,7 @@ class websiteSettingsController extends Controller
             Image::make($image)->save(base_path('public/storage/speech_files/' . $rename_image));
             speech::find($speechId)->update(['image' => $rename_image,]);
         }
-
+        Artisan::call('optimize:clear');
         return back()->with('message', 'Website details updated Successfully.');
 
     }
@@ -130,6 +108,7 @@ class websiteSettingsController extends Controller
         $speech = Speech::find($id);
         unlink(base_path('public/storage/speech_files/' . $speech->image));
         $speech->delete();
+        Artisan::call('optimize:clear');
         return back()->with('error', 'Data Deleted!.');
 
     }

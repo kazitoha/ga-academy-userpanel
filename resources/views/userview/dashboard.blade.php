@@ -9,17 +9,17 @@
     <section id="home-part">
 
         <div class="owl-carousel owl-theme home_slider">
-            @if ($banner_datas == null)
+            @if (count($banner_datas) === 0)
                 <div class="bakground"
                     style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
                 </div>
+            @else
+                @foreach ($banner_datas as $key => $banner_row)
+                    <div class="bakground"
+                        style="background-image: url(storage/banner/{{ $banner_row->file_path }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                    </div>
+                @endforeach
             @endif
-
-            @foreach ($banner_datas as $key => $banner_row)
-                <div class="bakground"
-                    style="background-image: url(storage/banner/{{ $banner_row->file_path }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
-                </div>
-            @endforeach
 
     </section>
     <!-- ======home and banner section finish======= -->
@@ -43,83 +43,95 @@
 
     <section id="Vice-Chancellor-part">
         <div class="owl-carousel owl-theme voice_parts">
-            <div>
-                <div class="container navbar-toggle.collapsed">
-                    <div class="row item-2">
-                        <div class="col-lg-3 col-md-3 text-center">
-                            <div class="voice-left-chanecllor">
-                                <div class="voice-images-box">
-                                    @if (!empty(websiteSetting()->chairman_image))
-                                        <img src="{{ asset('storage/dashboard_files/chairman_image.jpg') }}" alt="">
-                                    @endif
-                                    <p>
-                                        @if (!empty(websiteSetting()))
-                                            {{ websiteSetting()->chairman_name }}
-                                        @else
-                                            {{ 'Chairman Name' }}
-                                        @endif
-                                    </p>
-                                    <h5>সভাপতি</h5>
+            @if (count($speech_datas) === 0)
+                <div>
+                    <div class="container">
+                        <div class="row item-2  navbar-toggle.collapsed">
+                            <div class="col-lg-3 col-md-3 text-center">
+                                <div class="voice-left-chanecllor">
+                                    <div class="voice-images-box">
+                                        <img src="{{ asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg') }}"
+                                            alt="">
+                                        <p>
+                                            @if (!empty(websiteSetting()))
+                                                {{ websiteSetting()->head_teacher_name }}
+                                            @else
+                                                {{ 'Head Teacher Name' }}
+                                            @endif
+                                        </p>
+                                        <h5>প্রধান শক্ষিক</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9">
-                            <a href="#">
+                            <div class="col-lg-9 col-md-9">
                                 <div class="voice-right-chanecllorr">
-                                    <h4>সভাপতির বাণী</h4>
+                                    <h4>প্রধান শিক্ষকের বাণী</h4>
                                     <p>
                                         @if (!empty(websiteSetting()))
-                                            {{ websiteSetting()->chairman_speech }}
+                                            {{ websiteSetting()->head_teacher_speech }}
                                         @else
                                             {{ ' ' }}
                                         @endif
                                     </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="container">
-                    <div class="row item-2  navbar-toggle.collapsed">
-                        <div class="col-lg-3 col-md-3 text-center">
-                            <div class="voice-left-chanecllor">
-                                <div class="voice-images-box">
-                                    <img src="{{ asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg') }}"
-                                        alt="">
-                                    <p>
-                                        @if (!empty(websiteSetting()))
-                                            {{ websiteSetting()->head_teacher_name }}
-                                        @else
-                                            {{ 'Head Teacher Name' }}
-                                        @endif
                                     </p>
-                                    <h5>প্রধান শক্ষিক</h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-9 col-md-9">
-                            <div class="voice-right-chanecllorr">
-                                <h4>প্রধান শিক্ষকের বাণী</h4>
-                                <p>
-                                    @if (!empty(websiteSetting()))
-                                        {{ websiteSetting()->head_teacher_speech }}
-                                    @else
-                                        {{ ' ' }}
-                                    @endif
-                                </p>
-                                </p>
-                            </div>
-                        </div>
                     </div>
+
                 </div>
-            </div>
+            @else
+                @foreach ($speech_datas as $speech_data)
+                    <div>
+                        <div class="container">
+                            <div class="row item-2 navbar-toggle.collapsed">
+                                <div class="col-lg-3 col-md-3 text-center">
+                                    <div class="voice-left-chanecllor">
+                                        <div class="voice-images-box">
+                                            <img src="{{ asset('storage/speech_files') }}/{{ $speech_data->image }}"
+                                                alt="">
+                                            <p>{{ $speech_data->name }}</p>
+                                            <h5>{{ $speech_data->designation }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9">
+                                    <div class="voice-right-chanecllorr">
+                                        <h4>{{ $speech_data->title }}</h4>
+                                        @php
+                                            $tags = $speech_data->speech;
+                                            $words = explode(' ', $tags);
+                                            $excerpt = implode(' ', array_slice($words, 0, 106));
+                                        @endphp
+                                        <p>
+                                            {{ $excerpt }}
+
+                                            @if (count($words) > 106)
+                                                <div class="collapse" id="collapseExample"
+                                                    style="color:rgba(51, 51, 51, 0.794)">
+                                                    <p>{{ implode(' ', array_slice($words, 106)) }}</p>
+                                                </div><a data-toggle="collapse" href="#collapseExample" role="button"
+                                                    aria-expanded="false" aria-controls="collapseExample">
+                                                    Read more.
+                                                </a>
+                                        </p>
+                @endif
+                </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        @endforeach
+        @endif
+
+
 
 
         </div>
     </section>
+
+
 
     <!-- =============Vice Chancellor and pro Vice Chancellor section finsh============= -->
 
@@ -131,7 +143,6 @@
         // $client = new GuzzleHttp\Client();
         // $res = $client->get('https://portal.fenigaacademy.edu.bd/api/student_count');
         // $total_student = $res->getBody();
-
     @endphp
     <section id="counter_part">
         <div class="container">
@@ -621,8 +632,12 @@
                                 <table class="table table-striped">
                                     <thead class="table">
                                         <tr>
-                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">#</th>
-                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">Title</th>
+                                            <th scope="col"
+                                                style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                #</th>
+                                            <th scope="col"
+                                                style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                Title</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -657,8 +672,12 @@
                                 <table class="table table-striped">
                                     <thead class="table">
                                         <tr>
-                                            <th scope="col table-header"style="position: sticky; top: -5px; background-color: white; text-align: center;">#</th>
-                                            <th scope="col"style="position: sticky; top: -5px; background-color: white; text-align: center;"> Title</th>
+                                            <th
+                                                scope="col table-header"style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                #</th>
+                                            <th
+                                                scope="col"style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                Title</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -696,8 +715,12 @@
                                 <table class="table table-striped">
                                     <thead class="table">
                                         <tr>
-                                            <th scope="col"style="position: sticky; top: -5px; background-color: white;  text-align: center;">#</th>
-                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">Title</th>
+                                            <th
+                                                scope="col"style="position: sticky; top: -5px; background-color: white;  text-align: center;">
+                                                #</th>
+                                            <th scope="col"
+                                                style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                Title</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -729,18 +752,16 @@
         </div>
     </section>
 
-
-
-        <script>
-            $(document).ready(function() {
-                $(".navbar-toggle.collapsed").click(function() {
-                    alert("Clicked.");
-                });
+    <script>
+        $(document).ready(function() {
+            $(".navbar-toggle.collapsed").click(function() {
+                alert("Clicked.");
             });
-        </script>
-        <script type="text/javascript">
-            $("img").lazyload({
-                effect: "fadeIn"
-            });
-        </script>
-    @endsection
+        });
+    </script>
+    <script type="text/javascript">
+        $("img").lazyload({
+            effect: "fadeIn"
+        });
+    </script>
+@endsection

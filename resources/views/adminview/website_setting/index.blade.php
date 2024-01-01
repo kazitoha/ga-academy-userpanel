@@ -127,8 +127,10 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">name</th>
-                                    <th scope="col">speech</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Designation</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Speech</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -138,6 +140,8 @@
                                     <tr>
                                         <th scope="row">{{ $key + 1 }}</th>
                                         <td>{{ $speech_info->name }}</td>
+                                        <td>{{ $speech_info->designation }}</td>
+                                        <td>{{ $speech_info->title }}</td>
                                         <td>{{ $speech_info->speech }}</td>
                                         <td>
                                             <img src="{{asset('storage/speech_files')}}/{{$speech_info->image}}" style="width: 50px">
@@ -177,9 +181,17 @@
                             <input type="text" class="form-control" id="validationCustom02" name="name" required>
                         </div>
                         <div class="col-md-12 mb-3">
+                            <label for="validationCustom02">Designation</label>
+                            <input type="text" class="form-control" id="validationCustom02" name="designation" required>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationCustom02">Title</label>
+                            <input type="text" class="form-control" id="validationCustom02" name="title" required>
+                        </div>
+                        <div class="col-md-12 mb-3">
                             <label for="validationCustom01"></label>
                             <label>Speech</label>
-                            <textarea id="textarea" class="form-control" name="speech" rows="3" placeholder="This textarea."></textarea>
+                            <textarea id="textarea" class="form-control" name="speech" rows="5" maxlength="3000" placeholder="This textarea."></textarea>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="validationCustom01">Image</label>

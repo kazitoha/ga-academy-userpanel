@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
+
+
         @if (!empty(websiteSetting()))
             {{ websiteSetting()->school_name }}
         @else
@@ -76,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light  ">
             <div class="container">
                 <a class="navbar-brand navbar-mobile-logo" href="#"><img
                         src="{{ asset('public_asset/images/Untitled-2.png') }}" alt="" class="img-fluid"

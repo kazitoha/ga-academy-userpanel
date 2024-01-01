@@ -9,6 +9,7 @@ use App\Models\event;
 use App\Models\banner;
 use App\Models\officeStaff;
 use App\Models\news;
+use App\Models\speech;
 
 
 class DashboardController extends Controller
@@ -26,15 +27,21 @@ class DashboardController extends Controller
         $event_datas = event::orderBy('id', 'DESC')->take(10)->get();
         $news_datas = news::orderBy('id', 'DESC')->take(10)->get();
         $banner_datas = $this->getBannerData();
+        $speech_datas=$this->getSpeechData();
 
 
-        return view('userview.dashboard', compact('notice_data', 'event_datas', 'news_datas', 'banner_datas', 'officeStaff', 'headline_notices'));
+        return view('userview.dashboard', compact('notice_data', 'event_datas', 'news_datas', 'banner_datas','speech_datas', 'officeStaff', 'headline_notices'));
     }
 
     private function getBannerData()
     {
-        return Cache::remember('banner_datas', now()->addHours(24), function () {
+        return Cache::remember('banner_datas', now()->addHours(244), function () {
             return banner::orderBy('id', 'DESC')->take(3)->get();
+        });
+    }
+    private function getSpeechData(){
+        return Cache::remember('speech_datas', now()->addHours(244), function () {
+            return speech::orderBy('id', 'DESC')->take(3)->get();
         });
     }
 

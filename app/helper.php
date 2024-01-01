@@ -26,7 +26,12 @@ function divide_file_name($id)
 }
 function websiteSetting()
 {
-    return Cache::remember('website_settings', now()->addHours(24), function () {
+    return Cache::remember('website_settings', now()->addHours(244), function () {
         return website_settings::find(1) ?? '';
     });
+
+    // $website_settings=website_settings::find(1);
+    // dd($website_settings);
+    // return $website_settings;
+
 }

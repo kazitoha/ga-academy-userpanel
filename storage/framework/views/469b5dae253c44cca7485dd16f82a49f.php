@@ -146,8 +146,10 @@ unset($__errorArgs, $__bag); ?>"
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">name</th>
-                                    <th scope="col">speech</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Designation</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Speech</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -157,6 +159,8 @@ unset($__errorArgs, $__bag); ?>"
                                     <tr>
                                         <th scope="row"><?php echo e($key + 1); ?></th>
                                         <td><?php echo e($speech_info->name); ?></td>
+                                        <td><?php echo e($speech_info->designation); ?></td>
+                                        <td><?php echo e($speech_info->title); ?></td>
                                         <td><?php echo e($speech_info->speech); ?></td>
                                         <td>
                                             <img src="<?php echo e(asset('storage/speech_files')); ?>/<?php echo e($speech_info->image); ?>" style="width: 50px">
@@ -196,9 +200,17 @@ unset($__errorArgs, $__bag); ?>"
                             <input type="text" class="form-control" id="validationCustom02" name="name" required>
                         </div>
                         <div class="col-md-12 mb-3">
+                            <label for="validationCustom02">Designation</label>
+                            <input type="text" class="form-control" id="validationCustom02" name="designation" required>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationCustom02">Title</label>
+                            <input type="text" class="form-control" id="validationCustom02" name="title" required>
+                        </div>
+                        <div class="col-md-12 mb-3">
                             <label for="validationCustom01"></label>
                             <label>Speech</label>
-                            <textarea id="textarea" class="form-control" name="speech" rows="3" placeholder="This textarea."></textarea>
+                            <textarea id="textarea" class="form-control" name="speech" rows="5" maxlength="1260" placeholder="This textarea."></textarea>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="validationCustom01">Image</label>
@@ -208,7 +220,7 @@ unset($__errorArgs, $__bag); ?>"
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-outline-primary">Save changes</button>
+                    <button type="submit" class="btn btn-outline-primary">Save</button>
                 </div>
             </div>
         </div>

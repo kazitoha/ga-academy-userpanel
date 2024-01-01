@@ -7,17 +7,17 @@
     <section id="home-part">
 
         <div class="owl-carousel owl-theme home_slider">
-            <?php if($banner_datas == null): ?>
+            <?php if(count($banner_datas) === 0): ?>
                 <div class="bakground"
                     style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
                 </div>
+            <?php else: ?>
+                <?php $__currentLoopData = $banner_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $banner_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="bakground"
+                        style="background-image: url(storage/banner/<?php echo e($banner_row->file_path); ?>); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php endif; ?>
-
-            <?php $__currentLoopData = $banner_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $banner_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="bakground"
-                    style="background-image: url(storage/banner/<?php echo e($banner_row->file_path); ?>); background-position: center; background-repeat: no-repeat; background-size: cover;">
-                </div>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     </section>
     <!-- ======home and banner section finish======= -->
@@ -41,91 +41,100 @@
 
     <section id="Vice-Chancellor-part">
         <div class="owl-carousel owl-theme voice_parts">
-            <div>
-                <div class="container navbar-toggle.collapsed">
-                    <div class="row item-2">
-                        <div class="col-lg-3 col-md-3 text-center">
-                            <div class="voice-left-chanecllor">
-                                <div class="voice-images-box">
-                                    <?php if(!empty(websiteSetting()->chairman_image)): ?>
-                                        <img src="<?php echo e(asset('storage/dashboard_files/chairman_image.jpg')); ?>" alt="">
-                                    <?php endif; ?>
-                                    <p>
-                                        <?php if(!empty(websiteSetting())): ?>
-                                            <?php echo e(websiteSetting()->chairman_name); ?>
+            <?php if(count($speech_datas) === 0): ?>
+                <div>
+                    <div class="container">
+                        <div class="row item-2  navbar-toggle.collapsed">
+                            <div class="col-lg-3 col-md-3 text-center">
+                                <div class="voice-left-chanecllor">
+                                    <div class="voice-images-box">
+                                        <img src="<?php echo e(asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg')); ?>"
+                                            alt="">
+                                        <p>
+                                            <?php if(!empty(websiteSetting())): ?>
+                                                <?php echo e(websiteSetting()->head_teacher_name); ?>
 
-                                        <?php else: ?>
-                                            <?php echo e('Chairman Name'); ?>
+                                            <?php else: ?>
+                                                <?php echo e('Head Teacher Name'); ?>
 
-                                        <?php endif; ?>
-                                    </p>
-                                    <h5>সভাপতি</h5>
+                                            <?php endif; ?>
+                                        </p>
+                                        <h5>প্রধান শক্ষিক</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9">
-                            <a href="#">
+                            <div class="col-lg-9 col-md-9">
                                 <div class="voice-right-chanecllorr">
-                                    <h4>সভাপতির বাণী</h4>
+                                    <h4>প্রধান শিক্ষকের বাণী</h4>
                                     <p>
                                         <?php if(!empty(websiteSetting())): ?>
-                                            <?php echo e(websiteSetting()->chairman_speech); ?>
+                                            <?php echo e(websiteSetting()->head_teacher_speech); ?>
 
                                         <?php else: ?>
                                             <?php echo e(' '); ?>
 
                                         <?php endif; ?>
                                     </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="container">
-                    <div class="row item-2  navbar-toggle.collapsed">
-                        <div class="col-lg-3 col-md-3 text-center">
-                            <div class="voice-left-chanecllor">
-                                <div class="voice-images-box">
-                                    <img src="<?php echo e(asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg')); ?>"
-                                        alt="">
-                                    <p>
-                                        <?php if(!empty(websiteSetting())): ?>
-                                            <?php echo e(websiteSetting()->head_teacher_name); ?>
-
-                                        <?php else: ?>
-                                            <?php echo e('Head Teacher Name'); ?>
-
-                                        <?php endif; ?>
                                     </p>
-                                    <h5>প্রধান শক্ষিক</h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-9 col-md-9">
-                            <div class="voice-right-chanecllorr">
-                                <h4>প্রধান শিক্ষকের বাণী</h4>
-                                <p>
-                                    <?php if(!empty(websiteSetting())): ?>
-                                        <?php echo e(websiteSetting()->head_teacher_speech); ?>
-
-                                    <?php else: ?>
-                                        <?php echo e(' '); ?>
-
-                                    <?php endif; ?>
-                                </p>
-                                </p>
-                            </div>
-                        </div>
                     </div>
+
                 </div>
-            </div>
+            <?php else: ?>
+                <?php $__currentLoopData = $speech_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $speech_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div>
+                        <div class="container">
+                            <div class="row item-2 navbar-toggle.collapsed">
+                                <div class="col-lg-3 col-md-3 text-center">
+                                    <div class="voice-left-chanecllor">
+                                        <div class="voice-images-box">
+                                            <img src="<?php echo e(asset('storage/speech_files')); ?>/<?php echo e($speech_data->image); ?>"
+                                                alt="">
+                                            <p><?php echo e($speech_data->name); ?></p>
+                                            <h5><?php echo e($speech_data->designation); ?></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9">
+                                    <div class="voice-right-chanecllorr">
+                                        <h4><?php echo e($speech_data->title); ?></h4>
+                                        <?php
+                                            $tags = $speech_data->speech;
+                                            $words = explode(' ', $tags);
+                                            $excerpt = implode(' ', array_slice($words, 0, 106));
+                                        ?>
+                                        <p>
+                                            <?php echo e($excerpt); ?>
+
+
+                                            <?php if(count($words) > 106): ?>
+                                                <div class="collapse" id="collapseExample"
+                                                    style="color:rgba(51, 51, 51, 0.794)">
+                                                    <p><?php echo e(implode(' ', array_slice($words, 106))); ?></p>
+                                                </div><a data-toggle="collapse" href="#collapseExample" role="button"
+                                                    aria-expanded="false" aria-controls="collapseExample">
+                                                    Read more.
+                                                </a>
+                                        </p>
+                <?php endif; ?>
+                </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <?php endif; ?>
+
+
 
 
         </div>
     </section>
+
+
 
     <!-- =============Vice Chancellor and pro Vice Chancellor section finsh============= -->
 
@@ -137,7 +146,6 @@
         // $client = new GuzzleHttp\Client();
         // $res = $client->get('https://portal.fenigaacademy.edu.bd/api/student_count');
         // $total_student = $res->getBody();
-
     ?>
     <section id="counter_part">
         <div class="container">
@@ -559,8 +567,12 @@
                                 <table class="table table-striped">
                                     <thead class="table">
                                         <tr>
-                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">#</th>
-                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">Title</th>
+                                            <th scope="col"
+                                                style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                #</th>
+                                            <th scope="col"
+                                                style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                Title</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -596,8 +608,12 @@
                                 <table class="table table-striped">
                                     <thead class="table">
                                         <tr>
-                                            <th scope="col table-header"style="position: sticky; top: -5px; background-color: white; text-align: center;">#</th>
-                                            <th scope="col"style="position: sticky; top: -5px; background-color: white; text-align: center;"> Title</th>
+                                            <th
+                                                scope="col table-header"style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                #</th>
+                                            <th
+                                                scope="col"style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                Title</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -636,8 +652,12 @@
                                 <table class="table table-striped">
                                     <thead class="table">
                                         <tr>
-                                            <th scope="col"style="position: sticky; top: -5px; background-color: white;  text-align: center;">#</th>
-                                            <th scope="col" style="position: sticky; top: -5px; background-color: white; text-align: center;">Title</th>
+                                            <th
+                                                scope="col"style="position: sticky; top: -5px; background-color: white;  text-align: center;">
+                                                #</th>
+                                            <th scope="col"
+                                                style="position: sticky; top: -5px; background-color: white; text-align: center;">
+                                                Title</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -670,20 +690,18 @@
         </div>
     </section>
 
-
-
-        <script>
-            $(document).ready(function() {
-                $(".navbar-toggle.collapsed").click(function() {
-                    alert("Clicked.");
-                });
+    <script>
+        $(document).ready(function() {
+            $(".navbar-toggle.collapsed").click(function() {
+                alert("Clicked.");
             });
-        </script>
-        <script type="text/javascript">
-            $("img").lazyload({
-                effect: "fadeIn"
-            });
-        </script>
-    <?php $__env->stopSection(); ?>
+        });
+    </script>
+    <script type="text/javascript">
+        $("img").lazyload({
+            effect: "fadeIn"
+        });
+    </script>
+<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\ga-academy-userpanel\resources\views/userview/dashboard.blade.php ENDPATH**/ ?>
