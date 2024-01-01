@@ -26,12 +26,16 @@ function divide_file_name($id)
 }
 function websiteSetting()
 {
+
+    if (env('APP_DEBUG') == false) {
     return Cache::remember('website_settings', now()->addHours(244), function () {
         return website_settings::find(1) ?? '';
     });
+    }else{
+      $website_settings=website_settings::find(1);
+      return $website_settings;
+    }
 
-    // $website_settings=website_settings::find(1);
-    // dd($website_settings);
-    // return $website_settings;
+
 
 }

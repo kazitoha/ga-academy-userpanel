@@ -33,4 +33,7 @@ return [
         realpath(storage_path('framework/views'))
     ),
 
+    'cache' => env('VIEW_CACHE', false),
+
+
 ];

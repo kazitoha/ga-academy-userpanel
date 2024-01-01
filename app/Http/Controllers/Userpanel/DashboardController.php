@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Userpanel;
+
 use Illuminate\Support\Facades\Cache;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -27,22 +28,31 @@ class DashboardController extends Controller
         $event_datas = event::orderBy('id', 'DESC')->take(10)->get();
         $news_datas = news::orderBy('id', 'DESC')->take(10)->get();
         $banner_datas = $this->getBannerData();
-        $speech_datas=$this->getSpeechData();
+        $speech_datas = $this->getSpeechData();
 
 
-        return view('userview.dashboard', compact('notice_data', 'event_datas', 'news_datas', 'banner_datas','speech_datas', 'officeStaff', 'headline_notices'));
+        return view('userview.dashboard', compact('notice_data', 'event_datas', 'news_datas', 'banner_datas', 'speech_datas', 'officeStaff', 'headline_notices'));
     }
 
     private function getBannerData()
     {
-        return Cache::remember('banner_datas', now()->addHours(244), function () {
+        if (env('APP_DEBUG') == false) {
+            return Cache::remember('banner_datas', now()->addHours(244), function () {
+                return banner::orderBy('id', 'DESC')->take(3)->get();
+            });
+        } else {
             return banner::orderBy('id', 'DESC')->take(3)->get();
-        });
+        }
     }
-    private function getSpeechData(){
-        return Cache::remember('speech_datas', now()->addHours(244), function () {
+    private function getSpeechData()
+    {
+        if (env('APP_DEBUG') == false) {
+            return Cache::remember('speech_datas', now()->addHours(244), function () {
+                return speech::orderBy('id', 'DESC')->take(3)->get();
+            });
+        } else {
             return speech::orderBy('id', 'DESC')->take(3)->get();
-        });
+        }
     }
 
     function group()

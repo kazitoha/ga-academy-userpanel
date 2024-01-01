@@ -210,7 +210,7 @@ unset($__errorArgs, $__bag); ?>"
                         <div class="col-md-12 mb-3">
                             <label for="validationCustom01"></label>
                             <label>Speech</label>
-                            <textarea id="textarea" class="form-control" name="speech" rows="5" maxlength="1260" placeholder="This textarea."></textarea>
+                            <textarea id="textarea" class="form-control" name="speech" rows="5" maxlength="3000" placeholder="This textarea."></textarea>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="validationCustom01">Image</label>

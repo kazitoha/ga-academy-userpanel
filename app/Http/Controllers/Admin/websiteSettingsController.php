@@ -42,7 +42,7 @@ class websiteSettingsController extends Controller
             ]);
 
         }
-
+        Artisan::call('optimize:clear');
 
         return back()->with('message', 'Website details updated Successfully.');
     }
@@ -70,7 +70,6 @@ class websiteSettingsController extends Controller
         Artisan::call('optimize:clear');
 
         return back()->with('message', 'Website details updated Successfully.');
-
     }
 
     public function storeSpeechInfo(Request $request)

@@ -1,10 +1,11 @@
 banner/*
 bongobondhu/*
-dashboard_files/*
 committee_files/*
+dashboard_files/*
 event_files/*
 gallery/*
 notice_files/*
+speech_files/*
 staff_info_files/*
 testimonial/*
 !.gitignore
