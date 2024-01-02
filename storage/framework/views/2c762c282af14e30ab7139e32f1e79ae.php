@@ -1,6 +1,4 @@
-@extends('userview/layout/navbar')
-
-@section('userview-navbar')
+<?php $__env->startSection('userview-navbar'); ?>
     <!-- ======home and banner section start======= -->
     <section id="latest-news-view-banner">
         <div class="container">
@@ -18,16 +16,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img src="{{ asset('public_asset/images/bd50_mujib100.jpg') }}">
+                    <img src="<?php echo e(asset('public_asset/images/bd50_mujib100.jpg')); ?>">
                     <div class="mission-text">
                         <br>
                         <div class="mission-headding text-center">
                             <h2>স্বাধীনতার সুবর্ণ জয়ন্তী </h2>
                             <div class="under-bottom"></div>
                         </div>
-                        @if(!empty($GoldenJubileeData->description))
+                        <?php if(!empty($GoldenJubileeData->description)): ?>
                         <div class="mission-para mt-5">
-                          {!! $GoldenJubileeData->description !!}
+                          <?php echo $GoldenJubileeData->description; ?>
+
                         </div>
                         <div
                             style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); box-sizing: inherit; margin: 0px; padding: 5px 10px; background-color: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204);">
@@ -38,7 +37,7 @@
                             <ul>
                             </ul>
                         </div>
-                        @endif
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -47,4 +46,6 @@
     </section>
 
     <!-- ==========about history outline University of Dhaka finish========== -->
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('userview/layout/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\ga-academy-userpanel\resources\views/userview/independenceCorner/GoldenJubileeIndependenceCorner.blade.php ENDPATH**/ ?>

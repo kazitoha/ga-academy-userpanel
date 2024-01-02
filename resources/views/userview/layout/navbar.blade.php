@@ -113,11 +113,11 @@
                                 Academic
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
+                                {{-- <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
                                     href="{{ route('academic.calendar') }}">Syllabus</a>
                                 <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
                                     href="{{ route('academic.calendar') }}">Class Routine
-                                </a>
+                                </a> --}}
                                 <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
                                     href="{{ route('academic.calendar') }}">Academic Calendar</a>
                                 <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"

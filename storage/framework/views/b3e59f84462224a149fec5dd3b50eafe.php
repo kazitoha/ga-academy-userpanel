@@ -117,11 +117,7 @@
                                 Academic
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item <?php if($url == 'academic/calendar'): ?> active <?php endif; ?>"
-                                    href="<?php echo e(route('academic.calendar')); ?>">Syllabus</a>
-                                <a class="dropdown-item <?php if($url == 'academic/calendar'): ?> active <?php endif; ?>"
-                                    href="<?php echo e(route('academic.calendar')); ?>">Class Routine
-                                </a>
+                                
                                 <a class="dropdown-item <?php if($url == 'academic/calendar'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('academic.calendar')); ?>">Academic Calendar</a>
                                 <a class="dropdown-item <?php if($url == 'academic/calendar'): ?> active <?php endif; ?>"
