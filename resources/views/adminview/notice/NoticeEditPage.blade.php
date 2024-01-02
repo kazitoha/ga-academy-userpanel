@@ -85,7 +85,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title d-flex justify-content-center">Notice Files</h4>
-                    @if (!empty($noticeGetData['file_path']))
+                    @if (!empty($noticeGetData['file_path']) && $noticeGetData['file_sys_ver']==2)
                         <div class="position-relative gallery-content">
                             <div class="demo-img">
                                 @php
@@ -98,7 +98,7 @@
                                         $extension=end($explode_file);
                                     @endphp
 
-                                    @if ($extension == 'jpg' || $explode_file[1] == 'png' || $explode_file[1] == 'jpeg')
+                                    @if ($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
                                         <img src="{{ asset('storage/notice_files') }}/{{ $value[0] }}" alt=""
                                             class="img-fluid mx-auto d-block rounded"><br>
                                     @endif
@@ -116,6 +116,21 @@
                                 </div>
                             </div>
                         </div>
+                    @elseif (!empty($noticeGetData['file_path']) && $noticeGetData['file_sys_ver']==1)
+                    @php
+                        $explode_file = explode('.', $noticeGetData['file_path']);
+                        $extension=end($explode_file);
+                    @endphp
+
+                    @if ($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
+                    <img src="{{ asset('storage/notice_files') }}/{{$noticeGetData['file_path'] }}" alt=""
+                        class="img-fluid mx-auto d-block rounded"><br>
+                @endif
+
+                @if ($extension == 'pdf')
+                    <iframe src="{{ asset('storage/notice_files') }}/{{ $noticeGetData['file_path'] }}" width="100%"
+                        height="600px"></iframe>
+                @endif
                     @else
                         <div class="position-relative gallery-content">
                             <div class="demo-img">

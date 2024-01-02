@@ -10,14 +10,27 @@
 
         <div class="owl-carousel owl-theme home_slider">
             @if (count($banner_datas) === 0)
-                <div class="bakground"
-                    style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
+            <div class="bakground"
+            style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
+            <div class="container">
+                <div class="row item banner-text-box">
+                    <div class="col-lg-7 col-md-7 col-sm-7">
+                        <div class="home-content-left">
+                            <h4 style="color:white; ">Welcome to the Feni Girish-Akshay Academy.</h4>
+                        </div>
+                    </div>
+
                 </div>
+            </div>
+
+        </div>
             @else
                 @foreach ($banner_datas as $key => $banner_row)
                     <div class="bakground"
                         style="background-image: url(storage/banner/{{ $banner_row->file_path }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                    <h1 style="padding-left: 80px"> {{$banner_row->banner_title}} </h1>
                     </div>
+
                 @endforeach
             @endif
 
@@ -117,10 +130,6 @@
                                         </p>
                 @endif
                 </p>
-        </div>
-        </div>
-        </div>
-        </div>
         </div>
         @endforeach
         @endif

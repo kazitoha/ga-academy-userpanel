@@ -8,14 +8,27 @@
 
         <div class="owl-carousel owl-theme home_slider">
             <?php if(count($banner_datas) === 0): ?>
-                <div class="bakground"
-                    style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
+            <div class="bakground"
+            style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
+            <div class="container">
+                <div class="row item banner-text-box">
+                    <div class="col-lg-7 col-md-7 col-sm-7">
+                        <div class="home-content-left">
+                            <h4 style="color:white; ">Welcome to the Feni Girish-Akshay Academy.</h4>
+                        </div>
+                    </div>
+
                 </div>
+            </div>
+
+        </div>
             <?php else: ?>
                 <?php $__currentLoopData = $banner_datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $banner_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="bakground"
                         style="background-image: url(storage/banner/<?php echo e($banner_row->file_path); ?>); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                    <h1 style="padding-left: 80px"> <?php echo e($banner_row->banner_title); ?> </h1>
                     </div>
+
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php endif; ?>
 
@@ -120,10 +133,6 @@
                                         </p>
                 <?php endif; ?>
                 </p>
-        </div>
-        </div>
-        </div>
-        </div>
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <?php endif; ?>
