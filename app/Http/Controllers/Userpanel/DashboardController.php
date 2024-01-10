@@ -20,7 +20,7 @@ class DashboardController extends Controller
     function DashboardView()
     {
         // Use concise syntax for querying
-        $officeStaff = officeStaff::where("category", 1)->count();
+        $officeStaff = $this->getOfficeStaffData();
         // Combine notice queries for better readability
         $headline_notices = notices::where('headline_status', 1)->orderBy('id', 'DESC')->take(10)->select('title', 'slug')->get();
         $notice_data = notices::orderBy('id', 'DESC')->take(10)->get();
@@ -43,6 +43,17 @@ class DashboardController extends Controller
         } else {
             return banner::orderBy('id', 'DESC')->take(3)->get();
         }
+    }
+    private function getOfficeStaffData(){
+
+        if (env('APP_DEBUG') == false) {
+            return Cache::remember('officeStaff', now()->addHours(244), function () {
+                return officeStaff::where("category", 1)->count();
+            });
+        } else {
+             return officeStaff::where("category", 1)->count();
+        }
+
     }
     private function getSpeechData()
     {

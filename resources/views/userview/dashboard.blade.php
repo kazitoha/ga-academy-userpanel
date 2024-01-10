@@ -10,94 +10,101 @@
 
         <div class="owl-carousel owl-theme home_slider">
             @if (count($banner_datas) === 0)
-            <div class="bakground"
-            style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
-            <div class="container">
-                <div class="row item banner-text-box">
-                    <div class="col-lg-7 col-md-7 col-sm-7">
-                        <div class="home-content-left">
-                            <h4 style="color:white; ">Welcome to the Feni Girish-Akshay Academy.</h4>
+
+                <div class="bakground"
+                    style="background-image: url(public_asset/images/43.jpg); background-position:center; background-repeat: no-repeat; background-size: cover;">
+                    <div class="container">
+                        <div class="row item banner-text-box">
+                            <div class="col-lg-7 col-md-7 col-sm-7">
+                                <div class="home-content-left">
+                                    <h4 style="color:white; ">Welcome to the Feni Girish-Akshay Academy.</h4>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
-            </div>
-
-        </div>
             @else
                 @foreach ($banner_datas as $key => $banner_row)
                     <div class="bakground"
                         style="background-image: url(storage/banner/{{ $banner_row->file_path }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
-                    <h1 style="padding-left: 80px"> {{$banner_row->banner_title}} </h1>
+                        <h1 style="padding-left: 80px"> {{ $banner_row->banner_title }} </h1>
                     </div>
-
                 @endforeach
             @endif
 
     </section>
-    <!-- ======home and banner section finish======= -->
-    <div>
-        <div class="marquee-teg">
-            <marquee style="color: rgb(238, 95, 95)">
-                @foreach ($headline_notices as $headline_notice)
-                    <b>{{ $headline_notice->title }}</b> <a
-                        href="{{ route('single.notice', $headline_notice->slug) }}"><u>Read
-                            More.</u></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                @endforeach
-            </marquee>
-        </div>
 
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breaking-news-container">
+
+                    <div class="news-title ">Important Notice :</div>
+                    <div class="news-scroll">
+                        <marquee>
+                        @foreach ($headline_notices as $headline_notice)
+                            <span class="dot"></span> <a href="{{ route('single.notice', $headline_notice->slug) }}" class="ticker__item">{{ $headline_notice->title }}&nbsp;  &nbsp;	 &nbsp; &nbsp;	 &nbsp;	&nbsp;	&nbsp;</a>
+                        @endforeach
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-    {{-- <marquee>Welcome to Feni G.A. Academy</marquee> --}}
 
-    <!-- =============Vice Chancellor and pro Vice Chancellor section strat============= -->
+
 
     <section id="Vice-Chancellor-part">
         <div class="owl-carousel owl-theme voice_parts">
-            @if (count($speech_datas) === 0)
+            @if (count($speech_datas) == 0)
                 <div>
-                    <div class="container">
-                        <div class="row item-2  navbar-toggle.collapsed">
+                    <div class="container navbar-toggle.collapsed">
+                        <div class="row item-2">
                             <div class="col-lg-3 col-md-3 text-center">
                                 <div class="voice-left-chanecllor">
                                     <div class="voice-images-box">
-                                        <img src="{{ asset('public_asset/images/dashboard_image/MD. TAJUL ISLAM CHOWDHURY.jpg') }}"
+                                        <img src="{{ asset('public_asset/images/dashboard_image/chairman.jpg') }}"
                                             alt="">
-                                        <p>
-                                            @if (!empty(websiteSetting()))
-                                                {{ websiteSetting()->head_teacher_name }}
-                                            @else
-                                                {{ 'Head Teacher Name' }}
-                                            @endif
-                                        </p>
-                                        <h5>প্রধান শক্ষিক</h5>
+                                        <p>মোহাম্মদ ইউছুপ</p>
+                                        <h5>সভাপতি</h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-9 col-md-9">
-                                <div class="voice-right-chanecllorr">
-                                    <h4>প্রধান শিক্ষকের বাণী</h4>
-                                    <p>
-                                        @if (!empty(websiteSetting()))
-                                            {{ websiteSetting()->head_teacher_speech }}
-                                        @else
-                                            {{ ' ' }}
-                                        @endif
-                                    </p>
-                                    </p>
-                                </div>
+                                <a href="#">
+                                    <div class="voice-right-chanecllorr">
+                                        <h4>সভাপতির বাণী</h4>
+                                        <p>শিক্ষাক্ষেত্রে প্রায় শত বছরের সাক্ষী ফেনী গিরিশ অক্ষয় একাডেমির ডাইনামিক
+                                            ওয়েবসাইট ও
+                                            সফটওয়্যার চালু হচ্ছে বিধায় আমি যারপরনাই আনন্দাভিভূত। এ স্কুলের চলমান
+                                            শ্রীবৃদ্ধিতে
+                                            ভূমিকা রাখতে পারায় আমি নিজেকে ধন্য মনে করছি। উন্নয়ন একটি চলমা প্রক্রিয়া।
+                                            অনাগত
+                                            ভবিষ্যতেও পরিবর্তনশীল পৃথিবীর সময় উপযোগী শিক্ষাব্যবস্থাপনা যোগান দেয়ার কাজে
+                                            আমরা
+                                            কুষ্ঠিত হবো না।
+
+                                            এ স্কুলের শিক্ষা ব্যবস্থায় বর্তমান ডিজিটাল প্রযুক্তি সর্বদা হালনাগাদ রাখার জন্য
+                                            এবং
+                                            নিয়মিত অনুসরণ করার জন্য সংশ্লিষ্ট সকলকে অনুরোধ করছি। I মহান আল্লাহ আমাদের সহায়
+                                            হোন।</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
-
                 </div>
             @else
                 @foreach ($speech_datas as $speech_data)
                     <div>
-                        <div class="container">
-                            <div class="row item-2 navbar-toggle.collapsed">
+                        <div class="container navbar-toggle.collapsed">
+                            <div class="row item-2">
                                 <div class="col-lg-3 col-md-3 text-center">
                                     <div class="voice-left-chanecllor">
                                         <div class="voice-images-box">
@@ -129,7 +136,10 @@
                                                 </a>
                                         </p>
                 @endif
-                </p>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
         @endforeach
         @endif
@@ -139,6 +149,7 @@
 
         </div>
     </section>
+
 
 
 
@@ -289,9 +300,9 @@
                 <div class="col-md-3 border-right">
                     <div class="facilities_cards">
                         <div class="first bg-white p-4 text-center">
-                            <svg height="100px" width="100px" viewBox="0 0 503.467 503.467" version="1.1" id="Layer_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xml:space="preserve" fill="#000000">
+                            <svg height="100px" width="100px" viewBox="0 0 503.467 503.467" version="1.1"
+                                id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" fill="#000000">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">

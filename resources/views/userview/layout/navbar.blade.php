@@ -23,13 +23,15 @@
     <!-- venobox link------= -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/venobox.min.css') }}">
     <!-- bootstrap link============= -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('public_asset/css/bootstrap.min.css')}}">
     <!-- main css link-------- -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/style.css') }}">
     <!-- responsive css strat------- -->
     <link rel="stylesheet" href="{{ asset('public_asset/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('public_asset/css/scroll_slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('public_asset/css/headline.css') }}">
     <!-- font awosome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
@@ -108,7 +110,7 @@
                                 href="{{ route('event') }}">Event</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle @if ($url == 'academic/calendar' || $url == 'honorable/guardians') active @endif"
+                            <a class="nav-link dropdown-toggle @if ($url == 'academic/calendar' || $url == 'honorable/guardians' || $url=='group') active @endif"
                                 id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                                 Academic
                             </a>
@@ -120,7 +122,7 @@
                                 </a> --}}
                                 <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
                                     href="{{ route('academic.calendar') }}">Academic Calendar</a>
-                                <a class="dropdown-item @if ($url == 'academic/calendar') active @endif"
+                                <a class="dropdown-item @if ($url == 'group') active @endif"
                                     href="{{ route('group.view') }}">Groups</a>
                                 <a class="dropdown-item @if ($url == 'honorable/guardians') active @endif"
                                     href="{{ route('honorable.guardians') }}">Honorable Guardians</a>

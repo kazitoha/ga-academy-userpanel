@@ -25,13 +25,15 @@
     <!-- venobox link------= -->
     <link rel="stylesheet" href="<?php echo e(asset('public_asset/css/venobox.min.css')); ?>">
     <!-- bootstrap link============= -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo e(asset('public_asset/css/bootstrap.min.css')); ?>">
     <!-- main css link-------- -->
     <link rel="stylesheet" href="<?php echo e(asset('public_asset/css/style.css')); ?>">
     <!-- responsive css strat------- -->
     <link rel="stylesheet" href="<?php echo e(asset('public_asset/css/responsive.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('public_asset/css/scroll_slider.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('public_asset/css/headline.css')); ?>">
     <!-- font awosome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
@@ -112,7 +114,7 @@
                                 href="<?php echo e(route('event')); ?>">Event</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle <?php if($url == 'academic/calendar' || $url == 'honorable/guardians'): ?> active <?php endif; ?>"
+                            <a class="nav-link dropdown-toggle <?php if($url == 'academic/calendar' || $url == 'honorable/guardians' || $url=='group'): ?> active <?php endif; ?>"
                                 id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                                 Academic
                             </a>
@@ -120,7 +122,7 @@
                                 
                                 <a class="dropdown-item <?php if($url == 'academic/calendar'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('academic.calendar')); ?>">Academic Calendar</a>
-                                <a class="dropdown-item <?php if($url == 'academic/calendar'): ?> active <?php endif; ?>"
+                                <a class="dropdown-item <?php if($url == 'group'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('group.view')); ?>">Groups</a>
                                 <a class="dropdown-item <?php if($url == 'honorable/guardians'): ?> active <?php endif; ?>"
                                     href="<?php echo e(route('honorable.guardians')); ?>">Honorable Guardians</a>
