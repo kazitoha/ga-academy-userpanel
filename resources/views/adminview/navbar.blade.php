@@ -311,14 +311,7 @@
 
 
 
-
-
-
-
-
                 @yield('adminpanel-navbar')
-
-
 
 
 
